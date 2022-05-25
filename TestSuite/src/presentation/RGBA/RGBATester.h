@@ -4,6 +4,7 @@
 
 #include "RGBARedTest.h"
 #include "RGBAGreenTest.h"
+#include "RGBABlueTest.h"
 
 class RGBATester
 {
@@ -16,4 +17,5 @@ public:
 private:
 	std::string testRed();
 	std::string testGreen();
+	std::string testBlue();
 };

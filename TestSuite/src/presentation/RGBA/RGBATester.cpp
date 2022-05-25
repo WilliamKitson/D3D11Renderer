@@ -14,6 +14,7 @@ std::string RGBATester::test()
 
 	failures += testRed();
 	failures += testGreen();
+	failures += testBlue();
 
 	return failures;
 }
@@ -26,4 +27,9 @@ std::string RGBATester::testRed()
 std::string RGBATester::testGreen()
 {
 	return RGBAGreenTest().test();
+}
+
+std::string RGBATester::testBlue()
+{
+	return RGBABlueTest().test();
 }
