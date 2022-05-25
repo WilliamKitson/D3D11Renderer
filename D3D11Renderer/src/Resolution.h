@@ -13,7 +13,7 @@ namespace D3D11Renderer
 		void setResolution(int[2]);
 
 	private:
-		int validateMinimum(int, int);
+		int validate(int, int);
 
 	private:
 		int resolution[2];
