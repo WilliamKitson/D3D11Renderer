@@ -15,7 +15,6 @@ namespace D3D11Renderer
 	private:
 		int width(int);
 		int height(int);
-		int validate(int, int);
 
 	private:
 		int resolution[2];

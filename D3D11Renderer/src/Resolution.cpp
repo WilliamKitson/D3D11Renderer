@@ -54,13 +54,3 @@ int D3D11Renderer::Resolution::height(int input)
 
 	return input;
 }
-
-int D3D11Renderer::Resolution::validate(int minimum, int value)
-{
-	if (value < minimum)
-	{
-		return minimum;
-	}
-
-	return value;
-}
