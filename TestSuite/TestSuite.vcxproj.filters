@@ -102,6 +102,9 @@
     <ClCompile Include="src\presentation\RGBA\RGBABlueTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\presentation\RGBA\RGBAAlphaTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\MemoryTest.h">
@@ -186,6 +189,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\presentation\RGBA\RGBABlueTest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\presentation\RGBA\RGBAAlphaTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
