@@ -13,6 +13,7 @@ namespace D3D11Renderer
 		void setResolution(int[2]);
 
 	private:
+		int width(int);
 		int validate(int, int);
 
 	private:
