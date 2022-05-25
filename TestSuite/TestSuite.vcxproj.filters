@@ -69,6 +69,9 @@
     <ClCompile Include="src\presentation\camera\CameraYposTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\presentation\camera\CameraZposTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\MemoryTest.h">
@@ -120,6 +123,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\presentation\camera\CameraYposTest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\presentation\camera\CameraZposTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

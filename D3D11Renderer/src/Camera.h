@@ -7,5 +7,6 @@ namespace D3D11Renderer
 	public:
 		const float xpos{ 0.0f };
 		const float ypos{ 0.0f };
+		const float zpos{ 0.0f };
 	};
 }

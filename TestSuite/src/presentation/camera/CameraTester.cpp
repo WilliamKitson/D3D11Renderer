@@ -14,6 +14,7 @@ std::string CameraTester::test()
 
 	failures += testXpos();
 	failures += testYpos();
+	failures += testZpos();
 
 	return failures;
 }
@@ -26,4 +27,9 @@ std::string CameraTester::testXpos()
 std::string CameraTester::testYpos()
 {
 	return CameraYposTest().test();
+}
+
+std::string CameraTester::testZpos()
+{
+	return CameraZposTest().test();
 }
