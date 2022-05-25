@@ -160,6 +160,7 @@
     <ClCompile Include="src\domain\resolution\ResolutionTester.cpp" />
     <ClCompile Include="src\Entrypoint.cpp" />
     <ClCompile Include="src\MemoryTest.cpp" />
+    <ClCompile Include="src\presentation\camera\CameraFrustumTest.cpp" />
     <ClCompile Include="src\presentation\camera\CameraTester.cpp" />
     <ClCompile Include="src\presentation\camera\CameraXposTest.cpp" />
     <ClCompile Include="src\presentation\camera\CameraYposTest.cpp" />
@@ -180,6 +181,7 @@
     <ClInclude Include="src\domain\resolution\parameter\ResolutionParameterWidthTest.h" />
     <ClInclude Include="src\domain\resolution\ResolutionTester.h" />
     <ClInclude Include="src\MemoryTest.h" />
+    <ClInclude Include="src\presentation\camera\CameraFrustumTest.h" />
     <ClInclude Include="src\presentation\camera\CameraTester.h" />
     <ClInclude Include="src\presentation\camera\CameraXposTest.h" />
     <ClInclude Include="src\presentation\camera\CameraYposTest.h" />
