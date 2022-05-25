@@ -28,12 +28,24 @@ int D3D11Renderer::Resolution::getHeight()
 void D3D11Renderer::Resolution::setResolution(int input[2])
 {
 	resolution[0] = width(input[0]);
-	resolution[1] = validate(540, input[1]);
+	resolution[1] = height(input[1]);
 }
 
 int D3D11Renderer::Resolution::width(int input)
 {
 	int output = 960;
+
+	if (input < output)
+	{
+		return output;
+	}
+
+	return input;
+}
+
+int D3D11Renderer::Resolution::height(int input)
+{
+	int output = 540;
 
 	if (input < output)
 	{
