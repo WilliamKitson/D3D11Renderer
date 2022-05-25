@@ -21,6 +21,9 @@
     <ClInclude Include="src\Resolution.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\RGB.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Resolution.cpp">

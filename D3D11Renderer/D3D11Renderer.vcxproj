@@ -157,6 +157,7 @@
   <ItemGroup>
     <ClInclude Include="src\Camera.h" />
     <ClInclude Include="src\Resolution.h" />
+    <ClInclude Include="src\RGB.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Resolution.cpp" />
