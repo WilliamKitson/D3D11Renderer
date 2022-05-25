@@ -13,6 +13,7 @@ std::string SubordinateTester::test()
 	std::string failures{ "" };
 
 	failures += testDomain();
+	failures += testApplication();
 	failures += testPresentation();
 
 	return failures;
@@ -21,6 +22,11 @@ std::string SubordinateTester::test()
 std::string SubordinateTester::testDomain()
 {
 	return DomainTester().test();
+}
+
+std::string SubordinateTester::testApplication()
+{
+	return ApplicationTester().test();
 }
 
 std::string SubordinateTester::testPresentation()

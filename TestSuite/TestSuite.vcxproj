@@ -95,7 +95,7 @@
       <AdditionalIncludeDirectories>$(SolutionDir)D3D11Renderer\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
@@ -110,7 +110,7 @@
       <AdditionalIncludeDirectories>$(SolutionDir)D3D11Renderer\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -125,7 +125,7 @@
       <AdditionalIncludeDirectories>$(SolutionDir)D3D11Renderer\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
@@ -140,13 +140,17 @@
       <AdditionalIncludeDirectories>$(SolutionDir)D3D11Renderer\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\application\ApplicationTester.cpp" />
+    <ClCompile Include="src\application\rasteriser\default\RasteriserDefaultModeTest.cpp" />
+    <ClCompile Include="src\application\rasteriser\default\RasteriserDefaultTester.cpp" />
+    <ClCompile Include="src\application\rasteriser\RasteriserTester.cpp" />
     <ClCompile Include="src\domain\DomainTester.cpp" />
     <ClCompile Include="src\domain\resolution\default\ResolutionDefaultHeightTest.cpp" />
     <ClCompile Include="src\domain\resolution\default\ResolutionDefaultTester.cpp" />
@@ -179,6 +183,10 @@
     <ClCompile Include="src\SubordinateTester.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\application\ApplicationTester.h" />
+    <ClInclude Include="src\application\rasteriser\default\RasteriserDefaultModeTest.h" />
+    <ClInclude Include="src\application\rasteriser\default\RasteriserDefaultTester.h" />
+    <ClInclude Include="src\application\rasteriser\RasteriserTester.h" />
     <ClInclude Include="src\domain\DomainTester.h" />
     <ClInclude Include="src\domain\resolution\default\ResolutionDefaultHeightTest.h" />
     <ClInclude Include="src\domain\resolution\default\ResolutionDefaultTester.h" />

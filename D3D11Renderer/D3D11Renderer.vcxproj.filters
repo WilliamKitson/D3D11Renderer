@@ -27,9 +27,15 @@
     <ClInclude Include="src\RGBA.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\Rasteriser.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Resolution.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Rasteriser.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
