@@ -162,6 +162,7 @@
     <ClCompile Include="src\MemoryTest.cpp" />
     <ClCompile Include="src\presentation\camera\CameraTester.cpp" />
     <ClCompile Include="src\presentation\camera\CameraXposTest.cpp" />
+    <ClCompile Include="src\presentation\camera\CameraYposTest.cpp" />
     <ClCompile Include="src\presentation\PresentationTester.cpp" />
     <ClCompile Include="src\SubordinateTester.cpp" />
   </ItemGroup>
@@ -180,6 +181,7 @@
     <ClInclude Include="src\MemoryTest.h" />
     <ClInclude Include="src\presentation\camera\CameraTester.h" />
     <ClInclude Include="src\presentation\camera\CameraXposTest.h" />
+    <ClInclude Include="src\presentation\camera\CameraYposTest.h" />
     <ClInclude Include="src\presentation\PresentationTester.h" />
     <ClInclude Include="src\SubordinateTester.h" />
   </ItemGroup>
