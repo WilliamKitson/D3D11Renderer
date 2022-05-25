@@ -10,7 +10,7 @@ namespace D3D11Renderer
 
 		int getWidth();
 		int getHeight();
-		void setResolution(int, int);
+		void setResolution(int[2]);
 
 	private:
 		int validateMinimum(int, int);

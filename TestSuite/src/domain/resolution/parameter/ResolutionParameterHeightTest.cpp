@@ -13,7 +13,12 @@ std::string ResolutionParameterHeightTest::test()
 {
 	D3D11Renderer::Resolution unit;
 
-	unit.setResolution(0, height);
+	int resolution[2]{
+		0,
+		height
+	};
+
+	unit.setResolution(resolution);
 
 	if (unit.getHeight() == height)
 	{

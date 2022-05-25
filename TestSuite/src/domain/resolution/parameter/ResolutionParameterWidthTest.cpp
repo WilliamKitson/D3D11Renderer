@@ -13,7 +13,12 @@ std::string ResolutionParameterWidthTest::test()
 {
 	D3D11Renderer::Resolution unit;
 
-	unit.setResolution(width, 0);
+	int resolution[2]{
+		width,
+		0
+	};
+
+	unit.setResolution(resolution);
 
 	if (unit.getWidth() == width)
 	{

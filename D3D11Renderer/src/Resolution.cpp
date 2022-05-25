@@ -3,7 +3,12 @@
 D3D11Renderer::Resolution::Resolution()
 	: resolution()
 {
-	setResolution(0, 0);
+	int initial[2]{
+		0,
+		0
+	};
+
+	setResolution(initial);
 }
 
 D3D11Renderer::Resolution::~Resolution()
@@ -20,10 +25,10 @@ int D3D11Renderer::Resolution::getHeight()
 	return resolution[1];
 }
 
-void D3D11Renderer::Resolution::setResolution(int width, int height)
+void D3D11Renderer::Resolution::setResolution(int input[2])
 {
-	resolution[0] = validateMinimum(960, width);
-	resolution[1] = validateMinimum(540, height);
+	resolution[0] = validateMinimum(960, input[0]);
+	resolution[1] = validateMinimum(540, input[1]);
 }
 
 int D3D11Renderer::Resolution::validateMinimum(int minimum, int value)

@@ -12,7 +12,12 @@ std::string ResolutionMinimumWidthTest::test()
 {
 	D3D11Renderer::Resolution unit;
 
-	unit.setResolution(0, 0);
+	int resolution[2]{
+		0,
+		0
+	};
+
+	unit.setResolution(resolution);
 
 	if (unit.getWidth() == 960)
 	{
