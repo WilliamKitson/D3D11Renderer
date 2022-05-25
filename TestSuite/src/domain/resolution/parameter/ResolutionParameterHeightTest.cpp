@@ -11,7 +11,7 @@ ResolutionParameterHeightTest::~ResolutionParameterHeightTest()
 
 std::string ResolutionParameterHeightTest::test()
 {
-	windowsPlatform::Resolution unit;
+	D3D11Renderer::Resolution unit;
 
 	unit.setResolution(0, height);
 

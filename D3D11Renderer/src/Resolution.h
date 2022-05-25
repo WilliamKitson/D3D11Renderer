@@ -1,6 +1,6 @@
 #pragma once
 
-namespace windowsPlatform
+namespace D3D11Renderer
 {
 	class Resolution
 	{

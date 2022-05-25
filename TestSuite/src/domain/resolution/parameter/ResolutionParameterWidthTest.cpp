@@ -11,7 +11,7 @@ ResolutionParameterWidthTest::~ResolutionParameterWidthTest()
 
 std::string ResolutionParameterWidthTest::test()
 {
-	windowsPlatform::Resolution unit;
+	D3D11Renderer::Resolution unit;
 
 	unit.setResolution(width, 0);
 
