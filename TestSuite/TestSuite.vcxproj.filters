@@ -87,6 +87,9 @@
     <ClCompile Include="src\presentation\RGB\RGBGreenTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\presentation\RGB\RGBBlueTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\MemoryTest.h">
@@ -156,6 +159,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\presentation\RGB\RGBGreenTest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\presentation\RGB\RGBBlueTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
