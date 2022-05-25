@@ -14,6 +14,7 @@ std::string PresentationTester::test()
 
 	failures += testCamera();
 	failures += testRGB();
+	failures += testRGBA();
 
 	return failures;
 }
@@ -26,4 +27,9 @@ std::string PresentationTester::testCamera()
 std::string PresentationTester::testRGB()
 {
 	return RGBTester().test();
+}
+
+std::string PresentationTester::testRGBA()
+{
+	return RGBATester().test();
 }
