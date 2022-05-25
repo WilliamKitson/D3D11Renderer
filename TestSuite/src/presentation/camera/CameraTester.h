@@ -6,6 +6,7 @@
 #include "CameraYposTest.h"
 #include "CameraZposTest.h"
 #include "CameraFrustumTest.h"
+#include "CameraClippingTest.h"
 
 class CameraTester
 {
@@ -20,4 +21,5 @@ private:
 	std::string testYpos();
 	std::string testZpos();
 	std::string testFrustum();
+	std::string testClipping();
 };

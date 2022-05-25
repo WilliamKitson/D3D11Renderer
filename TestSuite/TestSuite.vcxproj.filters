@@ -75,6 +75,9 @@
     <ClCompile Include="src\presentation\camera\CameraFrustumTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\presentation\camera\CameraClippingTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\MemoryTest.h">
@@ -132,6 +135,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\presentation\camera\CameraFrustumTest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\presentation\camera\CameraClippingTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
