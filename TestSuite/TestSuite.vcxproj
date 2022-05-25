@@ -147,6 +147,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\domain\DomainTester.cpp" />
+    <ClCompile Include="src\domain\resolution\default\ResolutionDefaultHeightTest.cpp" />
+    <ClCompile Include="src\domain\resolution\default\ResolutionDefaultTester.cpp" />
+    <ClCompile Include="src\domain\resolution\default\ResolutionDefaultWidthTest.cpp" />
+    <ClCompile Include="src\domain\resolution\minimum\ResolutionMinimumHeightTest.cpp" />
+    <ClCompile Include="src\domain\resolution\minimum\ResolutionMinimumTester.cpp" />
+    <ClCompile Include="src\domain\resolution\minimum\ResolutionMinimumWidthTest.cpp" />
+    <ClCompile Include="src\domain\resolution\parameter\ResolutionParameterHeightTest.cpp" />
+    <ClCompile Include="src\domain\resolution\parameter\ResolutionParameterTester.cpp" />
+    <ClCompile Include="src\domain\resolution\parameter\ResolutionParameterWidthTest.cpp" />
+    <ClCompile Include="src\domain\resolution\ResolutionTester.cpp" />
     <ClCompile Include="src\Entrypoint.cpp" />
     <ClCompile Include="src\MemoryTest.cpp" />
     <ClCompile Include="src\presentation\camera\CameraTester.cpp" />
@@ -155,11 +166,27 @@
     <ClCompile Include="src\SubordinateTester.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\domain\DomainTester.h" />
+    <ClInclude Include="src\domain\resolution\default\ResolutionDefaultHeightTest.h" />
+    <ClInclude Include="src\domain\resolution\default\ResolutionDefaultTester.h" />
+    <ClInclude Include="src\domain\resolution\default\ResolutionDefaultWidthTest.h" />
+    <ClInclude Include="src\domain\resolution\minimum\ResolutionMinimumHeightTest.h" />
+    <ClInclude Include="src\domain\resolution\minimum\ResolutionMinimumTester.h" />
+    <ClInclude Include="src\domain\resolution\minimum\ResolutionMinimumWidthTest.h" />
+    <ClInclude Include="src\domain\resolution\parameter\ResolutionParameterHeightTest.h" />
+    <ClInclude Include="src\domain\resolution\parameter\ResolutionParameterTester.h" />
+    <ClInclude Include="src\domain\resolution\parameter\ResolutionParameterWidthTest.h" />
+    <ClInclude Include="src\domain\resolution\ResolutionTester.h" />
     <ClInclude Include="src\MemoryTest.h" />
     <ClInclude Include="src\presentation\camera\CameraTester.h" />
     <ClInclude Include="src\presentation\camera\CameraXposTest.h" />
     <ClInclude Include="src\presentation\PresentationTester.h" />
     <ClInclude Include="src\SubordinateTester.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\D3D11Renderer\D3D11Renderer.vcxproj">
+      <Project>{2bbbb5ad-4523-48b1-9a48-111aa10e1c21}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
