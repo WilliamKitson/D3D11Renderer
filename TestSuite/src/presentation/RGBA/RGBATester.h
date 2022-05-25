@@ -1,7 +1,9 @@
 #pragma once
 
 #include <string>
+
 #include "RGBARedTest.h"
+#include "RGBAGreenTest.h"
 
 class RGBATester
 {
@@ -13,4 +15,5 @@ public:
 
 private:
 	std::string testRed();
+	std::string testGreen();
 };

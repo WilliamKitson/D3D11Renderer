@@ -167,6 +167,7 @@
     <ClCompile Include="src\presentation\camera\CameraYposTest.cpp" />
     <ClCompile Include="src\presentation\camera\CameraZposTest.cpp" />
     <ClCompile Include="src\presentation\PresentationTester.cpp" />
+    <ClCompile Include="src\presentation\RGBA\RGBAGreenTest.cpp" />
     <ClCompile Include="src\presentation\RGBA\RGBARedTest.cpp" />
     <ClCompile Include="src\presentation\RGBA\RGBATester.cpp" />
     <ClCompile Include="src\presentation\RGB\RGBBlueTest.cpp" />
@@ -195,6 +196,7 @@
     <ClInclude Include="src\presentation\camera\CameraYposTest.h" />
     <ClInclude Include="src\presentation\camera\CameraZposTest.h" />
     <ClInclude Include="src\presentation\PresentationTester.h" />
+    <ClInclude Include="src\presentation\RGBA\RGBAGreenTest.h" />
     <ClInclude Include="src\presentation\RGBA\RGBARedTest.h" />
     <ClInclude Include="src\presentation\RGBA\RGBATester.h" />
     <ClInclude Include="src\presentation\RGB\RGBBlueTest.h" />
