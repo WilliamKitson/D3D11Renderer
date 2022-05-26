@@ -1,7 +1,7 @@
 #include "RasteriserDefaultModeTest.h"
 
 RasteriserDefaultModeTest::RasteriserDefaultModeTest()
-	: device{ nullptr }, context{ nullptr }
+	: device{ nullptr }, context{ nullptr }, description()
 {
 }
 
@@ -21,16 +21,10 @@ std::string RasteriserDefaultModeTest::test()
 	unit.initialise(device);
 	unit.bind(context);
 
-	ID3D11RasterizerState* state;
-	context->RSGetState(&state);
-
-	if (!state)
+	if (FAILED(getDescription()))
 	{
-		return "rasteriser default mode test failed to retrieve state\n";
+		return "rasteriser default mode test description failed to initialise\n";
 	}
-
-	CD3D11_RASTERIZER_DESC description;
-	state->GetDesc(&description);
 
 	if (description.FillMode == D3D11_FILL_SOLID)
 	{
@@ -62,4 +56,18 @@ HRESULT RasteriserDefaultModeTest::initialise()
 	);
 
 	return output;
+}
+
+HRESULT RasteriserDefaultModeTest::getDescription()
+{
+	ID3D11RasterizerState* state;
+	context->RSGetState(&state);
+
+	if (!state)
+	{
+		return E_FAIL;
+	}
+
+	state->GetDesc(&description);
+	return S_OK;
 }
