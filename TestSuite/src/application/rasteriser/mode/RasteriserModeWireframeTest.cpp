@@ -22,15 +22,10 @@ std::string RasteriserModeWireframeTest::test()
 	unit.initialise(device);
 	unit.bind(context);
 
-	ID3D11RasterizerState* state;
-	context->RSGetState(&state);
-
-	if (!state)
+	if (FAILED(getDescription()))
 	{
-		return "rasteriser mode wireframe test desciption failed to initialise\n";
+		return "rasteriser mode wireframe test description failed to initialise\n";
 	}
-
-	state->GetDesc(&description);
 
 	if (description.FillMode == D3D11_FILL_WIREFRAME)
 	{
@@ -62,4 +57,18 @@ HRESULT RasteriserModeWireframeTest::initialise()
 	);
 
 	return output;
+}
+
+HRESULT RasteriserModeWireframeTest::getDescription()
+{
+	ID3D11RasterizerState* state;
+	context->RSGetState(&state);
+
+	if (!state)
+	{
+		return E_FAIL;
+	}
+
+	state->GetDesc(&description);
+	return S_OK;
 }
