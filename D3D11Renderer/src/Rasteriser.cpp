@@ -1,7 +1,7 @@
 #include "Rasteriser.h"
 
 D3D11Renderer::Rasteriser::Rasteriser()
-	: description(), rasteriser{ nullptr }
+	: description(), state{ nullptr }
 {
 	initialise();
 }
@@ -14,13 +14,13 @@ void D3D11Renderer::Rasteriser::apply(ID3D11Device* input)
 {
 	input->CreateRasterizerState(
 		&description,
-		&rasteriser
+		&state
 	);
 }
 
 void D3D11Renderer::Rasteriser::bind(ID3D11DeviceContext* input)
 {
-	input->RSSetState(rasteriser);
+	input->RSSetState(state);
 }
 
 void D3D11Renderer::Rasteriser::setWireframe()

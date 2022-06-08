@@ -23,6 +23,6 @@ namespace D3D11Renderer
 
 	private:
 		D3D11_RASTERIZER_DESC description;
-		ID3D11RasterizerState* rasteriser;
+		ID3D11RasterizerState* state;
 	};
 }
