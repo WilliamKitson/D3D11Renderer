@@ -1,6 +1,7 @@
 #include "RasteriserModeWireframeTest.h"
 
 RasteriserModeWireframeTest::RasteriserModeWireframeTest()
+	: device{ nullptr }, context{ nullptr }, description()
 {
 }
 
@@ -10,28 +11,10 @@ RasteriserModeWireframeTest::~RasteriserModeWireframeTest()
 
 std::string RasteriserModeWireframeTest::test()
 {
-	ID3D11Device* device;
-	ID3D11DeviceContext* context;
-	CD3D11_RASTERIZER_DESC description;
-
-	D3D_FEATURE_LEVEL levels[] = {
-		D3D_FEATURE_LEVEL_11_0
-	};
-
-	D3D_FEATURE_LEVEL supported;
-
-	D3D11CreateDevice(
-		0,
-		D3D_DRIVER_TYPE_HARDWARE,
-		NULL,
-		0,
-		levels,
-		1,
-		D3D11_SDK_VERSION,
-		&device,
-		&supported,
-		&context
-	);
+	if (FAILED(initialise()))
+	{
+		return "rasteriser mode wireframe test failed to initialise\n";
+	}
 
 	D3D11Renderer::Rasteriser unit;
 
@@ -55,4 +38,28 @@ std::string RasteriserModeWireframeTest::test()
 	}
 
 	return "rasteriser mode wireframe test failed\n";
+}
+
+HRESULT RasteriserModeWireframeTest::initialise()
+{
+	D3D_FEATURE_LEVEL levels[] = {
+		D3D_FEATURE_LEVEL_11_0
+	};
+
+	D3D_FEATURE_LEVEL supported;
+
+	HRESULT output = D3D11CreateDevice(
+		0,
+		D3D_DRIVER_TYPE_HARDWARE,
+		NULL,
+		0,
+		levels,
+		1,
+		D3D11_SDK_VERSION,
+		&device,
+		&supported,
+		&context
+	);
+
+	return output;
 }
