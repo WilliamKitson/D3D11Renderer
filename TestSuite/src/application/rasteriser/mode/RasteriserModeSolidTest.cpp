@@ -11,24 +11,10 @@ RasteriserModeSolidTest::~RasteriserModeSolidTest()
 
 std::string RasteriserModeSolidTest::test()
 {
-	D3D_FEATURE_LEVEL levels[] = {
-		D3D_FEATURE_LEVEL_11_0
-	};
-
-	D3D_FEATURE_LEVEL supported;
-
-	D3D11CreateDevice(
-		0,
-		D3D_DRIVER_TYPE_HARDWARE,
-		NULL,
-		0,
-		levels,
-		1,
-		D3D11_SDK_VERSION,
-		&device,
-		&supported,
-		&context
-	);
+	if (FAILED(initialise()))
+	{
+		return "rasteriser mode solid test failed to initialise\n";
+	}
 
 	D3D11Renderer::Rasteriser unit;
 
@@ -53,4 +39,28 @@ std::string RasteriserModeSolidTest::test()
 	}
 
 	return "rasteriser mode solid test failed\n";
+}
+
+HRESULT RasteriserModeSolidTest::initialise()
+{
+	D3D_FEATURE_LEVEL levels[] = {
+		D3D_FEATURE_LEVEL_11_0
+	};
+
+	D3D_FEATURE_LEVEL supported;
+
+	HRESULT output = D3D11CreateDevice(
+		0,
+		D3D_DRIVER_TYPE_HARDWARE,
+		NULL,
+		0,
+		levels,
+		1,
+		D3D11_SDK_VERSION,
+		&device,
+		&supported,
+		&context
+	);
+
+	return output;
 }
