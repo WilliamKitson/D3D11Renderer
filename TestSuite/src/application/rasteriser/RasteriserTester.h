@@ -4,6 +4,7 @@
 
 #include "default/RasteriserDefaultTester.h"
 #include "mode/RasteriserModeTester.h"
+#include "culling/RasteriserCullingTester.h"
 
 class RasteriserTester
 {
@@ -16,4 +17,5 @@ public:
 private:
 	std::string testDefault();
 	std::string testMode();
+	std::string testCulling();
 };

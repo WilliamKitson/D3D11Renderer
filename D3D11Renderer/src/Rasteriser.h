@@ -14,6 +14,7 @@ namespace D3D11Renderer
 		void bind(ID3D11DeviceContext*);
 		void setWireframe();
 		void setSolid();
+		void setNone();
 
 	private:
 		D3D11_RASTERIZER_DESC description;

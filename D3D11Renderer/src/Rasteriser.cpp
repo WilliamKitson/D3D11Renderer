@@ -36,3 +36,8 @@ void D3D11Renderer::Rasteriser::setSolid()
 {
 	description.FillMode = D3D11_FILL_SOLID;
 }
+
+void D3D11Renderer::Rasteriser::setNone()
+{
+	description.CullMode = D3D11_CULL_NONE;
+}

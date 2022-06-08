@@ -1,0 +1,55 @@
+#include "RasteriserCullingNoneTest.h"
+
+RasteriserCullingNoneTest::RasteriserCullingNoneTest()
+	: device{ nullptr }, context{ nullptr }, description()
+{
+}
+
+RasteriserCullingNoneTest::~RasteriserCullingNoneTest()
+{
+}
+
+std::string RasteriserCullingNoneTest::test()
+{
+	D3D_FEATURE_LEVEL levels[] = {
+		D3D_FEATURE_LEVEL_11_0
+	};
+
+	D3D_FEATURE_LEVEL supported;
+
+	D3D11CreateDevice(
+		0,
+		D3D_DRIVER_TYPE_HARDWARE,
+		NULL,
+		0,
+		levels,
+		1,
+		D3D11_SDK_VERSION,
+		&device,
+		&supported,
+		&context
+	);
+
+	D3D11Renderer::Rasteriser unit;
+
+	unit.setNone();
+	unit.initialise(device);
+	unit.bind(context);
+
+	ID3D11RasterizerState* state;
+	context->RSGetState(&state);
+
+	if (!state)
+	{
+		return "rasteriser culling none test description failed to initialise\n";
+	}
+
+	state->GetDesc(&description);
+
+	if (description.CullMode == D3D11_CULL_NONE)
+	{
+		return std::string();
+	}
+
+	return "rasteriser culling none test failed\n";
+}
