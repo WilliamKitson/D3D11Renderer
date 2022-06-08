@@ -19,6 +19,9 @@ namespace D3D11Renderer
 		void setBack();
 
 	private:
+		void initialise();
+
+	private:
 		D3D11_RASTERIZER_DESC description;
 		ID3D11RasterizerState* rasteriser;
 	};

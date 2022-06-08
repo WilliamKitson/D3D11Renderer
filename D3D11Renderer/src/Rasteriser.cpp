@@ -3,11 +3,7 @@
 D3D11Renderer::Rasteriser::Rasteriser()
 	: description(), rasteriser{ nullptr }
 {
-	ZeroMemory(&description, sizeof(description));
-	description.FrontCounterClockwise = false;
-	description.DepthClipEnable = true;
-	description.FillMode = D3D11_FILL_SOLID;
-	description.CullMode = D3D11_CULL_BACK;
+	initialise();
 }
 
 D3D11Renderer::Rasteriser::~Rasteriser()
@@ -50,4 +46,14 @@ void D3D11Renderer::Rasteriser::setFront()
 void D3D11Renderer::Rasteriser::setBack()
 {
 	description.CullMode = D3D11_CULL_BACK;
+}
+
+void D3D11Renderer::Rasteriser::initialise()
+{
+	ZeroMemory(&description, sizeof(description));
+	description.FrontCounterClockwise = false;
+	description.DepthClipEnable = true;
+
+	setSolid();
+	setBack();
 }
