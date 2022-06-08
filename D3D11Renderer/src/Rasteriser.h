@@ -16,6 +16,7 @@ namespace D3D11Renderer
 		void setSolid();
 		void setNone();
 		void setFront();
+		void setBack();
 
 	private:
 		D3D11_RASTERIZER_DESC description;

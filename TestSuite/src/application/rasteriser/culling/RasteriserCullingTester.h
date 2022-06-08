@@ -4,6 +4,7 @@
 
 #include "RasteriserCullingNoneTest.h"
 #include "RasteriserCullingFrontTest.h"
+#include "RasteriserCullingBackTest.h"
 
 class RasteriserCullingTester
 {
@@ -16,4 +17,5 @@ public:
 private:
 	std::string testNone();
 	std::string testFront();
+	std::string testBack();
 };

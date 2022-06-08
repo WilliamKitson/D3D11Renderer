@@ -14,6 +14,7 @@ std::string RasteriserCullingTester::test()
 
 	output += testNone();
 	output += testFront();
+	output += testBack();
 
 	return output;
 }
@@ -26,4 +27,9 @@ std::string RasteriserCullingTester::testNone()
 std::string RasteriserCullingTester::testFront()
 {
 	return RasteriserCullingFrontTest().test();
+}
+
+std::string RasteriserCullingTester::testBack()
+{
+	return RasteriserCullingBackTest().test();
 }
