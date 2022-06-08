@@ -8,6 +8,11 @@ D3D11Renderer::Rasteriser::Rasteriser()
 
 D3D11Renderer::Rasteriser::~Rasteriser()
 {
+	if (state)
+	{
+		state->Release();
+		state = nullptr;
+	}
 }
 
 void D3D11Renderer::Rasteriser::apply(ID3D11Device* input)
