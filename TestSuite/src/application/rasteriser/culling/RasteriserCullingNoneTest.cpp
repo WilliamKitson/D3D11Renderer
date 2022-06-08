@@ -7,6 +7,17 @@ RasteriserCullingNoneTest::RasteriserCullingNoneTest()
 
 RasteriserCullingNoneTest::~RasteriserCullingNoneTest()
 {
+	if (context)
+	{
+		context->Release();
+		context = nullptr;
+	}
+
+	if (device)
+	{
+		device->Release();
+		device = nullptr;
+	}
 }
 
 std::string RasteriserCullingNoneTest::test()
@@ -47,7 +58,7 @@ HRESULT RasteriserCullingNoneTest::initialise()
 		0,
 		D3D_DRIVER_TYPE_HARDWARE,
 		NULL,
-		0,
+		D3D11_CREATE_DEVICE_DEBUG,
 		levels,
 		1,
 		D3D11_SDK_VERSION,
@@ -70,5 +81,12 @@ HRESULT RasteriserCullingNoneTest::getDescription()
 	}
 
 	state->GetDesc(&description);
+
+	if (state)
+	{
+		state->Release();
+		state = nullptr;
+	}
+
 	return S_OK;
 }
