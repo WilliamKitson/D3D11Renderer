@@ -1,7 +1,9 @@
 #pragma once
 
 #include <string>
+
 #include "RasteriserCullingNoneTest.h"
+#include "RasteriserCullingFrontTest.h"
 
 class RasteriserCullingTester
 {
@@ -13,4 +15,5 @@ public:
 
 private:
 	std::string testNone();
+	std::string testFront();
 };

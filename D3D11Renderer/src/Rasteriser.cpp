@@ -41,3 +41,8 @@ void D3D11Renderer::Rasteriser::setNone()
 {
 	description.CullMode = D3D11_CULL_NONE;
 }
+
+void D3D11Renderer::Rasteriser::setFront()
+{
+	description.CullMode = D3D11_CULL_FRONT;
+}
