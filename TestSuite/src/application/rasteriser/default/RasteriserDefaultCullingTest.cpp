@@ -21,15 +21,10 @@ std::string RasteriserDefaultCullingTest::test()
 	unit.initialise(device);
 	unit.bind(context);
 
-	ID3D11RasterizerState* state;
-	context->RSGetState(&state);
-
-	if (!state)
+	if (FAILED(getDescription()))
 	{
 		return "rasteriser default culling test description failed to initialise\n";
 	}
-
-	state->GetDesc(&description);
 
 	if (description.CullMode == D3D11_CULL_BACK)
 	{
@@ -61,4 +56,18 @@ HRESULT RasteriserDefaultCullingTest::initialise()
 	);
 
 	return output;
+}
+
+HRESULT RasteriserDefaultCullingTest::getDescription()
+{
+	ID3D11RasterizerState* state;
+	context->RSGetState(&state);
+
+	if (!state)
+	{
+		return E_FAIL;
+	}
+
+	state->GetDesc(&description);
+	return S_OK;
 }

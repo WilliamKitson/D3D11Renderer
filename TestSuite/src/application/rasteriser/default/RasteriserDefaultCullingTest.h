@@ -13,6 +13,7 @@ public:
 
 private:
 	HRESULT initialise();
+	HRESULT getDescription();
 
 private:
 	ID3D11Device* device;
