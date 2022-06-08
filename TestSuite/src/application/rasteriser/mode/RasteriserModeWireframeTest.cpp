@@ -19,7 +19,7 @@ std::string RasteriserModeWireframeTest::test()
 	D3D11Renderer::Rasteriser unit;
 
 	unit.setWireframe();
-	unit.initialise(device);
+	unit.apply(device);
 	unit.bind(context);
 
 	if (FAILED(getDescription()))

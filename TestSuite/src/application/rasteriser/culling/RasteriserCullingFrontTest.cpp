@@ -19,7 +19,7 @@ std::string RasteriserCullingFrontTest::test()
 	D3D11Renderer::Rasteriser unit;
 
 	unit.setFront();
-	unit.initialise(device);
+	unit.apply(device);
 	unit.bind(context);
 
 	if (FAILED(getDescription()))

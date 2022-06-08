@@ -10,7 +10,7 @@ namespace D3D11Renderer
 		Rasteriser();
 		~Rasteriser();
 
-		void initialise(ID3D11Device*);
+		void apply(ID3D11Device*);
 		void bind(ID3D11DeviceContext*);
 		void setWireframe();
 		void setSolid();

@@ -20,7 +20,7 @@ std::string RasteriserModeSolidTest::test()
 
 	unit.setWireframe();
 	unit.setSolid();
-	unit.initialise(device);
+	unit.apply(device);
 	unit.bind(context);
 
 	if (FAILED(getDescription()))

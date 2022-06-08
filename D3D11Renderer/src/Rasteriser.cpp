@@ -1,7 +1,7 @@
 #include "Rasteriser.h"
 
 D3D11Renderer::Rasteriser::Rasteriser()
-	: rasteriser()
+	: description(), rasteriser{ nullptr }
 {
 	ZeroMemory(&description, sizeof(description));
 	description.FrontCounterClockwise = false;
@@ -14,7 +14,7 @@ D3D11Renderer::Rasteriser::~Rasteriser()
 {
 }
 
-void D3D11Renderer::Rasteriser::initialise(ID3D11Device* input)
+void D3D11Renderer::Rasteriser::apply(ID3D11Device* input)
 {
 	input->CreateRasterizerState(
 		&description,

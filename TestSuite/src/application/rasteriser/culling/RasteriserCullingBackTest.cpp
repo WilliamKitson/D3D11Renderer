@@ -20,7 +20,7 @@ std::string RasteriserCullingBackTest::test()
 
 	unit.setFront();
 	unit.setBack();
-	unit.initialise(device);
+	unit.apply(device);
 	unit.bind(context);
 
 	if (FAILED(getDescription()))

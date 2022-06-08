@@ -18,7 +18,7 @@ std::string RasteriserDefaultModeTest::test()
 
 	D3D11Renderer::Rasteriser unit;
 
-	unit.initialise(device);
+	unit.apply(device);
 	unit.bind(context);
 
 	if (FAILED(getDescription()))
