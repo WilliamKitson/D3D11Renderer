@@ -31,3 +31,8 @@ void D3D11Renderer::Rasteriser::setWireframe()
 {
 	description.FillMode = D3D11_FILL_WIREFRAME;
 }
+
+void D3D11Renderer::Rasteriser::setSolid()
+{
+	description.FillMode = D3D11_FILL_SOLID;
+}

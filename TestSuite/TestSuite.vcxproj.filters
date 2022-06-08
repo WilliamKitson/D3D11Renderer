@@ -126,6 +126,9 @@
     <ClCompile Include="src\application\rasteriser\mode\RasteriserModeTester.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\application\rasteriser\mode\RasteriserModeSolidTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\MemoryTest.h">
@@ -234,6 +237,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\application\rasteriser\mode\RasteriserModeTester.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\application\rasteriser\mode\RasteriserModeSolidTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -151,6 +151,7 @@
     <ClCompile Include="src\application\rasteriser\default\RasteriserDefaultCullingTest.cpp" />
     <ClCompile Include="src\application\rasteriser\default\RasteriserDefaultModeTest.cpp" />
     <ClCompile Include="src\application\rasteriser\default\RasteriserDefaultTester.cpp" />
+    <ClCompile Include="src\application\rasteriser\mode\RasteriserModeSolidTest.cpp" />
     <ClCompile Include="src\application\rasteriser\mode\RasteriserModeTester.cpp" />
     <ClCompile Include="src\application\rasteriser\mode\RasteriserModeWireframeTest.cpp" />
     <ClCompile Include="src\application\rasteriser\RasteriserTester.cpp" />
@@ -190,6 +191,7 @@
     <ClInclude Include="src\application\rasteriser\default\RasteriserDefaultCullingTest.h" />
     <ClInclude Include="src\application\rasteriser\default\RasteriserDefaultModeTest.h" />
     <ClInclude Include="src\application\rasteriser\default\RasteriserDefaultTester.h" />
+    <ClInclude Include="src\application\rasteriser\mode\RasteriserModeSolidTest.h" />
     <ClInclude Include="src\application\rasteriser\mode\RasteriserModeTester.h" />
     <ClInclude Include="src\application\rasteriser\mode\RasteriserModeWireframeTest.h" />
     <ClInclude Include="src\application\rasteriser\RasteriserTester.h" />

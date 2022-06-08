@@ -1,7 +1,9 @@
 #pragma once
 
 #include <string>
+
 #include "RasteriserModeWireframeTest.h"
+#include "RasteriserModeSolidTest.h"
 
 class RasteriserModeTester
 {
@@ -13,4 +15,5 @@ public:
 
 private:
 	std::string testWireframe();
+	std::string testSolid();
 };
