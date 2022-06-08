@@ -7,6 +7,17 @@ RasteriserDefaultDepthTest::RasteriserDefaultDepthTest()
 
 RasteriserDefaultDepthTest::~RasteriserDefaultDepthTest()
 {
+	if (context)
+	{
+		context->Release();
+		context = nullptr;
+	}
+
+	if (device)
+	{
+		device->Release();
+		device = nullptr;
+	}
 }
 
 std::string RasteriserDefaultDepthTest::test()
@@ -46,7 +57,7 @@ HRESULT RasteriserDefaultDepthTest::initialise()
 		0,
 		D3D_DRIVER_TYPE_HARDWARE,
 		NULL,
-		0,
+		D3D11_CREATE_DEVICE_DEBUG,
 		levels,
 		1,
 		D3D11_SDK_VERSION,
@@ -69,5 +80,12 @@ HRESULT RasteriserDefaultDepthTest::getDescription()
 	}
 
 	state->GetDesc(&description);
+
+	if (state)
+	{
+		state->Release();
+		state = nullptr;
+	}
+
 	return S_OK;
 }
