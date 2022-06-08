@@ -120,6 +120,12 @@
     <ClCompile Include="src\application\rasteriser\default\RasteriserDefaultCullingTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\application\rasteriser\mode\RasteriserModeWireframeTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\application\rasteriser\mode\RasteriserModeTester.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\MemoryTest.h">
@@ -222,6 +228,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\application\rasteriser\default\RasteriserDefaultCullingTest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\application\rasteriser\mode\RasteriserModeWireframeTest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\application\rasteriser\mode\RasteriserModeTester.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

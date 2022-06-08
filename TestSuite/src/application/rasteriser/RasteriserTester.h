@@ -1,7 +1,9 @@
 #pragma once
 
 #include <string>
+
 #include "default/RasteriserDefaultTester.h"
+#include "mode/RasteriserModeTester.h"
 
 class RasteriserTester
 {
@@ -13,4 +15,5 @@ public:
 
 private:
 	std::string testDefault();
+	std::string testMode();
 };
