@@ -1,7 +1,9 @@
 #pragma once
 
 #include <string>
+
 #include "RasteriserDefaultModeTest.h"
+#include "RasteriserDefaultCullingTest.h"
 
 class RasteriserDefaultTester
 {
@@ -13,4 +15,5 @@ public:
 
 private:
 	std::string testMode();
+	std::string testCulling();
 };

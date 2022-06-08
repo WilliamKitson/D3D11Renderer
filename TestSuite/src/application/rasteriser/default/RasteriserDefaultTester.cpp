@@ -13,6 +13,7 @@ std::string RasteriserDefaultTester::test()
 	std::string failures{ "" };
 
 	failures += testMode();
+	failures += testCulling();
 
 	return failures;
 }
@@ -20,4 +21,9 @@ std::string RasteriserDefaultTester::test()
 std::string RasteriserDefaultTester::testMode()
 {
 	return RasteriserDefaultModeTest().test();
+}
+
+std::string RasteriserDefaultTester::testCulling()
+{
+	return RasteriserDefaultCullingTest().test();
 }
