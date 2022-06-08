@@ -8,11 +8,7 @@ D3D11Renderer::Rasteriser::Rasteriser()
 
 D3D11Renderer::Rasteriser::~Rasteriser()
 {
-	if (state)
-	{
-		state->Release();
-		state = nullptr;
-	}
+	cleanup();
 }
 
 void D3D11Renderer::Rasteriser::apply(ID3D11Device* input)
@@ -59,4 +55,13 @@ void D3D11Renderer::Rasteriser::initialise()
 	description.FillMode = D3D11_FILL_SOLID;
 	description.CullMode = D3D11_CULL_BACK;
 	description.DepthClipEnable = true;
+}
+
+void D3D11Renderer::Rasteriser::cleanup()
+{
+	if (state)
+	{
+		state->Release();
+		state = nullptr;
+	}
 }

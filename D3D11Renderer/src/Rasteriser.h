@@ -20,6 +20,7 @@ namespace D3D11Renderer
 
 	private:
 		void initialise();
+		void cleanup();
 
 	private:
 		D3D11_RASTERIZER_DESC description;
