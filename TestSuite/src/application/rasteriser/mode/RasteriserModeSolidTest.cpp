@@ -30,6 +30,8 @@ std::string RasteriserModeSolidTest::test()
 	D3D11Renderer::Rasteriser unit;
 
 	unit.setWireframe();
+	unit.apply(device);
+
 	unit.setSolid();
 	unit.apply(device);
 	unit.bind(context);

@@ -30,6 +30,8 @@ std::string RasteriserCullingBackTest::test()
 	D3D11Renderer::Rasteriser unit;
 
 	unit.setFront();
+	unit.apply(device);
+
 	unit.setBack();
 	unit.apply(device);
 	unit.bind(context);

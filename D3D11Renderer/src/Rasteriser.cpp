@@ -13,6 +13,8 @@ D3D11Renderer::Rasteriser::~Rasteriser()
 
 void D3D11Renderer::Rasteriser::apply(ID3D11Device* input)
 {
+	cleanup();
+
 	input->CreateRasterizerState(
 		&description,
 		&state
