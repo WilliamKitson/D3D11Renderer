@@ -23,22 +23,7 @@ D3D11Renderer::Swapchain::~Swapchain()
 void D3D11Renderer::Swapchain::initialise(ID3D11Device* device, HWND window)
 {
 	IDXGIFactory* factory = getFactory(device);
-
-	DXGI_SWAP_CHAIN_DESC description = DXGI_SWAP_CHAIN_DESC();
-
-	description.BufferDesc.Width = resolution.getWidth();
-	description.BufferDesc.Height = resolution.getHeight();
-	description.BufferDesc.Format = DXGI_FORMAT_R8G8B8A8_UNORM;
-	description.BufferDesc.ScanlineOrdering = DXGI_MODE_SCANLINE_ORDER_UNSPECIFIED;
-	description.BufferDesc.Scaling = DXGI_MODE_SCALING_UNSPECIFIED;
-	description.SampleDesc.Count = 1;
-	description.SampleDesc.Quality = 0;
-	description.BufferUsage = DXGI_USAGE_RENDER_TARGET_OUTPUT;
-	description.BufferCount = 1;
-	description.OutputWindow = window;
-	description.Windowed = true;
-	description.SwapEffect = DXGI_SWAP_EFFECT_DISCARD;
-	description.Flags = 0;
+	DXGI_SWAP_CHAIN_DESC description = getDescription(window);
 
 	HRESULT result = factory->CreateSwapChain(
 		device,
@@ -103,9 +88,9 @@ void D3D11Renderer::Swapchain::bind(ID3D11DeviceContext* input)
 	);
 }
 
-IDXGIFactory* D3D11Renderer::Swapchain::getFactory(ID3D11Device* device)
+IDXGIFactory* D3D11Renderer::Swapchain::getFactory(ID3D11Device* input)
 {
-	IDXGIAdapter* adapter = getAdapter(device);
+	IDXGIAdapter* adapter = getAdapter(input);
 	IDXGIFactory* output = nullptr;
 
 	adapter->GetParent(
@@ -119,9 +104,9 @@ IDXGIFactory* D3D11Renderer::Swapchain::getFactory(ID3D11Device* device)
 	return output;
 }
 
-IDXGIAdapter* D3D11Renderer::Swapchain::getAdapter(ID3D11Device* device)
+IDXGIAdapter* D3D11Renderer::Swapchain::getAdapter(ID3D11Device* input)
 {
-	IDXGIDevice* dxgiDevice = getDevice(device);
+	IDXGIDevice* dxgiDevice = getDevice(input);
 	IDXGIAdapter* output = nullptr;
 
 	dxgiDevice->GetParent(
@@ -135,14 +120,35 @@ IDXGIAdapter* D3D11Renderer::Swapchain::getAdapter(ID3D11Device* device)
 	return output;
 }
 
-IDXGIDevice* D3D11Renderer::Swapchain::getDevice(ID3D11Device* device)
+IDXGIDevice* D3D11Renderer::Swapchain::getDevice(ID3D11Device* input)
 {
 	IDXGIDevice* output = nullptr;
 
-	device->QueryInterface(
+	input->QueryInterface(
 		__uuidof(IDXGIDevice),
 		(void**)&output
 	);
+
+	return output;
+}
+
+DXGI_SWAP_CHAIN_DESC D3D11Renderer::Swapchain::getDescription(HWND input)
+{
+	DXGI_SWAP_CHAIN_DESC output = DXGI_SWAP_CHAIN_DESC();
+
+	output.BufferDesc.Width = resolution.getWidth();
+	output.BufferDesc.Height = resolution.getHeight();
+	output.BufferDesc.Format = DXGI_FORMAT_R8G8B8A8_UNORM;
+	output.BufferDesc.ScanlineOrdering = DXGI_MODE_SCANLINE_ORDER_UNSPECIFIED;
+	output.BufferDesc.Scaling = DXGI_MODE_SCALING_UNSPECIFIED;
+	output.SampleDesc.Count = 1;
+	output.SampleDesc.Quality = 0;
+	output.BufferUsage = DXGI_USAGE_RENDER_TARGET_OUTPUT;
+	output.BufferCount = 1;
+	output.OutputWindow = input;
+	output.Windowed = true;
+	output.SwapEffect = DXGI_SWAP_EFFECT_DISCARD;
+	output.Flags = 0;
 
 	return output;
 }
