@@ -32,11 +32,7 @@ void D3D11Renderer::Swapchain::initialise(ID3D11Device* device, HWND window)
 
 void D3D11Renderer::Swapchain::bind(ID3D11DeviceContext* input)
 {
-	input->OMSetRenderTargets(
-		1,
-		&view,
-		nullptr
-	);
+	bindRenderTargets(input);
 
 	D3D11_VIEWPORT viewport{
 		0.0f,
@@ -158,4 +154,14 @@ ID3D11Texture2D* D3D11Renderer::Swapchain::getBackBuffer()
 	);
 
 	return output;
+}
+
+void D3D11Renderer::Swapchain::bindRenderTargets(ID3D11DeviceContext* input)
+{
+	input->OMSetRenderTargets(
+		1,
+		&view,
+		nullptr
+	);
+
 }
