@@ -171,12 +171,7 @@ LRESULT SwapchainDefaultViewTest::windowProcedure(HWND window, UINT message, WPA
 
 HRESULT SwapchainDefaultViewTest::initialiseWindow()
 {
-	WNDCLASS windowClass = WNDCLASS();
-	windowClass.lpfnWndProc = windowProcedure;
-	windowClass.hInstance = hInstance;
-	windowClass.lpszClassName = tag.c_str();
-
-	if (!RegisterClass(&windowClass))
+	if (FAILED(initialiseWindowClass()))
 	{
 		return E_FAIL;
 	}
@@ -204,6 +199,21 @@ HRESULT SwapchainDefaultViewTest::initialiseWindow()
 		window,
 		nCmdShow
 	);
+
+	return S_OK;
+}
+
+HRESULT SwapchainDefaultViewTest::initialiseWindowClass()
+{
+	WNDCLASS windowClass = WNDCLASS();
+	windowClass.lpfnWndProc = windowProcedure;
+	windowClass.hInstance = hInstance;
+	windowClass.lpszClassName = tag.c_str();
+
+	if (!RegisterClass(&windowClass))
+	{
+		return E_FAIL;
+	}
 
 	return S_OK;
 }
