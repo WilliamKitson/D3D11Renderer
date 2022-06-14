@@ -17,5 +17,7 @@ namespace D3D11Renderer
 	private:
 		Resolution resolution;
 		D3D11_VIEWPORT viewport;
+		IDXGISwapChain* state;
+		ID3D11RenderTargetView* view;
 	};
 }
