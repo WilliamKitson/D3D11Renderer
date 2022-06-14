@@ -17,6 +17,7 @@ namespace D3D11Renderer
 	private:
 		IDXGIFactory* getFactory(ID3D11Device*);
 		IDXGIAdapter* getAdapter(ID3D11Device*);
+		IDXGIDevice* getDevice(ID3D11Device*);
 
 	private:
 		Resolution resolution;
