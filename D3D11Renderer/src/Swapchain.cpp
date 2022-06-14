@@ -135,23 +135,7 @@ DXGI_SWAP_CHAIN_DESC D3D11Renderer::Swapchain::getDescription(HWND input)
 
 void D3D11Renderer::Swapchain::initialiseView(ID3D11Device* input)
 {
-	if (!state)
-	{
-		return;
-	}
-
-	ID3D11Texture2D* backBuffer = nullptr;
-
-	state->GetBuffer(
-		0,
-		__uuidof(ID3D11Texture2D),
-		reinterpret_cast<void**>(&backBuffer)
-	);
-
-	if (!backBuffer)
-	{
-		return;
-	}
+	ID3D11Texture2D* backBuffer = getBackBuffer();
 
 	input->CreateRenderTargetView(
 		backBuffer,
@@ -159,9 +143,19 @@ void D3D11Renderer::Swapchain::initialiseView(ID3D11Device* input)
 		&view
 	);
 
-	if (backBuffer)
-	{
-		backBuffer->Release();
-		backBuffer = nullptr;
-	}
+	backBuffer->Release();
+	backBuffer = nullptr;
+}
+
+ID3D11Texture2D* D3D11Renderer::Swapchain::getBackBuffer()
+{
+	ID3D11Texture2D* output = nullptr;
+
+	state->GetBuffer(
+		0,
+		__uuidof(ID3D11Texture2D),
+		reinterpret_cast<void**>(&output)
+	);
+
+	return output;
 }

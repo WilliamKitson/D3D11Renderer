@@ -21,6 +21,7 @@ namespace D3D11Renderer
 		IDXGIDevice* getDevice(ID3D11Device*);
 		DXGI_SWAP_CHAIN_DESC getDescription(HWND);
 		void initialiseView(ID3D11Device*);
+		ID3D11Texture2D* getBackBuffer();
 
 	private:
 		Resolution resolution;
