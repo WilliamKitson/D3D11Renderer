@@ -39,79 +39,7 @@ std::string SwapchainDefaultViewTest::test()
 	unit.initialise(device, window);
 	unit.bind(context);
 
-	D3D11_TEXTURE2D_DESC successful = D3D11_TEXTURE2D_DESC();
-	successful.Width = 960;
-	successful.Height = 540;
-	successful.MipLevels = 1;
-	successful.ArraySize = 1;
-	successful.Format = DXGI_FORMAT_R8G8B8A8_UNORM;
-	successful.SampleDesc.Count = 1;
-	successful.SampleDesc.Quality = 0;
-	successful.Usage = D3D11_USAGE_DEFAULT;
-	successful.BindFlags = 32;
-	successful.CPUAccessFlags = 0;
-	successful.MiscFlags = 0;
-
-	D3D11_TEXTURE2D_DESC comparison = texture();
-
-	bool equal = true;
-
-	if (comparison.Width != successful.Width)
-	{
-		equal = false;
-	}
-
-	if (comparison.Height != successful.Height)
-	{
-		equal = false;
-	}
-
-	if (comparison.MipLevels != successful.MipLevels)
-	{
-		equal = false;
-	}
-
-	if (comparison.ArraySize != successful.ArraySize)
-	{
-		equal = false;
-	}
-
-	if (comparison.Format != successful.Format)
-	{
-		equal = false;
-	}
-
-	if (comparison.SampleDesc.Count != successful.SampleDesc.Count)
-	{
-		equal = false;
-	}
-
-	if (comparison.SampleDesc.Quality != successful.SampleDesc.Quality)
-	{
-		equal = false;
-	}
-
-	if (comparison.Usage != successful.Usage)
-	{
-		equal = false;
-	}
-
-	if (comparison.BindFlags != successful.BindFlags)
-	{
-		equal = false;
-	}
-
-	if (comparison.CPUAccessFlags != successful.CPUAccessFlags)
-	{
-		equal = false;
-	}
-
-	if (comparison.MiscFlags != successful.MiscFlags)
-	{
-		equal = false;
-	}
-
-	if (equal)
+	if (successful(texture()))
 	{
 		return std::string();
 	}
@@ -223,4 +151,64 @@ D3D11_TEXTURE2D_DESC SwapchainDefaultViewTest::texture()
 	backBuffer = nullptr;
 
 	return output;
+}
+
+bool SwapchainDefaultViewTest::successful(D3D11_TEXTURE2D_DESC input)
+{
+	if (input.Width != 960)
+	{
+		return false;
+	}
+
+	if (input.Height != 540)
+	{
+		return false;
+	}
+
+	if (input.MipLevels != 1)
+	{
+		return false;
+	}
+
+	if (input.ArraySize != 1)
+	{
+		return false;
+	}
+
+	if (input.Format != DXGI_FORMAT_R8G8B8A8_UNORM)
+	{
+		return false;
+	}
+
+	if (input.SampleDesc.Count != 1)
+	{
+		return false;
+	}
+
+	if (input.SampleDesc.Quality != 0)
+	{
+		return false;
+	}
+
+	if (input.Usage != D3D11_USAGE_DEFAULT)
+	{
+		return false;
+	}
+
+	if (input.BindFlags != 32)
+	{
+		return false;
+	}
+
+	if (input.CPUAccessFlags != 0)
+	{
+		return false;
+	}
+
+	if (input.MiscFlags != 0)
+	{
+		return false;
+	}
+
+	return true;
 }

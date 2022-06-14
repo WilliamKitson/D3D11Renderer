@@ -20,6 +20,7 @@ private:
 	HRESULT initialiseWindowClass();
 	HRESULT initialiseD3D11();
 	D3D11_TEXTURE2D_DESC texture();
+	bool successful(D3D11_TEXTURE2D_DESC);
 
 private:
 	HINSTANCE hInstance;
