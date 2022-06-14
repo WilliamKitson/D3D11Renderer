@@ -182,10 +182,12 @@
     <ClInclude Include="src\Resolution.h" />
     <ClInclude Include="src\RGB.h" />
     <ClInclude Include="src\RGBA.h" />
+    <ClInclude Include="src\Swapchain.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Rasteriser.cpp" />
     <ClCompile Include="src\Resolution.cpp" />
+    <ClCompile Include="src\Swapchain.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

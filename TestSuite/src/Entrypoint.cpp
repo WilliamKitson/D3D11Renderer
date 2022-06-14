@@ -8,7 +8,7 @@ int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _
 {
 	MessageBox(
 		NULL,
-		std::wstring_convert<std::codecvt_utf8<wchar_t>>().from_bytes(SubordinateTester().test()).c_str(),
+		std::wstring_convert<std::codecvt_utf8<wchar_t>>().from_bytes(SubordinateTester(hInstance, nCmdShow).test()).c_str(),
 		L"subordinate tester",
 		NULL
 	);
