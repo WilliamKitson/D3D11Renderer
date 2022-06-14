@@ -22,32 +22,25 @@ D3D11Renderer::Swapchain::~Swapchain()
 
 void D3D11Renderer::Swapchain::initialise(ID3D11Device* device, HWND window)
 {
-	IDXGIFactory* factory = getFactory(device);
-	DXGI_SWAP_CHAIN_DESC description = getDescription(window);
-
-	HRESULT result = factory->CreateSwapChain(
+	initialiseState(
 		device,
-		&description,
-		&state
+		window
 	);
 
-	factory->Release();
-	factory = nullptr;
-
-	if (FAILED(result))
+	if (!state)
 	{
 		return;
 	}
 
 	ID3D11Texture2D* backBuffer = nullptr;
 
-	result = state->GetBuffer(
+	state->GetBuffer(
 		0,
 		__uuidof(ID3D11Texture2D),
 		reinterpret_cast<void**>(&backBuffer)
 	);
 
-	if (FAILED(result))
+	if (!backBuffer)
 	{
 		return;
 	}
@@ -86,6 +79,21 @@ void D3D11Renderer::Swapchain::bind(ID3D11DeviceContext* input)
 		1,
 		&viewport
 	);
+}
+
+void D3D11Renderer::Swapchain::initialiseState(ID3D11Device* device, HWND window)
+{
+	IDXGIFactory* factory = getFactory(device);
+	DXGI_SWAP_CHAIN_DESC description = getDescription(window);
+
+	HRESULT result = factory->CreateSwapChain(
+		device,
+		&description,
+		&state
+	);
+
+	factory->Release();
+	factory = nullptr;
 }
 
 IDXGIFactory* D3D11Renderer::Swapchain::getFactory(ID3D11Device* input)
