@@ -1,16 +1,8 @@
 #include "Swapchain.h"
 
 D3D11Renderer::Swapchain::Swapchain()
-	: resolution(), viewport(), state{ nullptr }, view{ nullptr }
+	: resolution(), state{ nullptr }, view{ nullptr }
 {
-	viewport = D3D11_VIEWPORT{
-		0.0f,
-		0.0f,
-		960.0f,
-		540.0f,
-		0.0f,
-		1.0f
-	};
 }
 
 D3D11Renderer::Swapchain::~Swapchain()
@@ -114,6 +106,15 @@ void D3D11Renderer::Swapchain::bind(ID3D11DeviceContext* input)
 		&view,
 		nullptr
 	);
+
+	D3D11_VIEWPORT viewport{
+		0.0f,
+		0.0f,
+		(float)resolution.getWidth(),
+		(float)resolution.getHeight(),
+		0.0f,
+		1.0f
+	};
 
 	input->RSSetViewports(
 		1,
