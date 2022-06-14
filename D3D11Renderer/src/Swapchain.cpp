@@ -105,26 +105,43 @@ void D3D11Renderer::Swapchain::bind(ID3D11DeviceContext* input)
 
 IDXGIFactory* D3D11Renderer::Swapchain::getFactory(ID3D11Device* device)
 {
+	IDXGIAdapter* adapter = getAdapter(device);
+	IDXGIFactory* output = nullptr;
+
+	adapter->GetParent(
+		__uuidof(IDXGIFactory),
+		(void**)&output
+	);
+
+	adapter->Release();
+	adapter = nullptr;
+
+	return output;
+}
+
+IDXGIAdapter* D3D11Renderer::Swapchain::getAdapter(ID3D11Device* device)
+{
 	IDXGIDevice* dxgiDevice = nullptr;
 
-	device->QueryInterface(__uuidof(IDXGIDevice), (void**)&dxgiDevice);
+	device->QueryInterface(
+		__uuidof(IDXGIDevice),
+		(void**)&dxgiDevice
+	);
 
 	if (!dxgiDevice)
 	{
 		return nullptr;
 	}
 
-	IDXGIAdapter* adapter = nullptr;
+	IDXGIAdapter* output = nullptr;
 
-	dxgiDevice->GetParent(__uuidof(IDXGIAdapter), (void**)&adapter);
+	dxgiDevice->GetParent(
+		__uuidof(IDXGIAdapter),
+		(void**)&output
+	);
+
 	dxgiDevice->Release();
 	dxgiDevice = nullptr;
 
-	IDXGIFactory* factory = nullptr;
-
-	adapter->GetParent(__uuidof(IDXGIFactory), (void**)&factory);
-	adapter->Release();
-	adapter = nullptr;
-
-	return factory;
+	return output;
 }
