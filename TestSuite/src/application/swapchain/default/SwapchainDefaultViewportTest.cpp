@@ -1,8 +1,16 @@
 #include "SwapchainDefaultViewportTest.h"
 
 SwapchainDefaultViewportTest::SwapchainDefaultViewportTest(HINSTANCE hInstanceInput, int nCmdShowInput)
-	: hInstance{ hInstanceInput }, nCmdShow{ nCmdShowInput }, tag{ L"swapchain default viewport D3D11" }, window(), device{ nullptr }, context{ nullptr }
+	: hInstance{ hInstanceInput }, nCmdShow{ nCmdShowInput }, tag{ L"swapchain default viewport D3D11" }, window(), device{ nullptr }, context{ nullptr }, successful()
 {
+	successful = D3D11_VIEWPORT{
+		0.0f,
+		0.0f,
+		960.0f,
+		540.0f,
+		0.0f,
+		1.0f
+	};
 }
 
 SwapchainDefaultViewportTest::~SwapchainDefaultViewportTest()
@@ -38,15 +46,6 @@ std::string SwapchainDefaultViewportTest::test()
 
 	unit.initialise(device, window);
 	unit.bind(context);
-
-	D3D11_VIEWPORT successful{
-		0.0f,
-		0.0f,
-		960.0f,
-		540.0f,
-		0.0f,
-		1.0f
-	};
 
 	if (viewport() == successful)
 	{
