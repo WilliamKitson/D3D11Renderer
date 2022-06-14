@@ -1,7 +1,7 @@
 #include "SwapchainDefaultViewportTest.h"
 
 SwapchainDefaultViewportTest::SwapchainDefaultViewportTest(HINSTANCE hInstanceInput, int nCmdShowInput)
-	: hInstance{ hInstanceInput }, nCmdShow{ nCmdShowInput }, window(), device{nullptr}, context{nullptr}
+	: hInstance{ hInstanceInput }, nCmdShow{ nCmdShowInput }, window(), device{ nullptr }, context{ nullptr }
 {
 }
 
@@ -24,41 +24,10 @@ SwapchainDefaultViewportTest::~SwapchainDefaultViewportTest()
 
 std::string SwapchainDefaultViewportTest::test()
 {
-	const wchar_t tag[] = L"swapchain default viewport D3D11";
-
-	WNDCLASS windowClass = WNDCLASS();
-	windowClass.lpfnWndProc = windowProcedure;
-	windowClass.hInstance = hInstance;
-	windowClass.lpszClassName = tag;
-
-	if (!RegisterClass(&windowClass))
+	if (FAILED(initialiseWindow()))
 	{
-		return "swapchain default viewport window class failed to initialise\n";
+		return "swapchain default viewport test window failed to initialise\n";
 	}
-
-	window = CreateWindow(
-		tag,
-		tag,
-		WS_OVERLAPPEDWINDOW,
-		100,
-		100,
-		960,
-		540,
-		NULL,
-		NULL,
-		hInstance,
-		NULL
-	);
-
-	if (!window)
-	{
-		return "swapchain default viewport window failed to initialise\n";
-	}
-
-	ShowWindow(
-		window,
-		nCmdShow
-	);
 
 	D3D_FEATURE_LEVEL levels[] = {
 		D3D_FEATURE_LEVEL_11_0
@@ -81,7 +50,7 @@ std::string SwapchainDefaultViewportTest::test()
 
 	if (FAILED(result))
 	{
-		return "swapchain default viewport D3D11 failed to initialise\n";
+		return "swapchain default viewport test D3D11 failed to initialise\n";
 	}
 
 	D3D11Renderer::Swapchain unit;
@@ -117,4 +86,45 @@ std::string SwapchainDefaultViewportTest::test()
 LRESULT CALLBACK SwapchainDefaultViewportTest::windowProcedure(HWND window, UINT message, WPARAM wParam, LPARAM lParam)
 {
 	return DefWindowProc(window, message, wParam, lParam);
+}
+
+HRESULT SwapchainDefaultViewportTest::initialiseWindow()
+{
+	const wchar_t tag[] = L"swapchain default viewport D3D11";
+
+	WNDCLASS windowClass = WNDCLASS();
+	windowClass.lpfnWndProc = windowProcedure;
+	windowClass.hInstance = hInstance;
+	windowClass.lpszClassName = tag;
+
+	if (!RegisterClass(&windowClass))
+	{
+		return E_FAIL;
+	}
+
+	window = CreateWindow(
+		tag,
+		tag,
+		WS_OVERLAPPEDWINDOW,
+		100,
+		100,
+		960,
+		540,
+		NULL,
+		NULL,
+		hInstance,
+		NULL
+	);
+
+	if (!window)
+	{
+		return E_FAIL;
+	}
+
+	ShowWindow(
+		window,
+		nCmdShow
+	);
+
+	return S_OK;
 }
