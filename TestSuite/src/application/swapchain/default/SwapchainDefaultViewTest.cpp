@@ -24,39 +24,10 @@ SwapchainDefaultViewTest::~SwapchainDefaultViewTest()
 
 std::string SwapchainDefaultViewTest::test()
 {
-	WNDCLASS windowClass = WNDCLASS();
-	windowClass.lpfnWndProc = windowProcedure;
-	windowClass.hInstance = hInstance;
-	windowClass.lpszClassName = tag.c_str();
-
-	if (!RegisterClass(&windowClass))
+	if (FAILED(initialiseWindow()))
 	{
-		return "swapchain default view test failed to initialise window class\n";
+		return "swapchain default view test window failed to initialise\n";
 	}
-
-	window = CreateWindow(
-		tag.c_str(),
-		tag.c_str(),
-		WS_OVERLAPPEDWINDOW,
-		100,
-		100,
-		960,
-		540,
-		NULL,
-		NULL,
-		hInstance,
-		NULL
-	);
-
-	if (!window)
-	{
-		return "swapchain default view test failed to initialise window\n";
-	}
-
-	ShowWindow(
-		window,
-		nCmdShow
-	);
 
 	D3D_FEATURE_LEVEL levels[] = {
 		D3D_FEATURE_LEVEL_11_0
@@ -196,4 +167,43 @@ std::string SwapchainDefaultViewTest::test()
 LRESULT SwapchainDefaultViewTest::windowProcedure(HWND window, UINT message, WPARAM wParam, LPARAM lParam)
 {
 	return DefWindowProc(window, message, wParam, lParam);
+}
+
+HRESULT SwapchainDefaultViewTest::initialiseWindow()
+{
+	WNDCLASS windowClass = WNDCLASS();
+	windowClass.lpfnWndProc = windowProcedure;
+	windowClass.hInstance = hInstance;
+	windowClass.lpszClassName = tag.c_str();
+
+	if (!RegisterClass(&windowClass))
+	{
+		return E_FAIL;
+	}
+
+	window = CreateWindow(
+		tag.c_str(),
+		tag.c_str(),
+		WS_OVERLAPPEDWINDOW,
+		100,
+		100,
+		960,
+		540,
+		NULL,
+		NULL,
+		hInstance,
+		NULL
+	);
+
+	if (!window)
+	{
+		return E_FAIL;
+	}
+
+	ShowWindow(
+		window,
+		nCmdShow
+	);
+
+	return S_OK;
 }
