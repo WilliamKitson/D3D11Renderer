@@ -33,20 +33,7 @@ void D3D11Renderer::Swapchain::initialise(ID3D11Device* device, HWND window)
 void D3D11Renderer::Swapchain::bind(ID3D11DeviceContext* input)
 {
 	bindRenderTargets(input);
-
-	D3D11_VIEWPORT viewport{
-		0.0f,
-		0.0f,
-		(float)resolution.getWidth(),
-		(float)resolution.getHeight(),
-		0.0f,
-		1.0f
-	};
-
-	input->RSSetViewports(
-		1,
-		&viewport
-	);
+	bindViewport(input);
 }
 
 void D3D11Renderer::Swapchain::initialiseState(ID3D11Device* device, HWND window)
@@ -164,4 +151,21 @@ void D3D11Renderer::Swapchain::bindRenderTargets(ID3D11DeviceContext* input)
 		nullptr
 	);
 
+}
+
+void D3D11Renderer::Swapchain::bindViewport(ID3D11DeviceContext* input)
+{
+	D3D11_VIEWPORT viewport{
+		0.0f,
+		0.0f,
+		(float)resolution.getWidth(),
+		(float)resolution.getHeight(),
+		0.0f,
+		1.0f
+	};
+
+	input->RSSetViewports(
+		1,
+		&viewport
+	);
 }

@@ -23,6 +23,7 @@ namespace D3D11Renderer
 		void initialiseView(ID3D11Device*);
 		ID3D11Texture2D* getBackBuffer();
 		void bindRenderTargets(ID3D11DeviceContext*);
+		void bindViewport(ID3D11DeviceContext*);
 
 	private:
 		Resolution resolution;
