@@ -1,7 +1,7 @@
 #include "SwapchainDefaultViewportTest.h"
 
 SwapchainDefaultViewportTest::SwapchainDefaultViewportTest(HINSTANCE hInstanceInput, int nCmdShowInput)
-	: hInstance{ hInstanceInput }, nCmdShow{ nCmdShowInput }, window(), device{ nullptr }, context{ nullptr }
+	: hInstance{ hInstanceInput }, nCmdShow{ nCmdShowInput }, tag{ L"swapchain default viewport D3D11" }, window(), device{ nullptr }, context{ nullptr }
 {
 }
 
@@ -90,21 +90,14 @@ LRESULT CALLBACK SwapchainDefaultViewportTest::windowProcedure(HWND window, UINT
 
 HRESULT SwapchainDefaultViewportTest::initialiseWindow()
 {
-	const wchar_t tag[] = L"swapchain default viewport D3D11";
-
-	WNDCLASS windowClass = WNDCLASS();
-	windowClass.lpfnWndProc = windowProcedure;
-	windowClass.hInstance = hInstance;
-	windowClass.lpszClassName = tag;
-
-	if (!RegisterClass(&windowClass))
+	if (FAILED(initialiseWindowClass()))
 	{
 		return E_FAIL;
 	}
 
 	window = CreateWindow(
-		tag,
-		tag,
+		tag.c_str(),
+		tag.c_str(),
 		WS_OVERLAPPEDWINDOW,
 		100,
 		100,
@@ -125,6 +118,21 @@ HRESULT SwapchainDefaultViewportTest::initialiseWindow()
 		window,
 		nCmdShow
 	);
+
+	return S_OK;
+}
+
+HRESULT SwapchainDefaultViewportTest::initialiseWindowClass()
+{
+	WNDCLASS windowClass = WNDCLASS();
+	windowClass.lpfnWndProc = windowProcedure;
+	windowClass.hInstance = hInstance;
+	windowClass.lpszClassName = tag.c_str();
+
+	if (!RegisterClass(&windowClass))
+	{
+		return E_FAIL;
+	}
 
 	return S_OK;
 }

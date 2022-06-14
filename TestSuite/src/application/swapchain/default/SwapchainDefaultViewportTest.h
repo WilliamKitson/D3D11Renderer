@@ -17,10 +17,12 @@ public:
 private:
 	static LRESULT CALLBACK windowProcedure(HWND, UINT, WPARAM, LPARAM);
 	HRESULT initialiseWindow();
+	HRESULT initialiseWindowClass();
 
 private:
 	HINSTANCE hInstance;
 	int nCmdShow;
+	std::wstring tag;
 	HWND window;
 	ID3D11Device* device;
 	ID3D11DeviceContext* context;
