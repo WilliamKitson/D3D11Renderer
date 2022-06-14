@@ -39,14 +39,6 @@ std::string SwapchainDefaultViewportTest::test()
 	unit.initialise(device, window);
 	unit.bind(context);
 
-	UINT count = 1;
-	D3D11_VIEWPORT viewport = D3D11_VIEWPORT();
-
-	context->RSGetViewports(
-		&count,
-		&viewport
-	);
-
 	D3D11_VIEWPORT successful{
 		0.0f,
 		0.0f,
@@ -56,7 +48,7 @@ std::string SwapchainDefaultViewportTest::test()
 		1.0f
 	};
 
-	if (viewport == successful)
+	if (viewport() == successful)
 	{
 		return std::string();
 	}
@@ -137,6 +129,19 @@ HRESULT SwapchainDefaultViewportTest::initialiseD3D11()
 		&device,
 		&supported,
 		&context
+	);
+
+	return output;
+}
+
+D3D11_VIEWPORT SwapchainDefaultViewportTest::viewport()
+{
+	UINT count = 1;
+	D3D11_VIEWPORT output = D3D11_VIEWPORT();
+
+	context->RSGetViewports(
+		&count,
+		&output
 	);
 
 	return output;

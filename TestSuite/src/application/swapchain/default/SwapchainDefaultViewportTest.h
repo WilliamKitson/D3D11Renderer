@@ -19,6 +19,7 @@ private:
 	HRESULT initialiseWindow();
 	HRESULT initialiseWindowClass();
 	HRESULT initialiseD3D11();
+	D3D11_VIEWPORT viewport();
 
 private:
 	HINSTANCE hInstance;
