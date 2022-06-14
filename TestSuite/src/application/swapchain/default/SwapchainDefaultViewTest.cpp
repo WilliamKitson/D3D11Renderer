@@ -39,34 +39,6 @@ std::string SwapchainDefaultViewTest::test()
 	unit.initialise(device, window);
 	unit.bind(context);
 
-	ID3D11RenderTargetView* view = nullptr;
-	ID3D11DepthStencilView* depth = nullptr;
-
-	context->OMGetRenderTargets(
-		1,
-		&view,
-		&depth
-	);
-
-	if (!view)
-	{
-		return "swapchain default view test failed to initialise view\n";
-	}
-
-	ID3D11Texture2D* backBuffer = nullptr;
-	view->GetResource(reinterpret_cast<ID3D11Resource**>(&backBuffer));
-	view->Release();
-	view = nullptr;
-
-	D3D11_TEXTURE2D_DESC texture;
-	backBuffer->GetDesc(&texture);
-
-	if (backBuffer)
-	{
-		backBuffer->Release();
-		backBuffer = nullptr;
-	}
-
 	D3D11_TEXTURE2D_DESC successful = D3D11_TEXTURE2D_DESC();
 	successful.Width = 960;
 	successful.Height = 540;
@@ -80,59 +52,61 @@ std::string SwapchainDefaultViewTest::test()
 	successful.CPUAccessFlags = 0;
 	successful.MiscFlags = 0;
 
+	D3D11_TEXTURE2D_DESC comparison = texture();
+
 	bool equal = true;
 
-	if (texture.Width != successful.Width)
+	if (comparison.Width != successful.Width)
 	{
 		equal = false;
 	}
 
-	if (texture.Height != successful.Height)
+	if (comparison.Height != successful.Height)
 	{
 		equal = false;
 	}
 
-	if (texture.MipLevels != successful.MipLevels)
+	if (comparison.MipLevels != successful.MipLevels)
 	{
 		equal = false;
 	}
 
-	if (texture.ArraySize != successful.ArraySize)
+	if (comparison.ArraySize != successful.ArraySize)
 	{
 		equal = false;
 	}
 
-	if (texture.Format != successful.Format)
+	if (comparison.Format != successful.Format)
 	{
 		equal = false;
 	}
 
-	if (texture.SampleDesc.Count != successful.SampleDesc.Count)
+	if (comparison.SampleDesc.Count != successful.SampleDesc.Count)
 	{
 		equal = false;
 	}
 
-	if (texture.SampleDesc.Quality != successful.SampleDesc.Quality)
+	if (comparison.SampleDesc.Quality != successful.SampleDesc.Quality)
 	{
 		equal = false;
 	}
 
-	if (texture.Usage != successful.Usage)
+	if (comparison.Usage != successful.Usage)
 	{
 		equal = false;
 	}
 
-	if (texture.BindFlags != successful.BindFlags)
+	if (comparison.BindFlags != successful.BindFlags)
 	{
 		equal = false;
 	}
 
-	if (texture.CPUAccessFlags != successful.CPUAccessFlags)
+	if (comparison.CPUAccessFlags != successful.CPUAccessFlags)
 	{
 		equal = false;
 	}
 
-	if (texture.MiscFlags != successful.MiscFlags)
+	if (comparison.MiscFlags != successful.MiscFlags)
 	{
 		equal = false;
 	}
@@ -219,6 +193,34 @@ HRESULT SwapchainDefaultViewTest::initialiseD3D11()
 		&supported,
 		&context
 	);
+
+	return output;
+}
+
+D3D11_TEXTURE2D_DESC SwapchainDefaultViewTest::texture()
+{
+	ID3D11RenderTargetView* view = nullptr;
+
+	context->OMGetRenderTargets(
+		1,
+		&view,
+		nullptr
+	);
+
+	if (!view)
+	{
+		return D3D11_TEXTURE2D_DESC();
+	}
+
+	ID3D11Texture2D* backBuffer = nullptr;
+	view->GetResource(reinterpret_cast<ID3D11Resource**>(&backBuffer));
+	view->Release();
+	view = nullptr;
+
+	D3D11_TEXTURE2D_DESC output;
+	backBuffer->GetDesc(&output);
+	backBuffer->Release();
+	backBuffer = nullptr;
 
 	return output;
 }
