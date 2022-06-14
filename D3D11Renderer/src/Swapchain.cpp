@@ -22,6 +22,8 @@ D3D11Renderer::Swapchain::~Swapchain()
 
 void D3D11Renderer::Swapchain::initialise(ID3D11Device* device, HWND window)
 {
+	IDXGIFactory* factory = getFactory(device);
+
 	DXGI_SWAP_CHAIN_DESC description = DXGI_SWAP_CHAIN_DESC();
 
 	description.BufferDesc.Width = resolution.getWidth();
@@ -37,27 +39,6 @@ void D3D11Renderer::Swapchain::initialise(ID3D11Device* device, HWND window)
 	description.Windowed = true;
 	description.SwapEffect = DXGI_SWAP_EFFECT_DISCARD;
 	description.Flags = 0;
-
-	IDXGIDevice* dxgiDevice = nullptr;
-
-	device->QueryInterface(__uuidof(IDXGIDevice), (void**)&dxgiDevice);
-
-	if (!dxgiDevice)
-	{
-		return;
-	}
-
-	IDXGIAdapter* adapter = nullptr;
-
-	dxgiDevice->GetParent(__uuidof(IDXGIAdapter), (void**)&adapter);
-	dxgiDevice->Release();
-	dxgiDevice = nullptr;
-
-	IDXGIFactory* factory = nullptr;
-
-	adapter->GetParent(__uuidof(IDXGIFactory), (void**)&factory);
-	adapter->Release();
-	adapter = nullptr;
 
 	HRESULT result = factory->CreateSwapChain(
 		device,
@@ -120,4 +101,30 @@ void D3D11Renderer::Swapchain::bind(ID3D11DeviceContext* input)
 		1,
 		&viewport
 	);
+}
+
+IDXGIFactory* D3D11Renderer::Swapchain::getFactory(ID3D11Device* device)
+{
+	IDXGIDevice* dxgiDevice = nullptr;
+
+	device->QueryInterface(__uuidof(IDXGIDevice), (void**)&dxgiDevice);
+
+	if (!dxgiDevice)
+	{
+		return nullptr;
+	}
+
+	IDXGIAdapter* adapter = nullptr;
+
+	dxgiDevice->GetParent(__uuidof(IDXGIAdapter), (void**)&adapter);
+	dxgiDevice->Release();
+	dxgiDevice = nullptr;
+
+	IDXGIFactory* factory = nullptr;
+
+	adapter->GetParent(__uuidof(IDXGIFactory), (void**)&factory);
+	adapter->Release();
+	adapter = nullptr;
+
+	return factory;
 }

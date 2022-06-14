@@ -15,6 +15,9 @@ namespace D3D11Renderer
 		void bind(ID3D11DeviceContext*);
 
 	private:
+		IDXGIFactory* getFactory(ID3D11Device*);
+
+	private:
 		Resolution resolution;
 		IDXGISwapChain* state;
 		ID3D11RenderTargetView* view;
