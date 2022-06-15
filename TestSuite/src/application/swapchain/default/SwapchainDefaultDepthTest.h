@@ -16,6 +16,7 @@ public:
 
 private:
 	static LRESULT CALLBACK windowProcedure(HWND, UINT, WPARAM, LPARAM);
+	void initialiseWindow();
 
 private:
 	HINSTANCE hInstance;
@@ -24,4 +25,5 @@ private:
 	HWND window;
 	ID3D11Device* device;
 	ID3D11DeviceContext* context;
+	HRESULT result;
 };

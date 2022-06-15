@@ -1,7 +1,7 @@
 #include "SwapchainDefaultDepthTest.h"
 
 SwapchainDefaultDepthTest::SwapchainDefaultDepthTest(HINSTANCE hInstanceInput, int nCmdShowInput)
-	: hInstance{ hInstanceInput }, nCmdShow{ nCmdShowInput }, tag{ L"swapchain default depth test" }, window(), device{ nullptr }, context{ nullptr }
+	: hInstance{ hInstanceInput }, nCmdShow{ nCmdShowInput }, tag{ L"swapchain default depth test" }, window(), device{ nullptr }, context{ nullptr }, result()
 {
 }
 
@@ -24,39 +24,12 @@ SwapchainDefaultDepthTest::~SwapchainDefaultDepthTest()
 
 std::string SwapchainDefaultDepthTest::test()
 {
-	WNDCLASS windowClass = WNDCLASS();
-	windowClass.lpfnWndProc = windowProcedure;
-	windowClass.hInstance = hInstance;
-	windowClass.lpszClassName = tag.c_str();
+	initialiseWindow();
 
-	if (!RegisterClass(&windowClass))
-	{
-		return "swapchain default depth test window class failed to initialise\n";
-	}
-
-	window = CreateWindow(
-		tag.c_str(),
-		tag.c_str(),
-		WS_OVERLAPPEDWINDOW,
-		100,
-		100,
-		960,
-		540,
-		NULL,
-		NULL,
-		hInstance,
-		NULL
-	);
-
-	if (!window)
+	if (FAILED(result))
 	{
 		return "swapchain default depth test window failed to initialise\n";
 	}
-
-	ShowWindow(
-		window,
-		nCmdShow
-	);
 
 	D3D_FEATURE_LEVEL levels[] = {
 		D3D_FEATURE_LEVEL_11_0
@@ -173,4 +146,43 @@ std::string SwapchainDefaultDepthTest::test()
 LRESULT CALLBACK SwapchainDefaultDepthTest::windowProcedure(HWND window, UINT message, WPARAM wParam, LPARAM lParam)
 {
 	return DefWindowProc(window, message, wParam, lParam);
+}
+
+void SwapchainDefaultDepthTest::initialiseWindow()
+{
+	WNDCLASS windowClass = WNDCLASS();
+	windowClass.lpfnWndProc = windowProcedure;
+	windowClass.hInstance = hInstance;
+	windowClass.lpszClassName = tag.c_str();
+
+	if (!RegisterClass(&windowClass))
+	{
+		result = E_FAIL;
+		return;
+	}
+
+	window = CreateWindow(
+		tag.c_str(),
+		tag.c_str(),
+		WS_OVERLAPPEDWINDOW,
+		100,
+		100,
+		960,
+		540,
+		NULL,
+		NULL,
+		hInstance,
+		NULL
+	);
+
+	if (!window)
+	{
+		result = E_FAIL;
+		return;
+	}
+
+	ShowWindow(
+		window,
+		nCmdShow
+	);
 }
