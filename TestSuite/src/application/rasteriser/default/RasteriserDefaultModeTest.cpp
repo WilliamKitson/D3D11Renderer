@@ -7,17 +7,8 @@ RasteriserDefaultModeTest::RasteriserDefaultModeTest()
 
 RasteriserDefaultModeTest::~RasteriserDefaultModeTest()
 {
-	if (context)
-	{
-		context->Release();
-		context = nullptr;
-	}
-
-	if (device)
-	{
-		device->Release();
-		device = nullptr;
-	}
+	cleanup(context);
+	cleanup(device);
 }
 
 std::string RasteriserDefaultModeTest::test()
@@ -43,6 +34,15 @@ std::string RasteriserDefaultModeTest::test()
 	}
 
 	return "rasteriser default mode test failed\n";
+}
+
+void RasteriserDefaultModeTest::cleanup(IUnknown* input)
+{
+	if (input)
+	{
+		input->Release();
+		input = nullptr;
+	}
 }
 
 HRESULT RasteriserDefaultModeTest::initialise()
@@ -80,12 +80,7 @@ HRESULT RasteriserDefaultModeTest::getDescription()
 	}
 
 	state->GetDesc(&description);
-
-	if (state)
-	{
-		state->Release();
-		state = nullptr;
-	}
+	cleanup(state);
 
 	return S_OK;
 }
