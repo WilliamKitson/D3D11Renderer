@@ -50,66 +50,7 @@ std::string SwapchainDefaultDepthTest::test()
 	unit.initialise(device, window);
 	unit.bind(context);
 
-	D3D11_TEXTURE2D_DESC temp = texture();
-
-	bool success = true;
-
-	if (temp.Width != 960)
-	{
-		success = false;
-	}
-
-	if (temp.Height != 540)
-	{
-		success = false;
-	}
-
-	if (temp.MipLevels != 1)
-	{
-		success = false;
-	}
-
-	if (temp.ArraySize != 1)
-	{
-		success = false;
-	}
-
-	if (temp.Format != DXGI_FORMAT_D24_UNORM_S8_UINT)
-	{
-		success = false;
-	}
-
-	if (temp.SampleDesc.Count != 1)
-	{
-		success = false;
-	}
-
-	if (temp.SampleDesc.Quality != 0)
-	{
-		success = false;
-	}
-
-	if (temp.Usage != D3D11_USAGE_DEFAULT)
-	{
-		success = false;
-	}
-
-	if (temp.BindFlags != 64)
-	{
-		success = false;
-	}
-
-	if (temp.CPUAccessFlags != 0)
-	{
-		success = false;
-	}
-
-	if (temp.MiscFlags != 0)
-	{
-		success = false;
-	}
-
-	if (success)
+	if (success(texture()))
 	{
 		return std::string();
 	}
@@ -213,4 +154,64 @@ D3D11_TEXTURE2D_DESC SwapchainDefaultDepthTest::texture()
 	backBuffer = nullptr;
 
 	return output;
+}
+
+bool SwapchainDefaultDepthTest::success(D3D11_TEXTURE2D_DESC input)
+{
+	if (input.Width != 960)
+	{
+		return false;
+	}
+
+	if (input.Height != 540)
+	{
+		return false;
+	}
+
+	if (input.MipLevels != 1)
+	{
+		return false;
+	}
+
+	if (input.ArraySize != 1)
+	{
+		return false;
+	}
+
+	if (input.Format != DXGI_FORMAT_D24_UNORM_S8_UINT)
+	{
+		return false;
+	}
+
+	if (input.SampleDesc.Count != 1)
+	{
+		return false;
+	}
+
+	if (input.SampleDesc.Quality != 0)
+	{
+		return false;
+	}
+
+	if (input.Usage != D3D11_USAGE_DEFAULT)
+	{
+		return false;
+	}
+
+	if (input.BindFlags != 64)
+	{
+		return false;
+	}
+
+	if (input.CPUAccessFlags != 0)
+	{
+		return false;
+	}
+
+	if (input.MiscFlags != 0)
+	{
+		return false;
+	}
+
+	return true;
 }
