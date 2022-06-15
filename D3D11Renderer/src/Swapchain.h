@@ -29,5 +29,6 @@ namespace D3D11Renderer
 		Resolution resolution;
 		IDXGISwapChain* state;
 		ID3D11RenderTargetView* view;
+		ID3D11DepthStencilView* depth;
 	};
 }

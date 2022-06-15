@@ -3,6 +3,7 @@
 #include <string>
 
 #include "SwapchainDefaultViewTest.h"
+#include "SwapchainDefaultDepthTest.h"
 #include "SwapchainDefaultViewportTest.h"
 
 class SwapchainDefaultTester
@@ -15,6 +16,7 @@ public:
 
 private:
 	std::string testView();
+	std::string testDepth();
 	std::string testViewport();
 
 private:

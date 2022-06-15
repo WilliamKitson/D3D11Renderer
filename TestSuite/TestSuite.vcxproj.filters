@@ -156,6 +156,9 @@
     <ClCompile Include="src\application\swapchain\default\SwapchainDefaultViewTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\application\swapchain\default\SwapchainDefaultDepthTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\MemoryTest.h">
@@ -294,6 +297,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\application\swapchain\default\SwapchainDefaultViewTest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\application\swapchain\default\SwapchainDefaultDepthTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
