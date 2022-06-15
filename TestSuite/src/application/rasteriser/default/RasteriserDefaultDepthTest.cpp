@@ -1,7 +1,7 @@
 #include "RasteriserDefaultDepthTest.h"
 
 RasteriserDefaultDepthTest::RasteriserDefaultDepthTest()
-	: device{ nullptr }, context{ nullptr }, description(), result()
+	: device{ nullptr }, context{ nullptr }, result()
 {
 	initialise();
 }
@@ -24,12 +24,7 @@ std::string RasteriserDefaultDepthTest::test()
 	unit.apply(device);
 	unit.bind(context);
 
-	if (FAILED(getDescription()))
-	{
-		return "rasteriser default depth test description failed to initialise\n";
-	}
-
-	if (description.DepthClipEnable)
+	if (description().DepthClipEnable)
 	{
 		return std::string();
 	}
@@ -68,18 +63,19 @@ void RasteriserDefaultDepthTest::initialise()
 	);
 }
 
-HRESULT RasteriserDefaultDepthTest::getDescription()
+CD3D11_RASTERIZER_DESC RasteriserDefaultDepthTest::description()
 {
 	ID3D11RasterizerState* state;
 	context->RSGetState(&state);
 
 	if (!state)
 	{
-		return E_FAIL;
+		return CD3D11_RASTERIZER_DESC();
 	}
 
-	state->GetDesc(&description);
+	CD3D11_RASTERIZER_DESC output;
+	state->GetDesc(&output);
 	cleanup(state);
 
-	return S_OK;
+	return output;
 }
