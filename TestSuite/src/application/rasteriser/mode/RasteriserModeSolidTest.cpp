@@ -1,8 +1,9 @@
 #include "RasteriserModeSolidTest.h"
 
 RasteriserModeSolidTest::RasteriserModeSolidTest()
-	: device{ nullptr }, context{ nullptr }, description()
+	: device{ nullptr }, context{ nullptr }, description(), result()
 {
+	initialise();
 }
 
 RasteriserModeSolidTest::~RasteriserModeSolidTest()
@@ -13,7 +14,7 @@ RasteriserModeSolidTest::~RasteriserModeSolidTest()
 
 std::string RasteriserModeSolidTest::test()
 {
-	if (FAILED(initialise()))
+	if (FAILED(result))
 	{
 		return "rasteriser mode solid test failed to initialise\n";
 	}
@@ -49,7 +50,7 @@ void RasteriserModeSolidTest::cleanup(IUnknown* input)
 	}
 }
 
-HRESULT RasteriserModeSolidTest::initialise()
+void RasteriserModeSolidTest::initialise()
 {
 	D3D_FEATURE_LEVEL levels[] = {
 		D3D_FEATURE_LEVEL_11_0
@@ -57,7 +58,7 @@ HRESULT RasteriserModeSolidTest::initialise()
 
 	D3D_FEATURE_LEVEL supported;
 
-	HRESULT output = D3D11CreateDevice(
+	result = D3D11CreateDevice(
 		0,
 		D3D_DRIVER_TYPE_HARDWARE,
 		NULL,
@@ -69,8 +70,6 @@ HRESULT RasteriserModeSolidTest::initialise()
 		&supported,
 		&context
 	);
-
-	return output;
 }
 
 HRESULT RasteriserModeSolidTest::getDescription()
