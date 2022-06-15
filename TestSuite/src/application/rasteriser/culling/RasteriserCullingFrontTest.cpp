@@ -7,17 +7,8 @@ RasteriserCullingFrontTest::RasteriserCullingFrontTest()
 
 RasteriserCullingFrontTest::~RasteriserCullingFrontTest()
 {
-	if (context)
-	{
-		context->Release();
-		context = nullptr;
-	}
-
-	if (device)
-	{
-		device->Release();
-		device = nullptr;
-	}
+	cleanup(context);
+	cleanup(device);
 }
 
 std::string RasteriserCullingFrontTest::test()
@@ -44,6 +35,15 @@ std::string RasteriserCullingFrontTest::test()
 	}
 
 	return "rasteriser culling front test failed\n";
+}
+
+void RasteriserCullingFrontTest::cleanup(IUnknown* input)
+{
+	if (input)
+	{
+		input->Release();
+		input = nullptr;
+	}
 }
 
 HRESULT RasteriserCullingFrontTest::initialise()
@@ -81,12 +81,7 @@ HRESULT RasteriserCullingFrontTest::getDescription()
 	}
 
 	state->GetDesc(&description);
-
-	if (state)
-	{
-		state->Release();
-		state = nullptr;
-	}
+	cleanup(state);
 
 	return S_OK;
 }
