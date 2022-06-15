@@ -1,16 +1,8 @@
 #include "SwapchainDefaultViewportTest.h"
 
 SwapchainDefaultViewportTest::SwapchainDefaultViewportTest(HINSTANCE hInstanceInput, int nCmdShowInput)
-	: hInstance{ hInstanceInput }, nCmdShow{ nCmdShowInput }, tag{ L"swapchain default viewport D3D11" }, window(), device{ nullptr }, context{ nullptr }, successful()
+	: hInstance{ hInstanceInput }, nCmdShow{ nCmdShowInput }, tag{ L"swapchain default viewport D3D11" }, window(), device{ nullptr }, context{ nullptr }
 {
-	successful = D3D11_VIEWPORT{
-		0.0f,
-		0.0f,
-		960.0f,
-		540.0f,
-		0.0f,
-		1.0f
-	};
 }
 
 SwapchainDefaultViewportTest::~SwapchainDefaultViewportTest()
@@ -47,7 +39,7 @@ std::string SwapchainDefaultViewportTest::test()
 	unit.initialise(device, window);
 	unit.bind(context);
 
-	if (viewport() == successful)
+	if (successful(viewport()))
 	{
 		return std::string();
 	}
@@ -144,4 +136,39 @@ D3D11_VIEWPORT SwapchainDefaultViewportTest::viewport()
 	);
 
 	return output;
+}
+
+bool SwapchainDefaultViewportTest::successful(D3D11_VIEWPORT input)
+{
+	if (input.TopLeftX != 0.0f)
+	{
+		return false;
+	}
+
+	if (input.TopLeftY != 0.0f)
+	{
+		return false;
+	}
+
+	if (input.Width != 960.0f)
+	{
+		return false;
+	}
+
+	if (input.Height != 540.0f)
+	{
+		return false;
+	}
+
+	if (input.MinDepth != 0.0f)
+	{
+		return false;
+	}
+
+	if (input.MaxDepth != 1.0f)
+	{
+		return false;
+	}
+
+	return true;
 }

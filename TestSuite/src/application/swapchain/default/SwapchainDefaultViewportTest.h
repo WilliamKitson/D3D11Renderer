@@ -20,6 +20,7 @@ private:
 	HRESULT initialiseWindowClass();
 	HRESULT initialiseD3D11();
 	D3D11_VIEWPORT viewport();
+	bool successful(D3D11_VIEWPORT);
 
 private:
 	HINSTANCE hInstance;
@@ -28,5 +29,4 @@ private:
 	HWND window;
 	ID3D11Device* device;
 	ID3D11DeviceContext* context;
-	D3D11_VIEWPORT successful;
 };
