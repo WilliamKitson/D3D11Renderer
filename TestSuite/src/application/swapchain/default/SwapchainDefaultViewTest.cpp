@@ -7,18 +7,8 @@ SwapchainDefaultViewTest::SwapchainDefaultViewTest(HINSTANCE hInstanceInput, int
 
 SwapchainDefaultViewTest::~SwapchainDefaultViewTest()
 {
-	if (context)
-	{
-		context->Release();
-		context = nullptr;
-	}
-
-	if (device)
-	{
-		device->Release();
-		device = nullptr;
-	}
-
+	cleanup(context);
+	cleanup(device);
 	DestroyWindow(window);
 }
 
@@ -50,6 +40,15 @@ std::string SwapchainDefaultViewTest::test()
 LRESULT SwapchainDefaultViewTest::windowProcedure(HWND window, UINT message, WPARAM wParam, LPARAM lParam)
 {
 	return DefWindowProc(window, message, wParam, lParam);
+}
+
+void SwapchainDefaultViewTest::cleanup(IUnknown* input)
+{
+	if (input)
+	{
+		input->Release();
+		input = nullptr;
+	}
 }
 
 HRESULT SwapchainDefaultViewTest::initialiseWindow()
@@ -142,13 +141,11 @@ D3D11_TEXTURE2D_DESC SwapchainDefaultViewTest::texture()
 
 	ID3D11Texture2D* backBuffer = nullptr;
 	view->GetResource(reinterpret_cast<ID3D11Resource**>(&backBuffer));
-	view->Release();
-	view = nullptr;
+	cleanup(view);
 
 	D3D11_TEXTURE2D_DESC output;
 	backBuffer->GetDesc(&output);
-	backBuffer->Release();
-	backBuffer = nullptr;
+	cleanup(backBuffer);
 
 	return output;
 }
