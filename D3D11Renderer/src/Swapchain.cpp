@@ -152,25 +152,13 @@ ID3D11Texture2D* D3D11Renderer::Swapchain::getBackBuffer()
 
 void D3D11Renderer::Swapchain::initialiseDepth(ID3D11Device* input)
 {
-	ID3D11Texture2D* depthTexture = nullptr;
-
-	D3D11_TEXTURE2D_DESC description = D3D11_TEXTURE2D_DESC();
-	description.Width = 960;
-	description.Height = 540;
-	description.MipLevels = 1;
-	description.ArraySize = 1;
-	description.Format = DXGI_FORMAT_D24_UNORM_S8_UINT;
-	description.SampleDesc.Count = 1;
-	description.SampleDesc.Quality = 0;
-	description.Usage = D3D11_USAGE_DEFAULT;
-	description.BindFlags = D3D11_BIND_DEPTH_STENCIL;
-	description.CPUAccessFlags = 0;
-	description.MiscFlags = 0;
+	D3D11_TEXTURE2D_DESC description = depthDescription();
+	ID3D11Texture2D* texture = nullptr;
 
 	HRESULT result = input->CreateTexture2D(
 		&description,
 		0,
-		&depthTexture
+		&texture
 	);
 
 	if (FAILED(result))
@@ -179,16 +167,35 @@ void D3D11Renderer::Swapchain::initialiseDepth(ID3D11Device* input)
 	}
 
 	input->CreateDepthStencilView(
-		depthTexture,
+		texture,
 		0,
 		&depth
 	);
 
-	if (depthTexture)
+	if (texture)
 	{
-		depthTexture->Release();
-		depthTexture = nullptr;
+		texture->Release();
+		texture = nullptr;
 	}
+}
+
+D3D11_TEXTURE2D_DESC D3D11Renderer::Swapchain::depthDescription()
+{
+	D3D11_TEXTURE2D_DESC output = D3D11_TEXTURE2D_DESC();
+
+	output.Width = 960;
+	output.Height = 540;
+	output.MipLevels = 1;
+	output.ArraySize = 1;
+	output.Format = DXGI_FORMAT_D24_UNORM_S8_UINT;
+	output.SampleDesc.Count = 1;
+	output.SampleDesc.Quality = 0;
+	output.Usage = D3D11_USAGE_DEFAULT;
+	output.BindFlags = D3D11_BIND_DEPTH_STENCIL;
+	output.CPUAccessFlags = 0;
+	output.MiscFlags = 0;
+
+	return output;
 }
 
 void D3D11Renderer::Swapchain::bindRenderTargets(ID3D11DeviceContext* input)
