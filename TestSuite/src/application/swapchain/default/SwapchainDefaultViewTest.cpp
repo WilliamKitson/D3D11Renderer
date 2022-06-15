@@ -115,7 +115,7 @@ void SwapchainDefaultViewTest::initialiseD3D11()
 
 	D3D_FEATURE_LEVEL supported;
 
-	HRESULT success = D3D11CreateDevice(
+	result = D3D11CreateDevice(
 		0,
 		D3D_DRIVER_TYPE_HARDWARE,
 		NULL,
@@ -127,8 +127,6 @@ void SwapchainDefaultViewTest::initialiseD3D11()
 		&supported,
 		&context
 	);
-
-	result = success;
 }
 
 D3D11_TEXTURE2D_DESC SwapchainDefaultViewTest::texture()
