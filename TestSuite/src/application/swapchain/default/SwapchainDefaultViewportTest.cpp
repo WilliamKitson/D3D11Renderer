@@ -11,6 +11,13 @@ SwapchainDefaultViewportTest::SwapchainDefaultViewportTest(HINSTANCE hInstanceIn
 	}
 
 	initialiseWindow();
+
+	if (FAILED(result))
+	{
+		return;
+	}
+
+	initialiseD3D11();
 }
 
 SwapchainDefaultViewportTest::~SwapchainDefaultViewportTest()
@@ -24,12 +31,7 @@ std::string SwapchainDefaultViewportTest::test()
 {
 	if (FAILED(result))
 	{
-		return "swapchain default viewport test window failed to initialise\n";
-	}
-
-	if (FAILED(initialiseD3D11()))
-	{
-		return "swapchain default viewport test D3D11 failed to initialise\n";
+		return "swapchain default viewport test failed to initialise\n";
 	}
 
 	D3D11Renderer::Swapchain unit;
@@ -105,7 +107,7 @@ void SwapchainDefaultViewportTest::initialiseWindow()
 	result = S_OK;
 }
 
-HRESULT SwapchainDefaultViewportTest::initialiseD3D11()
+void SwapchainDefaultViewportTest::initialiseD3D11()
 {
 	D3D_FEATURE_LEVEL levels[] = {
 		D3D_FEATURE_LEVEL_11_0
@@ -113,7 +115,7 @@ HRESULT SwapchainDefaultViewportTest::initialiseD3D11()
 
 	D3D_FEATURE_LEVEL supported;
 
-	HRESULT output = D3D11CreateDevice(
+	result = D3D11CreateDevice(
 		0,
 		D3D_DRIVER_TYPE_HARDWARE,
 		NULL,
@@ -125,8 +127,6 @@ HRESULT SwapchainDefaultViewportTest::initialiseD3D11()
 		&supported,
 		&context
 	);
-
-	return output;
 }
 
 D3D11_VIEWPORT SwapchainDefaultViewportTest::viewport()
