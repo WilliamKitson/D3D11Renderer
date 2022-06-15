@@ -1,7 +1,7 @@
 #include "RasteriserModeSolidTest.h"
 
 RasteriserModeSolidTest::RasteriserModeSolidTest()
-	: device{ nullptr }, context{ nullptr }, description(), result()
+	: device{ nullptr }, context{ nullptr }, result()
 {
 	initialise();
 }
@@ -28,12 +28,7 @@ std::string RasteriserModeSolidTest::test()
 	unit.apply(device);
 	unit.bind(context);
 
-	if (FAILED(getDescription()))
-	{
-		return "rasteriser mode solid test description failed to initialise\n";
-	}
-
-	if (description.FillMode == D3D11_FILL_SOLID)
+	if (description().FillMode == D3D11_FILL_SOLID)
 	{
 		return std::string();
 	}
@@ -72,18 +67,19 @@ void RasteriserModeSolidTest::initialise()
 	);
 }
 
-HRESULT RasteriserModeSolidTest::getDescription()
+CD3D11_RASTERIZER_DESC RasteriserModeSolidTest::description()
 {
 	ID3D11RasterizerState* state;
 	context->RSGetState(&state);
 
 	if (!state)
 	{
-		return E_FAIL;
+		return CD3D11_RASTERIZER_DESC();
 	}
 
-	state->GetDesc(&description);
+	CD3D11_RASTERIZER_DESC output;
+	state->GetDesc(&output);
 	cleanup(state);
 
-	return S_OK;
+	return output;
 }
