@@ -7,17 +7,8 @@ RasteriserModeWireframeTest::RasteriserModeWireframeTest()
 
 RasteriserModeWireframeTest::~RasteriserModeWireframeTest()
 {
-	if (context)
-	{
-		context->Release();
-		context = nullptr;
-	}
-
-	if (device)
-	{
-		device->Release();
-		device = nullptr;
-	}
+	cleanup(context);
+	cleanup(device);
 }
 
 std::string RasteriserModeWireframeTest::test()
@@ -44,6 +35,15 @@ std::string RasteriserModeWireframeTest::test()
 	}
 
 	return "rasteriser mode wireframe test failed\n";
+}
+
+void RasteriserModeWireframeTest::cleanup(IUnknown* input)
+{
+	if (input)
+	{
+		input->Release();
+		input = nullptr;
+	}
 }
 
 HRESULT RasteriserModeWireframeTest::initialise()
@@ -81,12 +81,7 @@ HRESULT RasteriserModeWireframeTest::getDescription()
 	}
 
 	state->GetDesc(&description);
-
-	if (state)
-	{
-		state->Release();
-		state = nullptr;
-	}
+	cleanup(state);
 
 	return S_OK;
 }
