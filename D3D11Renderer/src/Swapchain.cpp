@@ -152,19 +152,7 @@ ID3D11Texture2D* D3D11Renderer::Swapchain::getBackBuffer()
 
 void D3D11Renderer::Swapchain::initialiseDepth(ID3D11Device* input)
 {
-	D3D11_TEXTURE2D_DESC description = depthDescription();
-	ID3D11Texture2D* texture = nullptr;
-
-	HRESULT result = input->CreateTexture2D(
-		&description,
-		0,
-		&texture
-	);
-
-	if (FAILED(result))
-	{
-		return;
-	}
+	ID3D11Texture2D* texture = depthTexture(input);
 
 	input->CreateDepthStencilView(
 		texture,
@@ -177,6 +165,20 @@ void D3D11Renderer::Swapchain::initialiseDepth(ID3D11Device* input)
 		texture->Release();
 		texture = nullptr;
 	}
+}
+
+ID3D11Texture2D* D3D11Renderer::Swapchain::depthTexture(ID3D11Device* input)
+{
+	D3D11_TEXTURE2D_DESC description = depthDescription();
+	ID3D11Texture2D* output = nullptr;
+
+	input->CreateTexture2D(
+		&description,
+		0,
+		&output
+	);
+
+	return output;
 }
 
 D3D11_TEXTURE2D_DESC D3D11Renderer::Swapchain::depthDescription()

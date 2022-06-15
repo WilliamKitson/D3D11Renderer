@@ -23,6 +23,7 @@ namespace D3D11Renderer
 		void initialiseView(ID3D11Device*);
 		ID3D11Texture2D* getBackBuffer();
 		void initialiseDepth(ID3D11Device*);
+		ID3D11Texture2D* depthTexture(ID3D11Device*);
 		D3D11_TEXTURE2D_DESC depthDescription();
 		void bindRenderTargets(ID3D11DeviceContext*);
 		void bindViewport(ID3D11DeviceContext*);
