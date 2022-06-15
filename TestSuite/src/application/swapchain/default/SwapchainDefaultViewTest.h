@@ -19,7 +19,7 @@ private:
 	void cleanup(IUnknown*);
 	void initialiseWindowClass();
 	void initialiseWindow();
-	HRESULT initialiseD3D11();
+	void initialiseD3D11();
 	D3D11_TEXTURE2D_DESC texture();
 	bool successful(D3D11_TEXTURE2D_DESC);
 

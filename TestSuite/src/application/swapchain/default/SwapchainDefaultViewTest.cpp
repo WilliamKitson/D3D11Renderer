@@ -11,6 +11,13 @@ SwapchainDefaultViewTest::SwapchainDefaultViewTest(HINSTANCE hInstanceInput, int
 	}
 
 	initialiseWindow();
+
+	if (FAILED(result))
+	{
+		return;
+	}
+
+	initialiseD3D11();
 }
 
 SwapchainDefaultViewTest::~SwapchainDefaultViewTest()
@@ -24,12 +31,7 @@ std::string SwapchainDefaultViewTest::test()
 {
 	if (FAILED(result))
 	{
-		return "swapchain default view test window failed to initialise\n";
-	}
-
-	if (FAILED(initialiseD3D11()))
-	{
-		return "swapchain default view test d3d11 failed to initialise\n";
+		return "swapchain default view test failed to initialise\n";
 	}
 
 	D3D11Renderer::Swapchain unit;
@@ -105,7 +107,7 @@ void SwapchainDefaultViewTest::initialiseWindow()
 	result = S_OK;
 }
 
-HRESULT SwapchainDefaultViewTest::initialiseD3D11()
+void SwapchainDefaultViewTest::initialiseD3D11()
 {
 	D3D_FEATURE_LEVEL levels[] = {
 		D3D_FEATURE_LEVEL_11_0
@@ -113,7 +115,7 @@ HRESULT SwapchainDefaultViewTest::initialiseD3D11()
 
 	D3D_FEATURE_LEVEL supported;
 
-	HRESULT output = D3D11CreateDevice(
+	HRESULT success = D3D11CreateDevice(
 		0,
 		D3D_DRIVER_TYPE_HARDWARE,
 		NULL,
@@ -126,7 +128,7 @@ HRESULT SwapchainDefaultViewTest::initialiseD3D11()
 		&context
 	);
 
-	return output;
+	result = success;
 }
 
 D3D11_TEXTURE2D_DESC SwapchainDefaultViewTest::texture()
