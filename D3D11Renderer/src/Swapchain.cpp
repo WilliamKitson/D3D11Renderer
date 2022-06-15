@@ -7,23 +7,9 @@ D3D11Renderer::Swapchain::Swapchain()
 
 D3D11Renderer::Swapchain::~Swapchain()
 {
-	if (depth)
-	{
-		depth->Release();
-		depth = nullptr;
-	}
-
-	if (view)
-	{
-		view->Release();
-		view = nullptr;
-	}
-
-	if (state)
-	{
-		state->Release();
-		state = nullptr;
-	}
+	cleanup(depth);
+	cleanup(view);
+	cleanup(state);
 }
 
 void D3D11Renderer::Swapchain::initialise(ID3D11Device* device, HWND window)
@@ -43,6 +29,15 @@ void D3D11Renderer::Swapchain::bind(ID3D11DeviceContext* input)
 	bindViewport(input);
 }
 
+void D3D11Renderer::Swapchain::cleanup(IUnknown* input)
+{
+	if (input)
+	{
+		input->Release();
+		input = nullptr;
+	}
+}
+
 void D3D11Renderer::Swapchain::initialiseState(ID3D11Device* device, HWND window)
 {
 	IDXGIFactory* factory = getFactory(device);
@@ -54,8 +49,7 @@ void D3D11Renderer::Swapchain::initialiseState(ID3D11Device* device, HWND window
 		&state
 	);
 
-	factory->Release();
-	factory = nullptr;
+	cleanup(factory);
 }
 
 IDXGIFactory* D3D11Renderer::Swapchain::getFactory(ID3D11Device* input)
@@ -68,9 +62,7 @@ IDXGIFactory* D3D11Renderer::Swapchain::getFactory(ID3D11Device* input)
 		(void**)&output
 	);
 
-	adapter->Release();
-	adapter = nullptr;
-
+	cleanup(adapter);
 	return output;
 }
 
@@ -84,9 +76,7 @@ IDXGIAdapter* D3D11Renderer::Swapchain::getAdapter(ID3D11Device* input)
 		(void**)&output
 	);
 
-	dxgiDevice->Release();
-	dxgiDevice = nullptr;
-
+	cleanup(dxgiDevice);
 	return output;
 }
 
@@ -133,8 +123,7 @@ void D3D11Renderer::Swapchain::initialiseView(ID3D11Device* input)
 		&view
 	);
 
-	backBuffer->Release();
-	backBuffer = nullptr;
+	cleanup(backBuffer);
 }
 
 ID3D11Texture2D* D3D11Renderer::Swapchain::getBackBuffer()
@@ -160,11 +149,7 @@ void D3D11Renderer::Swapchain::initialiseDepth(ID3D11Device* input)
 		&depth
 	);
 
-	if (texture)
-	{
-		texture->Release();
-		texture = nullptr;
-	}
+	cleanup(texture);
 }
 
 ID3D11Texture2D* D3D11Renderer::Swapchain::depthTexture(ID3D11Device* input)
