@@ -7,17 +7,8 @@ RasteriserModeSolidTest::RasteriserModeSolidTest()
 
 RasteriserModeSolidTest::~RasteriserModeSolidTest()
 {
-	if (context)
-	{
-		context->Release();
-		context = nullptr;
-	}
-
-	if (device)
-	{
-		device->Release();
-		device = nullptr;
-	}
+	cleanup(context);
+	cleanup(device);
 }
 
 std::string RasteriserModeSolidTest::test()
@@ -47,6 +38,15 @@ std::string RasteriserModeSolidTest::test()
 	}
 
 	return "rasteriser mode solid test failed\n";
+}
+
+void RasteriserModeSolidTest::cleanup(IUnknown* input)
+{
+	if (input)
+	{
+		input->Release();
+		input = nullptr;
+	}
 }
 
 HRESULT RasteriserModeSolidTest::initialise()
@@ -84,12 +84,7 @@ HRESULT RasteriserModeSolidTest::getDescription()
 	}
 
 	state->GetDesc(&description);
-
-	if (state)
-	{
-		state->Release();
-		state = nullptr;
-	}
+	cleanup(state);
 
 	return S_OK;
 }

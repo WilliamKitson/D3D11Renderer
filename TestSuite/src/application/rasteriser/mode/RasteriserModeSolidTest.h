@@ -14,6 +14,7 @@ public:
 	std::string test();
 
 private:
+	void cleanup(IUnknown*);
 	HRESULT initialise();
 	HRESULT getDescription();
 
