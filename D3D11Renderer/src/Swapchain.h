@@ -22,6 +22,7 @@ namespace D3D11Renderer
 		DXGI_SWAP_CHAIN_DESC getDescription(HWND);
 		void initialiseView(ID3D11Device*);
 		ID3D11Texture2D* getBackBuffer();
+		void initialiseDepth(ID3D11Device*);
 		void bindRenderTargets(ID3D11DeviceContext*);
 		void bindViewport(ID3D11DeviceContext*);
 
