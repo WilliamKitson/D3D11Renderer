@@ -27,18 +27,8 @@ SwapchainDefaultDepthTest::SwapchainDefaultDepthTest(HINSTANCE hInstanceInput, i
 
 SwapchainDefaultDepthTest::~SwapchainDefaultDepthTest()
 {
-	if (context)
-	{
-		context->Release();
-		context = nullptr;
-	}
-
-	if (device)
-	{
-		device->Release();
-		device = nullptr;
-	}
-
+	cleanup(context);
+	cleanup(device);
 	DestroyWindow(window);
 }
 
@@ -65,6 +55,15 @@ std::string SwapchainDefaultDepthTest::test()
 LRESULT CALLBACK SwapchainDefaultDepthTest::windowProcedure(HWND window, UINT message, WPARAM wParam, LPARAM lParam)
 {
 	return DefWindowProc(window, message, wParam, lParam);
+}
+
+void SwapchainDefaultDepthTest::cleanup(IUnknown* input)
+{
+	if (input)
+	{
+		input->Release();
+		input = nullptr;
+	}
 }
 
 void SwapchainDefaultDepthTest::initialiseWindowClass()
@@ -149,13 +148,11 @@ D3D11_TEXTURE2D_DESC SwapchainDefaultDepthTest::texture()
 
 	ID3D11Texture2D* backBuffer = nullptr;
 	depth->GetResource(reinterpret_cast<ID3D11Resource**>(&backBuffer));
-	depth->Release();
-	depth = nullptr;
+	cleanup(depth);
 
 	D3D11_TEXTURE2D_DESC output;
 	backBuffer->GetDesc(&output);
-	backBuffer->Release();
-	backBuffer = nullptr;
+	cleanup(backBuffer);
 
 	return output;
 }
