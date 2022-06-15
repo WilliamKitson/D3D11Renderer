@@ -1,7 +1,7 @@
 #include "RasteriserCullingNoneTest.h"
 
 RasteriserCullingNoneTest::RasteriserCullingNoneTest()
-	: device{ nullptr }, context{ nullptr }, description(), result()
+	: device{ nullptr }, context{ nullptr }, result()
 {
 	initialise();
 }
@@ -25,12 +25,7 @@ std::string RasteriserCullingNoneTest::test()
 	unit.apply(device);
 	unit.bind(context);
 
-	if (FAILED(getDescription()))
-	{
-		return "rasteriser culling none test description failed to initialise\n";
-	}
-
-	if (description.CullMode == D3D11_CULL_NONE)
+	if (description().CullMode == D3D11_CULL_NONE)
 	{
 		return std::string();
 	}
@@ -69,18 +64,19 @@ void RasteriserCullingNoneTest::initialise()
 	);
 }
 
-HRESULT RasteriserCullingNoneTest::getDescription()
+CD3D11_RASTERIZER_DESC RasteriserCullingNoneTest::description()
 {
 	ID3D11RasterizerState* state;
 	context->RSGetState(&state);
 
 	if (!state)
 	{
-		return E_FAIL;
+		return CD3D11_RASTERIZER_DESC();
 	}
 
-	state->GetDesc(&description);
+	CD3D11_RASTERIZER_DESC output;
+	state->GetDesc(&output);
 	cleanup(state);
 
-	return S_OK;
+	return output;
 }
