@@ -24,6 +24,13 @@ SwapchainDefaultDepthTest::~SwapchainDefaultDepthTest()
 
 std::string SwapchainDefaultDepthTest::test()
 {
+	initialiseWindowClass();
+
+	if (FAILED(result))
+	{
+		return "swapchain default depth test window class failed to initialise\n";
+	}
+
 	initialiseWindow();
 
 	if (FAILED(result))
@@ -148,7 +155,7 @@ LRESULT CALLBACK SwapchainDefaultDepthTest::windowProcedure(HWND window, UINT me
 	return DefWindowProc(window, message, wParam, lParam);
 }
 
-void SwapchainDefaultDepthTest::initialiseWindow()
+void SwapchainDefaultDepthTest::initialiseWindowClass()
 {
 	WNDCLASS windowClass = WNDCLASS();
 	windowClass.lpfnWndProc = windowProcedure;
@@ -158,9 +165,13 @@ void SwapchainDefaultDepthTest::initialiseWindow()
 	if (!RegisterClass(&windowClass))
 	{
 		result = E_FAIL;
-		return;
 	}
 
+	result = S_OK;
+}
+
+void SwapchainDefaultDepthTest::initialiseWindow()
+{
 	window = CreateWindow(
 		tag.c_str(),
 		tag.c_str(),
