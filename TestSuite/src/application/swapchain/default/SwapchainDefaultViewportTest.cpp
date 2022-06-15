@@ -4,6 +4,13 @@ SwapchainDefaultViewportTest::SwapchainDefaultViewportTest(HINSTANCE hInstanceIn
 	: hInstance{ hInstanceInput }, nCmdShow{ nCmdShowInput }, tag{ L"swapchain default viewport test" }, window(), device{ nullptr }, context{ nullptr }, result()
 {
 	initialiseWindowClass();
+
+	if (FAILED(result))
+	{
+		return;
+	}
+
+	initialiseWindow();
 }
 
 SwapchainDefaultViewportTest::~SwapchainDefaultViewportTest()
@@ -16,11 +23,6 @@ SwapchainDefaultViewportTest::~SwapchainDefaultViewportTest()
 std::string SwapchainDefaultViewportTest::test()
 {
 	if (FAILED(result))
-	{
-		return "swapchain default viewport test window class failed to initialise\n";
-	}
-
-	if (FAILED(initialiseWindow()))
 	{
 		return "swapchain default viewport test window failed to initialise\n";
 	}
@@ -73,7 +75,7 @@ void SwapchainDefaultViewportTest::initialiseWindowClass()
 	result = S_OK;
 }
 
-HRESULT SwapchainDefaultViewportTest::initialiseWindow()
+void SwapchainDefaultViewportTest::initialiseWindow()
 {
 	window = CreateWindow(
 		tag.c_str(),
@@ -91,7 +93,8 @@ HRESULT SwapchainDefaultViewportTest::initialiseWindow()
 
 	if (!window)
 	{
-		return E_FAIL;
+		result = E_FAIL;
+		return;
 	}
 
 	ShowWindow(
@@ -99,7 +102,7 @@ HRESULT SwapchainDefaultViewportTest::initialiseWindow()
 		nCmdShow
 	);
 
-	return S_OK;
+	result = S_OK;
 }
 
 HRESULT SwapchainDefaultViewportTest::initialiseD3D11()
