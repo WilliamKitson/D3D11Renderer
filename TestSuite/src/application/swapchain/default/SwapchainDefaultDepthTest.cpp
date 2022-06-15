@@ -3,6 +3,26 @@
 SwapchainDefaultDepthTest::SwapchainDefaultDepthTest(HINSTANCE hInstanceInput, int nCmdShowInput)
 	: hInstance{ hInstanceInput }, nCmdShow{ nCmdShowInput }, tag{ L"swapchain default depth test" }, window(), device{ nullptr }, context{ nullptr }, result()
 {
+	initialiseWindowClass();
+
+	if (FAILED(result))
+	{
+		return;
+	}
+
+	initialiseWindow();
+
+	if (FAILED(result))
+	{
+		return;
+	}
+
+	initialiseD3D11();
+
+	if (FAILED(result))
+	{
+		return;
+	}
 }
 
 SwapchainDefaultDepthTest::~SwapchainDefaultDepthTest()
@@ -24,25 +44,9 @@ SwapchainDefaultDepthTest::~SwapchainDefaultDepthTest()
 
 std::string SwapchainDefaultDepthTest::test()
 {
-	initialiseWindowClass();
-
 	if (FAILED(result))
 	{
-		return "swapchain default depth test window class failed to initialise\n";
-	}
-
-	initialiseWindow();
-
-	if (FAILED(result))
-	{
-		return "swapchain default depth test window failed to initialise\n";
-	}
-
-	initialiseD3D11();
-
-	if (FAILED(result))
-	{
-		return "swapchain default depth test d3d11 failed to initialise\n";
+		return "swapchain default depth test failed to initialise\n";
 	}
 
 	D3D11Renderer::Swapchain unit;
