@@ -1,8 +1,9 @@
 #include "RasteriserDefaultCullingTest.h"
 
 RasteriserDefaultCullingTest::RasteriserDefaultCullingTest()
-	: device{ nullptr }, context{ nullptr }, description()
+	: device{ nullptr }, context{ nullptr }, description(), result()
 {
+	initialise();
 }
 
 RasteriserDefaultCullingTest::~RasteriserDefaultCullingTest()
@@ -13,7 +14,7 @@ RasteriserDefaultCullingTest::~RasteriserDefaultCullingTest()
 
 std::string RasteriserDefaultCullingTest::test()
 {
-	if (FAILED(initialise()))
+	if (FAILED(result))
 	{
 		return "rasteriser default culling test failed to initialise\n";
 	}
@@ -45,7 +46,7 @@ void RasteriserDefaultCullingTest::cleanup(IUnknown* index)
 	}
 }
 
-HRESULT RasteriserDefaultCullingTest::initialise()
+void RasteriserDefaultCullingTest::initialise()
 {
 	D3D_FEATURE_LEVEL levels[] = {
 		D3D_FEATURE_LEVEL_11_0
@@ -53,7 +54,7 @@ HRESULT RasteriserDefaultCullingTest::initialise()
 
 	D3D_FEATURE_LEVEL supported;
 
-	HRESULT output = D3D11CreateDevice(
+	result = D3D11CreateDevice(
 		0,
 		D3D_DRIVER_TYPE_HARDWARE,
 		NULL,
@@ -65,8 +66,6 @@ HRESULT RasteriserDefaultCullingTest::initialise()
 		&supported,
 		&context
 	);
-
-	return output;
 }
 
 HRESULT RasteriserDefaultCullingTest::getDescription()
