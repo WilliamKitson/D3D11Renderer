@@ -1,8 +1,9 @@
 #include "RasteriserCullingFrontTest.h"
 
 RasteriserCullingFrontTest::RasteriserCullingFrontTest()
-	: device{ nullptr }, context{ nullptr }, description()
+	: device{ nullptr }, context{ nullptr }, description(), result()
 {
+	initialise();
 }
 
 RasteriserCullingFrontTest::~RasteriserCullingFrontTest()
@@ -13,7 +14,7 @@ RasteriserCullingFrontTest::~RasteriserCullingFrontTest()
 
 std::string RasteriserCullingFrontTest::test()
 {
-	if (FAILED(initialise()))
+	if (FAILED(result))
 	{
 		return "rasteriser culling front test failed to initialise\n";
 	}
@@ -46,7 +47,7 @@ void RasteriserCullingFrontTest::cleanup(IUnknown* input)
 	}
 }
 
-HRESULT RasteriserCullingFrontTest::initialise()
+void RasteriserCullingFrontTest::initialise()
 {
 	D3D_FEATURE_LEVEL levels[] = {
 		D3D_FEATURE_LEVEL_11_0
@@ -54,7 +55,7 @@ HRESULT RasteriserCullingFrontTest::initialise()
 
 	D3D_FEATURE_LEVEL supported;
 
-	HRESULT output = D3D11CreateDevice(
+	result = D3D11CreateDevice(
 		0,
 		D3D_DRIVER_TYPE_HARDWARE,
 		NULL,
@@ -66,8 +67,6 @@ HRESULT RasteriserCullingFrontTest::initialise()
 		&supported,
 		&context
 	);
-
-	return output;
 }
 
 HRESULT RasteriserCullingFrontTest::getDescription()
