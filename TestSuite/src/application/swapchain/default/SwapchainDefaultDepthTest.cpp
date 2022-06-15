@@ -44,7 +44,7 @@ std::string SwapchainDefaultDepthTest::test()
 	unit.initialise(device, window);
 	unit.bind(context);
 
-	if (success(texture()))
+	if (successful(texture()))
 	{
 		return std::string();
 	}
@@ -157,7 +157,7 @@ D3D11_TEXTURE2D_DESC SwapchainDefaultDepthTest::texture()
 	return output;
 }
 
-bool SwapchainDefaultDepthTest::success(D3D11_TEXTURE2D_DESC input)
+bool SwapchainDefaultDepthTest::successful(D3D11_TEXTURE2D_DESC input)
 {
 	if (input.Width != 960)
 	{

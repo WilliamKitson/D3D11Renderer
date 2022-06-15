@@ -21,7 +21,7 @@ private:
 	void initialiseWindow();
 	void initialiseD3D11();
 	D3D11_TEXTURE2D_DESC texture();
-	bool success(D3D11_TEXTURE2D_DESC);
+	bool successful(D3D11_TEXTURE2D_DESC);
 
 private:
 	HINSTANCE hInstance;
