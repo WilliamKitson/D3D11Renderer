@@ -38,24 +38,12 @@ std::string SwapchainDefaultDepthTest::test()
 		return "swapchain default depth test window failed to initialise\n";
 	}
 
-	D3D_FEATURE_LEVEL levels[] = {
-		D3D_FEATURE_LEVEL_11_0
-	};
+	initialiseD3D11();
 
-	D3D_FEATURE_LEVEL supported;
-
-	D3D11CreateDevice(
-		0,
-		D3D_DRIVER_TYPE_HARDWARE,
-		NULL,
-		D3D11_CREATE_DEVICE_DEBUG,
-		levels,
-		1,
-		D3D11_SDK_VERSION,
-		&device,
-		&supported,
-		&context
-	);
+	if (FAILED(result))
+	{
+		return "swapchain default depth test d3d11 failed to initialise\n";
+	}
 
 	D3D11Renderer::Swapchain unit;
 
@@ -195,5 +183,27 @@ void SwapchainDefaultDepthTest::initialiseWindow()
 	ShowWindow(
 		window,
 		nCmdShow
+	);
+}
+
+void SwapchainDefaultDepthTest::initialiseD3D11()
+{
+	D3D_FEATURE_LEVEL levels[] = {
+		D3D_FEATURE_LEVEL_11_0
+	};
+
+	D3D_FEATURE_LEVEL supported;
+
+	result = D3D11CreateDevice(
+		0,
+		D3D_DRIVER_TYPE_HARDWARE,
+		NULL,
+		D3D11_CREATE_DEVICE_DEBUG,
+		levels,
+		1,
+		D3D11_SDK_VERSION,
+		&device,
+		&supported,
+		&context
 	);
 }
