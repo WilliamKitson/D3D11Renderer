@@ -18,7 +18,7 @@ private:
 	static LRESULT CALLBACK windowProcedure(HWND, UINT, WPARAM, LPARAM);
 	void cleanup(IUnknown*);
 	void initialiseWindowClass();
-	HRESULT initialiseWindow();
+	void initialiseWindow();
 	HRESULT initialiseD3D11();
 	D3D11_TEXTURE2D_DESC texture();
 	bool successful(D3D11_TEXTURE2D_DESC);
