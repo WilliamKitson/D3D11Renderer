@@ -7,17 +7,8 @@ RasteriserDefaultDepthTest::RasteriserDefaultDepthTest()
 
 RasteriserDefaultDepthTest::~RasteriserDefaultDepthTest()
 {
-	if (context)
-	{
-		context->Release();
-		context = nullptr;
-	}
-
-	if (device)
-	{
-		device->Release();
-		device = nullptr;
-	}
+	cleanup(context);
+	cleanup(device);
 }
 
 std::string RasteriserDefaultDepthTest::test()
@@ -43,6 +34,15 @@ std::string RasteriserDefaultDepthTest::test()
 	}
 
 	return "rasteriser default depth test failed\n";
+}
+
+void RasteriserDefaultDepthTest::cleanup(IUnknown* input)
+{
+	if (input)
+	{
+		input->Release();
+		input = nullptr;
+	}
 }
 
 HRESULT RasteriserDefaultDepthTest::initialise()
@@ -80,12 +80,7 @@ HRESULT RasteriserDefaultDepthTest::getDescription()
 	}
 
 	state->GetDesc(&description);
-
-	if (state)
-	{
-		state->Release();
-		state = nullptr;
-	}
+	cleanup(state);
 
 	return S_OK;
 }
