@@ -1,8 +1,9 @@
 #include "RasteriserDefaultDepthTest.h"
 
 RasteriserDefaultDepthTest::RasteriserDefaultDepthTest()
-	: device{ nullptr }, context{ nullptr }, description()
+	: device{ nullptr }, context{ nullptr }, description(), result()
 {
+	initialise();
 }
 
 RasteriserDefaultDepthTest::~RasteriserDefaultDepthTest()
@@ -13,7 +14,7 @@ RasteriserDefaultDepthTest::~RasteriserDefaultDepthTest()
 
 std::string RasteriserDefaultDepthTest::test()
 {
-	if (FAILED(initialise()))
+	if (FAILED(result))
 	{
 		return "rasteriser default depth test failed to initialise\n";
 	}
@@ -45,7 +46,7 @@ void RasteriserDefaultDepthTest::cleanup(IUnknown* input)
 	}
 }
 
-HRESULT RasteriserDefaultDepthTest::initialise()
+void RasteriserDefaultDepthTest::initialise()
 {
 	D3D_FEATURE_LEVEL levels[] = {
 		D3D_FEATURE_LEVEL_11_0
@@ -53,7 +54,7 @@ HRESULT RasteriserDefaultDepthTest::initialise()
 
 	D3D_FEATURE_LEVEL supported;
 
-	HRESULT output = D3D11CreateDevice(
+	result = D3D11CreateDevice(
 		0,
 		D3D_DRIVER_TYPE_HARDWARE,
 		NULL,
@@ -65,8 +66,6 @@ HRESULT RasteriserDefaultDepthTest::initialise()
 		&supported,
 		&context
 	);
-
-	return output;
 }
 
 HRESULT RasteriserDefaultDepthTest::getDescription()
