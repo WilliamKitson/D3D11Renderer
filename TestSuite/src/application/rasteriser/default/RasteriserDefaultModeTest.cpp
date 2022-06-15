@@ -1,8 +1,9 @@
 #include "RasteriserDefaultModeTest.h"
 
 RasteriserDefaultModeTest::RasteriserDefaultModeTest()
-	: device{ nullptr }, context{ nullptr }, description()
+	: device{ nullptr }, context{ nullptr }, description(), result()
 {
+	initialise();
 }
 
 RasteriserDefaultModeTest::~RasteriserDefaultModeTest()
@@ -13,7 +14,7 @@ RasteriserDefaultModeTest::~RasteriserDefaultModeTest()
 
 std::string RasteriserDefaultModeTest::test()
 {
-	if (FAILED(initialise()))
+	if (FAILED(result))
 	{
 		return "rasteriser default mode test device failed to initialise\n";
 	}
@@ -45,7 +46,7 @@ void RasteriserDefaultModeTest::cleanup(IUnknown* input)
 	}
 }
 
-HRESULT RasteriserDefaultModeTest::initialise()
+void RasteriserDefaultModeTest::initialise()
 {
 	D3D_FEATURE_LEVEL levels[] = {
 		D3D_FEATURE_LEVEL_11_0
@@ -53,7 +54,7 @@ HRESULT RasteriserDefaultModeTest::initialise()
 
 	D3D_FEATURE_LEVEL supported;
 
-	HRESULT output = D3D11CreateDevice(
+	result = D3D11CreateDevice(
 		0,
 		D3D_DRIVER_TYPE_HARDWARE,
 		NULL,
@@ -65,8 +66,6 @@ HRESULT RasteriserDefaultModeTest::initialise()
 		&supported,
 		&context
 	);
-
-	return output;
 }
 
 HRESULT RasteriserDefaultModeTest::getDescription()
