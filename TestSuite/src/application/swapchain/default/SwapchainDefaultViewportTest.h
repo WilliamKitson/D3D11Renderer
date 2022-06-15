@@ -16,6 +16,7 @@ public:
 
 private:
 	static LRESULT CALLBACK windowProcedure(HWND, UINT, WPARAM, LPARAM);
+	void cleanup(IUnknown*);
 	HRESULT initialiseWindow();
 	HRESULT initialiseWindowClass();
 	HRESULT initialiseD3D11();

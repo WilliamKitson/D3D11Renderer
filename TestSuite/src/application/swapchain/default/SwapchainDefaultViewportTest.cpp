@@ -1,24 +1,14 @@
 #include "SwapchainDefaultViewportTest.h"
 
 SwapchainDefaultViewportTest::SwapchainDefaultViewportTest(HINSTANCE hInstanceInput, int nCmdShowInput)
-	: hInstance{ hInstanceInput }, nCmdShow{ nCmdShowInput }, tag{ L"swapchain default viewport D3D11" }, window(), device{ nullptr }, context{ nullptr }
+	: hInstance{ hInstanceInput }, nCmdShow{ nCmdShowInput }, tag{ L"swapchain default viewport test" }, window(), device{ nullptr }, context{ nullptr }
 {
 }
 
 SwapchainDefaultViewportTest::~SwapchainDefaultViewportTest()
 {
-	if (context)
-	{
-		context->Release();
-		context = nullptr;
-	}
-
-	if (device)
-	{
-		device->Release();
-		device = nullptr;
-	}
-
+	cleanup(context);
+	cleanup(device);
 	DestroyWindow(window);
 }
 
@@ -50,6 +40,15 @@ std::string SwapchainDefaultViewportTest::test()
 LRESULT CALLBACK SwapchainDefaultViewportTest::windowProcedure(HWND window, UINT message, WPARAM wParam, LPARAM lParam)
 {
 	return DefWindowProc(window, message, wParam, lParam);
+}
+
+void SwapchainDefaultViewportTest::cleanup(IUnknown* input)
+{
+	if (input)
+	{
+		input->Release();
+		input = nullptr;
+	}
 }
 
 HRESULT SwapchainDefaultViewportTest::initialiseWindow()
