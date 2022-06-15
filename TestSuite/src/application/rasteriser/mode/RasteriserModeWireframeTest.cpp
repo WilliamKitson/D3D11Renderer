@@ -1,8 +1,9 @@
 #include "RasteriserModeWireframeTest.h"
 
 RasteriserModeWireframeTest::RasteriserModeWireframeTest()
-	: device{ nullptr }, context{ nullptr }, description()
+	: device{ nullptr }, context{ nullptr }, description(), result()
 {
+	initialise();
 }
 
 RasteriserModeWireframeTest::~RasteriserModeWireframeTest()
@@ -13,7 +14,7 @@ RasteriserModeWireframeTest::~RasteriserModeWireframeTest()
 
 std::string RasteriserModeWireframeTest::test()
 {
-	if (FAILED(initialise()))
+	if (FAILED(result))
 	{
 		return "rasteriser mode wireframe test failed to initialise\n";
 	}
@@ -46,7 +47,7 @@ void RasteriserModeWireframeTest::cleanup(IUnknown* input)
 	}
 }
 
-HRESULT RasteriserModeWireframeTest::initialise()
+void RasteriserModeWireframeTest::initialise()
 {
 	D3D_FEATURE_LEVEL levels[] = {
 		D3D_FEATURE_LEVEL_11_0
@@ -54,7 +55,7 @@ HRESULT RasteriserModeWireframeTest::initialise()
 
 	D3D_FEATURE_LEVEL supported;
 
-	HRESULT output = D3D11CreateDevice(
+	result = D3D11CreateDevice(
 		0,
 		D3D_DRIVER_TYPE_HARDWARE,
 		NULL,
@@ -66,8 +67,6 @@ HRESULT RasteriserModeWireframeTest::initialise()
 		&supported,
 		&context
 	);
-
-	return output;
 }
 
 HRESULT RasteriserModeWireframeTest::getDescription()
