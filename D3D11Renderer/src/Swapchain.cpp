@@ -46,7 +46,7 @@ void D3D11Renderer::Swapchain::bind(ID3D11DeviceContext* input)
 void D3D11Renderer::Swapchain::initialiseState(ID3D11Device* device, HWND window)
 {
 	IDXGIFactory* factory = getFactory(device);
-	DXGI_SWAP_CHAIN_DESC description = getDescription(window);
+	DXGI_SWAP_CHAIN_DESC description = swapchainDescription(window);
 
 	HRESULT result = factory->CreateSwapChain(
 		device,
@@ -102,7 +102,7 @@ IDXGIDevice* D3D11Renderer::Swapchain::getDevice(ID3D11Device* input)
 	return output;
 }
 
-DXGI_SWAP_CHAIN_DESC D3D11Renderer::Swapchain::getDescription(HWND input)
+DXGI_SWAP_CHAIN_DESC D3D11Renderer::Swapchain::swapchainDescription(HWND input)
 {
 	DXGI_SWAP_CHAIN_DESC output = DXGI_SWAP_CHAIN_DESC();
 
