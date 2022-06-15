@@ -50,82 +50,61 @@ std::string SwapchainDefaultDepthTest::test()
 	unit.initialise(device, window);
 	unit.bind(context);
 
-	ID3D11DepthStencilView* depth = nullptr;
-
-	context->OMGetRenderTargets(
-		1,
-		nullptr,
-		&depth
-	);
-
-	if (!depth)
-	{
-		return "swapchain default depth test depth failed to initialise\n";
-	}
-
-	ID3D11Texture2D* backBuffer = nullptr;
-	depth->GetResource(reinterpret_cast<ID3D11Resource**>(&backBuffer));
-	depth->Release();
-	depth = nullptr;
-
-	D3D11_TEXTURE2D_DESC texture;
-	backBuffer->GetDesc(&texture);
-	backBuffer->Release();
-	backBuffer = nullptr;
+	D3D11_TEXTURE2D_DESC temp = texture();
 
 	bool success = true;
 
-	if (texture.Width != 960)
+	if (temp.Width != 960)
 	{
 		success = false;
 	}
 
-	if (texture.Height != 540)
+	if (temp.Height != 540)
 	{
 		success = false;
 	}
 
-	if (texture.MipLevels != 1)
+	if (temp.MipLevels != 1)
 	{
 		success = false;
 	}
 
-	if (texture.ArraySize != 1)
+	if (temp.ArraySize != 1)
 	{
 		success = false;
 	}
 
-	if (texture.Format != DXGI_FORMAT_D24_UNORM_S8_UINT)
+	if (temp.Format != DXGI_FORMAT_D24_UNORM_S8_UINT)
 	{
 		success = false;
 	}
 
-	if (texture.SampleDesc.Count != 1)
+	if (temp.SampleDesc.Count != 1)
 	{
 		success = false;
 	}
 
-	if (texture.SampleDesc.Quality != 0)
+	if (temp.SampleDesc.Quality != 0)
 	{
 		success = false;
 	}
 
-	if (texture.Usage != D3D11_USAGE_DEFAULT)
+	if (temp.Usage != D3D11_USAGE_DEFAULT)
 	{
 		success = false;
 	}
 
-	if (texture.BindFlags != 64)
+	if (temp.BindFlags != 64)
 	{
 		success = false;
 	}
 
-	if (texture.CPUAccessFlags != 0)
+	if (temp.CPUAccessFlags != 0)
 	{
 		success = false;
 	}
 
-	if (texture.MiscFlags != 0)
+	if (temp.MiscFlags != 0)
 	{
 		success = false;
 	}
@@ -206,4 +185,32 @@ void SwapchainDefaultDepthTest::initialiseD3D11()
 		&supported,
 		&context
 	);
+}
+
+D3D11_TEXTURE2D_DESC SwapchainDefaultDepthTest::texture()
+{
+	ID3D11DepthStencilView* depth = nullptr;
+
+	context->OMGetRenderTargets(
+		1,
+		nullptr,
+		&depth
+	);
+
+	if (!depth)
+	{
+		return D3D11_TEXTURE2D_DESC();
+	}
+
+	ID3D11Texture2D* backBuffer = nullptr;
+	depth->GetResource(reinterpret_cast<ID3D11Resource**>(&backBuffer));
+	depth->Release();
+	depth = nullptr;
+
+	D3D11_TEXTURE2D_DESC output;
+	backBuffer->GetDesc(&output);
+	backBuffer->Release();
+	backBuffer = nullptr;
+
+	return output;
 }
