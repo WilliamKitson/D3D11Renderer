@@ -1,8 +1,9 @@
 #include "SwapchainDefaultViewTest.h"
 
 SwapchainDefaultViewTest::SwapchainDefaultViewTest(HINSTANCE hInstanceInput, int nCmdShowInput)
-	: hInstance{ hInstanceInput }, nCmdShow{ nCmdShowInput }, tag{ L"swapchain default view test" }, window(), device{ nullptr }, context{ nullptr }
+	: hInstance{ hInstanceInput }, nCmdShow{ nCmdShowInput }, tag{ L"swapchain default view test" }, window(), device{ nullptr }, context{ nullptr }, result()
 {
+	initialiseWindowClass();
 }
 
 SwapchainDefaultViewTest::~SwapchainDefaultViewTest()
@@ -14,6 +15,11 @@ SwapchainDefaultViewTest::~SwapchainDefaultViewTest()
 
 std::string SwapchainDefaultViewTest::test()
 {
+	if (FAILED(result))
+	{
+		return "swapchain default view test window class failed to initialise\n";
+	}
+
 	if (FAILED(initialiseWindow()))
 	{
 		return "swapchain default view test window failed to initialise\n";
@@ -51,13 +57,24 @@ void SwapchainDefaultViewTest::cleanup(IUnknown* input)
 	}
 }
 
-HRESULT SwapchainDefaultViewTest::initialiseWindow()
+void SwapchainDefaultViewTest::initialiseWindowClass()
 {
-	if (FAILED(initialiseWindowClass()))
+	WNDCLASS windowClass = WNDCLASS();
+	windowClass.lpfnWndProc = windowProcedure;
+	windowClass.hInstance = hInstance;
+	windowClass.lpszClassName = tag.c_str();
+
+	if (!RegisterClass(&windowClass))
 	{
-		return E_FAIL;
+		result = E_FAIL;
+		return;
 	}
 
+	result = S_OK;
+}
+
+HRESULT SwapchainDefaultViewTest::initialiseWindow()
+{
 	window = CreateWindow(
 		tag.c_str(),
 		tag.c_str(),
@@ -81,21 +98,6 @@ HRESULT SwapchainDefaultViewTest::initialiseWindow()
 		window,
 		nCmdShow
 	);
-
-	return S_OK;
-}
-
-HRESULT SwapchainDefaultViewTest::initialiseWindowClass()
-{
-	WNDCLASS windowClass = WNDCLASS();
-	windowClass.lpfnWndProc = windowProcedure;
-	windowClass.hInstance = hInstance;
-	windowClass.lpszClassName = tag.c_str();
-
-	if (!RegisterClass(&windowClass))
-	{
-		return E_FAIL;
-	}
 
 	return S_OK;
 }

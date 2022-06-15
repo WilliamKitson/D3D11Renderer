@@ -17,8 +17,8 @@ public:
 private:
 	static LRESULT CALLBACK windowProcedure(HWND, UINT, WPARAM, LPARAM);
 	void cleanup(IUnknown*);
+	void initialiseWindowClass();
 	HRESULT initialiseWindow();
-	HRESULT initialiseWindowClass();
 	HRESULT initialiseD3D11();
 	D3D11_TEXTURE2D_DESC texture();
 	bool successful(D3D11_TEXTURE2D_DESC);
@@ -30,4 +30,5 @@ private:
 	HWND window;
 	ID3D11Device* device;
 	ID3D11DeviceContext* context;
+	HRESULT result;
 };
