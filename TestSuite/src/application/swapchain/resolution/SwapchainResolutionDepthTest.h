@@ -20,6 +20,7 @@ private:
 	void initialiseWindowClass();
 	void initialiseWindow();
 	void initialiseD3D11();
+	D3D11_TEXTURE2D_DESC texture();
 
 private:
 	HINSTANCE hInstance;

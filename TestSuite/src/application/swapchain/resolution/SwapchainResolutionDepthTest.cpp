@@ -47,35 +47,16 @@ std::string SwapchainResolutionDepthTest::test()
 	unit.initialise(device, window);
 	unit.bind(context);
 
-	ID3D11DepthStencilView* depth = nullptr;
-
-	context->OMGetRenderTargets(
-		1,
-		nullptr,
-		&depth
-	);
-
-	if (!depth)
-	{
-		return "swapchain resolution depth test failed to initialise view\n";
-	}
-
-	ID3D11Texture2D* backBuffer = nullptr;
-	depth->GetResource(reinterpret_cast<ID3D11Resource**>(&backBuffer));
-	cleanup(depth);
-
-	D3D11_TEXTURE2D_DESC texture;
-	backBuffer->GetDesc(&texture);
-	cleanup(backBuffer);
+	D3D11_TEXTURE2D_DESC output = texture();
 
 	bool success = true;
 
-	if (texture.Width != resolution[0])
+	if (output.Width != resolution[0])
 	{
 		success = false;
 	}
 
-	if (texture.Height != resolution[1])
+	if (output.Height != resolution[1])
 	{
 		success = false;
 	}
@@ -167,4 +148,30 @@ void SwapchainResolutionDepthTest::initialiseD3D11()
 		&supported,
 		&context
 	);
+}
+
+D3D11_TEXTURE2D_DESC SwapchainResolutionDepthTest::texture()
+{
+	ID3D11DepthStencilView* depth = nullptr;
+
+	context->OMGetRenderTargets(
+		1,
+		nullptr,
+		&depth
+	);
+
+	if (!depth)
+	{
+		return D3D11_TEXTURE2D_DESC();
+	}
+
+	ID3D11Texture2D* backBuffer = nullptr;
+	depth->GetResource(reinterpret_cast<ID3D11Resource**>(&backBuffer));
+	cleanup(depth);
+
+	D3D11_TEXTURE2D_DESC output;
+	backBuffer->GetDesc(&output);
+	cleanup(backBuffer);
+
+	return output;
 }
