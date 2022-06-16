@@ -14,18 +14,7 @@ SwapchainResolutionViewportTest::~SwapchainResolutionViewportTest()
 
 std::string SwapchainResolutionViewportTest::test()
 {
-	WNDCLASS windowClass = WNDCLASS();
-	windowClass.lpfnWndProc = windowProcedure;
-	windowClass.hInstance = hInstance;
-	windowClass.lpszClassName = tag.c_str();
-
-	if (!RegisterClass(&windowClass))
-	{
-		result = E_FAIL;
-		return "swapchain resolution viewport test failed to initialise window class\n";
-	}
-
-	result = S_OK;
+	initialiseWindowClass();
 
 	if (FAILED(result))
 	{
@@ -140,4 +129,20 @@ void SwapchainResolutionViewportTest::cleanup(IUnknown* input)
 	{
 		input->Release();
 	}
+}
+
+void SwapchainResolutionViewportTest::initialiseWindowClass()
+{
+	WNDCLASS windowClass = WNDCLASS();
+	windowClass.lpfnWndProc = windowProcedure;
+	windowClass.hInstance = hInstance;
+	windowClass.lpszClassName = tag.c_str();
+
+	if (!RegisterClass(&windowClass))
+	{
+		result = E_FAIL;
+		return;
+	}
+
+	result = S_OK;
 }
