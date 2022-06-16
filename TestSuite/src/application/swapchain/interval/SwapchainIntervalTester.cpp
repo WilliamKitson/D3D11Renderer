@@ -16,6 +16,7 @@ std::string SwapchainIntervalTester::test()
 	output += testDefault();
 	output += testFull();
 	output += testHalf();
+	output += testQuater();
 
 	return output;
 }
@@ -33,4 +34,9 @@ std::string SwapchainIntervalTester::testFull()
 std::string SwapchainIntervalTester::testHalf()
 {
 	return SwapchainIntervalHalfTest(hInstance, nCmdShow).test();
+}
+
+std::string SwapchainIntervalTester::testQuater()
+{
+	return SwapchainIntervalQuaterTest(hInstance, nCmdShow).test();
 }

@@ -31,7 +31,7 @@ std::string SwapchainIntervalHalfTest::test()
 {
 	if (FAILED(result))
 	{
-		return "swapchain interval default test failed to initialise window\n";
+		return "swapchain interval half test failed to initialise window\n";
 	}
 
 	unit.initialise(device, window);

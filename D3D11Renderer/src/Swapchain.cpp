@@ -47,6 +47,11 @@ void D3D11Renderer::Swapchain::setHalf()
 	intervals = 2;
 }
 
+void D3D11Renderer::Swapchain::setQuater()
+{
+	intervals = 4;
+}
+
 void D3D11Renderer::Swapchain::cleanup()
 {
 	cleanup(depth);

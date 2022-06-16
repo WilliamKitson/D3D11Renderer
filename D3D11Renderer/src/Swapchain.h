@@ -17,6 +17,7 @@ namespace D3D11Renderer
 		void setResolution(int[2]);
 		void setFull();
 		void setHalf();
+		void setQuater();
 
 	private:
 		void cleanup();
