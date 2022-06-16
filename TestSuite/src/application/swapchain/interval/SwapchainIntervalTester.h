@@ -5,6 +5,7 @@
 
 #include "SwapchainIntervalDefaultTest.h"
 #include "SwapchainIntervalFullTest.h"
+#include "SwapchainIntervalHalfTest.h"
 
 class SwapchainIntervalTester
 {
@@ -17,6 +18,7 @@ public:
 private:
 	std::string testDefault();
 	std::string testFull();
+	std::string testHalf();
 
 private:
 	HINSTANCE hInstance;
