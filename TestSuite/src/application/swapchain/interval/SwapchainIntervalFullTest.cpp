@@ -3,6 +3,21 @@
 SwapchainIntervalFullTest::SwapchainIntervalFullTest(HINSTANCE hInstanceInput, int nCmdShowInput)
 	: hInstance{ hInstanceInput }, nCmdShow{ nCmdShowInput }, tag{ L"swapchain interval full test" }, window(), device{ nullptr }, context{ nullptr }, result(), unit()
 {
+	initialiseWindowClass();
+
+	if (FAILED(result))
+	{
+		return;
+	}
+
+	initialiseWindow();
+
+	if (FAILED(result))
+	{
+		return;
+	}
+
+	initialiseD3D11();
 }
 
 SwapchainIntervalFullTest::~SwapchainIntervalFullTest()
@@ -14,46 +29,16 @@ SwapchainIntervalFullTest::~SwapchainIntervalFullTest()
 
 std::string SwapchainIntervalFullTest::test()
 {
-	initialiseWindowClass();
-
 	if (FAILED(result))
 	{
-		return "swapchain interval default test failed to initialise window class\n";
-	}
-
-	initialiseWindow();
-
-	if (FAILED(result))
-	{
-		return "swapchain interval default test failed to initialise window\n";
-	}
-
-	initialiseD3D11();
-
-	if (FAILED(result))
-	{
-		return "swapchain interval default test failed to initialise d3d11\n";
+		return "swapchain interval default test failed to initialise\n";
 	}
 
 	unit.initialise(device, window);
 	unit.bind(context);
 	unit.setFull();
 
-	int output = 0;
-	double elapced = 0.0f;
-	std::chrono::time_point<std::chrono::high_resolution_clock> start = std::chrono::high_resolution_clock::now();
-
-	while (elapced < 1.0f)
-	{
-		unit.update();
-		elapced += (float)std::chrono::duration<double>(std::chrono::high_resolution_clock::now() - start).count();
-		start = std::chrono::high_resolution_clock::now();
-		output++;
-	}
-
-	output--;
-
-	if (output == 144)
+	if (framerate() == 144)
 	{
 		return std::string();
 	}
@@ -140,4 +125,21 @@ void SwapchainIntervalFullTest::initialiseD3D11()
 		&supported,
 		&context
 	);
+}
+
+int SwapchainIntervalFullTest::framerate()
+{
+	int output = 0;
+	double elapced = 0.0f;
+	std::chrono::time_point<std::chrono::high_resolution_clock> start = std::chrono::high_resolution_clock::now();
+
+	while (elapced < 1.0f)
+	{
+		unit.update();
+		elapced += (float)std::chrono::duration<double>(std::chrono::high_resolution_clock::now() - start).count();
+		start = std::chrono::high_resolution_clock::now();
+		output++;
+	}
+
+	return output - 1;
 }
