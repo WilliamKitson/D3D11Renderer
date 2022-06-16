@@ -7,16 +7,8 @@ SwapchainIntervalFullTest::SwapchainIntervalFullTest(HINSTANCE hInstanceInput, i
 
 SwapchainIntervalFullTest::~SwapchainIntervalFullTest()
 {
-	if (context)
-	{
-		context->Release();
-	}
-
-	if (device)
-	{
-		device->Release();
-	}
-
+	cleanup(context);
+	cleanup(device);
 	DestroyWindow(window);
 }
 
@@ -125,4 +117,12 @@ std::string SwapchainIntervalFullTest::test()
 LRESULT CALLBACK SwapchainIntervalFullTest::windowProcedure(HWND window, UINT message, WPARAM wParam, LPARAM lParam)
 {
 	return DefWindowProc(window, message, wParam, lParam);
+}
+
+void SwapchainIntervalFullTest::cleanup(IUnknown* input)
+{
+	if (input)
+	{
+		input->Release();
+	}
 }
