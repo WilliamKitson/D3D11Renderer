@@ -21,32 +21,7 @@ std::string SwapchainIntervalQuaterTest::test()
 		return "swapchain interval quater test failed to initialise window class\n";
 	}
 
-	window = CreateWindow(
-		tag.c_str(),
-		tag.c_str(),
-		WS_OVERLAPPEDWINDOW,
-		100,
-		100,
-		960,
-		540,
-		NULL,
-		NULL,
-		hInstance,
-		NULL
-	);
-
-	if (!window)
-	{
-		result = E_FAIL;
-		return "swapchain interval quater test failed to initialise window\n";
-	}
-
-	ShowWindow(
-		window,
-		nCmdShow
-	);
-
-	result = S_OK;
+	initialiseWindow();
 
 	if (FAILED(result))
 	{
@@ -128,6 +103,36 @@ void SwapchainIntervalQuaterTest::initialiseWindowClass()
 		result = E_FAIL;
 		return;
 	}
+
+	result = S_OK;
+}
+
+void SwapchainIntervalQuaterTest::initialiseWindow()
+{
+	window = CreateWindow(
+		tag.c_str(),
+		tag.c_str(),
+		WS_OVERLAPPEDWINDOW,
+		100,
+		100,
+		960,
+		540,
+		NULL,
+		NULL,
+		hInstance,
+		NULL
+	);
+
+	if (!window)
+	{
+		result = E_FAIL;
+		return;
+	}
+
+	ShowWindow(
+		window,
+		nCmdShow
+	);
 
 	result = S_OK;
 }
