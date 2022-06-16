@@ -20,6 +20,7 @@ private:
 	void initialiseWindowClass();
 	void initialiseWindow();
 	void initialiseD3D11();
+	int framerate();
 
 private:
 	HINSTANCE hInstance;
@@ -29,4 +30,5 @@ private:
 	ID3D11Device* device;
 	ID3D11DeviceContext* context;
 	HRESULT result;
+	D3D11Renderer::Swapchain unit;
 };

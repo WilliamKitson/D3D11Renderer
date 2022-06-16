@@ -1,7 +1,7 @@
 #include "SwapchainIntervalDefaultTest.h"
 
 SwapchainIntervalDefaultTest::SwapchainIntervalDefaultTest(HINSTANCE hInstanceInput, int nCmdShowInput)
-	: hInstance{ hInstanceInput }, nCmdShow{ nCmdShowInput }, tag{ L"swapchain interval default test" }, window(), device{ nullptr }, context{ nullptr }, result()
+	: hInstance{ hInstanceInput }, nCmdShow{ nCmdShowInput }, tag{ L"swapchain interval default test" }, window(), device{ nullptr }, context{ nullptr }, result(), unit()
 {
 	initialiseWindowClass();
 
@@ -42,25 +42,10 @@ std::string SwapchainIntervalDefaultTest::test()
 		return "swapchain interval default test failed to initialise\n";
 	}
 
-	D3D11Renderer::Swapchain unit;
 	unit.initialise(device, window);
 	unit.bind(context);
 
-	int framerate = 0;
-	double elapced = 0.0f;
-	std::chrono::time_point<std::chrono::high_resolution_clock> start = std::chrono::high_resolution_clock::now();
-
-	while (elapced < 1.0f)
-	{
-		framerate++;
-		unit.update();
-		elapced += (float)std::chrono::duration<double>(std::chrono::high_resolution_clock::now() - start).count();
-		start = std::chrono::high_resolution_clock::now();
-	}
-
-	framerate--;
-
-	if (framerate > 144)
+	if (framerate() > 144)
 	{
 		return std::string();
 	}
@@ -139,4 +124,21 @@ void SwapchainIntervalDefaultTest::initialiseD3D11()
 		&supported,
 		&context
 	);
+}
+
+int SwapchainIntervalDefaultTest::framerate()
+{
+	int output = 0;
+	double elapced = 0.0f;
+	std::chrono::time_point<std::chrono::high_resolution_clock> start = std::chrono::high_resolution_clock::now();
+
+	while (elapced < 1.0f)
+	{
+		unit.update();
+		output++;
+		elapced += (float)std::chrono::duration<double>(std::chrono::high_resolution_clock::now() - start).count();
+		start = std::chrono::high_resolution_clock::now();
+	}
+
+	return output - 1;
 }
