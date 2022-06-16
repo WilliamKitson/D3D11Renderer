@@ -19,6 +19,7 @@ private:
 	void cleanup(IUnknown*);
 	void initialiseWindowClass();
 	void initialiseWindow();
+	void initialiseD3D11();
 
 private:
 	HINSTANCE hInstance;
