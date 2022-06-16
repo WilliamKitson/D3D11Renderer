@@ -24,6 +24,14 @@ void D3D11Renderer::Swapchain::bind(ID3D11DeviceContext* input)
 	bindViewport(input);
 }
 
+void D3D11Renderer::Swapchain::update()
+{
+	state->Present(
+		0,
+		0
+	);
+}
+
 void D3D11Renderer::Swapchain::setResolution(int input[2])
 {
 	resolution.setResolution(input);

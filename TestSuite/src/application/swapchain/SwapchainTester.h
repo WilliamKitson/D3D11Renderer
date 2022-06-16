@@ -4,6 +4,7 @@
 
 #include "default/SwapchainDefaultTester.h"
 #include "resolution/SwapchainResolutionTester.h"
+#include "interval/SwapchainIntervalTester.h"
 
 class SwapchainTester
 {
@@ -16,6 +17,7 @@ public:
 private:
 	std::string testDefault();
 	std::string testResolution();
+	std::string testInterval();
 
 private:
 	HINSTANCE hInstance;

@@ -15,6 +15,7 @@ std::string SwapchainTester::test()
 
 	output += testDefault();
 	output += testResolution();
+	output += testInterval();
 
 	return output;
 }
@@ -27,4 +28,9 @@ std::string SwapchainTester::testDefault()
 std::string SwapchainTester::testResolution()
 {
 	return SwapchainResolutionTester(hInstance, nCmdShow).test();
+}
+
+std::string SwapchainTester::testInterval()
+{
+	return SwapchainIntervalTester(hInstance, nCmdShow).test();
 }
