@@ -31,7 +31,7 @@ std::string SwapchainResolutionDepthTest::test()
 {
 	if (FAILED(result))
 	{
-		return "swapchain resolution view test failed to initialise\n";
+		return "swapchain resolution depth test failed to initialise\n";
 	}
 
 	D3D11Renderer::Swapchain unit;

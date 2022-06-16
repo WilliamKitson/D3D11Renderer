@@ -5,6 +5,7 @@
 
 #include "SwapchainResolutionViewTest.h"
 #include "SwapchainResolutionDepthTest.h"
+#include "SwapchainResolutionViewportTest.h"
 
 class SwapchainResolutionTester
 {
@@ -17,6 +18,7 @@ public:
 private:
 	std::string testView();
 	std::string testDepth();
+	std::string testViewport();
 
 private:
 	HINSTANCE hInstance;

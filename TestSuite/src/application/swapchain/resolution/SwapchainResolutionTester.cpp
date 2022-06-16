@@ -15,6 +15,7 @@ std::string SwapchainResolutionTester::test()
 
 	output += testView();
 	output += testDepth();
+	output += testViewport();
 
 	return output;
 }
@@ -27,4 +28,9 @@ std::string SwapchainResolutionTester::testView()
 std::string SwapchainResolutionTester::testDepth()
 {
 	return SwapchainResolutionDepthTest(hInstance, nCmdShow).test();
+}
+
+std::string SwapchainResolutionTester::testViewport()
+{
+	return SwapchainResolutionViewportTest(hInstance, nCmdShow).test();
 }

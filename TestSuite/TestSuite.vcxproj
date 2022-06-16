@@ -166,6 +166,7 @@
     <ClCompile Include="src\application\swapchain\default\SwapchainDefaultViewTest.cpp" />
     <ClCompile Include="src\application\swapchain\resolution\SwapchainResolutionDepthTest.cpp" />
     <ClCompile Include="src\application\swapchain\resolution\SwapchainResolutionTester.cpp" />
+    <ClCompile Include="src\application\swapchain\resolution\SwapchainResolutionViewportTest.cpp" />
     <ClCompile Include="src\application\swapchain\resolution\SwapchainResolutionViewTest.cpp" />
     <ClCompile Include="src\application\swapchain\SwapchainTester.cpp" />
     <ClCompile Include="src\domain\DomainTester.cpp" />
@@ -219,6 +220,7 @@
     <ClInclude Include="src\application\swapchain\default\SwapchainDefaultViewTest.h" />
     <ClInclude Include="src\application\swapchain\resolution\SwapchainResolutionDepthTest.h" />
     <ClInclude Include="src\application\swapchain\resolution\SwapchainResolutionTester.h" />
+    <ClInclude Include="src\application\swapchain\resolution\SwapchainResolutionViewportTest.h" />
     <ClInclude Include="src\application\swapchain\resolution\SwapchainResolutionViewTest.h" />
     <ClInclude Include="src\application\swapchain\SwapchainTester.h" />
     <ClInclude Include="src\domain\DomainTester.h" />

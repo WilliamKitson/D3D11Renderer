@@ -168,6 +168,9 @@
     <ClCompile Include="src\application\swapchain\resolution\SwapchainResolutionDepthTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\application\swapchain\resolution\SwapchainResolutionViewportTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\MemoryTest.h">
@@ -318,6 +321,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\application\swapchain\resolution\SwapchainResolutionDepthTest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\application\swapchain\resolution\SwapchainResolutionViewportTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
