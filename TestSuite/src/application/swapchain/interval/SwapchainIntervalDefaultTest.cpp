@@ -135,9 +135,9 @@ int SwapchainIntervalDefaultTest::framerate()
 	while (elapced < 1.0f)
 	{
 		unit.update();
-		output++;
 		elapced += (float)std::chrono::duration<double>(std::chrono::high_resolution_clock::now() - start).count();
 		start = std::chrono::high_resolution_clock::now();
+		output++;
 	}
 
 	return output - 1;

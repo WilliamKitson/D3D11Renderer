@@ -4,6 +4,7 @@
 #include <Windows.h>
 
 #include "SwapchainIntervalDefaultTest.h"
+#include "SwapchainIntervalFullTest.h"
 
 class SwapchainIntervalTester
 {
@@ -15,6 +16,7 @@ public:
 
 private:
 	std::string testDefault();
+	std::string testFull();
 
 private:
 	HINSTANCE hInstance;

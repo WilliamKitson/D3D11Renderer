@@ -177,6 +177,9 @@
     <ClCompile Include="src\application\swapchain\interval\SwapchainIntervalTester.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\application\swapchain\interval\SwapchainIntervalFullTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\MemoryTest.h">
@@ -336,6 +339,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\application\swapchain\interval\SwapchainIntervalTester.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\application\swapchain\interval\SwapchainIntervalFullTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,7 +1,7 @@
 #include "Swapchain.h"
 
 D3D11Renderer::Swapchain::Swapchain()
-	: resolution(), state{ nullptr }, view{ nullptr }, depth{ nullptr }
+	: resolution(), intervals{ 0 }, state{ nullptr }, view{ nullptr }, depth{ nullptr }
 {
 }
 
@@ -27,7 +27,7 @@ void D3D11Renderer::Swapchain::bind(ID3D11DeviceContext* input)
 void D3D11Renderer::Swapchain::update()
 {
 	state->Present(
-		0,
+		intervals,
 		0
 	);
 }
@@ -35,6 +35,11 @@ void D3D11Renderer::Swapchain::update()
 void D3D11Renderer::Swapchain::setResolution(int input[2])
 {
 	resolution.setResolution(input);
+}
+
+void D3D11Renderer::Swapchain::setFull()
+{
+	intervals = 1;
 }
 
 void D3D11Renderer::Swapchain::cleanup()

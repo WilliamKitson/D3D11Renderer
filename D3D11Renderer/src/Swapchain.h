@@ -15,6 +15,7 @@ namespace D3D11Renderer
 		void bind(ID3D11DeviceContext*);
 		void update();
 		void setResolution(int[2]);
+		void setFull();
 
 	private:
 		void cleanup();
@@ -34,6 +35,7 @@ namespace D3D11Renderer
 
 	private:
 		Resolution resolution;
+		int intervals;
 		IDXGISwapChain* state;
 		ID3D11RenderTargetView* view;
 		ID3D11DepthStencilView* depth;
