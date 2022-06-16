@@ -21,6 +21,7 @@ private:
 	void initialiseWindow();
 	void initialiseD3D11();
 	D3D11_VIEWPORT viewport();
+	bool successful(D3D11_VIEWPORT, int[2]);
 
 private:
 	HINSTANCE hInstance;

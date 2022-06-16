@@ -47,21 +47,7 @@ std::string SwapchainResolutionViewportTest::test()
 	unit.initialise(device, window);
 	unit.bind(context);
 
-	D3D11_VIEWPORT temp = viewport();
-
-	bool success = true;
-
-	if (temp.Width != resolution[0])
-	{
-		success = false;
-	}
-
-	if (temp.Height != resolution[1])
-	{
-		success = false;
-	}
-
-	if (success)
+	if (successful(viewport(), resolution))
 	{
 		return std::string();
 	}
@@ -161,4 +147,19 @@ D3D11_VIEWPORT SwapchainResolutionViewportTest::viewport()
 	);
 
 	return output;
+}
+
+bool SwapchainResolutionViewportTest::successful(D3D11_VIEWPORT view, int resolution[2])
+{
+	if (view.Width != resolution[0])
+	{
+		return false;
+	}
+
+	if (view.Height != resolution[1])
+	{
+		return false;
+	}
+
+	return true;
 }
