@@ -164,6 +164,8 @@
     <ClCompile Include="src\application\swapchain\default\SwapchainDefaultTester.cpp" />
     <ClCompile Include="src\application\swapchain\default\SwapchainDefaultViewportTest.cpp" />
     <ClCompile Include="src\application\swapchain\default\SwapchainDefaultViewTest.cpp" />
+    <ClCompile Include="src\application\swapchain\resolution\SwapchainResolutionTester.cpp" />
+    <ClCompile Include="src\application\swapchain\resolution\SwapchainResolutionViewTest.cpp" />
     <ClCompile Include="src\application\swapchain\SwapchainTester.cpp" />
     <ClCompile Include="src\domain\DomainTester.cpp" />
     <ClCompile Include="src\domain\resolution\default\ResolutionDefaultHeightTest.cpp" />
@@ -214,6 +216,8 @@
     <ClInclude Include="src\application\swapchain\default\SwapchainDefaultTester.h" />
     <ClInclude Include="src\application\swapchain\default\SwapchainDefaultViewportTest.h" />
     <ClInclude Include="src\application\swapchain\default\SwapchainDefaultViewTest.h" />
+    <ClInclude Include="src\application\swapchain\resolution\SwapchainResolutionTester.h" />
+    <ClInclude Include="src\application\swapchain\resolution\SwapchainResolutionViewTest.h" />
     <ClInclude Include="src\application\swapchain\SwapchainTester.h" />
     <ClInclude Include="src\domain\DomainTester.h" />
     <ClInclude Include="src\domain\resolution\default\ResolutionDefaultHeightTest.h" />

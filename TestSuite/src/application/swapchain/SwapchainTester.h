@@ -1,7 +1,9 @@
 #pragma once
 
 #include <string>
+
 #include "default/SwapchainDefaultTester.h"
+#include "resolution/SwapchainResolutionTester.h"
 
 class SwapchainTester
 {
@@ -13,6 +15,7 @@ public:
 
 private:
 	std::string testDefault();
+	std::string testResolution();
 
 private:
 	HINSTANCE hInstance;

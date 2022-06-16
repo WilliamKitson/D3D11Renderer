@@ -14,6 +14,7 @@ std::string SwapchainTester::test()
 	std::string output{ "" };
 
 	output += testDefault();
+	output += testResolution();
 
 	return output;
 }
@@ -21,4 +22,9 @@ std::string SwapchainTester::test()
 std::string SwapchainTester::testDefault()
 {
 	return SwapchainDefaultTester(hInstance, nCmdShow).test();
+}
+
+std::string SwapchainTester::testResolution()
+{
+	return SwapchainResolutionTester(hInstance, nCmdShow).test();
 }

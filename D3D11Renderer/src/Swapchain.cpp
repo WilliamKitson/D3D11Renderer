@@ -14,6 +14,10 @@ D3D11Renderer::Swapchain::~Swapchain()
 
 void D3D11Renderer::Swapchain::initialise(ID3D11Device* device, HWND window)
 {
+	cleanup(depth);
+	cleanup(view);
+	cleanup(state);
+
 	initialiseState(
 		device,
 		window
@@ -29,12 +33,16 @@ void D3D11Renderer::Swapchain::bind(ID3D11DeviceContext* input)
 	bindViewport(input);
 }
 
+void D3D11Renderer::Swapchain::setResolution(int input[2])
+{
+	resolution.setResolution(input);
+}
+
 void D3D11Renderer::Swapchain::cleanup(IUnknown* input)
 {
 	if (input)
 	{
 		input->Release();
-		input = nullptr;
 	}
 }
 
@@ -43,7 +51,7 @@ void D3D11Renderer::Swapchain::initialiseState(ID3D11Device* device, HWND window
 	IDXGIFactory* factory = getFactory(device);
 	DXGI_SWAP_CHAIN_DESC description = swapchainDescription(window);
 
-	HRESULT result = factory->CreateSwapChain(
+	factory->CreateSwapChain(
 		device,
 		&description,
 		&state
@@ -170,8 +178,8 @@ D3D11_TEXTURE2D_DESC D3D11Renderer::Swapchain::depthDescription()
 {
 	D3D11_TEXTURE2D_DESC output = D3D11_TEXTURE2D_DESC();
 
-	output.Width = 960;
-	output.Height = 540;
+	output.Width = resolution.getWidth();
+	output.Height = resolution.getHeight();
 	output.MipLevels = 1;
 	output.ArraySize = 1;
 	output.Format = DXGI_FORMAT_D24_UNORM_S8_UINT;
