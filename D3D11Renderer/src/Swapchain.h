@@ -18,6 +18,7 @@ namespace D3D11Renderer
 		void setFull();
 		void setHalf();
 		void setQuater();
+		void setNone();
 
 	private:
 		void cleanup();
