@@ -3,6 +3,21 @@
 SwapchainIntervalDefaultTest::SwapchainIntervalDefaultTest(HINSTANCE hInstanceInput, int nCmdShowInput)
 	: hInstance{ hInstanceInput }, nCmdShow{ nCmdShowInput }, tag{ L"swapchain interval default test" }, window(), device{ nullptr }, context{ nullptr }, result()
 {
+	initialiseWindowClass();
+
+	if (FAILED(result))
+	{
+		return;
+	}
+
+	initialiseWindow();
+
+	if (FAILED(result))
+	{
+		return;
+	}
+
+	initialiseD3D11();
 }
 
 SwapchainIntervalDefaultTest::~SwapchainIntervalDefaultTest()
@@ -22,42 +37,9 @@ SwapchainIntervalDefaultTest::~SwapchainIntervalDefaultTest()
 
 std::string SwapchainIntervalDefaultTest::test()
 {
-	initialiseWindowClass();
-
 	if (FAILED(result))
 	{
-		return "swapchain interval default test failed to initialise window class\n";
-	}
-
-	initialiseWindow();
-
-	if (FAILED(result))
-	{
-		return "swapchain interval default test failed to initialise window\n";
-	}
-
-	D3D_FEATURE_LEVEL levels[] = {
-		D3D_FEATURE_LEVEL_11_0
-	};
-
-	D3D_FEATURE_LEVEL supported;
-
-	result = D3D11CreateDevice(
-		0,
-		D3D_DRIVER_TYPE_HARDWARE,
-		NULL,
-		D3D11_CREATE_DEVICE_DEBUG,
-		levels,
-		1,
-		D3D11_SDK_VERSION,
-		&device,
-		&supported,
-		&context
-	);
-
-	if (FAILED(result))
-	{
-		return "swapchain interval default test failed to initialise d3d11\n";
+		return "swapchain interval default test failed to initialise\n";
 	}
 
 	D3D11Renderer::Swapchain unit;
@@ -135,4 +117,26 @@ void SwapchainIntervalDefaultTest::initialiseWindow()
 	);
 
 	result = S_OK;
+}
+
+void SwapchainIntervalDefaultTest::initialiseD3D11()
+{
+	D3D_FEATURE_LEVEL levels[] = {
+		D3D_FEATURE_LEVEL_11_0
+	};
+
+	D3D_FEATURE_LEVEL supported;
+
+	result = D3D11CreateDevice(
+		0,
+		D3D_DRIVER_TYPE_HARDWARE,
+		NULL,
+		D3D11_CREATE_DEVICE_DEBUG,
+		levels,
+		1,
+		D3D11_SDK_VERSION,
+		&device,
+		&supported,
+		&context
+	);
 }

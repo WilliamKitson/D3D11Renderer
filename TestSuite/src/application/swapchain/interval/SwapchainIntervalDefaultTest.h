@@ -19,6 +19,7 @@ private:
 	static LRESULT CALLBACK windowProcedure(HWND, UINT, WPARAM, LPARAM);
 	void initialiseWindowClass();
 	void initialiseWindow();
+	void initialiseD3D11();
 
 private:
 	HINSTANCE hInstance;
