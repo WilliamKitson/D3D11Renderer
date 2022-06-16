@@ -7,18 +7,8 @@ SwapchainResolutionViewTest::SwapchainResolutionViewTest(HINSTANCE hInstanceInpu
 
 SwapchainResolutionViewTest::~SwapchainResolutionViewTest()
 {
-	if (context)
-	{
-		context->Release();
-		context = nullptr;
-	}
-
-	if (device)
-	{
-		device->Release();
-		device = nullptr;
-	}
-
+	cleanup(context);
+	cleanup(device);
 	DestroyWindow(window);
 }
 
@@ -127,21 +117,11 @@ std::string SwapchainResolutionViewTest::test()
 
 	ID3D11Texture2D* backBuffer = nullptr;
 	view->GetResource(reinterpret_cast<ID3D11Resource**>(&backBuffer));
-
-	if (view)
-	{
-		view->Release();
-		view = nullptr;
-	}
+	cleanup(view);
 
 	D3D11_TEXTURE2D_DESC texture;
 	backBuffer->GetDesc(&texture);
-
-	if (backBuffer)
-	{
-		backBuffer->Release();
-		backBuffer = nullptr;
-	}
+	cleanup(backBuffer);
 
 	bool success = true;
 
@@ -166,4 +146,12 @@ std::string SwapchainResolutionViewTest::test()
 LRESULT SwapchainResolutionViewTest::windowProcedure(HWND window, UINT message, WPARAM wParam, LPARAM lParam)
 {
 	return DefWindowProc(window, message, wParam, lParam);
+}
+
+void SwapchainResolutionViewTest::cleanup(IUnknown* input)
+{
+	if (input)
+	{
+		input->Release();
+	}
 }
