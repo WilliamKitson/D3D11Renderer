@@ -47,21 +47,7 @@ std::string SwapchainResolutionDepthTest::test()
 	unit.initialise(device, window);
 	unit.bind(context);
 
-	D3D11_TEXTURE2D_DESC output = texture();
-
-	bool success = true;
-
-	if (output.Width != resolution[0])
-	{
-		success = false;
-	}
-
-	if (output.Height != resolution[1])
-	{
-		success = false;
-	}
-
-	if (success)
+	if (successful(texture(), resolution))
 	{
 		return std::string();
 	}
@@ -174,4 +160,19 @@ D3D11_TEXTURE2D_DESC SwapchainResolutionDepthTest::texture()
 	cleanup(backBuffer);
 
 	return output;
+}
+
+bool SwapchainResolutionDepthTest::successful(D3D11_TEXTURE2D_DESC depth, int resolution[2])
+{
+	if (depth.Width != resolution[0])
+	{
+		return false;
+	}
+
+	if (depth.Height != resolution[1])
+	{
+		return false;
+	}
+
+	return true;
 }
