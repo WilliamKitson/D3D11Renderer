@@ -16,6 +16,7 @@ namespace D3D11Renderer
 		void setResolution(int[2]);
 
 	private:
+		void cleanup();
 		void cleanup(IUnknown*);
 		void initialiseState(ID3D11Device*, HWND);
 		IDXGIFactory* getFactory(ID3D11Device*);

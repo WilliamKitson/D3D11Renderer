@@ -7,22 +7,13 @@ D3D11Renderer::Swapchain::Swapchain()
 
 D3D11Renderer::Swapchain::~Swapchain()
 {
-	cleanup(depth);
-	cleanup(view);
-	cleanup(state);
+	cleanup();
 }
 
 void D3D11Renderer::Swapchain::initialise(ID3D11Device* device, HWND window)
 {
-	cleanup(depth);
-	cleanup(view);
-	cleanup(state);
-
-	initialiseState(
-		device,
-		window
-	);
-
+	cleanup();
+	initialiseState(device,window);
 	initialiseView(device);
 	initialiseDepth(device);
 }
@@ -36,6 +27,13 @@ void D3D11Renderer::Swapchain::bind(ID3D11DeviceContext* input)
 void D3D11Renderer::Swapchain::setResolution(int input[2])
 {
 	resolution.setResolution(input);
+}
+
+void D3D11Renderer::Swapchain::cleanup()
+{
+	cleanup(depth);
+	cleanup(view);
+	cleanup(state);
 }
 
 void D3D11Renderer::Swapchain::cleanup(IUnknown* input)
