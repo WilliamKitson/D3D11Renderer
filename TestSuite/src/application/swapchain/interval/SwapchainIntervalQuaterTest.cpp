@@ -38,21 +38,7 @@ std::string SwapchainIntervalQuaterTest::test()
 	unit.bind(context);
 	unit.setQuater();
 
-	int framerate = 0;
-	double elapced = 0.0f;
-	std::chrono::time_point<std::chrono::high_resolution_clock> start = std::chrono::high_resolution_clock::now();
-
-	while (elapced < 1.0f)
-	{
-		unit.update();
-		elapced += (float)std::chrono::duration<double>(std::chrono::high_resolution_clock::now() - start).count();
-		start = std::chrono::high_resolution_clock::now();
-		framerate++;
-	}
-
-	framerate--;
-
-	if (framerate == 36)
+	if (framerate() == 36)
 	{
 		return std::string();
 	}
@@ -139,4 +125,21 @@ void SwapchainIntervalQuaterTest::initialiseD3D11()
 		&supported,
 		&context
 	);
+}
+
+int SwapchainIntervalQuaterTest::framerate()
+{
+	int output = 0;
+	double elapced = 0.0f;
+	std::chrono::time_point<std::chrono::high_resolution_clock> start = std::chrono::high_resolution_clock::now();
+
+	while (elapced < 1.0f)
+	{
+		unit.update();
+		elapced += (float)std::chrono::duration<double>(std::chrono::high_resolution_clock::now() - start).count();
+		start = std::chrono::high_resolution_clock::now();
+		output++;
+	}
+
+	return output - 1;
 }
