@@ -7,16 +7,8 @@ SwapchainResolutionDepthTest::SwapchainResolutionDepthTest(HINSTANCE hInstanceIn
 
 SwapchainResolutionDepthTest::~SwapchainResolutionDepthTest()
 {
-	if (context)
-	{
-		context->Release();
-	}
-
-	if (device)
-	{
-		device->Release();
-	}
-
+	cleanup(context);
+	cleanup(device);
 	DestroyWindow(window);
 }
 
@@ -124,19 +116,11 @@ std::string SwapchainResolutionDepthTest::test()
 
 	ID3D11Texture2D* backBuffer = nullptr;
 	depth->GetResource(reinterpret_cast<ID3D11Resource**>(&backBuffer));
-
-	if (depth)
-	{
-		depth->Release();
-	}
+	cleanup(depth);
 
 	D3D11_TEXTURE2D_DESC texture;
 	backBuffer->GetDesc(&texture);
-
-	if (backBuffer)
-	{
-		backBuffer->Release();
-	}
+	cleanup(backBuffer);
 
 	bool success = true;
 
@@ -161,4 +145,12 @@ std::string SwapchainResolutionDepthTest::test()
 LRESULT CALLBACK SwapchainResolutionDepthTest::windowProcedure(HWND window, UINT message, WPARAM wParam, LPARAM lParam)
 {
 	return DefWindowProc(window, message, wParam, lParam);
+}
+
+void SwapchainResolutionDepthTest::cleanup(IUnknown* input)
+{
+	if (input)
+	{
+		input->Release();
+	}
 }
