@@ -47,22 +47,16 @@ std::string SwapchainResolutionViewportTest::test()
 	unit.initialise(device, window);
 	unit.bind(context);
 
-	UINT count = 1;
-	D3D11_VIEWPORT viewport = D3D11_VIEWPORT();
-
-	context->RSGetViewports(
-		&count,
-		&viewport
-	);
+	D3D11_VIEWPORT temp = viewport();
 
 	bool success = true;
 
-	if (viewport.Width != resolution[0])
+	if (temp.Width != resolution[0])
 	{
 		success = false;
 	}
 
-	if (viewport.Height != resolution[1])
+	if (temp.Height != resolution[1])
 	{
 		success = false;
 	}
@@ -154,4 +148,17 @@ void SwapchainResolutionViewportTest::initialiseD3D11()
 		&supported,
 		&context
 	);
+}
+
+D3D11_VIEWPORT SwapchainResolutionViewportTest::viewport()
+{
+	UINT count = 1;
+	D3D11_VIEWPORT output = D3D11_VIEWPORT();
+
+	context->RSGetViewports(
+		&count,
+		&output
+	);
+
+	return output;
 }

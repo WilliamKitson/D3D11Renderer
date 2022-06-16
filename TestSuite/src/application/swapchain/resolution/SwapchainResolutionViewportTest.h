@@ -20,6 +20,7 @@ private:
 	void initialiseWindowClass();
 	void initialiseWindow();
 	void initialiseD3D11();
+	D3D11_VIEWPORT viewport();
 
 private:
 	HINSTANCE hInstance;
