@@ -22,16 +22,8 @@ SwapchainIntervalDefaultTest::SwapchainIntervalDefaultTest(HINSTANCE hInstanceIn
 
 SwapchainIntervalDefaultTest::~SwapchainIntervalDefaultTest()
 {
-	if (context)
-	{
-		context->Release();
-	}
-
-	if (device)
-	{
-		device->Release();
-	}
-
+	cleanup(context);
+	cleanup(device);
 	DestroyWindow(window);
 }
 
@@ -56,6 +48,14 @@ std::string SwapchainIntervalDefaultTest::test()
 LRESULT CALLBACK SwapchainIntervalDefaultTest::windowProcedure(HWND window, UINT message, WPARAM wParam, LPARAM lParam)
 {
 	return DefWindowProc(window, message, wParam, lParam);
+}
+
+void SwapchainIntervalDefaultTest::cleanup(IUnknown* input)
+{
+	if (input)
+	{
+		input->Release();
+	}
 }
 
 void SwapchainIntervalDefaultTest::initialiseWindowClass()
