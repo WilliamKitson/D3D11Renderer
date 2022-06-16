@@ -4,6 +4,7 @@
 #include <Windows.h>
 
 #include "SwapchainResolutionViewTest.h"
+#include "SwapchainResolutionDepthTest.h"
 
 class SwapchainResolutionTester
 {
@@ -15,6 +16,7 @@ public:
 
 private:
 	std::string testView();
+	std::string testDepth();
 
 private:
 	HINSTANCE hInstance;
