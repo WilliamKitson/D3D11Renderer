@@ -22,18 +22,7 @@ SwapchainIntervalDefaultTest::~SwapchainIntervalDefaultTest()
 
 std::string SwapchainIntervalDefaultTest::test()
 {
-	WNDCLASS windowClass = WNDCLASS();
-	windowClass.lpfnWndProc = windowProcedure;
-	windowClass.hInstance = hInstance;
-	windowClass.lpszClassName = tag.c_str();
-
-	if (!RegisterClass(&windowClass))
-	{
-		result = E_FAIL;
-		return "swapchain interval default test failed to initialise window class\n";
-	}
-
-	result = S_OK;
+	initialiseWindowClass();
 
 	if (FAILED(result))
 	{
@@ -125,4 +114,20 @@ std::string SwapchainIntervalDefaultTest::test()
 LRESULT CALLBACK SwapchainIntervalDefaultTest::windowProcedure(HWND window, UINT message, WPARAM wParam, LPARAM lParam)
 {
 	return DefWindowProc(window, message, wParam, lParam);
+}
+
+void SwapchainIntervalDefaultTest::initialiseWindowClass()
+{
+	WNDCLASS windowClass = WNDCLASS();
+	windowClass.lpfnWndProc = windowProcedure;
+	windowClass.hInstance = hInstance;
+	windowClass.lpszClassName = tag.c_str();
+
+	if (!RegisterClass(&windowClass))
+	{
+		result = E_FAIL;
+		return;
+	}
+
+	result = S_OK;
 }

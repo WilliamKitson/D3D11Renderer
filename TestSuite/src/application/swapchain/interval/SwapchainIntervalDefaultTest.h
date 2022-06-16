@@ -17,6 +17,7 @@ public:
 
 private:
 	static LRESULT CALLBACK windowProcedure(HWND, UINT, WPARAM, LPARAM);
+	void initialiseWindowClass();
 
 private:
 	HINSTANCE hInstance;
