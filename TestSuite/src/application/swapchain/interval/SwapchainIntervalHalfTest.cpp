@@ -14,18 +14,7 @@ SwapchainIntervalHalfTest::~SwapchainIntervalHalfTest()
 
 std::string SwapchainIntervalHalfTest::test()
 {
-	WNDCLASS windowClass = WNDCLASS();
-	windowClass.lpfnWndProc = windowProcedure;
-	windowClass.hInstance = hInstance;
-	windowClass.lpszClassName = tag.c_str();
-
-	if (!RegisterClass(&windowClass))
-	{
-		result = E_FAIL;
-		return "swapchain interval default test failed to initialise window class\n";
-	}
-
-	result = S_OK;
+	initialiseWindowClass();
 
 	if (FAILED(result))
 	{
@@ -125,4 +114,20 @@ void SwapchainIntervalHalfTest::cleanup(IUnknown* input)
 	{
 		input->Release();
 	}
+}
+
+void SwapchainIntervalHalfTest::initialiseWindowClass()
+{
+	WNDCLASS windowClass = WNDCLASS();
+	windowClass.lpfnWndProc = windowProcedure;
+	windowClass.hInstance = hInstance;
+	windowClass.lpszClassName = tag.c_str();
+
+	if (!RegisterClass(&windowClass))
+	{
+		result = E_FAIL;
+		return;
+	}
+
+	result = S_OK;
 }
