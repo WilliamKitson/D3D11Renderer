@@ -48,35 +48,16 @@ std::string SwapchainResolutionViewTest::test()
 	unit.initialise(device, window);
 	unit.bind(context);
 
-	ID3D11RenderTargetView* view = nullptr;
-
-	context->OMGetRenderTargets(
-		1,
-		&view,
-		nullptr
-	);
-
-	if (!view)
-	{
-		return "swapchain resolution view test failed to initialise view\n";
-	}
-
-	ID3D11Texture2D* backBuffer = nullptr;
-	view->GetResource(reinterpret_cast<ID3D11Resource**>(&backBuffer));
-	cleanup(view);
-
-	D3D11_TEXTURE2D_DESC texture;
-	backBuffer->GetDesc(&texture);
-	cleanup(backBuffer);
+	D3D11_TEXTURE2D_DESC temp = texture();
 
 	bool success = true;
 
-	if (texture.Width != resolution[0])
+	if (temp.Width != resolution[0])
 	{
 		success = false;
 	}
 
-	if (texture.Height != resolution[1])
+	if (temp.Height != resolution[1])
 	{
 		success = false;
 	}
@@ -168,4 +149,30 @@ void SwapchainResolutionViewTest::initialiseD3D11()
 		&supported,
 		&context
 	);
+}
+
+D3D11_TEXTURE2D_DESC SwapchainResolutionViewTest::texture()
+{
+	ID3D11RenderTargetView* view = nullptr;
+
+	context->OMGetRenderTargets(
+		1,
+		&view,
+		nullptr
+	);
+
+	if (!view)
+	{
+		return D3D11_TEXTURE2D_DESC();
+	}
+
+	ID3D11Texture2D* backBuffer = nullptr;
+	view->GetResource(reinterpret_cast<ID3D11Resource**>(&backBuffer));
+	cleanup(view);
+
+	D3D11_TEXTURE2D_DESC output;
+	backBuffer->GetDesc(&output);
+	cleanup(backBuffer);
+
+	return output;
 }
