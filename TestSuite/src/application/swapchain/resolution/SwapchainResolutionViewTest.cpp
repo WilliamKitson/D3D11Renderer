@@ -34,35 +34,20 @@ std::string SwapchainResolutionViewTest::test()
 		return "swapchain resolution view test failed to initialise\n";
 	}
 
+	D3D11Renderer::Swapchain unit;
+	unit.initialise(device, window);
+	unit.bind(context);
+
 	int resolution[2]{
 		1000,
 		2000
 	};
 
-	D3D11Renderer::Swapchain unit;
-
-	unit.initialise(device, window);
-	unit.bind(context);
-
 	unit.setResolution(resolution);
 	unit.initialise(device, window);
 	unit.bind(context);
 
-	D3D11_TEXTURE2D_DESC temp = texture();
-
-	bool success = true;
-
-	if (temp.Width != resolution[0])
-	{
-		success = false;
-	}
-
-	if (temp.Height != resolution[1])
-	{
-		success = false;
-	}
-
-	if (success)
+	if (successful(texture(), resolution))
 	{
 		return std::string();
 	}
@@ -175,4 +160,19 @@ D3D11_TEXTURE2D_DESC SwapchainResolutionViewTest::texture()
 	cleanup(backBuffer);
 
 	return output;
+}
+
+bool SwapchainResolutionViewTest::successful(D3D11_TEXTURE2D_DESC view, int resolution[2])
+{
+	if (view.Width != resolution[0])
+	{
+		return false;
+	}
+
+	if (view.Height != resolution[1])
+	{
+		return false;
+	}
+
+	return true;
 }
