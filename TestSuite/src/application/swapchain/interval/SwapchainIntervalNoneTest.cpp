@@ -39,21 +39,7 @@ std::string SwapchainIntervalNoneTest::test()
 	unit.setFull();
 	unit.setNone();
 
-	int framerate = 0;
-	double elapced = 0.0f;
-	std::chrono::time_point<std::chrono::high_resolution_clock> start = std::chrono::high_resolution_clock::now();
-
-	while (elapced < 1.0f)
-	{
-		unit.update();
-		elapced += (float)std::chrono::duration<double>(std::chrono::high_resolution_clock::now() - start).count();
-		start = std::chrono::high_resolution_clock::now();
-		framerate++;
-	}
-
-	framerate--;
-
-	if (framerate > 144)
+	if (framerate() > 144)
 	{
 		return std::string();
 	}
@@ -140,4 +126,21 @@ void SwapchainIntervalNoneTest::initialiseD3D11()
 		&supported,
 		&context
 	);
+}
+
+int SwapchainIntervalNoneTest::framerate()
+{
+	int output = 0;
+	double elapced = 0.0f;
+	std::chrono::time_point<std::chrono::high_resolution_clock> start = std::chrono::high_resolution_clock::now();
+
+	while (elapced < 1.0f)
+	{
+		unit.update();
+		elapced += (float)std::chrono::duration<double>(std::chrono::high_resolution_clock::now() - start).count();
+		start = std::chrono::high_resolution_clock::now();
+		output++;
+	}
+
+	return output - 1;
 }

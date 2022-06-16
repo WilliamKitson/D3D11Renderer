@@ -21,6 +21,7 @@ private:
 	void initialiseWindowClass();
 	void initialiseWindow();
 	void initialiseD3D11();
+	int framerate();
 
 private:
 	HINSTANCE hInstance;
