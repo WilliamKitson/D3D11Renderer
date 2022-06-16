@@ -14,18 +14,7 @@ SwapchainResolutionDepthTest::~SwapchainResolutionDepthTest()
 
 std::string SwapchainResolutionDepthTest::test()
 {
-	WNDCLASS windowClass = WNDCLASS();
-	windowClass.lpfnWndProc = windowProcedure;
-	windowClass.hInstance = hInstance;
-	windowClass.lpszClassName = tag.c_str();
-
-	if (!RegisterClass(&windowClass))
-	{
-		result = E_FAIL;
-		return "swapchain resolution view test failed to initialise window class\n";
-	}
-
-	result = S_OK;
+	initialiseWindowClass();
 
 	if (FAILED(result))
 	{
@@ -153,4 +142,20 @@ void SwapchainResolutionDepthTest::cleanup(IUnknown* input)
 	{
 		input->Release();
 	}
+}
+
+void SwapchainResolutionDepthTest::initialiseWindowClass()
+{
+	WNDCLASS windowClass = WNDCLASS();
+	windowClass.lpfnWndProc = windowProcedure;
+	windowClass.hInstance = hInstance;
+	windowClass.lpszClassName = tag.c_str();
+
+	if (!RegisterClass(&windowClass))
+	{
+		result = E_FAIL;
+		return;
+	}
+
+	result = S_OK;
 }
