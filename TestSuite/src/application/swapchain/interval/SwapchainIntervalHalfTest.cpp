@@ -38,7 +38,7 @@ std::string SwapchainIntervalHalfTest::test()
 	unit.bind(context);
 	unit.setHalf();
 
-	if (framerate() == 72)
+	if (framerate() < 80)
 	{
 		return std::string();
 	}
@@ -141,5 +141,5 @@ int SwapchainIntervalHalfTest::framerate()
 		output++;
 	}
 
-	return output - 1;
+	return output;
 }
