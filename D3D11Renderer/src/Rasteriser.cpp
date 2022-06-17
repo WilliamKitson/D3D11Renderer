@@ -64,6 +64,5 @@ void D3D11Renderer::Rasteriser::cleanup()
 	if (state)
 	{
 		state->Release();
-		state = nullptr;
 	}
 }
