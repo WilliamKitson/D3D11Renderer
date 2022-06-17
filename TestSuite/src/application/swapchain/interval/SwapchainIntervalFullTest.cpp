@@ -38,7 +38,7 @@ std::string SwapchainIntervalFullTest::test()
 	unit.bind(context);
 	unit.setFull();
 
-	if (framerate() == 144)
+	if (framerate() < 150)
 	{
 		return std::string();
 	}
@@ -141,5 +141,5 @@ int SwapchainIntervalFullTest::framerate()
 		output++;
 	}
 
-	return output - 1;
+	return output;
 }
