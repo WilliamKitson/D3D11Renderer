@@ -38,7 +38,7 @@ std::string SwapchainIntervalQuaterTest::test()
 	unit.bind(context);
 	unit.setQuater();
 
-	if (framerate() == 36)
+	if (framerate() < 40)
 	{
 		return std::string();
 	}
@@ -141,5 +141,5 @@ int SwapchainIntervalQuaterTest::framerate()
 		output++;
 	}
 
-	return output - 1;
+	return output;
 }
