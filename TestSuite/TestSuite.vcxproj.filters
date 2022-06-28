@@ -363,4 +363,7 @@
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="assets\shaders\shaders.hlsl" />
+  </ItemGroup>
 </Project>
