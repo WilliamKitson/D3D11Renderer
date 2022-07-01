@@ -15,6 +15,7 @@ std::string PresentationTester::test()
 	failures += testCamera();
 	failures += testRGB();
 	failures += testRGBA();
+	failures += testCBufferPerObject();
 
 	return failures;
 }
@@ -32,4 +33,9 @@ std::string PresentationTester::testRGB()
 std::string PresentationTester::testRGBA()
 {
 	return RGBATester().test();
+}
+
+std::string PresentationTester::testCBufferPerObject()
+{
+	return CBufferPerObjectTester().test();
 }

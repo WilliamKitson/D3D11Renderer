@@ -178,6 +178,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="src\Camera.h" />
+    <ClInclude Include="src\CBufferPerObject.h" />
     <ClInclude Include="src\Rasteriser.h" />
     <ClInclude Include="src\Resolution.h" />
     <ClInclude Include="src\RGB.h" />
@@ -185,6 +186,7 @@
     <ClInclude Include="src\Swapchain.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\CBufferPerObject.cpp" />
     <ClCompile Include="src\Rasteriser.cpp" />
     <ClCompile Include="src\Resolution.cpp" />
     <ClCompile Include="src\Swapchain.cpp" />

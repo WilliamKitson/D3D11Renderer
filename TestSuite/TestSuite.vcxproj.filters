@@ -189,6 +189,12 @@
     <ClCompile Include="src\application\swapchain\interval\SwapchainIntervalNoneTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\presentation\CBufferPerObject\CBufferPerObjectTransformTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\presentation\CBufferPerObject\CBufferPerObjectTester.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\MemoryTest.h">
@@ -360,6 +366,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\application\swapchain\interval\SwapchainIntervalNoneTest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\presentation\CBufferPerObject\CBufferPerObjectTransformTest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\presentation\CBufferPerObject\CBufferPerObjectTester.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
