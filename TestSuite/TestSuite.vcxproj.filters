@@ -195,6 +195,9 @@
     <ClCompile Include="src\presentation\CBufferPerObject\CBufferPerObjectTester.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\presentation\CBufferPerObject\CBufferPerObjectColourTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\MemoryTest.h">
@@ -372,6 +375,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\presentation\CBufferPerObject\CBufferPerObjectTester.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\presentation\CBufferPerObject\CBufferPerObjectColourTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

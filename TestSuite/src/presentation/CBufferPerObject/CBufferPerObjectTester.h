@@ -1,7 +1,9 @@
 #pragma once
 
 #include <string>
+
 #include "CBufferPerObjectTransformTest.h"
+#include "CBufferPerObjectColourTest.h"
 
 class CBufferPerObjectTester
 {
@@ -13,4 +15,5 @@ public:
 
 private:
 	std::string testTransfrom();
+	std::string testColour();
 };

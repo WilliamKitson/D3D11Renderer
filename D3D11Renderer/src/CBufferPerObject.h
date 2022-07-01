@@ -9,5 +9,6 @@ namespace D3D11Renderer
 
 	public:
 		float transform[16];
+		float colour[4];
 	};
 }

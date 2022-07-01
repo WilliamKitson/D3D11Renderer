@@ -194,6 +194,7 @@
     <ClCompile Include="src\presentation\camera\CameraXposTest.cpp" />
     <ClCompile Include="src\presentation\camera\CameraYposTest.cpp" />
     <ClCompile Include="src\presentation\camera\CameraZposTest.cpp" />
+    <ClCompile Include="src\presentation\CBufferPerObject\CBufferPerObjectColourTest.cpp" />
     <ClCompile Include="src\presentation\CBufferPerObject\CBufferPerObjectTester.cpp" />
     <ClCompile Include="src\presentation\CBufferPerObject\CBufferPerObjectTransformTest.cpp" />
     <ClCompile Include="src\presentation\PresentationTester.cpp" />
@@ -255,6 +256,7 @@
     <ClInclude Include="src\presentation\camera\CameraXposTest.h" />
     <ClInclude Include="src\presentation\camera\CameraYposTest.h" />
     <ClInclude Include="src\presentation\camera\CameraZposTest.h" />
+    <ClInclude Include="src\presentation\CBufferPerObject\CBufferPerObjectColourTest.h" />
     <ClInclude Include="src\presentation\CBufferPerObject\CBufferPerObjectTester.h" />
     <ClInclude Include="src\presentation\CBufferPerObject\CBufferPerObjectTransformTest.h" />
     <ClInclude Include="src\presentation\PresentationTester.h" />

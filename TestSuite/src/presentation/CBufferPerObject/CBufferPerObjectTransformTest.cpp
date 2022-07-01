@@ -15,7 +15,7 @@ std::string CBufferPerObjectTransformTest::test()
 		return std::string();
 	}
 
-	return "CBufferPerObject transform test failed\n";
+	return "CBuffer per object transform test failed\n";
 }
 
 bool CBufferPerObjectTransformTest::success()
