@@ -148,6 +148,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\application\ApplicationTester.cpp" />
+    <ClCompile Include="src\application\perObject\default\PerObjectDefaultTester.cpp" />
+    <ClCompile Include="src\application\perObject\default\PerObjectDefaultTransformTest.cpp" />
+    <ClCompile Include="src\application\perObject\PerObjectTester.cpp" />
     <ClCompile Include="src\application\rasteriser\culling\RasteriserCullingBackTest.cpp" />
     <ClCompile Include="src\application\rasteriser\culling\RasteriserCullingFrontTest.cpp" />
     <ClCompile Include="src\application\rasteriser\culling\RasteriserCullingNoneTest.cpp" />
@@ -211,6 +214,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\application\ApplicationTester.h" />
+    <ClInclude Include="src\application\perObject\default\PerObjectDefaultTester.h" />
+    <ClInclude Include="src\application\perObject\default\PerObjectDefaultTransformTest.h" />
+    <ClInclude Include="src\application\perObject\PerObjectTester.h" />
     <ClInclude Include="src\application\rasteriser\culling\RasteriserCullingBackTest.h" />
     <ClInclude Include="src\application\rasteriser\culling\RasteriserCullingFrontTest.h" />
     <ClInclude Include="src\application\rasteriser\culling\RasteriserCullingNoneTest.h" />

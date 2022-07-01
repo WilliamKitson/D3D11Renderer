@@ -11,12 +11,13 @@ ApplicationTester::~ApplicationTester()
 
 std::string ApplicationTester::test()
 {
-	std::string failures{ "" };
+	std::string output{ "" };
 
-	failures += testSwapchain();
-	failures += testRasteriser();
+	output += testSwapchain();
+	output += testRasteriser();
+	output += testPerObject();
 
-	return failures;
+	return output;
 }
 
 std::string ApplicationTester::testSwapchain()
@@ -27,4 +28,9 @@ std::string ApplicationTester::testSwapchain()
 std::string ApplicationTester::testRasteriser()
 {
 	return RasteriserTester().test();
+}
+
+std::string ApplicationTester::testPerObject()
+{
+	return PerObjectTester().test();
 }

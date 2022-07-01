@@ -4,6 +4,7 @@
 
 #include "swapchain/SwapchainTester.h"
 #include "rasteriser/RasteriserTester.h"
+#include "perObject/PerObjectTester.h"
 
 class ApplicationTester
 {
@@ -16,6 +17,7 @@ public:
 private:
 	std::string testSwapchain();
 	std::string testRasteriser();
+	std::string testPerObject();
 
 private:
 	HINSTANCE hInstance;
