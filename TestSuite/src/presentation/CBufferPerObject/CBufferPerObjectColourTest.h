@@ -10,4 +10,7 @@ public:
 	~CBufferPerObjectColourTest();
 
 	std::string test();
+
+private:
+	bool success();
 };
