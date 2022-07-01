@@ -13,5 +13,6 @@ namespace D3D11Renderer
 
 	private:
 		void initTransform();
+		void initColour();
 	};
 }

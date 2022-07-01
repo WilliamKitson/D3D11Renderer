@@ -4,11 +4,7 @@ D3D11Renderer::CBufferPerObject::CBufferPerObject()
 	: transform(), colour()
 {
 	initTransform();
-
-	for (int i{ 0 }; i < 4; i++)
-	{
-		colour[i] = 1.0f;
-	}
+	initColour();
 }
 
 void D3D11Renderer::CBufferPerObject::initTransform()
@@ -16,5 +12,13 @@ void D3D11Renderer::CBufferPerObject::initTransform()
 	for (int i{ 0 }; i < 16; i++)
 	{
 		transform[i] = 1.0f;
+	}
+}
+
+void D3D11Renderer::CBufferPerObject::initColour()
+{
+	for (int i{ 0 }; i < 4; i++)
+	{
+		colour[i] = 1.0f;
 	}
 }
