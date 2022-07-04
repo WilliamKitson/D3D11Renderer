@@ -16,10 +16,12 @@ public:
 private:
 	void cleanup(IUnknown*);
 	void initialiseD3D11();
+	void initialiseData();
 
 private:
 	ID3D11Device* device;
 	ID3D11DeviceContext* context;
 	ID3D11Buffer* perObject;
 	HRESULT result;
+	D3D11Renderer::CBufferPerObject data;
 };

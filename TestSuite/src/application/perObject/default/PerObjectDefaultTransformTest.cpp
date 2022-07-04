@@ -1,7 +1,7 @@
 #include "PerObjectDefaultTransformTest.h"
 
 PerObjectDefaultTransformTest::PerObjectDefaultTransformTest()
-	: device{ nullptr }, context{ nullptr }, perObject{ nullptr }, result()
+	: device{ nullptr }, context{ nullptr }, perObject{ nullptr }, result(), data()
 {
 }
 
@@ -37,54 +37,12 @@ std::string PerObjectDefaultTransformTest::test()
 		return "per object default transform test failed to initialise per object\n";
 	}
 
-	D3D11_BUFFER_DESC readDescription{
-		sizeof(D3D11Renderer::CBufferPerObject),
-		D3D11_USAGE_STAGING,
-		0,
-		D3D11_CPU_ACCESS_READ,
-		0,
-		0
-	};
+	initialiseData();
 
-	/// STAGING BUFFER TO ACCESS CONSTANT BUFFER DATA
-
-	ID3D11Buffer* readBuffer;
-
-	result = device->CreateBuffer(
-		&readDescription,
-		NULL,
-		&readBuffer
-	);
-
-	if (!readBuffer)
+	if (FAILED(result))
 	{
-		return "per object default transform test failed to initialise read buffer\n";
+		return "per object default transform test failed to initialise data\n";
 	}
-
-	context->CopyResource(
-		readBuffer,
-		perObject
-	);
-
-	D3D11_MAPPED_SUBRESOURCE subresource;
-
-	result = context->Map(
-		readBuffer,
-		NULL,
-		D3D11_MAP_READ,
-		NULL,
-		&subresource
-	);
-
-	D3D11Renderer::CBufferPerObject data;
-
-	memcpy(
-		&data,
-		subresource.pData,
-		sizeof(data)
-	);
-
-	cleanup(readBuffer);
 
 	int successes = 0;
 
@@ -129,4 +87,52 @@ void PerObjectDefaultTransformTest::initialiseD3D11()
 		&supported,
 		&context
 	);
+}
+
+void PerObjectDefaultTransformTest::initialiseData()
+{
+	D3D11_BUFFER_DESC readDescription{
+		sizeof(D3D11Renderer::CBufferPerObject),
+		D3D11_USAGE_STAGING,
+		0,
+		D3D11_CPU_ACCESS_READ,
+		0,
+		0
+	};
+
+	ID3D11Buffer* readBuffer;
+
+	result = device->CreateBuffer(
+		&readDescription,
+		NULL,
+		&readBuffer
+	);
+
+	if (FAILED(result))
+	{
+		return;
+	}
+
+	context->CopyResource(
+		readBuffer,
+		perObject
+	);
+
+	D3D11_MAPPED_SUBRESOURCE subresource;
+
+	result = context->Map(
+		readBuffer,
+		NULL,
+		D3D11_MAP_READ,
+		NULL,
+		&subresource
+	);
+
+	memcpy(
+		&data,
+		subresource.pData,
+		sizeof(data)
+	);
+
+	cleanup(readBuffer);
 }
