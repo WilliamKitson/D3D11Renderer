@@ -141,17 +141,22 @@ void PerObjectDefaultTransformTest::initialiseRead()
 
 bool PerObjectDefaultTransformTest::success()
 {
-	int successes = 0;
-
-	for (int i{ 0 }; i < 16; i++)
-	{
-		successes += data.transform[i] == D3D11Renderer::CBufferPerObject().transform[i];
-	}
-
-	if (successes == 16)
+	if (successes() == 16)
 	{
 		return true;
 	}
 
 	return false;
+}
+
+int PerObjectDefaultTransformTest::successes()
+{
+	int output = 0;
+
+	for (int i{ 0 }; i < 16; i++)
+	{
+		output += data.transform[i] == D3D11Renderer::CBufferPerObject().transform[i];
+	}
+
+	return output;
 }
