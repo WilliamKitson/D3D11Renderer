@@ -7,20 +7,9 @@ PerObjectInvalidDeviceTest::PerObjectInvalidDeviceTest()
 
 PerObjectInvalidDeviceTest::~PerObjectInvalidDeviceTest()
 {
-	if (objectBuffer)
-	{
-		objectBuffer->Release();
-	}
-
-	if (context)
-	{
-		context->Release();
-	}
-
-	if (device)
-	{
-		device->Release();
-	}
+	cleanup(objectBuffer);
+	cleanup(context);
+	cleanup(device);
 }
 
 std::string PerObjectInvalidDeviceTest::test()
@@ -66,4 +55,12 @@ std::string PerObjectInvalidDeviceTest::test()
 	}
 
 	return "per object invalid device test failed\n";
+}
+
+void PerObjectInvalidDeviceTest::cleanup(IUnknown* input)
+{
+	if (input)
+	{
+		input->Release();
+	}
 }
