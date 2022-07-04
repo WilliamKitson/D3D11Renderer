@@ -16,6 +16,12 @@ D3D11Renderer::PerObject::~PerObject()
 
 void D3D11Renderer::PerObject::initialise(ID3D11Device* input)
 {
+	if (cBuffer)
+	{
+		cBuffer->Release();
+		cBuffer = nullptr;
+	}
+
 	D3D11_BUFFER_DESC perObjectDescription{
 		sizeof(CBufferPerObject),
 		D3D11_USAGE_DEFAULT,
@@ -45,4 +51,12 @@ void D3D11Renderer::PerObject::bind(ID3D11DeviceContext* input)
 		1,
 		&cBuffer
 	);
+}
+
+void D3D11Renderer::PerObject::setTransform(float input[16])
+{
+	for (int i{ 0 }; i < 16; i++)
+	{
+		data.transform[i] = input[i];
+	}
 }
