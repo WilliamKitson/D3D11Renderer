@@ -185,6 +185,7 @@
     <ClCompile Include="src\application\swapchain\interval\SwapchainIntervalTester.cpp" />
     <ClCompile Include="src\application\swapchain\invalid\SwapchainInvalidDeviceTest.cpp" />
     <ClCompile Include="src\application\swapchain\invalid\SwapchainInvalidTester.cpp" />
+    <ClCompile Include="src\application\swapchain\invalid\SwapchainInvalidWindowTest.cpp" />
     <ClCompile Include="src\application\swapchain\resolution\SwapchainResolutionDepthTest.cpp" />
     <ClCompile Include="src\application\swapchain\resolution\SwapchainResolutionTester.cpp" />
     <ClCompile Include="src\application\swapchain\resolution\SwapchainResolutionViewportTest.cpp" />
@@ -263,6 +264,7 @@
     <ClInclude Include="src\application\swapchain\interval\SwapchainIntervalTester.h" />
     <ClInclude Include="src\application\swapchain\invalid\SwapchainInvalidDeviceTest.h" />
     <ClInclude Include="src\application\swapchain\invalid\SwapchainInvalidTester.h" />
+    <ClInclude Include="src\application\swapchain\invalid\SwapchainInvalidWindowTest.h" />
     <ClInclude Include="src\application\swapchain\resolution\SwapchainResolutionDepthTest.h" />
     <ClInclude Include="src\application\swapchain\resolution\SwapchainResolutionTester.h" />
     <ClInclude Include="src\application\swapchain\resolution\SwapchainResolutionViewportTest.h" />

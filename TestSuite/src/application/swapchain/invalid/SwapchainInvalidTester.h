@@ -1,7 +1,9 @@
 #pragma once
 
 #include <string>
+
 #include "SwapchainInvalidDeviceTest.h"
+#include "SwapchainInvalidWindowTest.h"
 
 class SwapchainInvalidTester
 {
@@ -13,6 +15,7 @@ public:
 
 private:
 	std::string testDevice();
+	std::string testWindow();
 
 private:
 	HINSTANCE hInstance;

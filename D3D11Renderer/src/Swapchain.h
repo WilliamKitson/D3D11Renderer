@@ -24,6 +24,7 @@ namespace D3D11Renderer
 		void cleanup();
 		void cleanup(IUnknown*);
 		void validate(IUnknown*);
+		void validate(HWND);
 		void initialiseState(ID3D11Device*, HWND);
 		IDXGIFactory* getFactory(ID3D11Device*);
 		IDXGIAdapter* getAdapter(ID3D11Device*);

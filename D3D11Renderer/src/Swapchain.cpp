@@ -15,6 +15,7 @@ void D3D11Renderer::Swapchain::initialise(ID3D11Device* device, HWND window)
 	try
 	{
 		validate(device);
+		validate(window);
 	}
 	catch (int)
 	{
@@ -82,6 +83,16 @@ void D3D11Renderer::Swapchain::cleanup(IUnknown* input)
 }
 
 void D3D11Renderer::Swapchain::validate(IUnknown* input)
+{
+	if (input)
+	{
+		return;
+	}
+
+	throw int();
+}
+
+void D3D11Renderer::Swapchain::validate(HWND input)
 {
 	if (input)
 	{
