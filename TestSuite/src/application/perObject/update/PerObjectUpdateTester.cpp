@@ -20,7 +20,7 @@ std::string PerObjectUpdateTester::test()
 
 std::string PerObjectUpdateTester::testTransform()
 {
-	return PerObjectUpdateTransformTest().test();
+	return PerObjectReloadTransformTest().test();
 }
 
 std::string PerObjectUpdateTester::testColour()

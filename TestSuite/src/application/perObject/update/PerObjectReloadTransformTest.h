@@ -5,11 +5,11 @@
 
 #include "PerObject.h"
 
-class PerObjectUpdateTransformTest
+class PerObjectReloadTransformTest
 {
 public:
-	PerObjectUpdateTransformTest();
-	~PerObjectUpdateTransformTest();
+	PerObjectReloadTransformTest();
+	~PerObjectReloadTransformTest();
 
 	std::string test();
 

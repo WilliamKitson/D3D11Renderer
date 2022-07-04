@@ -1,12 +1,12 @@
-#include "PerObjectUpdateTransformTest.h"
+#include "PerObjectReloadTransformTest.h"
 
-PerObjectUpdateTransformTest::PerObjectUpdateTransformTest()
+PerObjectReloadTransformTest::PerObjectReloadTransformTest()
 	: device{ nullptr }, context{ nullptr }, objectBuffer{ nullptr }, readBuffer{ nullptr }, result(), update(), data()
 {
 	initialiseUpdate();
 }
 
-PerObjectUpdateTransformTest::~PerObjectUpdateTransformTest()
+PerObjectReloadTransformTest::~PerObjectReloadTransformTest()
 {
 	cleanup(readBuffer);
 	cleanup(objectBuffer);
@@ -14,13 +14,13 @@ PerObjectUpdateTransformTest::~PerObjectUpdateTransformTest()
 	cleanup(device);
 }
 
-std::string PerObjectUpdateTransformTest::test()
+std::string PerObjectReloadTransformTest::test()
 {
 	initialiseD3D11();
 
 	if (FAILED(result))
 	{
-		return "per object update transform test failed to initialise D3D11\n";
+		return "per object reload transform test failed to initialise D3D11\n";
 	}
 
 	D3D11Renderer::PerObject unit;
@@ -36,7 +36,7 @@ std::string PerObjectUpdateTransformTest::test()
 
 	if (FAILED(result))
 	{
-		return "per object update transform test failed to initialise data\n";
+		return "per object reload transform test failed to initialise data\n";
 	}
 
 	if (success())
@@ -44,10 +44,10 @@ std::string PerObjectUpdateTransformTest::test()
 		return std::string();
 	}
 
-	return "per object update transform test failed\n";
+	return "per object reload transform test failed\n";
 }
 
-void PerObjectUpdateTransformTest::initialiseUpdate()
+void PerObjectReloadTransformTest::initialiseUpdate()
 {
 	for (int i{ 0 }; i < 16; i++)
 	{
@@ -55,7 +55,7 @@ void PerObjectUpdateTransformTest::initialiseUpdate()
 	}
 }
 
-void PerObjectUpdateTransformTest::cleanup(IUnknown* input)
+void PerObjectReloadTransformTest::cleanup(IUnknown* input)
 {
 	if (input)
 	{
@@ -63,7 +63,7 @@ void PerObjectUpdateTransformTest::cleanup(IUnknown* input)
 	}
 }
 
-void PerObjectUpdateTransformTest::initialiseD3D11()
+void PerObjectReloadTransformTest::initialiseD3D11()
 {
 	D3D_FEATURE_LEVEL levels[] = {
 		D3D_FEATURE_LEVEL_11_0
@@ -85,7 +85,7 @@ void PerObjectUpdateTransformTest::initialiseD3D11()
 	);
 }
 
-void PerObjectUpdateTransformTest::initialiseData()
+void PerObjectReloadTransformTest::initialiseData()
 {
 	initialiseObject();
 	initialiseRead();
@@ -117,7 +117,7 @@ void PerObjectUpdateTransformTest::initialiseData()
 	);
 }
 
-void PerObjectUpdateTransformTest::initialiseObject()
+void PerObjectReloadTransformTest::initialiseObject()
 {
 	context->VSGetConstantBuffers(
 		0,
@@ -134,7 +134,7 @@ void PerObjectUpdateTransformTest::initialiseObject()
 	result = S_OK;
 }
 
-void PerObjectUpdateTransformTest::initialiseRead()
+void PerObjectReloadTransformTest::initialiseRead()
 {
 	D3D11_BUFFER_DESC readDescription{
 		sizeof(D3D11Renderer::CBufferPerObject),
@@ -152,7 +152,7 @@ void PerObjectUpdateTransformTest::initialiseRead()
 	);
 }
 
-bool PerObjectUpdateTransformTest::success()
+bool PerObjectReloadTransformTest::success()
 {
 	if (successes() == 16)
 	{
@@ -162,7 +162,7 @@ bool PerObjectUpdateTransformTest::success()
 	return false;
 }
 
-int PerObjectUpdateTransformTest::successes()
+int PerObjectReloadTransformTest::successes()
 {
 	int output = 0;
 
