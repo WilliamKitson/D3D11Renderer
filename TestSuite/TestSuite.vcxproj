@@ -148,6 +148,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\application\ApplicationTester.cpp" />
+    <ClCompile Include="src\application\perObject\default\PerObjectDefaultColourTest.cpp" />
     <ClCompile Include="src\application\perObject\default\PerObjectDefaultTester.cpp" />
     <ClCompile Include="src\application\perObject\default\PerObjectDefaultTransformTest.cpp" />
     <ClCompile Include="src\application\perObject\PerObjectTester.cpp" />
@@ -214,6 +215,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\application\ApplicationTester.h" />
+    <ClInclude Include="src\application\perObject\default\PerObjectDefaultColourTest.h" />
     <ClInclude Include="src\application\perObject\default\PerObjectDefaultTester.h" />
     <ClInclude Include="src\application\perObject\default\PerObjectDefaultTransformTest.h" />
     <ClInclude Include="src\application\perObject\PerObjectTester.h" />

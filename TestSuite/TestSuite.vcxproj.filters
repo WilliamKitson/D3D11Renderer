@@ -207,6 +207,9 @@
     <ClCompile Include="src\application\perObject\PerObjectTester.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\application\perObject\default\PerObjectDefaultColourTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\MemoryTest.h">
@@ -396,6 +399,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\application\perObject\PerObjectTester.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\application\perObject\default\PerObjectDefaultColourTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
