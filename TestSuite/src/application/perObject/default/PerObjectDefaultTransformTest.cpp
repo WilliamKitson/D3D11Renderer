@@ -1,13 +1,14 @@
 #include "PerObjectDefaultTransformTest.h"
 
 PerObjectDefaultTransformTest::PerObjectDefaultTransformTest()
-	: device{ nullptr }, context{ nullptr }, perObject{ nullptr }, result(), data()
+	: device{ nullptr }, context{ nullptr }, objectBuffer{ nullptr }, readBuffer{ nullptr }, result(), data()
 {
 }
 
 PerObjectDefaultTransformTest::~PerObjectDefaultTransformTest()
 {
-	cleanup(perObject);
+	cleanup(readBuffer);
+	cleanup(objectBuffer);
 	cleanup(context);
 	cleanup(device);
 }
@@ -25,17 +26,6 @@ std::string PerObjectDefaultTransformTest::test()
 
 	unit.initialise(device);
 	unit.bind(context);
-
-	context->VSGetConstantBuffers(
-		0,
-		1,
-		&perObject
-	);
-
-	if (!perObject)
-	{
-		return "per object default transform test failed to initialise per object\n";
-	}
 
 	initialiseData();
 
@@ -84,22 +74,19 @@ void PerObjectDefaultTransformTest::initialiseD3D11()
 
 void PerObjectDefaultTransformTest::initialiseData()
 {
-	D3D11_BUFFER_DESC readDescription{
-		sizeof(D3D11Renderer::CBufferPerObject),
-		D3D11_USAGE_STAGING,
+	context->VSGetConstantBuffers(
 		0,
-		D3D11_CPU_ACCESS_READ,
-		0,
-		0
-	};
-
-	ID3D11Buffer* readBuffer;
-
-	result = device->CreateBuffer(
-		&readDescription,
-		NULL,
-		&readBuffer
+		1,
+		&objectBuffer
 	);
+
+	if (!objectBuffer)
+	{
+		result = E_FAIL;
+		return;
+	}
+
+	initialiseRead();
 
 	if (FAILED(result))
 	{
@@ -108,7 +95,7 @@ void PerObjectDefaultTransformTest::initialiseData()
 
 	context->CopyResource(
 		readBuffer,
-		perObject
+		objectBuffer
 	);
 
 	D3D11_MAPPED_SUBRESOURCE subresource;
@@ -126,8 +113,24 @@ void PerObjectDefaultTransformTest::initialiseData()
 		subresource.pData,
 		sizeof(data)
 	);
+}
 
-	cleanup(readBuffer);
+void PerObjectDefaultTransformTest::initialiseRead()
+{
+	D3D11_BUFFER_DESC readDescription{
+		sizeof(D3D11Renderer::CBufferPerObject),
+		D3D11_USAGE_STAGING,
+		0,
+		D3D11_CPU_ACCESS_READ,
+		0,
+		0
+	};
+
+	result = device->CreateBuffer(
+		&readDescription,
+		NULL,
+		&readBuffer
+	);
 }
 
 bool PerObjectDefaultTransformTest::success()
