@@ -15,7 +15,6 @@ std::string CameraTester::test()
 	output += testPos();
 	output += testRot();
 	output += testFrustum();
-	output += testClipping();
 
 	return output;
 }
@@ -33,9 +32,4 @@ std::string CameraTester::testRot()
 std::string CameraTester::testFrustum()
 {
 	return CameraFrustumTest().test();
-}
-
-std::string CameraTester::testClipping()
-{
-	return CameraClippingTest().test();
 }
