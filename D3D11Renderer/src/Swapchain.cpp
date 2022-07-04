@@ -12,6 +12,15 @@ D3D11Renderer::Swapchain::~Swapchain()
 
 void D3D11Renderer::Swapchain::initialise(ID3D11Device* device, HWND window)
 {
+	try
+	{
+		validate(device);
+	}
+	catch (int)
+	{
+		return;
+	}
+
 	cleanup();
 	initialiseState(device,window);
 	initialiseView(device);
@@ -70,6 +79,16 @@ void D3D11Renderer::Swapchain::cleanup(IUnknown* input)
 	{
 		input->Release();
 	}
+}
+
+void D3D11Renderer::Swapchain::validate(IUnknown* input)
+{
+	if (input)
+	{
+		return;
+	}
+
+	throw int();
 }
 
 void D3D11Renderer::Swapchain::initialiseState(ID3D11Device* device, HWND window)

@@ -16,6 +16,7 @@ std::string SwapchainTester::test()
 	output += testDefault();
 	output += testResolution();
 	output += testInterval();
+	output += testInvalid();
 
 	return output;
 }
@@ -33,4 +34,9 @@ std::string SwapchainTester::testResolution()
 std::string SwapchainTester::testInterval()
 {
 	return SwapchainIntervalTester(hInstance, nCmdShow).test();
+}
+
+std::string SwapchainTester::testInvalid()
+{
+	return SwapchainInvalidTester(hInstance, nCmdShow).test();
 }
