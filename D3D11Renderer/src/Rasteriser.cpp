@@ -53,10 +53,18 @@ void D3D11Renderer::Rasteriser::setBack()
 
 void D3D11Renderer::Rasteriser::initialise()
 {
-	ZeroMemory(&description, sizeof(description));
-	description.FillMode = D3D11_FILL_SOLID;
-	description.CullMode = D3D11_CULL_BACK;
-	description.DepthClipEnable = true;
+	description = {
+		D3D11_FILL_SOLID,
+		D3D11_CULL_BACK,
+		false,
+		0,
+		0.0f,
+		0.0f,
+		true,
+		false,
+		false,
+		false
+	};
 }
 
 void D3D11Renderer::Rasteriser::cleanup()
