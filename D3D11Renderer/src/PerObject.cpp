@@ -21,28 +21,7 @@ void D3D11Renderer::PerObject::initialise(ID3D11Device* input)
 		return;
 	}
 
-	cleanup();
-
-	D3D11_BUFFER_DESC perObjectDescription{
-		sizeof(CBufferPerObject),
-		D3D11_USAGE_DEFAULT,
-		D3D11_BIND_CONSTANT_BUFFER,
-		0,
-		0,
-		0
-	};
-
-	D3D11_SUBRESOURCE_DATA subresource{
-		&data,
-		0,
-		0
-	};
-
-	HRESULT result = input->CreateBuffer(
-		&perObjectDescription,
-		&subresource,
-		&cBuffer
-	);
+	create(input);
 }
 
 void D3D11Renderer::PerObject::bind(ID3D11DeviceContext* input)
@@ -87,4 +66,30 @@ void D3D11Renderer::PerObject::validate(IUnknown* input)
 	}
 
 	throw int();
+}
+
+void D3D11Renderer::PerObject::create(ID3D11Device* input)
+{
+	cleanup();
+
+	D3D11_BUFFER_DESC perObjectDescription{
+		sizeof(CBufferPerObject),
+		D3D11_USAGE_DEFAULT,
+		D3D11_BIND_CONSTANT_BUFFER,
+		0,
+		0,
+		0
+	};
+
+	D3D11_SUBRESOURCE_DATA subresource{
+		&data,
+		0,
+		0
+	};
+
+	HRESULT result = input->CreateBuffer(
+		&perObjectDescription,
+		&subresource,
+		&cBuffer
+	);
 }

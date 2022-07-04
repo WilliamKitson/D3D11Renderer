@@ -19,6 +19,7 @@ namespace D3D11Renderer
 	private:
 		void cleanup();
 		void validate(IUnknown*);
+		void create(ID3D11Device*);
 
 	private:
 		ID3D11Buffer* cBuffer;
