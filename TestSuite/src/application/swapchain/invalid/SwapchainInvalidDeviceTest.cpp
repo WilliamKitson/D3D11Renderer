@@ -14,12 +14,9 @@ SwapchainInvalidDeviceTest::~SwapchainInvalidDeviceTest()
 
 std::string SwapchainInvalidDeviceTest::test()
 {
-	WNDCLASS windowClass = WNDCLASS();
-	windowClass.lpfnWndProc = windowProcedure;
-	windowClass.hInstance = hInstance;
-	windowClass.lpszClassName = tag.c_str();
+	initialiseWindowClass();
 
-	if (!RegisterClass(&windowClass))
+	if (FAILED(result))
 	{
 		return "swapchain invalid device test failed to initialise window class\n";
 	}
@@ -104,4 +101,20 @@ void SwapchainInvalidDeviceTest::cleanup(IUnknown* input)
 	{
 		input->Release();
 	}
+}
+
+void SwapchainInvalidDeviceTest::initialiseWindowClass()
+{
+	WNDCLASS windowClass = WNDCLASS();
+	windowClass.lpfnWndProc = windowProcedure;
+	windowClass.hInstance = hInstance;
+	windowClass.lpszClassName = tag.c_str();
+
+	if (!RegisterClass(&windowClass))
+	{
+		result = E_FAIL;
+		return;
+	}
+
+	result = S_OK;
 }
