@@ -1,7 +1,9 @@
 #pragma once
 
 #include <string>
+
 #include "PerObjectUpdateTransformTest.h"
+#include "PerObjectUpdateColourTest.h"
 
 class PerObjectUpdateTester
 {
@@ -13,4 +15,5 @@ public:
 
 private:
 	std::string testTransform();
+	std::string testColour();
 };

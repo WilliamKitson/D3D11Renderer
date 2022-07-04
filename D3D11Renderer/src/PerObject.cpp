@@ -53,6 +53,14 @@ void D3D11Renderer::PerObject::setTransform(float input[16])
 	}
 }
 
+void D3D11Renderer::PerObject::setColour(float input[4])
+{
+	for (int i{ 0 }; i < 4; i++)
+	{
+		data.colour[i] = input[i];
+	}
+}
+
 void D3D11Renderer::PerObject::cleanup()
 {
 	if (cBuffer)

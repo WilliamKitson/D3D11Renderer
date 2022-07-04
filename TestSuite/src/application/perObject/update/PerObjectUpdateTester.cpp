@@ -13,6 +13,7 @@ std::string PerObjectUpdateTester::test()
 	std::string output{ "" };
 
 	output += testTransform();
+	output += testColour();
 
 	return output;
 }
@@ -20,4 +21,9 @@ std::string PerObjectUpdateTester::test()
 std::string PerObjectUpdateTester::testTransform()
 {
 	return PerObjectUpdateTransformTest().test();
+}
+
+std::string PerObjectUpdateTester::testColour()
+{
+	return PerObjectUpdateColourTest().test();
 }

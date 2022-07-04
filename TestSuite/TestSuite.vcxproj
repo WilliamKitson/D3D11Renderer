@@ -152,6 +152,7 @@
     <ClCompile Include="src\application\perObject\default\PerObjectDefaultTester.cpp" />
     <ClCompile Include="src\application\perObject\default\PerObjectDefaultTransformTest.cpp" />
     <ClCompile Include="src\application\perObject\PerObjectTester.cpp" />
+    <ClCompile Include="src\application\perObject\update\PerObjectUpdateColourTest.cpp" />
     <ClCompile Include="src\application\perObject\update\PerObjectUpdateTester.cpp" />
     <ClCompile Include="src\application\perObject\update\PerObjectUpdateTransformTest.cpp" />
     <ClCompile Include="src\application\rasteriser\culling\RasteriserCullingBackTest.cpp" />
@@ -221,6 +222,7 @@
     <ClInclude Include="src\application\perObject\default\PerObjectDefaultTester.h" />
     <ClInclude Include="src\application\perObject\default\PerObjectDefaultTransformTest.h" />
     <ClInclude Include="src\application\perObject\PerObjectTester.h" />
+    <ClInclude Include="src\application\perObject\update\PerObjectUpdateColourTest.h" />
     <ClInclude Include="src\application\perObject\update\PerObjectUpdateTester.h" />
     <ClInclude Include="src\application\perObject\update\PerObjectUpdateTransformTest.h" />
     <ClInclude Include="src\application\rasteriser\culling\RasteriserCullingBackTest.h" />
