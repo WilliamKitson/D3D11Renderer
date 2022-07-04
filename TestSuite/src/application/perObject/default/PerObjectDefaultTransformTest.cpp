@@ -74,18 +74,7 @@ void PerObjectDefaultTransformTest::initialiseD3D11()
 
 void PerObjectDefaultTransformTest::initialiseData()
 {
-	context->VSGetConstantBuffers(
-		0,
-		1,
-		&objectBuffer
-	);
-
-	if (!objectBuffer)
-	{
-		result = E_FAIL;
-		return;
-	}
-
+	initialiseObject();
 	initialiseRead();
 
 	if (FAILED(result))
@@ -113,6 +102,23 @@ void PerObjectDefaultTransformTest::initialiseData()
 		subresource.pData,
 		sizeof(data)
 	);
+}
+
+void PerObjectDefaultTransformTest::initialiseObject()
+{
+	context->VSGetConstantBuffers(
+		0,
+		1,
+		&objectBuffer
+	);
+
+	if (!objectBuffer)
+	{
+		result = E_FAIL;
+		return;
+	}
+
+	result = S_OK;
 }
 
 void PerObjectDefaultTransformTest::initialiseRead()
