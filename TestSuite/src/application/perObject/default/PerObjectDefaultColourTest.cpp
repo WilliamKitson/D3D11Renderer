@@ -141,17 +141,22 @@ void PerObjectDefaultColourTest::initialiseRead()
 
 bool PerObjectDefaultColourTest::success()
 {
-	int successes = 0;
-
-	for (int i{ 0 }; i < 4; i++)
-	{
-		successes += data.colour[i] == D3D11Renderer::CBufferPerObject().colour[i];
-	}
-
-	if (successes == 4)
+	if (successes() == 4)
 	{
 		return true;
 	}
 
 	return false;
+}
+
+int PerObjectDefaultColourTest::successes()
+{
+	int output = 0;
+
+	for (int i{ 0 }; i < 4; i++)
+	{
+		output += data.colour[i] == D3D11Renderer::CBufferPerObject().colour[i];
+	}
+
+	return output;
 }
