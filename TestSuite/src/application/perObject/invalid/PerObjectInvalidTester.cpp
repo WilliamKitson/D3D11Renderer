@@ -14,6 +14,7 @@ std::string PerObjectInvalidTester::test()
 
 	output += testDevice();
 	output += testBind();
+	output += testApply();
 
 	return output;
 }
@@ -26,4 +27,9 @@ std::string PerObjectInvalidTester::testDevice()
 std::string PerObjectInvalidTester::testBind()
 {
 	return PerObjectInvalidBindTest().test();
+}
+
+std::string PerObjectInvalidTester::testApply()
+{
+	return PerObjectInvalidApplyTest().test();
 }

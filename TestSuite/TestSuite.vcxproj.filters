@@ -270,6 +270,9 @@
     <ClCompile Include="src\application\perObject\invalid\PerObjectInvalidBindTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\application\perObject\invalid\PerObjectInvalidApplyTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\MemoryTest.h">
@@ -522,6 +525,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\application\perObject\invalid\PerObjectInvalidBindTest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\application\perObject\invalid\PerObjectInvalidApplyTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
