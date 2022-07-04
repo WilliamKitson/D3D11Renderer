@@ -14,24 +14,7 @@ PerObjectInvalidDeviceTest::~PerObjectInvalidDeviceTest()
 
 std::string PerObjectInvalidDeviceTest::test()
 {
-	D3D_FEATURE_LEVEL levels[] = {
-		D3D_FEATURE_LEVEL_11_0
-	};
-
-	D3D_FEATURE_LEVEL supported;
-
-	result = D3D11CreateDevice(
-		0,
-		D3D_DRIVER_TYPE_HARDWARE,
-		NULL,
-		D3D11_CREATE_DEVICE_DEBUG,
-		levels,
-		1,
-		D3D11_SDK_VERSION,
-		&device,
-		&supported,
-		&context
-	);
+	initialise();
 
 	if (FAILED(result))
 	{
@@ -63,4 +46,26 @@ void PerObjectInvalidDeviceTest::cleanup(IUnknown* input)
 	{
 		input->Release();
 	}
+}
+
+void PerObjectInvalidDeviceTest::initialise()
+{
+	D3D_FEATURE_LEVEL levels[] = {
+		D3D_FEATURE_LEVEL_11_0
+	};
+
+	D3D_FEATURE_LEVEL supported;
+
+	result = D3D11CreateDevice(
+		0,
+		D3D_DRIVER_TYPE_HARDWARE,
+		NULL,
+		D3D11_CREATE_DEVICE_DEBUG,
+		levels,
+		1,
+		D3D11_SDK_VERSION,
+		&device,
+		&supported,
+		&context
+	);
 }
