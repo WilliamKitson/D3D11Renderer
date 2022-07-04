@@ -21,6 +21,7 @@ void D3D11Renderer::PerObject::initialise(ID3D11Device* input)
 		return;
 	}
 
+	cleanup();
 	create(input);
 }
 
@@ -100,8 +101,6 @@ void D3D11Renderer::PerObject::validate(IUnknown* input)
 
 void D3D11Renderer::PerObject::create(ID3D11Device* input)
 {
-	cleanup();
-
 	D3D11_BUFFER_DESC perObjectDescription{
 		sizeof(CBufferPerObject),
 		D3D11_USAGE_DEFAULT,
