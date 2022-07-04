@@ -208,9 +208,10 @@
     <ClCompile Include="src\presentation\camera\CameraClippingTest.cpp" />
     <ClCompile Include="src\presentation\camera\CameraFrustumTest.cpp" />
     <ClCompile Include="src\presentation\camera\CameraTester.cpp" />
-    <ClCompile Include="src\presentation\camera\CameraXposTest.cpp" />
-    <ClCompile Include="src\presentation\camera\CameraYposTest.cpp" />
-    <ClCompile Include="src\presentation\camera\CameraZposTest.cpp" />
+    <ClCompile Include="src\presentation\camera\pos\CameraPosTester.cpp" />
+    <ClCompile Include="src\presentation\camera\pos\CameraXposTest.cpp" />
+    <ClCompile Include="src\presentation\camera\pos\CameraYposTest.cpp" />
+    <ClCompile Include="src\presentation\camera\pos\CameraZposTest.cpp" />
     <ClCompile Include="src\presentation\CBufferPerObject\CBufferPerObjectColourTest.cpp" />
     <ClCompile Include="src\presentation\CBufferPerObject\CBufferPerObjectTester.cpp" />
     <ClCompile Include="src\presentation\CBufferPerObject\CBufferPerObjectTransformTest.cpp" />
@@ -287,9 +288,10 @@
     <ClInclude Include="src\presentation\camera\CameraClippingTest.h" />
     <ClInclude Include="src\presentation\camera\CameraFrustumTest.h" />
     <ClInclude Include="src\presentation\camera\CameraTester.h" />
-    <ClInclude Include="src\presentation\camera\CameraXposTest.h" />
-    <ClInclude Include="src\presentation\camera\CameraYposTest.h" />
-    <ClInclude Include="src\presentation\camera\CameraZposTest.h" />
+    <ClInclude Include="src\presentation\camera\pos\CameraPosTester.h" />
+    <ClInclude Include="src\presentation\camera\pos\CameraXposTest.h" />
+    <ClInclude Include="src\presentation\camera\pos\CameraYposTest.h" />
+    <ClInclude Include="src\presentation\camera\pos\CameraZposTest.h" />
     <ClInclude Include="src\presentation\CBufferPerObject\CBufferPerObjectColourTest.h" />
     <ClInclude Include="src\presentation\CBufferPerObject\CBufferPerObjectTester.h" />
     <ClInclude Include="src\presentation\CBufferPerObject\CBufferPerObjectTransformTest.h" />

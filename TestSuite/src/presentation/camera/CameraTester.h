@@ -2,9 +2,7 @@
 
 #include <string>
 
-#include "CameraXposTest.h"
-#include "CameraYposTest.h"
-#include "CameraZposTest.h"
+#include "pos/CameraPosTester.h"
 #include "CameraFrustumTest.h"
 #include "CameraClippingTest.h"
 
@@ -17,9 +15,7 @@ public:
 	std::string test();
 
 private:
-	std::string testXpos();
-	std::string testYpos();
-	std::string testZpos();
+	std::string testPos();
 	std::string testFrustum();
 	std::string testClipping();
 };

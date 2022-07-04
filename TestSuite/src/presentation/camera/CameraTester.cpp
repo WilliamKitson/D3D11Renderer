@@ -12,28 +12,16 @@ std::string CameraTester::test()
 {
 	std::string failures{ "" };
 
-	failures += testXpos();
-	failures += testYpos();
-	failures += testZpos();
+	failures += testPos();
 	failures += testFrustum();
 	failures += testClipping();
 
 	return failures;
 }
 
-std::string CameraTester::testXpos()
+std::string CameraTester::testPos()
 {
-	return CameraXposTest().test();
-}
-
-std::string CameraTester::testYpos()
-{
-	return CameraYposTest().test();
-}
-
-std::string CameraTester::testZpos()
-{
-	return CameraZposTest().test();
+	return CameraPosTester().test();
 }
 
 std::string CameraTester::testFrustum()

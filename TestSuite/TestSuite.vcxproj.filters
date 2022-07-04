@@ -21,9 +21,6 @@
     <ClCompile Include="src\MemoryTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\presentation\camera\CameraXposTest.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\presentation\camera\CameraTester.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -64,12 +61,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\domain\DomainTester.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\presentation\camera\CameraYposTest.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\presentation\camera\CameraZposTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\presentation\camera\CameraFrustumTest.cpp">
@@ -249,12 +240,21 @@
     <ClCompile Include="src\application\swapchain\invalid\SwapchainInvalidContextTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\presentation\camera\pos\CameraXposTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\presentation\camera\pos\CameraYposTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\presentation\camera\pos\CameraZposTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\presentation\camera\pos\CameraPosTester.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\MemoryTest.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\presentation\camera\CameraXposTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\presentation\camera\CameraTester.h">
@@ -297,12 +297,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\domain\DomainTester.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\presentation\camera\CameraYposTest.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\presentation\camera\CameraZposTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\presentation\camera\CameraFrustumTest.h">
@@ -480,6 +474,18 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\application\swapchain\invalid\SwapchainInvalidContextTest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\presentation\camera\pos\CameraXposTest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\presentation\camera\pos\CameraYposTest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\presentation\camera\pos\CameraZposTest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\presentation\camera\pos\CameraPosTester.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
