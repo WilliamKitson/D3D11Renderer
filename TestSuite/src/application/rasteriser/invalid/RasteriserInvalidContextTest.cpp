@@ -7,20 +7,9 @@ RasteriserInvalidContextTest::RasteriserInvalidContextTest()
 
 RasteriserInvalidContextTest::~RasteriserInvalidContextTest()
 {
-	if (state)
-	{
-		state->Release();
-	}
-
-	if (context)
-	{
-		context->Release();
-	}
-
-	if (device)
-	{
-		device->Release();
-	}
+	cleanup(state);
+	cleanup(context);
+	cleanup(device);
 }
 
 std::string RasteriserInvalidContextTest::test()
@@ -57,4 +46,12 @@ std::string RasteriserInvalidContextTest::test()
 	}
 
 	return "rasteriser invalid context test failed\n";
+}
+
+void RasteriserInvalidContextTest::cleanup(IUnknown* input)
+{
+	if (input)
+	{
+		input->Release();
+	}
 }
