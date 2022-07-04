@@ -21,29 +21,12 @@ std::string SwapchainInvalidDeviceTest::test()
 		return "swapchain invalid device test failed to initialise window class\n";
 	}
 
-	window = CreateWindow(
-		tag.c_str(),
-		tag.c_str(),
-		WS_OVERLAPPEDWINDOW,
-		100,
-		100,
-		960,
-		540,
-		NULL,
-		NULL,
-		hInstance,
-		NULL
-	);
+	initialiseWindow();
 
-	if (!window)
+	if (FAILED(result))
 	{
 		return "swapchain invalid device test failed to initialise window\n";
 	}
-
-	ShowWindow(
-		window,
-		nCmdShow
-	);
 
 	D3D_FEATURE_LEVEL levels[] = {
 		D3D_FEATURE_LEVEL_11_0
@@ -117,4 +100,32 @@ void SwapchainInvalidDeviceTest::initialiseWindowClass()
 	}
 
 	result = S_OK;
+}
+
+void SwapchainInvalidDeviceTest::initialiseWindow()
+{
+	window = CreateWindow(
+		tag.c_str(),
+		tag.c_str(),
+		WS_OVERLAPPEDWINDOW,
+		100,
+		100,
+		960,
+		540,
+		NULL,
+		NULL,
+		hInstance,
+		NULL
+	);
+
+	if (!window)
+	{
+		result = E_FAIL;
+		return;
+	}
+
+	ShowWindow(
+		window,
+		nCmdShow
+	);
 }
