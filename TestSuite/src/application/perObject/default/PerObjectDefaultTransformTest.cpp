@@ -7,23 +7,9 @@ PerObjectDefaultTransformTest::PerObjectDefaultTransformTest()
 
 PerObjectDefaultTransformTest::~PerObjectDefaultTransformTest()
 {
-	if (perObject)
-	{
-		perObject->Release();
-		perObject = nullptr;
-	}
-
-	if (context)
-	{
-		context->Release();
-		context = nullptr;
-	}
-
-	if (device)
-	{
-		device->Release();
-		device = nullptr;
-	}
+	cleanup(perObject);
+	cleanup(context);
+	cleanup(device);
 }
 
 std::string PerObjectDefaultTransformTest::test()
@@ -115,11 +101,7 @@ std::string PerObjectDefaultTransformTest::test()
 		sizeof(data)
 	);
 
-	if (readBuffer)
-	{
-		readBuffer->Release();
-		readBuffer = nullptr;
-	}
+	cleanup(readBuffer);
 
 	int successes = 0;
 
@@ -134,4 +116,12 @@ std::string PerObjectDefaultTransformTest::test()
 	}
 
 	return "per object default transform test failed\n";
+}
+
+void PerObjectDefaultTransformTest::cleanup(IUnknown* input)
+{
+	if (input)
+	{
+		input->Release();
+	}
 }
