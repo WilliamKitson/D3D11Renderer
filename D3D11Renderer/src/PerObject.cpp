@@ -12,7 +12,11 @@ D3D11Renderer::PerObject::~PerObject()
 
 void D3D11Renderer::PerObject::initialise(ID3D11Device* input)
 {
-	if (!input)
+	try
+	{
+		validate(input);
+	}
+	catch (int)
 	{
 		return;
 	}
@@ -73,4 +77,14 @@ void D3D11Renderer::PerObject::cleanup()
 		cBuffer->Release();
 		cBuffer = nullptr;
 	}
+}
+
+void D3D11Renderer::PerObject::validate(IUnknown* input)
+{
+	if (input)
+	{
+		return;
+	}
+
+	throw int();
 }
