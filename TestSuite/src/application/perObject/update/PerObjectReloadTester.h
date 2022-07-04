@@ -5,11 +5,11 @@
 #include "PerObjectReloadTransformTest.h"
 #include "PerObjectReloadColourTest.h"
 
-class PerObjectUpdateTester
+class PerObjectReloadTester
 {
 public:
-	PerObjectUpdateTester();
-	~PerObjectUpdateTester();
+	PerObjectReloadTester();
+	~PerObjectReloadTester();
 
 	std::string test();
 

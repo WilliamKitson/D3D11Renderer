@@ -3,7 +3,7 @@
 #include <string>
 
 #include "default/PerObjectDefaultTester.h"
-#include "update/PerObjectUpdateTester.h"
+#include "update/PerObjectReloadTester.h"
 #include "apply/PerObjectApplyTester.h"
 #include "invalid/PerObjectInvalidTester.h"
 
@@ -17,7 +17,7 @@ public:
 
 private:
 	std::string testDefault();
-	std::string testUpdate();
+	std::string testReload();
 	std::string testApply();
 	std::string testInvalid();
 };

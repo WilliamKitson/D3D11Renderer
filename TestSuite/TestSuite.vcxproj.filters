@@ -198,9 +198,6 @@
     <ClCompile Include="src\application\perObject\default\PerObjectDefaultColourTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\application\perObject\update\PerObjectUpdateTester.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\application\perObject\invalid\PerObjectInvalidDeviceTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -271,6 +268,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\application\perObject\update\PerObjectReloadColourTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\application\perObject\update\PerObjectReloadTester.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -455,9 +455,6 @@
     <ClInclude Include="src\application\perObject\default\PerObjectDefaultColourTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\application\perObject\update\PerObjectUpdateTester.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="src\application\perObject\invalid\PerObjectInvalidDeviceTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -528,6 +525,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\application\perObject\update\PerObjectReloadColourTest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\application\perObject\update\PerObjectReloadTester.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -13,7 +13,7 @@ std::string PerObjectTester::test()
 	std::string output{ "" };
 
 	output += testDefault();
-	output += testUpdate();
+	output += testReload();
 	output += testApply();
 	output += testInvalid();
 
@@ -25,9 +25,9 @@ std::string PerObjectTester::testDefault()
 	return PerObjectDefaultTester().test();
 }
 
-std::string PerObjectTester::testUpdate()
+std::string PerObjectTester::testReload()
 {
-	return PerObjectUpdateTester().test();
+	return PerObjectReloadTester().test();
 }
 
 std::string PerObjectTester::testApply()
