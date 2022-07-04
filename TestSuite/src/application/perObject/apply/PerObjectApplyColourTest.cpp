@@ -1,12 +1,12 @@
-#include "PerObjectApplyTransformTest.h"
+#include "PerObjectApplyColourTest.h"
 
-PerObjectApplyTransformTest::PerObjectApplyTransformTest()
+PerObjectApplyColourTest::PerObjectApplyColourTest()
 	: device{ nullptr }, context{ nullptr }, objectBuffer{ nullptr }, readBuffer{ nullptr }, result(), update(), data()
 {
 	initialiseUpdate();
 }
 
-PerObjectApplyTransformTest::~PerObjectApplyTransformTest()
+PerObjectApplyColourTest::~PerObjectApplyColourTest()
 {
 	cleanup(readBuffer);
 	cleanup(objectBuffer);
@@ -14,13 +14,13 @@ PerObjectApplyTransformTest::~PerObjectApplyTransformTest()
 	cleanup(device);
 }
 
-std::string PerObjectApplyTransformTest::test()
+std::string PerObjectApplyColourTest::test()
 {
 	initialiseD3D11();
 
 	if (FAILED(result))
 	{
-		return "per object apply transform test failed to initialise D3D11\n";
+		return "per object apply colour test failed to initialise D3D11\n";
 	}
 
 	D3D11Renderer::PerObject unit;
@@ -28,14 +28,14 @@ std::string PerObjectApplyTransformTest::test()
 	unit.initialise(device);
 	unit.bind(context);
 
-	unit.setTransform(update.transform);
+	unit.setColour(update.colour);
 	unit.apply(context);
 
 	initialiseData();
 
 	if (FAILED(result))
 	{
-		return "per object apply transform test failed to initialise data\n";
+		return "per object apply colour test failed to initialise data\n";
 	}
 
 	if (success())
@@ -43,18 +43,18 @@ std::string PerObjectApplyTransformTest::test()
 		return std::string();
 	}
 
-	return "per object apply transform test failed\n";
+	return "per object apply colour test failed\n";
 }
 
-void PerObjectApplyTransformTest::initialiseUpdate()
+void PerObjectApplyColourTest::initialiseUpdate()
 {
-	for (int i{ 0 }; i < 16; i++)
+	for (int i{ 0 }; i < 4; i++)
 	{
-		update.transform[i] = (float)i;
+		update.colour[i] = (float)i;
 	}
 }
 
-void PerObjectApplyTransformTest::cleanup(IUnknown* input)
+void PerObjectApplyColourTest::cleanup(IUnknown* input)
 {
 	if (input)
 	{
@@ -62,7 +62,7 @@ void PerObjectApplyTransformTest::cleanup(IUnknown* input)
 	}
 }
 
-void PerObjectApplyTransformTest::initialiseD3D11()
+void PerObjectApplyColourTest::initialiseD3D11()
 {
 	D3D_FEATURE_LEVEL levels[] = {
 		D3D_FEATURE_LEVEL_11_0
@@ -84,7 +84,7 @@ void PerObjectApplyTransformTest::initialiseD3D11()
 	);
 }
 
-void PerObjectApplyTransformTest::initialiseData()
+void PerObjectApplyColourTest::initialiseData()
 {
 	initialiseObject();
 	initialiseRead();
@@ -116,7 +116,7 @@ void PerObjectApplyTransformTest::initialiseData()
 	);
 }
 
-void PerObjectApplyTransformTest::initialiseObject()
+void PerObjectApplyColourTest::initialiseObject()
 {
 	context->VSGetConstantBuffers(
 		0,
@@ -133,7 +133,7 @@ void PerObjectApplyTransformTest::initialiseObject()
 	result = S_OK;
 }
 
-void PerObjectApplyTransformTest::initialiseRead()
+void PerObjectApplyColourTest::initialiseRead()
 {
 	D3D11_BUFFER_DESC readDescription{
 		sizeof(D3D11Renderer::CBufferPerObject),
@@ -151,9 +151,9 @@ void PerObjectApplyTransformTest::initialiseRead()
 	);
 }
 
-bool PerObjectApplyTransformTest::success()
+bool PerObjectApplyColourTest::success()
 {
-	if (successes() == 16)
+	if (successes() == 4)
 	{
 		return true;
 	}
@@ -161,13 +161,13 @@ bool PerObjectApplyTransformTest::success()
 	return false;
 }
 
-int PerObjectApplyTransformTest::successes()
+int PerObjectApplyColourTest::successes()
 {
 	int output = 0;
 
-	for (int i{ 0 }; i < 16; i++)
+	for (int i{ 0 }; i < 4; i++)
 	{
-		output += data.transform[i] == update.transform[i];
+		output += data.colour[i] == update.colour[i];
 	}
 
 	return output;
