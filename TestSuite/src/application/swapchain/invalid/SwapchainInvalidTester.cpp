@@ -15,6 +15,7 @@ std::string SwapchainInvalidTester::test()
 
 	output += testDevice();
 	output += testWindow();
+	output += testContext();
 
 	return output;
 }
@@ -27,4 +28,9 @@ std::string SwapchainInvalidTester::testDevice()
 std::string SwapchainInvalidTester::testWindow()
 {
 	return SwapchainInvalidWindowTest(hInstance, nCmdShow).test();
+}
+
+std::string SwapchainInvalidTester::testContext()
+{
+	return SwapchainInvalidContextTest(hInstance, nCmdShow).test();
 }

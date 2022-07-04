@@ -30,6 +30,15 @@ void D3D11Renderer::Swapchain::initialise(ID3D11Device* device, HWND window)
 
 void D3D11Renderer::Swapchain::bind(ID3D11DeviceContext* input)
 {
+	try
+	{
+		validate(input);
+	}
+	catch (int)
+	{
+		return;
+	}
+
 	bindRenderTargets(input);
 	bindViewport(input);
 }

@@ -246,6 +246,9 @@
     <ClCompile Include="src\application\swapchain\invalid\SwapchainInvalidWindowTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\application\swapchain\invalid\SwapchainInvalidContextTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\MemoryTest.h">
@@ -474,6 +477,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\application\swapchain\invalid\SwapchainInvalidWindowTest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\application\swapchain\invalid\SwapchainInvalidContextTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
