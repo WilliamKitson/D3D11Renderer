@@ -228,6 +228,12 @@
     <ClCompile Include="src\application\perObject\invalid\PerObjectInvalidContextTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\application\rasteriser\invalid\RasteriserInvalidDeviceTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\application\rasteriser\invalid\RasteriserInvalidTester.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\MemoryTest.h">
@@ -438,6 +444,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\application\perObject\invalid\PerObjectInvalidContextTest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\application\rasteriser\invalid\RasteriserInvalidDeviceTest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\application\rasteriser\invalid\RasteriserInvalidTester.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

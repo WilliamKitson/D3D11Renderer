@@ -13,6 +13,15 @@ D3D11Renderer::Rasteriser::~Rasteriser()
 
 void D3D11Renderer::Rasteriser::apply(ID3D11Device* input)
 {
+	try
+	{
+		validate(input);
+	}
+	catch (int)
+	{
+		return;
+	}
+
 	cleanup();
 
 	input->CreateRasterizerState(
@@ -73,4 +82,14 @@ void D3D11Renderer::Rasteriser::cleanup()
 	{
 		state->Release();
 	}
+}
+
+void D3D11Renderer::Rasteriser::validate(IUnknown* input)
+{
+	if (input)
+	{
+		return;
+	}
+
+	throw int();
 }
