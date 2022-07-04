@@ -1,7 +1,9 @@
 #pragma once
 
 #include <string>
+
 #include "RasteriserInvalidDeviceTest.h"
+#include "RasteriserInvalidContextTest.h"
 
 class RasteriserInvalidTester
 {
@@ -13,4 +15,5 @@ public:
 
 private:
 	std::string testDevice();
+	std::string testContext();
 };

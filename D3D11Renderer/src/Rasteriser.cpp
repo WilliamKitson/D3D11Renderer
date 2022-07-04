@@ -32,6 +32,15 @@ void D3D11Renderer::Rasteriser::initialise(ID3D11Device* input)
 
 void D3D11Renderer::Rasteriser::bind(ID3D11DeviceContext* input)
 {
+	try
+	{
+		validate(input);
+	}
+	catch (int)
+	{
+		return;
+	}
+
 	input->RSSetState(state);
 }
 

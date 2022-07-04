@@ -166,6 +166,7 @@
     <ClCompile Include="src\application\rasteriser\default\RasteriserDefaultDepthTest.cpp" />
     <ClCompile Include="src\application\rasteriser\default\RasteriserDefaultModeTest.cpp" />
     <ClCompile Include="src\application\rasteriser\default\RasteriserDefaultTester.cpp" />
+    <ClCompile Include="src\application\rasteriser\invalid\RasteriserInvalidContextTest.cpp" />
     <ClCompile Include="src\application\rasteriser\invalid\RasteriserInvalidDeviceTest.cpp" />
     <ClCompile Include="src\application\rasteriser\invalid\RasteriserInvalidTester.cpp" />
     <ClCompile Include="src\application\rasteriser\mode\RasteriserModeSolidTest.cpp" />
@@ -241,6 +242,7 @@
     <ClInclude Include="src\application\rasteriser\default\RasteriserDefaultDepthTest.h" />
     <ClInclude Include="src\application\rasteriser\default\RasteriserDefaultModeTest.h" />
     <ClInclude Include="src\application\rasteriser\default\RasteriserDefaultTester.h" />
+    <ClInclude Include="src\application\rasteriser\invalid\RasteriserInvalidContextTest.h" />
     <ClInclude Include="src\application\rasteriser\invalid\RasteriserInvalidDeviceTest.h" />
     <ClInclude Include="src\application\rasteriser\invalid\RasteriserInvalidTester.h" />
     <ClInclude Include="src\application\rasteriser\mode\RasteriserModeSolidTest.h" />
