@@ -22,7 +22,7 @@ std::string RasteriserCullingNoneTest::test()
 	D3D11Renderer::Rasteriser unit;
 
 	unit.setNone();
-	unit.apply(device);
+	unit.initialise(device);
 	unit.bind(context);
 
 	if (description().CullMode == D3D11_CULL_NONE)

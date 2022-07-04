@@ -46,7 +46,7 @@ std::string RasteriserInvalidDeviceTest::test()
 
 	D3D11Renderer::Rasteriser unit;
 
-	unit.apply(nullptr);
+	unit.initialise(nullptr);
 	unit.bind(context);
 
 	context->RSGetState(&state);

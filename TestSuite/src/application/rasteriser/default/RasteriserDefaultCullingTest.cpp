@@ -21,7 +21,7 @@ std::string RasteriserDefaultCullingTest::test()
 
 	D3D11Renderer::Rasteriser unit;
 
-	unit.apply(device);
+	unit.initialise(device);
 	unit.bind(context);
 
 	if (description().CullMode == D3D11_CULL_BACK)

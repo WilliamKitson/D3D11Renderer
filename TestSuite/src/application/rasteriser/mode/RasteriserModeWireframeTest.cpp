@@ -22,7 +22,7 @@ std::string RasteriserModeWireframeTest::test()
 	D3D11Renderer::Rasteriser unit;
 
 	unit.setWireframe();
-	unit.apply(device);
+	unit.initialise(device);
 	unit.bind(context);
 
 	if (description().FillMode == D3D11_FILL_WIREFRAME)

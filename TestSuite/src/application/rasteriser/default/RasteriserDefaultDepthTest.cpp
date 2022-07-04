@@ -21,7 +21,7 @@ std::string RasteriserDefaultDepthTest::test()
 
 	D3D11Renderer::Rasteriser unit;
 
-	unit.apply(device);
+	unit.initialise(device);
 	unit.bind(context);
 
 	if (description().DepthClipEnable)

@@ -11,7 +11,7 @@ D3D11Renderer::Rasteriser::~Rasteriser()
 	cleanup();
 }
 
-void D3D11Renderer::Rasteriser::apply(ID3D11Device* input)
+void D3D11Renderer::Rasteriser::initialise(ID3D11Device* input)
 {
 	try
 	{

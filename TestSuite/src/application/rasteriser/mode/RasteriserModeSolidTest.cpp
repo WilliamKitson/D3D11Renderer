@@ -22,10 +22,10 @@ std::string RasteriserModeSolidTest::test()
 	D3D11Renderer::Rasteriser unit;
 
 	unit.setWireframe();
-	unit.apply(device);
+	unit.initialise(device);
 
 	unit.setSolid();
-	unit.apply(device);
+	unit.initialise(device);
 	unit.bind(context);
 
 	if (description().FillMode == D3D11_FILL_SOLID)
