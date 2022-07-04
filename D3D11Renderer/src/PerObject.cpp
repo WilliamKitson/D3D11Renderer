@@ -12,6 +12,11 @@ D3D11Renderer::PerObject::~PerObject()
 
 void D3D11Renderer::PerObject::initialise(ID3D11Device* input)
 {
+	if (!input)
+	{
+		return;
+	}
+
 	cleanup();
 
 	D3D11_BUFFER_DESC perObjectDescription{

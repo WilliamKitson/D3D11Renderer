@@ -14,6 +14,7 @@ std::string PerObjectTester::test()
 
 	output += testDefault();
 	output += testUpdate();
+	output += testInvalid();
 
 	return output;
 }
@@ -26,4 +27,9 @@ std::string PerObjectTester::testDefault()
 std::string PerObjectTester::testUpdate()
 {
 	return PerObjectUpdateTester().test();
+}
+
+std::string PerObjectTester::testInvalid()
+{
+	return PerObjectInvalidTester().test();
 }
