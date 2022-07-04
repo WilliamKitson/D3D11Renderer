@@ -15,6 +15,7 @@ public:
 
 private:
 	void cleanup(IUnknown*);
+	void initialiseD3D11();
 
 private:
 	ID3D11Device* device;
