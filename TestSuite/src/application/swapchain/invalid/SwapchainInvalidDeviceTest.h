@@ -20,6 +20,7 @@ private:
 	void initialiseWindowClass();
 	void initialiseWindow();
 	void initialiseD3D11();
+	bool success();
 
 private:
 	HINSTANCE hInstance;

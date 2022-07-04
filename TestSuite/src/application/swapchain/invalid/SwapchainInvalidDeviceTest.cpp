@@ -39,15 +39,7 @@ std::string SwapchainInvalidDeviceTest::test()
 	unit.initialise(nullptr, window);
 	unit.bind(context);
 
-	ID3D11RenderTargetView* view = nullptr;
-
-	context->OMGetRenderTargets(
-		1,
-		&view,
-		nullptr
-	);
-
-	if (!view)
+	if (success())
 	{
 		return std::string();
 	}
@@ -132,4 +124,22 @@ void SwapchainInvalidDeviceTest::initialiseD3D11()
 		&supported,
 		&context
 	);
+}
+
+bool SwapchainInvalidDeviceTest::success()
+{
+	ID3D11RenderTargetView* view = nullptr;
+
+	context->OMGetRenderTargets(
+		1,
+		&view,
+		nullptr
+	);
+
+	if (!view)
+	{
+		return true;
+	}
+
+	return false;
 }
