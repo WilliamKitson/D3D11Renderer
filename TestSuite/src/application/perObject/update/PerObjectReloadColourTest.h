@@ -5,11 +5,11 @@
 
 #include "PerObject.h"
 
-class PerObjectUpdateColourTest
+class PerObjectReloadColourTest
 {
 public:
-	PerObjectUpdateColourTest();
-	~PerObjectUpdateColourTest();
+	PerObjectReloadColourTest();
+	~PerObjectReloadColourTest();
 
 	std::string test();
 

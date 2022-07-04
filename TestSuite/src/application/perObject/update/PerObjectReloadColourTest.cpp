@@ -1,12 +1,12 @@
-#include "PerObjectUpdateColourTest.h"
+#include "PerObjectReloadColourTest.h"
 
-PerObjectUpdateColourTest::PerObjectUpdateColourTest()
+PerObjectReloadColourTest::PerObjectReloadColourTest()
 	: device{ nullptr }, context{ nullptr }, objectBuffer{ nullptr }, readBuffer{ nullptr }, result(), update(), data()
 {
 	initialiseUpdate();
 }
 
-PerObjectUpdateColourTest::~PerObjectUpdateColourTest()
+PerObjectReloadColourTest::~PerObjectReloadColourTest()
 {
 	cleanup(readBuffer);
 	cleanup(objectBuffer);
@@ -14,13 +14,13 @@ PerObjectUpdateColourTest::~PerObjectUpdateColourTest()
 	cleanup(device);
 }
 
-std::string PerObjectUpdateColourTest::test()
+std::string PerObjectReloadColourTest::test()
 {
 	initialiseD3D11();
 
 	if (FAILED(result))
 	{
-		return "per object update colour test failed to initialise D3D11\n";
+		return "per object reload colour test failed to initialise D3D11\n";
 	}
 
 	D3D11Renderer::PerObject unit;
@@ -36,7 +36,7 @@ std::string PerObjectUpdateColourTest::test()
 
 	if (FAILED(result))
 	{
-		return "per object update colour test failed to initialise data\n";
+		return "per object reload colour test failed to initialise data\n";
 	}
 
 	if (success())
@@ -44,10 +44,10 @@ std::string PerObjectUpdateColourTest::test()
 		return std::string();
 	}
 
-	return "per object update colour test failed\n";
+	return "per object reload colour test failed\n";
 }
 
-void PerObjectUpdateColourTest::initialiseUpdate()
+void PerObjectReloadColourTest::initialiseUpdate()
 {
 	for (int i{ 0 }; i < 4; i++)
 	{
@@ -55,7 +55,7 @@ void PerObjectUpdateColourTest::initialiseUpdate()
 	}
 }
 
-void PerObjectUpdateColourTest::cleanup(IUnknown* input)
+void PerObjectReloadColourTest::cleanup(IUnknown* input)
 {
 	if (input)
 	{
@@ -63,7 +63,7 @@ void PerObjectUpdateColourTest::cleanup(IUnknown* input)
 	}
 }
 
-void PerObjectUpdateColourTest::initialiseD3D11()
+void PerObjectReloadColourTest::initialiseD3D11()
 {
 	D3D_FEATURE_LEVEL levels[] = {
 		D3D_FEATURE_LEVEL_11_0
@@ -85,7 +85,7 @@ void PerObjectUpdateColourTest::initialiseD3D11()
 	);
 }
 
-void PerObjectUpdateColourTest::initialiseData()
+void PerObjectReloadColourTest::initialiseData()
 {
 	initialiseObject();
 	initialiseRead();
@@ -117,7 +117,7 @@ void PerObjectUpdateColourTest::initialiseData()
 	);
 }
 
-void PerObjectUpdateColourTest::initialiseObject()
+void PerObjectReloadColourTest::initialiseObject()
 {
 	context->VSGetConstantBuffers(
 		0,
@@ -134,7 +134,7 @@ void PerObjectUpdateColourTest::initialiseObject()
 	result = S_OK;
 }
 
-void PerObjectUpdateColourTest::initialiseRead()
+void PerObjectReloadColourTest::initialiseRead()
 {
 	D3D11_BUFFER_DESC readDescription{
 		sizeof(D3D11Renderer::CBufferPerObject),
@@ -152,7 +152,7 @@ void PerObjectUpdateColourTest::initialiseRead()
 	);
 }
 
-bool PerObjectUpdateColourTest::success()
+bool PerObjectReloadColourTest::success()
 {
 	if (successes() == 4)
 	{
@@ -162,7 +162,7 @@ bool PerObjectUpdateColourTest::success()
 	return false;
 }
 
-int PerObjectUpdateColourTest::successes()
+int PerObjectReloadColourTest::successes()
 {
 	int output = 0;
 

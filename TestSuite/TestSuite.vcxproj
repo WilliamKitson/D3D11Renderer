@@ -159,8 +159,8 @@
     <ClCompile Include="src\application\perObject\invalid\PerObjectInvalidDeviceTest.cpp" />
     <ClCompile Include="src\application\perObject\invalid\PerObjectInvalidTester.cpp" />
     <ClCompile Include="src\application\perObject\PerObjectTester.cpp" />
+    <ClCompile Include="src\application\perObject\update\PerObjectReloadColourTest.cpp" />
     <ClCompile Include="src\application\perObject\update\PerObjectReloadTransformTest.cpp" />
-    <ClCompile Include="src\application\perObject\update\PerObjectUpdateColourTest.cpp" />
     <ClCompile Include="src\application\perObject\update\PerObjectUpdateTester.cpp" />
     <ClCompile Include="src\application\rasteriser\culling\RasteriserCullingBackTest.cpp" />
     <ClCompile Include="src\application\rasteriser\culling\RasteriserCullingFrontTest.cpp" />
@@ -247,8 +247,8 @@
     <ClInclude Include="src\application\perObject\invalid\PerObjectInvalidDeviceTest.h" />
     <ClInclude Include="src\application\perObject\invalid\PerObjectInvalidTester.h" />
     <ClInclude Include="src\application\perObject\PerObjectTester.h" />
+    <ClInclude Include="src\application\perObject\update\PerObjectReloadColourTest.h" />
     <ClInclude Include="src\application\perObject\update\PerObjectReloadTransformTest.h" />
-    <ClInclude Include="src\application\perObject\update\PerObjectUpdateColourTest.h" />
     <ClInclude Include="src\application\perObject\update\PerObjectUpdateTester.h" />
     <ClInclude Include="src\application\rasteriser\culling\RasteriserCullingBackTest.h" />
     <ClInclude Include="src\application\rasteriser\culling\RasteriserCullingFrontTest.h" />

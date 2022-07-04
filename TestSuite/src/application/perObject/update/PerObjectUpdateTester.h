@@ -3,7 +3,7 @@
 #include <string>
 
 #include "PerObjectReloadTransformTest.h"
-#include "PerObjectUpdateColourTest.h"
+#include "PerObjectReloadColourTest.h"
 
 class PerObjectUpdateTester
 {
