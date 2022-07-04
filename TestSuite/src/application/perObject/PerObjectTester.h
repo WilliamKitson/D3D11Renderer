@@ -3,7 +3,7 @@
 #include <string>
 
 #include "default/PerObjectDefaultTester.h"
-#include "update/PerObjectReloadTester.h"
+#include "reload/PerObjectReloadTester.h"
 #include "apply/PerObjectApplyTester.h"
 #include "invalid/PerObjectInvalidTester.h"
 

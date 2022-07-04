@@ -159,9 +159,9 @@
     <ClCompile Include="src\application\perObject\invalid\PerObjectInvalidDeviceTest.cpp" />
     <ClCompile Include="src\application\perObject\invalid\PerObjectInvalidTester.cpp" />
     <ClCompile Include="src\application\perObject\PerObjectTester.cpp" />
-    <ClCompile Include="src\application\perObject\update\PerObjectReloadColourTest.cpp" />
-    <ClCompile Include="src\application\perObject\update\PerObjectReloadTester.cpp" />
-    <ClCompile Include="src\application\perObject\update\PerObjectReloadTransformTest.cpp" />
+    <ClCompile Include="src\application\perObject\reload\PerObjectReloadColourTest.cpp" />
+    <ClCompile Include="src\application\perObject\reload\PerObjectReloadTester.cpp" />
+    <ClCompile Include="src\application\perObject\reload\PerObjectReloadTransformTest.cpp" />
     <ClCompile Include="src\application\rasteriser\culling\RasteriserCullingBackTest.cpp" />
     <ClCompile Include="src\application\rasteriser\culling\RasteriserCullingFrontTest.cpp" />
     <ClCompile Include="src\application\rasteriser\culling\RasteriserCullingNoneTest.cpp" />
@@ -247,9 +247,9 @@
     <ClInclude Include="src\application\perObject\invalid\PerObjectInvalidDeviceTest.h" />
     <ClInclude Include="src\application\perObject\invalid\PerObjectInvalidTester.h" />
     <ClInclude Include="src\application\perObject\PerObjectTester.h" />
-    <ClInclude Include="src\application\perObject\update\PerObjectReloadColourTest.h" />
-    <ClInclude Include="src\application\perObject\update\PerObjectReloadTester.h" />
-    <ClInclude Include="src\application\perObject\update\PerObjectReloadTransformTest.h" />
+    <ClInclude Include="src\application\perObject\reload\PerObjectReloadColourTest.h" />
+    <ClInclude Include="src\application\perObject\reload\PerObjectReloadTester.h" />
+    <ClInclude Include="src\application\perObject\reload\PerObjectReloadTransformTest.h" />
     <ClInclude Include="src\application\rasteriser\culling\RasteriserCullingBackTest.h" />
     <ClInclude Include="src\application\rasteriser\culling\RasteriserCullingFrontTest.h" />
     <ClInclude Include="src\application\rasteriser\culling\RasteriserCullingNoneTest.h" />

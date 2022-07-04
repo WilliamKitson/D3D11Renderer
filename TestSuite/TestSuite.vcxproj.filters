@@ -264,13 +264,13 @@
     <ClCompile Include="src\application\perObject\invalid\PerObjectInvalidApplyTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\application\perObject\update\PerObjectReloadTransformTest.cpp">
+    <ClCompile Include="src\application\perObject\reload\PerObjectReloadColourTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\application\perObject\update\PerObjectReloadColourTest.cpp">
+    <ClCompile Include="src\application\perObject\reload\PerObjectReloadTester.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\application\perObject\update\PerObjectReloadTester.cpp">
+    <ClCompile Include="src\application\perObject\reload\PerObjectReloadTransformTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -521,13 +521,13 @@
     <ClInclude Include="src\application\perObject\invalid\PerObjectInvalidApplyTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\application\perObject\update\PerObjectReloadTransformTest.h">
+    <ClInclude Include="src\application\perObject\reload\PerObjectReloadColourTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\application\perObject\update\PerObjectReloadColourTest.h">
+    <ClInclude Include="src\application\perObject\reload\PerObjectReloadTester.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\application\perObject\update\PerObjectReloadTester.h">
+    <ClInclude Include="src\application\perObject\reload\PerObjectReloadTransformTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
