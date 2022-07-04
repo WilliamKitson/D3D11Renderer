@@ -213,9 +213,6 @@
     <ClCompile Include="src\application\perObject\invalid\PerObjectInvalidTester.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\application\perObject\invalid\PerObjectInvalidContextTest.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\application\rasteriser\invalid\RasteriserInvalidDeviceTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -268,6 +265,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\application\perObject\apply\PerObjectApplyColourTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\application\perObject\invalid\PerObjectInvalidBindTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -467,9 +467,6 @@
     <ClInclude Include="src\application\perObject\invalid\PerObjectInvalidTester.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\application\perObject\invalid\PerObjectInvalidContextTest.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="src\application\rasteriser\invalid\RasteriserInvalidDeviceTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -522,6 +519,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\application\perObject\apply\PerObjectApplyColourTest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\application\perObject\invalid\PerObjectInvalidBindTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

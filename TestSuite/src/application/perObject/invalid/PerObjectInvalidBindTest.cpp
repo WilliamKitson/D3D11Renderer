@@ -1,24 +1,24 @@
-#include "PerObjectInvalidContextTest.h"
+#include "PerObjectInvalidBindTest.h"
 
-PerObjectInvalidContextTest::PerObjectInvalidContextTest()
+PerObjectInvalidBindTest::PerObjectInvalidBindTest()
 	: device{ nullptr }, context{ nullptr }, objectBuffer{ nullptr }, result()
 {
 }
 
-PerObjectInvalidContextTest::~PerObjectInvalidContextTest()
+PerObjectInvalidBindTest::~PerObjectInvalidBindTest()
 {
 	cleanup(objectBuffer);
 	cleanup(context);
 	cleanup(device);
 }
 
-std::string PerObjectInvalidContextTest::test()
+std::string PerObjectInvalidBindTest::test()
 {
 	initialise();
 
 	if (FAILED(result))
 	{
-		return "per object invalid context test failed to initialise\n";
+		return "per object invalid bind test failed to initialise\n";
 	}
 
 	D3D11Renderer::PerObject unit;
@@ -37,10 +37,10 @@ std::string PerObjectInvalidContextTest::test()
 		return std::string();
 	}
 
-	return "per object invalid context test failed\n";
+	return "per object invalid bind test failed\n";
 }
 
-void PerObjectInvalidContextTest::cleanup(IUnknown* input)
+void PerObjectInvalidBindTest::cleanup(IUnknown* input)
 {
 	if (input)
 	{
@@ -48,7 +48,7 @@ void PerObjectInvalidContextTest::cleanup(IUnknown* input)
 	}
 }
 
-void PerObjectInvalidContextTest::initialise()
+void PerObjectInvalidBindTest::initialise()
 {
 	D3D_FEATURE_LEVEL levels[] = {
 		D3D_FEATURE_LEVEL_11_0

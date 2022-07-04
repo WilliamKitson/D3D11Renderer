@@ -5,11 +5,11 @@
 
 #include "PerObject.h"
 
-class PerObjectInvalidContextTest
+class PerObjectInvalidBindTest
 {
 public:
-	PerObjectInvalidContextTest();
-	~PerObjectInvalidContextTest();
+	PerObjectInvalidBindTest();
+	~PerObjectInvalidBindTest();
 
 	std::string test();
 

@@ -3,7 +3,7 @@
 #include <string>
 
 #include "PerObjectInvalidDeviceTest.h"
-#include "PerObjectInvalidContextTest.h"
+#include "PerObjectInvalidBindTest.h"
 
 class PerObjectInvalidTester
 {
@@ -15,5 +15,5 @@ public:
 
 private:
 	std::string testDevice();
-	std::string testContext();
+	std::string testBind();
 };

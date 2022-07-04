@@ -13,7 +13,7 @@ std::string PerObjectInvalidTester::test()
 	std::string output{ "" };
 
 	output += testDevice();
-	output += testContext();
+	output += testBind();
 
 	return output;
 }
@@ -23,7 +23,7 @@ std::string PerObjectInvalidTester::testDevice()
 	return PerObjectInvalidDeviceTest().test();
 }
 
-std::string PerObjectInvalidTester::testContext()
+std::string PerObjectInvalidTester::testBind()
 {
-	return PerObjectInvalidContextTest().test();
+	return PerObjectInvalidBindTest().test();
 }

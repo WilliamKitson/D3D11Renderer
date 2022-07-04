@@ -154,7 +154,7 @@
     <ClCompile Include="src\application\perObject\default\PerObjectDefaultColourTest.cpp" />
     <ClCompile Include="src\application\perObject\default\PerObjectDefaultTester.cpp" />
     <ClCompile Include="src\application\perObject\default\PerObjectDefaultTransformTest.cpp" />
-    <ClCompile Include="src\application\perObject\invalid\PerObjectInvalidContextTest.cpp" />
+    <ClCompile Include="src\application\perObject\invalid\PerObjectInvalidBindTest.cpp" />
     <ClCompile Include="src\application\perObject\invalid\PerObjectInvalidDeviceTest.cpp" />
     <ClCompile Include="src\application\perObject\invalid\PerObjectInvalidTester.cpp" />
     <ClCompile Include="src\application\perObject\PerObjectTester.cpp" />
@@ -241,7 +241,7 @@
     <ClInclude Include="src\application\perObject\default\PerObjectDefaultColourTest.h" />
     <ClInclude Include="src\application\perObject\default\PerObjectDefaultTester.h" />
     <ClInclude Include="src\application\perObject\default\PerObjectDefaultTransformTest.h" />
-    <ClInclude Include="src\application\perObject\invalid\PerObjectInvalidContextTest.h" />
+    <ClInclude Include="src\application\perObject\invalid\PerObjectInvalidBindTest.h" />
     <ClInclude Include="src\application\perObject\invalid\PerObjectInvalidDeviceTest.h" />
     <ClInclude Include="src\application\perObject\invalid\PerObjectInvalidTester.h" />
     <ClInclude Include="src\application\perObject\PerObjectTester.h" />
