@@ -4,6 +4,7 @@
 
 #include "default/PerObjectDefaultTester.h"
 #include "update/PerObjectUpdateTester.h"
+#include "apply/PerObjectApplyTester.h"
 #include "invalid/PerObjectInvalidTester.h"
 
 class PerObjectTester
@@ -17,5 +18,6 @@ public:
 private:
 	std::string testDefault();
 	std::string testUpdate();
+	std::string testApply();
 	std::string testInvalid();
 };
