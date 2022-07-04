@@ -7,20 +7,9 @@ RasteriserInvalidDeviceTest::RasteriserInvalidDeviceTest()
 
 RasteriserInvalidDeviceTest::~RasteriserInvalidDeviceTest()
 {
-	if (state)
-	{
-		state->Release();
-	}
-
-	if (context)
-	{
-		context->Release();
-	}
-
-	if (device)
-	{
-		device->Release();
-	}
+	cleanup(state);
+	cleanup(context);
+	cleanup(device);
 }
 
 std::string RasteriserInvalidDeviceTest::test()
@@ -57,4 +46,12 @@ std::string RasteriserInvalidDeviceTest::test()
 	}
 
 	return "rasteriser invalid device test failed\n";
+}
+
+void RasteriserInvalidDeviceTest::cleanup(IUnknown* input)
+{
+	if (input)
+	{
+		input->Release();
+	}
 }
