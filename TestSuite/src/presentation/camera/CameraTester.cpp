@@ -10,18 +10,24 @@ CameraTester::~CameraTester()
 
 std::string CameraTester::test()
 {
-	std::string failures{ "" };
+	std::string output{ "" };
 
-	failures += testPos();
-	failures += testFrustum();
-	failures += testClipping();
+	output += testPos();
+	output += testRot();
+	output += testFrustum();
+	output += testClipping();
 
-	return failures;
+	return output;
 }
 
 std::string CameraTester::testPos()
 {
 	return CameraPosTester().test();
+}
+
+std::string CameraTester::testRot()
+{
+	return CameraRotTester().test();
 }
 
 std::string CameraTester::testFrustum()

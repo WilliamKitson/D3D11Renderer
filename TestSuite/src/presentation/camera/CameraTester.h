@@ -3,6 +3,7 @@
 #include <string>
 
 #include "pos/CameraPosTester.h"
+#include "rot/CameraRotTester.h"
 #include "CameraFrustumTest.h"
 #include "CameraClippingTest.h"
 
@@ -16,6 +17,7 @@ public:
 
 private:
 	std::string testPos();
+	std::string testRot();
 	std::string testFrustum();
 	std::string testClipping();
 };
