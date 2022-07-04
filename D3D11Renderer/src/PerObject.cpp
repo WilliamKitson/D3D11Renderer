@@ -7,20 +7,12 @@ D3D11Renderer::PerObject::PerObject()
 
 D3D11Renderer::PerObject::~PerObject()
 {
-	if (cBuffer)
-	{
-		cBuffer->Release();
-		cBuffer = nullptr;
-	}
+	cleanup();
 }
 
 void D3D11Renderer::PerObject::initialise(ID3D11Device* input)
 {
-	if (cBuffer)
-	{
-		cBuffer->Release();
-		cBuffer = nullptr;
-	}
+	cleanup();
 
 	D3D11_BUFFER_DESC perObjectDescription{
 		sizeof(CBufferPerObject),
@@ -58,5 +50,14 @@ void D3D11Renderer::PerObject::setTransform(float input[16])
 	for (int i{ 0 }; i < 16; i++)
 	{
 		data.transform[i] = input[i];
+	}
+}
+
+void D3D11Renderer::PerObject::cleanup()
+{
+	if (cBuffer)
+	{
+		cBuffer->Release();
+		cBuffer = nullptr;
 	}
 }

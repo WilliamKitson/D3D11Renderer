@@ -16,6 +16,9 @@ namespace D3D11Renderer
 		void setTransform(float[16]);
 
 	private:
+		void cleanup();
+
+	private:
 		ID3D11Buffer* cBuffer;
 		CBufferPerObject data;
 	};
