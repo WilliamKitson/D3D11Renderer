@@ -258,6 +258,9 @@
     <ClCompile Include="src\presentation\camera\rot\CameraRotTester.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\presentation\camera\rot\CameraYrotTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\MemoryTest.h">
@@ -498,6 +501,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\presentation\camera\rot\CameraRotTester.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\presentation\camera\rot\CameraYrotTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
