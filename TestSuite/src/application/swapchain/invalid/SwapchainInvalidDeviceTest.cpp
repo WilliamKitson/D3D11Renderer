@@ -7,16 +7,8 @@ SwapchainInvalidDeviceTest::SwapchainInvalidDeviceTest(HINSTANCE hInstanceInput,
 
 SwapchainInvalidDeviceTest::~SwapchainInvalidDeviceTest()
 {
-	if (context)
-	{
-		context->Release();
-	}
-
-	if (device)
-	{
-		device->Release();
-	}
-
+	cleanup(context);
+	cleanup(device);
 	DestroyWindow(window);
 }
 
@@ -104,4 +96,12 @@ std::string SwapchainInvalidDeviceTest::test()
 LRESULT CALLBACK SwapchainInvalidDeviceTest::windowProcedure(HWND window, UINT message, WPARAM wParam, LPARAM lParam)
 {
 	return DefWindowProc(window, message, wParam, lParam);
+}
+
+void SwapchainInvalidDeviceTest::cleanup(IUnknown* input)
+{
+	if (input)
+	{
+		input->Release();
+	}
 }
