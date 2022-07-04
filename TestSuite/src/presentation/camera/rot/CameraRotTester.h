@@ -4,6 +4,7 @@
 
 #include "CameraXrotTest.h"
 #include "CameraYrotTest.h"
+#include "CameraZrotTest.h"
 
 class CameraRotTester
 {
@@ -16,4 +17,5 @@ public:
 private:
 	std::string testX();
 	std::string testY();
+	std::string testZ();
 };

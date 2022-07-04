@@ -14,6 +14,7 @@ std::string CameraRotTester::test()
 
 	output += testX();
 	output += testY();
+	output += testZ();
 
 	return output;
 }
@@ -26,4 +27,9 @@ std::string CameraRotTester::testX()
 std::string CameraRotTester::testY()
 {
 	return CameraYrotTest().test();
+}
+
+std::string CameraRotTester::testZ()
+{
+	return CameraZrotTest().test();
 }
