@@ -14,6 +14,9 @@ public:
 	std::string test();
 
 private:
+	void cleanup(IUnknown*);
+
+private:
 	ID3D11Device* device;
 	ID3D11DeviceContext* context;
 	ID3D11Buffer* objectBuffer;

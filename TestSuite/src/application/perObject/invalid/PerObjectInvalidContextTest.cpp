@@ -7,20 +7,9 @@ PerObjectInvalidContextTest::PerObjectInvalidContextTest()
 
 PerObjectInvalidContextTest::~PerObjectInvalidContextTest()
 {
-	if (objectBuffer)
-	{
-		objectBuffer->Release();
-	}
-
-	if (context)
-	{
-		context->Release();
-	}
-
-	if (device)
-	{
-		device->Release();
-	}
+	cleanup(objectBuffer);
+	cleanup(context);
+	cleanup(device);
 }
 
 std::string PerObjectInvalidContextTest::test()
@@ -66,4 +55,12 @@ std::string PerObjectInvalidContextTest::test()
 	}
 
 	return "per object invalid context test failed\n";
+}
+
+void PerObjectInvalidContextTest::cleanup(IUnknown* input)
+{
+	if (input)
+	{
+		input->Release();
+	}
 }
