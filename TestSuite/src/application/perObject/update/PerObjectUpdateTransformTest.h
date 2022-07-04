@@ -14,6 +14,7 @@ public:
 	std::string test();
 
 private:
+	void initialiseUpdate();
 	void cleanup(IUnknown*);
 	void initialiseD3D11();
 	void initialiseData();

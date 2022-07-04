@@ -3,10 +3,7 @@
 PerObjectUpdateTransformTest::PerObjectUpdateTransformTest()
 	: device{ nullptr }, context{ nullptr }, objectBuffer{ nullptr }, readBuffer{ nullptr }, result(), update(), data()
 {
-	for (int i{ 0 }; i < 16; i++)
-	{
-		update.transform[i] = (float)i;
-	}
+	initialiseUpdate();
 }
 
 PerObjectUpdateTransformTest::~PerObjectUpdateTransformTest()
@@ -48,6 +45,14 @@ std::string PerObjectUpdateTransformTest::test()
 	}
 
 	return "per object update transform test failed\n";
+}
+
+void PerObjectUpdateTransformTest::initialiseUpdate()
+{
+	for (int i{ 0 }; i < 16; i++)
+	{
+		update.transform[i] = (float)i;
+	}
 }
 
 void PerObjectUpdateTransformTest::cleanup(IUnknown* input)
