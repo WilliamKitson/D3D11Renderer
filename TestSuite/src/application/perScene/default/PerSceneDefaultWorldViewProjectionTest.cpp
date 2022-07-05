@@ -15,24 +15,7 @@ PerSceneDefaultWorldViewProjectionTest::~PerSceneDefaultWorldViewProjectionTest(
 
 std::string PerSceneDefaultWorldViewProjectionTest::test()
 {
-	D3D_FEATURE_LEVEL levels[] = {
-		D3D_FEATURE_LEVEL_11_0
-	};
-
-	D3D_FEATURE_LEVEL supported;
-
-	result = D3D11CreateDevice(
-		0,
-		D3D_DRIVER_TYPE_HARDWARE,
-		NULL,
-		D3D11_CREATE_DEVICE_DEBUG,
-		levels,
-		1,
-		D3D11_SDK_VERSION,
-		&device,
-		&supported,
-		&context
-	);
+	initialiseD3D11();
 
 	if (FAILED(result))
 	{
@@ -217,4 +200,26 @@ void PerSceneDefaultWorldViewProjectionTest::cleanup(IUnknown* input)
 	{
 		input->Release();
 	}
+}
+
+void PerSceneDefaultWorldViewProjectionTest::initialiseD3D11()
+{
+	D3D_FEATURE_LEVEL levels[] = {
+		D3D_FEATURE_LEVEL_11_0
+	};
+
+	D3D_FEATURE_LEVEL supported;
+
+	result = D3D11CreateDevice(
+		0,
+		D3D_DRIVER_TYPE_HARDWARE,
+		NULL,
+		D3D11_CREATE_DEVICE_DEBUG,
+		levels,
+		1,
+		D3D11_SDK_VERSION,
+		&device,
+		&supported,
+		&context
+	);
 }
