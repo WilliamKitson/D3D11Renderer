@@ -124,7 +124,7 @@ void PerObjectDefaultTransformTest::initialiseObject()
 void PerObjectDefaultTransformTest::initialiseRead()
 {
 	D3D11_BUFFER_DESC readDescription{
-		sizeof(D3D11Renderer::CBufferPerObject),
+		sizeof(data),
 		D3D11_USAGE_STAGING,
 		0,
 		D3D11_CPU_ACCESS_READ,
@@ -155,7 +155,7 @@ int PerObjectDefaultTransformTest::successes()
 
 	for (int i{ 0 }; i < 16; i++)
 	{
-		output += data.transform[i] == D3D11Renderer::CBufferPerObject().transform[i];
+		output += data[i] == 1.0f;
 	}
 
 	return output;

@@ -28,5 +28,5 @@ private:
 	ID3D11Buffer* objectBuffer;
 	ID3D11Buffer* readBuffer;
 	HRESULT result;
-	D3D11Renderer::CBufferPerObject data;
+	float data[20];
 };

@@ -3,6 +3,10 @@
 D3D11Renderer::PerObject::PerObject()
 	: cBuffer{ nullptr }, data()
 {
+	for (int i{ 0 }; i < 20; i++)
+	{
+		data[i] = 1.0f;
+	}
 }
 
 D3D11Renderer::PerObject::~PerObject()
@@ -68,29 +72,29 @@ void D3D11Renderer::PerObject::setTransform(float input[16])
 {
 	DirectX::XMMATRIX transform = calculate(input);
 
-	data.transform[0] = transform._11;
-	data.transform[1] = transform._12;
-	data.transform[2] = transform._13;
-	data.transform[3] = transform._14;
-	data.transform[4] = transform._21;
-	data.transform[5] = transform._22;
-	data.transform[6] = transform._23;
-	data.transform[7] = transform._24;
-	data.transform[8] = transform._31;
-	data.transform[9] = transform._32;
-	data.transform[10] = transform._33;
-	data.transform[11] = transform._34;
-	data.transform[12] = transform._41;
-	data.transform[13] = transform._42;
-	data.transform[14] = transform._43;
-	data.transform[15] = transform._44;
+	data[0] = transform._11;
+	data[1] = transform._12;
+	data[2] = transform._13;
+	data[3] = transform._14;
+	data[4] = transform._21;
+	data[5] = transform._22;
+	data[6] = transform._23;
+	data[7] = transform._24;
+	data[8] = transform._31;
+	data[9] = transform._32;
+	data[10] = transform._33;
+	data[11] = transform._34;
+	data[12] = transform._41;
+	data[13] = transform._42;
+	data[14] = transform._43;
+	data[15] = transform._44;
 }
 
 void D3D11Renderer::PerObject::setColour(float input[4])
 {
 	for (int i{ 0 }; i < 4; i++)
 	{
-		data.colour[i] = input[i];
+		data[16 + i] = input[i];
 	}
 }
 
@@ -116,7 +120,7 @@ void D3D11Renderer::PerObject::validate(IUnknown* input)
 void D3D11Renderer::PerObject::create(ID3D11Device* input)
 {
 	D3D11_BUFFER_DESC perObjectDescription{
-		sizeof(CBufferPerObject),
+		sizeof(data),
 		D3D11_USAGE_DEFAULT,
 		D3D11_BIND_CONSTANT_BUFFER,
 		0,
