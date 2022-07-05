@@ -3,6 +3,10 @@
 #include <string>
 #include <d3d11.h>
 
+#define _XM_NO_INTRINSICS_
+#define XM_NO_ALIGNMENT
+#include <DirectXMath.h>
+
 #include "PerObject.h"
 
 class PerObjectApplyTransformTest
@@ -21,7 +25,8 @@ private:
 	void initialiseObject();
 	void initialiseRead();
 	bool success();
-	int successes();
+	DirectX::XMMATRIX convert(D3D11Renderer::CBufferPerObject);
+	D3D11Renderer::CBufferPerObject convert(DirectX::XMMATRIX);
 
 private:
 	ID3D11Device* device;
