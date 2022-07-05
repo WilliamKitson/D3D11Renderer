@@ -124,7 +124,7 @@ void PerObjectDefaultColourTest::initialiseObject()
 void PerObjectDefaultColourTest::initialiseRead()
 {
 	D3D11_BUFFER_DESC readDescription{
-		sizeof(D3D11Renderer::CBufferPerObject),
+		sizeof(data),
 		D3D11_USAGE_STAGING,
 		0,
 		D3D11_CPU_ACCESS_READ,
@@ -153,9 +153,9 @@ int PerObjectDefaultColourTest::successes()
 {
 	int output = 0;
 
-	for (int i{ 0 }; i < 4; i++)
+	for (int i{ 16 }; i < 20; i++)
 	{
-		output += data.colour[i] == D3D11Renderer::CBufferPerObject().colour[i];
+		output += data[i] == 1.0f;
 	}
 
 	return output;
