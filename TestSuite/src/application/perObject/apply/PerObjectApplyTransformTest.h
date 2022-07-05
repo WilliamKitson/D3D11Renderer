@@ -17,7 +17,7 @@ private:
 	void initialiseInput();
 	void cleanup(IUnknown*);
 	void initialiseD3D11();
-	void initialiseData();
+	void initialiseOutput();
 	void initialiseObject();
 	void initialiseRead();
 	bool success();
@@ -29,6 +29,6 @@ private:
 	ID3D11Buffer* objectBuffer;
 	ID3D11Buffer* readBuffer;
 	HRESULT result;
-	D3D11Renderer::CBufferPerObject input;
-	D3D11Renderer::CBufferPerObject data;
+	D3D11Renderer::CBufferPerObject inputData;
+	D3D11Renderer::CBufferPerObject outputData;
 };

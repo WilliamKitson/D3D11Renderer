@@ -1,7 +1,7 @@
 #include "PerObjectApplyTransformTest.h"
 
 PerObjectApplyTransformTest::PerObjectApplyTransformTest()
-	: device{ nullptr }, context{ nullptr }, objectBuffer{ nullptr }, readBuffer{ nullptr }, result(), input(), data()
+	: device{ nullptr }, context{ nullptr }, objectBuffer{ nullptr }, readBuffer{ nullptr }, result(), inputData(), outputData()
 {
 	initialiseInput();
 }
@@ -28,10 +28,10 @@ std::string PerObjectApplyTransformTest::test()
 	unit.initialise(device);
 	unit.bind(context);
 
-	unit.setTransform(input.transform);
+	unit.setTransform(inputData.transform);
 	unit.apply(context);
 
-	initialiseData();
+	initialiseOutput();
 
 	if (FAILED(result))
 	{
@@ -50,7 +50,7 @@ void PerObjectApplyTransformTest::initialiseInput()
 {
 	for (int i{ 0 }; i < 16; i++)
 	{
-		input.transform[i] = (float)i;
+		inputData.transform[i] = (float)i;
 	}
 }
 
@@ -84,7 +84,7 @@ void PerObjectApplyTransformTest::initialiseD3D11()
 	);
 }
 
-void PerObjectApplyTransformTest::initialiseData()
+void PerObjectApplyTransformTest::initialiseOutput()
 {
 	initialiseObject();
 	initialiseRead();
@@ -110,9 +110,9 @@ void PerObjectApplyTransformTest::initialiseData()
 	);
 
 	memcpy(
-		&data,
+		&outputData,
 		subresource.pData,
-		sizeof(data)
+		sizeof(outputData)
 	);
 }
 
@@ -167,7 +167,7 @@ int PerObjectApplyTransformTest::successes()
 
 	for (int i{ 0 }; i < 16; i++)
 	{
-		output += data.transform[i] == input.transform[i];
+		output += outputData.transform[i] == inputData.transform[i];
 	}
 
 	return output;
