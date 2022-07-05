@@ -1,7 +1,9 @@
 #pragma once
 
 #include <string>
+
 #include "default/PerSceneDefaultTester.h"
+#include "reload/PerSceneReloadTester.h"
 
 class PerSceneTester
 {
@@ -13,4 +15,5 @@ public:
 
 private:
 	std::string testDefault();
+	std::string testReload();
 };
