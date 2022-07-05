@@ -1,7 +1,9 @@
 #pragma once
 
 #include <string>
+
 #include "CBufferPerSceneWorldViewProjectionTest.h"
+#include "CBufferPerSceneAmbienceTest.h"
 
 class CBufferPerSceneTester
 {
@@ -13,4 +15,5 @@ public:
 
 private:
 	std::string testWorldViewProjection();
+	std::string testAmbience();
 };

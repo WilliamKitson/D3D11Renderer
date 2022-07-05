@@ -222,6 +222,7 @@
     <ClCompile Include="src\presentation\CBufferPerObject\CBufferPerObjectColourTest.cpp" />
     <ClCompile Include="src\presentation\CBufferPerObject\CBufferPerObjectTester.cpp" />
     <ClCompile Include="src\presentation\CBufferPerObject\CBufferPerObjectTransformTest.cpp" />
+    <ClCompile Include="src\presentation\CBufferPerScene\CBufferPerSceneAmbienceTest.cpp" />
     <ClCompile Include="src\presentation\CBufferPerScene\CBufferPerSceneTester.cpp" />
     <ClCompile Include="src\presentation\CBufferPerScene\CBufferPerSceneWorldViewProjectionTest.cpp" />
     <ClCompile Include="src\presentation\PresentationTester.cpp" />
@@ -311,6 +312,7 @@
     <ClInclude Include="src\presentation\CBufferPerObject\CBufferPerObjectColourTest.h" />
     <ClInclude Include="src\presentation\CBufferPerObject\CBufferPerObjectTester.h" />
     <ClInclude Include="src\presentation\CBufferPerObject\CBufferPerObjectTransformTest.h" />
+    <ClInclude Include="src\presentation\CBufferPerScene\CBufferPerSceneAmbienceTest.h" />
     <ClInclude Include="src\presentation\CBufferPerScene\CBufferPerSceneTester.h" />
     <ClInclude Include="src\presentation\CBufferPerScene\CBufferPerSceneWorldViewProjectionTest.h" />
     <ClInclude Include="src\presentation\PresentationTester.h" />
