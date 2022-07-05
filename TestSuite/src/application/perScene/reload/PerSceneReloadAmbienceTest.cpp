@@ -3,10 +3,7 @@
 PerSceneReloadAmbienceTest::PerSceneReloadAmbienceTest()
 	: device{ nullptr }, context{ nullptr }, sceneBuffer{ nullptr }, readBuffer{ nullptr }, result(), ambience(), outputData()
 {
-	for (int i{ 0 }; i < 4; i++)
-	{
-		ambience[i] = (float)i;
-	}
+	initialiseAmbience();
 }
 
 PerSceneReloadAmbienceTest::~PerSceneReloadAmbienceTest()
@@ -61,6 +58,14 @@ std::string PerSceneReloadAmbienceTest::test()
 	}
 
 	return "per scene reload ambience test failed\n";
+}
+
+void PerSceneReloadAmbienceTest::initialiseAmbience()
+{
+	for (int i{ 0 }; i < 4; i++)
+	{
+		ambience[i] = (float)i;
+	}
 }
 
 void PerSceneReloadAmbienceTest::cleanup(IUnknown* input)
