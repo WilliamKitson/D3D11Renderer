@@ -18,6 +18,7 @@ public:
 	std::string test();
 
 private:
+	void initialiseCamera();
 	void cleanup(IUnknown*);
 	void initialiseD3D11();
 	void initialiseRead();

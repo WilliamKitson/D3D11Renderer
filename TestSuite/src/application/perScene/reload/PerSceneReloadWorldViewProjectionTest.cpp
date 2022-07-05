@@ -3,10 +3,7 @@
 PerSceneReloadWorldViewProjectionTest::PerSceneReloadWorldViewProjectionTest()
 	: device{ nullptr }, context{ nullptr }, sceneBuffer{ nullptr }, readBuffer{ nullptr }, result(), camera(), outputData()
 {
-	for (int i{ 0 }; i < 8; i++)
-	{
-		camera[i] = (float)i;
-	}
+	initialiseCamera();
 }
 
 PerSceneReloadWorldViewProjectionTest::~PerSceneReloadWorldViewProjectionTest()
@@ -61,6 +58,14 @@ std::string PerSceneReloadWorldViewProjectionTest::test()
 	}
 
 	return "per scene reload world view projection test failed\n";
+}
+
+void PerSceneReloadWorldViewProjectionTest::initialiseCamera()
+{
+	for (int i{ 0 }; i < 8; i++)
+	{
+		camera[i] = (float)i;
+	}
 }
 
 void PerSceneReloadWorldViewProjectionTest::cleanup(IUnknown* input)
