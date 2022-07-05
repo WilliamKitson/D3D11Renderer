@@ -7,25 +7,10 @@ PerSceneDefaultWorldViewProjectionTest::PerSceneDefaultWorldViewProjectionTest()
 
 PerSceneDefaultWorldViewProjectionTest::~PerSceneDefaultWorldViewProjectionTest()
 {
-	if (readBuffer)
-	{
-		readBuffer->Release();
-	}
-
-	if (sceneBuffer)
-	{
-		sceneBuffer->Release();
-	}
-
-	if (context)
-	{
-		context->Release();
-	}
-
-	if (device)
-	{
-		device->Release();
-	}
+	cleanup(readBuffer);
+	cleanup(sceneBuffer);
+	cleanup(context);
+	cleanup(device);
 }
 
 std::string PerSceneDefaultWorldViewProjectionTest::test()
@@ -224,4 +209,12 @@ std::string PerSceneDefaultWorldViewProjectionTest::test()
 	}
 
 	return "per scene default world view projection test failed\n";
+}
+
+void PerSceneDefaultWorldViewProjectionTest::cleanup(IUnknown* input)
+{
+	if (input)
+	{
+		input->Release();
+	}
 }
