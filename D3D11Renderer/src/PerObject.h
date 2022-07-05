@@ -3,8 +3,8 @@
 #define _XM_NO_INTRINSICS_
 #define XM_NO_ALIGNMENT
 
-#include <DirectXMath.h>
 #include <d3d11.h>
+#include <DirectXMath.h>
 
 namespace D3D11Renderer
 {

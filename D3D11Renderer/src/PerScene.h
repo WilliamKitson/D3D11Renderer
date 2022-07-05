@@ -19,6 +19,7 @@ namespace D3D11Renderer
 		void setCamera(float[8]);
 
 	private:
+		void camera();
 		void cleanup();
 
 	private:

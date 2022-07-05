@@ -3,18 +3,7 @@
 D3D11Renderer::PerScene::PerScene()
 	: cBuffer{ nullptr }, data()
 {
-	float camera[8]{
-		0.0f,
-		0.0f,
-		0.0f,
-		0.0f,
-		0.0f,
-		0.0f,
-		90.0f,
-		960.0f / 540.0f
-	};
-
-	setCamera(camera);
+	camera();
 
 	for (int i{ 16 }; i < 20; i++)
 	{
@@ -105,6 +94,22 @@ void D3D11Renderer::PerScene::setCamera(float input[8])
 	data[13] = worldViewProjection._42;
 	data[14] = worldViewProjection._43;
 	data[15] = worldViewProjection._44;
+}
+
+void D3D11Renderer::PerScene::camera()
+{
+	float camera[8]{
+		0.0f,
+		0.0f,
+		0.0f,
+		0.0f,
+		0.0f,
+		0.0f,
+		90.0f,
+		960.0f / 540.0f
+	};
+
+	setCamera(camera);
 }
 
 void D3D11Renderer::PerScene::cleanup()
