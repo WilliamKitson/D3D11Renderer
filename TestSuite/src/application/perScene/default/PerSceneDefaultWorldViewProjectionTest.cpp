@@ -45,26 +45,7 @@ std::string PerSceneDefaultWorldViewProjectionTest::test()
 		return "per scene default world view projection test failed to initialise read buffer\n";
 	}
 
-	context->CopyResource(
-		readBuffer,
-		sceneBuffer
-	);
-
-	D3D11_MAPPED_SUBRESOURCE subresource;
-
-	result = context->Map(
-		readBuffer,
-		NULL,
-		D3D11_MAP_READ,
-		NULL,
-		&subresource
-	);
-
-	memcpy(
-		&data,
-		subresource.pData,
-		sizeof(data)
-	);
+	initialiseData();
 
 	DirectX::XMMATRIX world = DirectX::XMMatrixIdentity();
 
@@ -226,5 +207,29 @@ void PerSceneDefaultWorldViewProjectionTest::initialiseRead()
 		&readDescription,
 		NULL,
 		&readBuffer
+	);
+}
+
+void PerSceneDefaultWorldViewProjectionTest::initialiseData()
+{
+	context->CopyResource(
+		readBuffer,
+		sceneBuffer
+	);
+
+	D3D11_MAPPED_SUBRESOURCE subresource;
+
+	result = context->Map(
+		readBuffer,
+		NULL,
+		D3D11_MAP_READ,
+		NULL,
+		&subresource
+	);
+
+	memcpy(
+		&data,
+		subresource.pData,
+		sizeof(data)
 	);
 }
