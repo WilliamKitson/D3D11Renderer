@@ -44,6 +44,11 @@ D3D11Renderer::PerScene::PerScene()
 	data[13] = worldViewProjection._42;
 	data[14] = worldViewProjection._43;
 	data[15] = worldViewProjection._44;
+
+	for (int i{ 16 }; i < 20; i++)
+	{
+		data[i] = 1.0f;
+	}
 }
 
 D3D11Renderer::PerScene::~PerScene()

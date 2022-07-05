@@ -13,6 +13,7 @@ std::string PerSceneDefaultTester::test()
 	std::string output{ "" };
 
 	output += testWorldViewProjection();
+	output += testAmbience();
 
 	return output;
 }
@@ -20,4 +21,9 @@ std::string PerSceneDefaultTester::test()
 std::string PerSceneDefaultTester::testWorldViewProjection()
 {
 	return PerSceneDefaultWorldViewProjectionTest().test();
+}
+
+std::string PerSceneDefaultTester::testAmbience()
+{
+	return PerSceneDefaultAmbienceTest().test();
 }
