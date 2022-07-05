@@ -273,6 +273,12 @@
     <ClCompile Include="src\application\perObject\reload\PerObjectReloadTransformTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\presentation\CBufferPerScene\CBufferPerSceneWorldViewProjectionTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\presentation\CBufferPerScene\CBufferPerSceneTester.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\MemoryTest.h">
@@ -528,6 +534,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\application\perObject\reload\PerObjectReloadTransformTest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\presentation\CBufferPerScene\CBufferPerSceneWorldViewProjectionTest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\presentation\CBufferPerScene\CBufferPerSceneTester.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -16,6 +16,7 @@ std::string PresentationTester::test()
 	failures += testRGB();
 	failures += testRGBA();
 	failures += testCBufferPerObject();
+	failures += testCBufferPerScene();
 
 	return failures;
 }
@@ -38,4 +39,9 @@ std::string PresentationTester::testRGBA()
 std::string PresentationTester::testCBufferPerObject()
 {
 	return CBufferPerObjectTester().test();
+}
+
+std::string PresentationTester::testCBufferPerScene()
+{
+	return CBufferPerSceneTester().test();
 }

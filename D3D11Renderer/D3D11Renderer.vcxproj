@@ -179,6 +179,7 @@
   <ItemGroup>
     <ClInclude Include="src\Camera.h" />
     <ClInclude Include="src\CBufferPerObject.h" />
+    <ClInclude Include="src\CBufferPerScene.h" />
     <ClInclude Include="src\PerObject.h" />
     <ClInclude Include="src\Rasteriser.h" />
     <ClInclude Include="src\Resolution.h" />
@@ -188,6 +189,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\CBufferPerObject.cpp" />
+    <ClCompile Include="src\CBufferPerScene.cpp" />
     <ClCompile Include="src\PerObject.cpp" />
     <ClCompile Include="src\Rasteriser.cpp" />
     <ClCompile Include="src\Resolution.cpp" />
