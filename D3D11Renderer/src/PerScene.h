@@ -20,6 +20,7 @@ namespace D3D11Renderer
 
 	private:
 		void camera();
+		void ambience();
 		void cleanup();
 
 	private:

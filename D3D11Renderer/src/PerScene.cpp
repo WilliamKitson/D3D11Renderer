@@ -4,11 +4,7 @@ D3D11Renderer::PerScene::PerScene()
 	: cBuffer{ nullptr }, data()
 {
 	camera();
-
-	for (int i{ 16 }; i < 20; i++)
-	{
-		data[i] = 1.0f;
-	}
+	ambience();
 }
 
 D3D11Renderer::PerScene::~PerScene()
@@ -110,6 +106,14 @@ void D3D11Renderer::PerScene::camera()
 	};
 
 	setCamera(camera);
+}
+
+void D3D11Renderer::PerScene::ambience()
+{
+	for (int i{ 16 }; i < 20; i++)
+	{
+		data[i] = 1.0f;
+	}
 }
 
 void D3D11Renderer::PerScene::cleanup()
