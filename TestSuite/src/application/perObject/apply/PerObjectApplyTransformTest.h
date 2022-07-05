@@ -25,8 +25,7 @@ private:
 	void initialiseObject();
 	void initialiseRead();
 	bool success();
-	DirectX::XMMATRIX convert(D3D11Renderer::CBufferPerObject);
-	D3D11Renderer::CBufferPerObject convert(DirectX::XMMATRIX);
+	DirectX::XMMATRIX convert(float[20]);
 
 private:
 	ID3D11Device* device;
@@ -34,6 +33,6 @@ private:
 	ID3D11Buffer* objectBuffer;
 	ID3D11Buffer* readBuffer;
 	HRESULT result;
-	D3D11Renderer::CBufferPerObject inputData;
-	D3D11Renderer::CBufferPerObject outputData;
+	float inputData[20];
+	float outputData[20];
 };

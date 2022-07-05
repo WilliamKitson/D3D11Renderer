@@ -28,7 +28,14 @@ std::string PerObjectApplyTransformTest::test()
 	unit.initialise(device);
 	unit.bind(context);
 
-	unit.setTransform(inputData.transform);
+	float transform[16];
+
+	for (int i{ 0 }; i < 16; i++)
+	{
+		transform[i] = inputData[i];
+	}
+
+	unit.setTransform(transform);
 	unit.apply(context);
 
 	initialiseOutput();
@@ -50,7 +57,7 @@ void PerObjectApplyTransformTest::initialiseInput()
 {
 	for (int i{ 0 }; i < 16; i++)
 	{
-		inputData.transform[i] = (float)i;
+		inputData[i] = (float)i;
 	}
 }
 
@@ -153,62 +160,110 @@ void PerObjectApplyTransformTest::initialiseRead()
 
 bool PerObjectApplyTransformTest::success()
 {
-	D3D11Renderer::CBufferPerObject inputConverted = convert(convert(inputData));
+	DirectX::XMMATRIX transform = convert(inputData);
 
-	for (int i{ 0 }; i < 16; i++)
+	if (outputData[0] != transform._11)
 	{
-		if (inputConverted.transform[i] != outputData.transform[i])
-		{
-			return false;
-		}
+		return false;
+	}
+
+	if (outputData[1] != transform._12)
+	{
+		return false;
+	}
+
+	if (outputData[2] != transform._13)
+	{
+		return false;
+	}
+
+	if (outputData[3] != transform._14)
+	{
+		return false;
+	}
+
+	if (outputData[4] != transform._21)
+	{
+		return false;
+	}
+
+	if (outputData[5] != transform._22)
+	{
+		return false;
+	}
+
+	if (outputData[6] != transform._23)
+	{
+		return false;
+	}
+
+	if (outputData[7] != transform._24)
+	{
+		return false;
+	}
+
+	if (outputData[8] != transform._31)
+	{
+		return false;
+	}
+
+	if (outputData[9] != transform._32)
+	{
+		return false;
+	}
+
+	if (outputData[10] != transform._33)
+	{
+		return false;
+	}
+
+	if (outputData[11] != transform._34)
+	{
+		return false;
+	}
+
+	if (outputData[12] != transform._41)
+	{
+		return false;
+	}
+
+	if (outputData[13] != transform._42)
+	{
+		return false;
+	}
+
+	if (outputData[14] != transform._43)
+	{
+		return false;
+	}
+
+	if (outputData[15] != transform._44)
+	{
+		return false;
 	}
 
 	return true;
 }
 
-DirectX::XMMATRIX PerObjectApplyTransformTest::convert(D3D11Renderer::CBufferPerObject input)
+DirectX::XMMATRIX PerObjectApplyTransformTest::convert(float input[20])
 {
 	DirectX::XMMATRIX position = DirectX::XMMatrixTranslation(
-		input.transform[0],
-		input.transform[1],
-		input.transform[2]
+		input[0],
+		input[1],
+		input[2]
 	);
 
 	DirectX::XMMATRIX rotation = DirectX::XMMatrixRotationRollPitchYaw(
-		input.transform[4],
-		input.transform[5],
-		input.transform[6]
+		input[4],
+		input[5],
+		input[6]
 	);
 
 	DirectX::XMMATRIX scale = DirectX::XMMatrixScaling(
-		input.transform[8],
-		input.transform[9],
-		input.transform[10]
+		input[8],
+		input[9],
+		input[10]
 	);
 
 	return position * rotation * scale;
-}
-
-D3D11Renderer::CBufferPerObject PerObjectApplyTransformTest::convert(DirectX::XMMATRIX input)
-{
-	D3D11Renderer::CBufferPerObject output;
-
-	output.transform[0] = input._11;
-	output.transform[1] = input._12;
-	output.transform[2] = input._13;
-	output.transform[3] = input._14;
-	output.transform[4] = input._21;
-	output.transform[5] = input._22;
-	output.transform[6] = input._23;
-	output.transform[7] = input._24;
-	output.transform[8] = input._31;
-	output.transform[9] = input._32;
-	output.transform[10] = input._33;
-	output.transform[11] = input._34;
-	output.transform[12] = input._41;
-	output.transform[13] = input._42;
-	output.transform[14] = input._43;
-	output.transform[15] = input._44;
-
-	return output;
 }
