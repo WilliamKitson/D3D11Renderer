@@ -47,91 +47,7 @@ std::string PerSceneDefaultWorldViewProjectionTest::test()
 
 	initialiseData();
 
-	DirectX::XMMATRIX worldViewProjection = WVPDefault();
-
-	bool success = true;
-
-	if (data[0] != worldViewProjection._11)
-	{
-		success = false;
-	}
-
-	if (data[1] != worldViewProjection._12)
-	{
-		success = false;
-	}
-
-	if (data[2] != worldViewProjection._13)
-	{
-		success = false;
-	}
-
-	if (data[3] != worldViewProjection._14)
-	{
-		success = false;
-	}
-
-	if (data[4] != worldViewProjection._21)
-	{
-		success = false;
-	}
-
-	if (data[5] != worldViewProjection._22)
-	{
-		success = false;
-	}
-
-	if (data[6] != worldViewProjection._23)
-	{
-		success = false;
-	}
-
-	if (data[7] != worldViewProjection._24)
-	{
-		success = false;
-	}
-
-	if (data[8] != worldViewProjection._31)
-	{
-		success = false;
-	}
-
-	if (data[9] != worldViewProjection._32)
-	{
-		success = false;
-	}
-
-	if (data[10] != worldViewProjection._33)
-	{
-		success = false;
-	}
-
-	if (data[11] != worldViewProjection._34)
-	{
-		success = false;
-	}
-
-	if (data[12] != worldViewProjection._41)
-	{
-		success = false;
-	}
-
-	if (data[13] != worldViewProjection._42)
-	{
-		success = false;
-	}
-
-	if (data[14] != worldViewProjection._43)
-	{
-		success = false;
-	}
-
-	if (data[15] != worldViewProjection._44)
-	{
-		success = false;
-	}
-
-	if (success)
+	if (success())
 	{
 		return std::string();
 	}
@@ -237,4 +153,91 @@ DirectX::XMMATRIX PerSceneDefaultWorldViewProjectionTest::WVPDefault()
 	);
 
 	return world * view * projection;
+}
+
+bool PerSceneDefaultWorldViewProjectionTest::success()
+{
+	DirectX::XMMATRIX worldViewProjection = WVPDefault();
+
+	if (data[0] != worldViewProjection._11)
+	{
+		return false;
+	}
+
+	if (data[1] != worldViewProjection._12)
+	{
+		return false;
+	}
+
+	if (data[2] != worldViewProjection._13)
+	{
+		return false;
+	}
+
+	if (data[3] != worldViewProjection._14)
+	{
+		return false;
+	}
+
+	if (data[4] != worldViewProjection._21)
+	{
+		return false;
+	}
+
+	if (data[5] != worldViewProjection._22)
+	{
+		return false;
+	}
+
+	if (data[6] != worldViewProjection._23)
+	{
+		return false;
+	}
+
+	if (data[7] != worldViewProjection._24)
+	{
+		return false;
+	}
+
+	if (data[8] != worldViewProjection._31)
+	{
+		return false;
+	}
+
+	if (data[9] != worldViewProjection._32)
+	{
+		return false;
+	}
+
+	if (data[10] != worldViewProjection._33)
+	{
+		return false;
+	}
+
+	if (data[11] != worldViewProjection._34)
+	{
+		return false;
+	}
+
+	if (data[12] != worldViewProjection._41)
+	{
+		return false;
+	}
+
+	if (data[13] != worldViewProjection._42)
+	{
+		return false;
+	}
+
+	if (data[14] != worldViewProjection._43)
+	{
+		return false;
+	}
+
+	if (data[15] != worldViewProjection._44)
+	{
+		return false;
+	}
+
+	return true;
 }
