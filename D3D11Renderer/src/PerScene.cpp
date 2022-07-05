@@ -75,10 +75,14 @@ void D3D11Renderer::PerScene::camera()
 
 void D3D11Renderer::PerScene::ambience()
 {
-	for (int i{ 16 }; i < 20; i++)
-	{
-		data[i] = 1.0f;
-	}
+	float ambience[4]{
+		1.0f,
+		1.0f,
+		1.0f,
+		1.0f
+	};
+
+	setAmbience(ambience);
 }
 
 void D3D11Renderer::PerScene::cleanup()
