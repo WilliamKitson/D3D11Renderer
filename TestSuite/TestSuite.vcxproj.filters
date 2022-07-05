@@ -282,6 +282,9 @@
     <ClCompile Include="src\application\perScene\reload\PerSceneReloadTester.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\application\perScene\reload\PerSceneReloadAmbienceTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\MemoryTest.h">
@@ -546,6 +549,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\application\perScene\reload\PerSceneReloadTester.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\application\perScene\reload\PerSceneReloadAmbienceTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

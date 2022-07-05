@@ -166,6 +166,7 @@
     <ClCompile Include="src\application\perScene\default\PerSceneDefaultTester.cpp" />
     <ClCompile Include="src\application\perScene\default\PerSceneDefaultWorldViewProjectionTest.cpp" />
     <ClCompile Include="src\application\perScene\PerSceneTester.cpp" />
+    <ClCompile Include="src\application\perScene\reload\PerSceneReloadAmbienceTest.cpp" />
     <ClCompile Include="src\application\perScene\reload\PerSceneReloadTester.cpp" />
     <ClCompile Include="src\application\perScene\reload\PerSceneReloadWorldViewProjectionTest.cpp" />
     <ClCompile Include="src\application\rasteriser\culling\RasteriserCullingBackTest.cpp" />
@@ -257,6 +258,7 @@
     <ClInclude Include="src\application\perScene\default\PerSceneDefaultTester.h" />
     <ClInclude Include="src\application\perScene\default\PerSceneDefaultWorldViewProjectionTest.h" />
     <ClInclude Include="src\application\perScene\PerSceneTester.h" />
+    <ClInclude Include="src\application\perScene\reload\PerSceneReloadAmbienceTest.h" />
     <ClInclude Include="src\application\perScene\reload\PerSceneReloadTester.h" />
     <ClInclude Include="src\application\perScene\reload\PerSceneReloadWorldViewProjectionTest.h" />
     <ClInclude Include="src\application\rasteriser\culling\RasteriserCullingBackTest.h" />

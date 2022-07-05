@@ -49,6 +49,14 @@ void D3D11Renderer::PerScene::setCamera(float input[8])
 	data[15] = transform._44;
 }
 
+void D3D11Renderer::PerScene::setAmbience(float input[4])
+{
+	for (int i{ 0 }; i < 4; i++)
+	{
+		data[16 + i] = input[i];
+	}
+}
+
 void D3D11Renderer::PerScene::camera()
 {
 	float camera[8]{
