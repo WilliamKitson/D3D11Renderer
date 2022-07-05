@@ -20,6 +20,7 @@ public:
 private:
 	void cleanup(IUnknown*);
 	void initialiseD3D11();
+	void initialiseRead();
 
 private:
 	ID3D11Device* device;

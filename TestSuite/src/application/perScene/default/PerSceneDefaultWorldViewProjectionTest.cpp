@@ -38,20 +38,7 @@ std::string PerSceneDefaultWorldViewProjectionTest::test()
 		return "per scene default world view projection test failed to initialise scene buffer\n";
 	}
 
-	D3D11_BUFFER_DESC readDescription{
-		sizeof(data),
-		D3D11_USAGE_STAGING,
-		0,
-		D3D11_CPU_ACCESS_READ,
-		0,
-		0
-	};
-
-	result = device->CreateBuffer(
-		&readDescription,
-		NULL,
-		&readBuffer
-	);
+	initialiseRead();
 
 	if (FAILED(result))
 	{
@@ -221,5 +208,23 @@ void PerSceneDefaultWorldViewProjectionTest::initialiseD3D11()
 		&device,
 		&supported,
 		&context
+	);
+}
+
+void PerSceneDefaultWorldViewProjectionTest::initialiseRead()
+{
+	D3D11_BUFFER_DESC readDescription{
+		sizeof(data),
+		D3D11_USAGE_STAGING,
+		0,
+		D3D11_CPU_ACCESS_READ,
+		0,
+		0
+	};
+
+	result = device->CreateBuffer(
+		&readDescription,
+		NULL,
+		&readBuffer
 	);
 }
