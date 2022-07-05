@@ -22,6 +22,7 @@ namespace D3D11Renderer
 		void camera();
 		void ambience();
 		void cleanup();
+		void create(ID3D11Device*);
 		DirectX::XMMATRIX worldViewProjection(float[8]);
 
 	private:

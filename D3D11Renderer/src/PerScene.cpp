@@ -15,27 +15,7 @@ D3D11Renderer::PerScene::~PerScene()
 void D3D11Renderer::PerScene::initialise(ID3D11Device* input)
 {
 	cleanup();
-
-	D3D11_BUFFER_DESC description{
-		sizeof(data),
-		D3D11_USAGE_DEFAULT,
-		D3D11_BIND_CONSTANT_BUFFER,
-		0,
-		0,
-		0
-	};
-
-	D3D11_SUBRESOURCE_DATA subresource{
-		&data,
-		0,
-		0
-	};
-
-	input->CreateBuffer(
-		&description,
-		&subresource,
-		&cBuffer
-	);
+	create(input);
 }
 
 void D3D11Renderer::PerScene::bind(ID3D11DeviceContext* input)
@@ -100,6 +80,30 @@ void D3D11Renderer::PerScene::cleanup()
 		cBuffer->Release();
 		cBuffer = nullptr;
 	}
+}
+
+void D3D11Renderer::PerScene::create(ID3D11Device* input)
+{
+	D3D11_BUFFER_DESC description{
+		sizeof(data),
+		D3D11_USAGE_DEFAULT,
+		D3D11_BIND_CONSTANT_BUFFER,
+		0,
+		0,
+		0
+	};
+
+	D3D11_SUBRESOURCE_DATA subresource{
+		&data,
+		0,
+		0
+	};
+
+	input->CreateBuffer(
+		&description,
+		&subresource,
+		&cBuffer
+	);
 }
 
 DirectX::XMMATRIX D3D11Renderer::PerScene::worldViewProjection(float input[8])
