@@ -22,6 +22,7 @@ private:
 	void initialiseD3D11();
 	void initialiseRead();
 	void initialiseData();
+	DirectX::XMMATRIX WVPDefault();
 
 private:
 	ID3D11Device* device;

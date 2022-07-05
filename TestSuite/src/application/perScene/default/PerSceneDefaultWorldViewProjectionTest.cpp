@@ -47,30 +47,7 @@ std::string PerSceneDefaultWorldViewProjectionTest::test()
 
 	initialiseData();
 
-	DirectX::XMMATRIX world = DirectX::XMMatrixIdentity();
-
-	DirectX::XMMATRIX viewPosition = DirectX::XMMatrixTranslation(
-		0.0f,
-		0.0f,
-		0.0f
-	);
-
-	DirectX::XMMATRIX viewRotation = DirectX::XMMatrixRotationRollPitchYaw(
-		0.0f,
-		0.0f,
-		0.0f
-	);
-
-	DirectX::XMMATRIX view = viewPosition * viewRotation;
-
-	DirectX::XMMATRIX projection = DirectX::XMMatrixPerspectiveFovLH(
-		DirectX::XMConvertToRadians(90.0f),
-		960.0f/540.0f,
-		1.0f,
-		100.0f
-	);
-
-	DirectX::XMMATRIX worldViewProjection = world * view * projection;
+	DirectX::XMMATRIX worldViewProjection = WVPDefault();
 
 	bool success = true;
 
@@ -232,4 +209,32 @@ void PerSceneDefaultWorldViewProjectionTest::initialiseData()
 		subresource.pData,
 		sizeof(data)
 	);
+}
+
+DirectX::XMMATRIX PerSceneDefaultWorldViewProjectionTest::WVPDefault()
+{
+	DirectX::XMMATRIX world = DirectX::XMMatrixIdentity();
+
+	DirectX::XMMATRIX viewPosition = DirectX::XMMatrixTranslation(
+		0.0f,
+		0.0f,
+		0.0f
+	);
+
+	DirectX::XMMATRIX viewRotation = DirectX::XMMatrixRotationRollPitchYaw(
+		0.0f,
+		0.0f,
+		0.0f
+	);
+
+	DirectX::XMMATRIX view = viewPosition * viewRotation;
+
+	DirectX::XMMATRIX projection = DirectX::XMMatrixPerspectiveFovLH(
+		DirectX::XMConvertToRadians(90.0f),
+		960.0f / 540.0f,
+		1.0f,
+		100.0f
+	);
+
+	return world * view * projection;
 }
