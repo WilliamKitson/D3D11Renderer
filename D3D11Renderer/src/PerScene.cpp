@@ -24,20 +24,12 @@ D3D11Renderer::PerScene::PerScene()
 
 D3D11Renderer::PerScene::~PerScene()
 {
-	if (cBuffer)
-	{
-		cBuffer->Release();
-		cBuffer = nullptr;
-	}
+	cleanup();
 }
 
 void D3D11Renderer::PerScene::initialise(ID3D11Device* input)
 {
-	if (cBuffer)
-	{
-		cBuffer->Release();
-		cBuffer = nullptr;
-	}
+	cleanup();
 
 	D3D11_BUFFER_DESC description{
 		sizeof(data),
@@ -113,4 +105,13 @@ void D3D11Renderer::PerScene::setCamera(float input[8])
 	data[13] = worldViewProjection._42;
 	data[14] = worldViewProjection._43;
 	data[15] = worldViewProjection._44;
+}
+
+void D3D11Renderer::PerScene::cleanup()
+{
+	if (cBuffer)
+	{
+		cBuffer->Release();
+		cBuffer = nullptr;
+	}
 }

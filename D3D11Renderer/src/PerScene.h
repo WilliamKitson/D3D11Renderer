@@ -19,6 +19,9 @@ namespace D3D11Renderer
 		void setCamera(float[8]);
 
 	private:
+		void cleanup();
+
+	private:
 		ID3D11Buffer* cBuffer;
 		float data[20];
 	};
