@@ -10,5 +10,8 @@ namespace D3D11Renderer
 	public:
 		float worldViewProjection[16];
 		float ambience[4];
+
+	private:
+		void initWorldViewProjection();
 	};
 }
