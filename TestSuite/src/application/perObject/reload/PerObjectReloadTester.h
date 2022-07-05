@@ -2,6 +2,7 @@
 
 #include <string>
 
+#include "PerObjectReloadTransformTest.h"
 #include "PerObjectReloadColourTest.h"
 
 class PerObjectReloadTester
@@ -13,5 +14,6 @@ public:
 	std::string test();
 
 private:
+	std::string testTransform();
 	std::string testColour();
 };

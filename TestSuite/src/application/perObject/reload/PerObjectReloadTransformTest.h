@@ -14,14 +14,15 @@ public:
 	std::string test();
 
 private:
-	void initialiseUpdate();
+	void initialiseInput();
 	void cleanup(IUnknown*);
 	void initialiseD3D11();
-	void initialiseData();
+	void initialiseOutput();
 	void initialiseObject();
 	void initialiseRead();
 	bool success();
-	int successes();
+	DirectX::XMMATRIX convert(D3D11Renderer::CBufferPerObject);
+	D3D11Renderer::CBufferPerObject convert(DirectX::XMMATRIX);
 
 private:
 	ID3D11Device* device;
@@ -29,6 +30,6 @@ private:
 	ID3D11Buffer* objectBuffer;
 	ID3D11Buffer* readBuffer;
 	HRESULT result;
-	D3D11Renderer::CBufferPerObject update;
-	D3D11Renderer::CBufferPerObject data;
+	D3D11Renderer::CBufferPerObject inputData;
+	D3D11Renderer::CBufferPerObject outputData;
 };
