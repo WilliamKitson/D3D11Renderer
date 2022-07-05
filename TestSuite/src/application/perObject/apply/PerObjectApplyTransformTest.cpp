@@ -1,9 +1,9 @@
 #include "PerObjectApplyTransformTest.h"
 
 PerObjectApplyTransformTest::PerObjectApplyTransformTest()
-	: device{ nullptr }, context{ nullptr }, objectBuffer{ nullptr }, readBuffer{ nullptr }, result(), update(), data()
+	: device{ nullptr }, context{ nullptr }, objectBuffer{ nullptr }, readBuffer{ nullptr }, result(), input(), data()
 {
-	initialiseUpdate();
+	initialiseInput();
 }
 
 PerObjectApplyTransformTest::~PerObjectApplyTransformTest()
@@ -28,7 +28,7 @@ std::string PerObjectApplyTransformTest::test()
 	unit.initialise(device);
 	unit.bind(context);
 
-	unit.setTransform(update.transform);
+	unit.setTransform(input.transform);
 	unit.apply(context);
 
 	initialiseData();
@@ -46,11 +46,11 @@ std::string PerObjectApplyTransformTest::test()
 	return "per object apply transform test failed\n";
 }
 
-void PerObjectApplyTransformTest::initialiseUpdate()
+void PerObjectApplyTransformTest::initialiseInput()
 {
 	for (int i{ 0 }; i < 16; i++)
 	{
-		update.transform[i] = (float)i;
+		input.transform[i] = (float)i;
 	}
 }
 
@@ -167,7 +167,7 @@ int PerObjectApplyTransformTest::successes()
 
 	for (int i{ 0 }; i < 16; i++)
 	{
-		output += data.transform[i] == update.transform[i];
+		output += data.transform[i] == input.transform[i];
 	}
 
 	return output;
