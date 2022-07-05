@@ -26,6 +26,7 @@ namespace D3D11Renderer
 		void cleanup();
 		void validate(IUnknown*);
 		void create(ID3D11Device*);
+		DirectX::XMMATRIX calculate(float[16]);
 
 	private:
 		ID3D11Buffer* cBuffer;

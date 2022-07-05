@@ -66,25 +66,7 @@ void D3D11Renderer::PerObject::bind(ID3D11DeviceContext* input)
 
 void D3D11Renderer::PerObject::setTransform(float input[16])
 {
-	DirectX::XMMATRIX position = DirectX::XMMatrixTranslation(
-		input[0],
-		input[1],
-		input[2]
-	);
-
-	DirectX::XMMATRIX rotation = DirectX::XMMatrixRotationRollPitchYaw(
-		input[4],
-		input[5],
-		input[6]
-	);
-
-	DirectX::XMMATRIX scale = DirectX::XMMatrixScaling(
-		input[8],
-		input[9],
-		input[10]
-	);
-
-	DirectX::XMMATRIX transform = position * rotation * scale;
+	DirectX::XMMATRIX transform = calculate(input);
 
 	data.transform[0] = transform._11;
 	data.transform[1] = transform._12;
@@ -153,4 +135,27 @@ void D3D11Renderer::PerObject::create(ID3D11Device* input)
 		&subresource,
 		&cBuffer
 	);
+}
+
+DirectX::XMMATRIX D3D11Renderer::PerObject::calculate(float input[16])
+{
+	DirectX::XMMATRIX position = DirectX::XMMatrixTranslation(
+		input[0],
+		input[1],
+		input[2]
+	);
+
+	DirectX::XMMATRIX rotation = DirectX::XMMatrixRotationRollPitchYaw(
+		input[4],
+		input[5],
+		input[6]
+	);
+
+	DirectX::XMMATRIX scale = DirectX::XMMatrixScaling(
+		input[8],
+		input[9],
+		input[10]
+	);
+
+	return position * rotation * scale;
 }
