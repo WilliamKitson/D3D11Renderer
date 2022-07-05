@@ -16,6 +16,7 @@ std::string ApplicationTester::test()
 	output += testSwapchain();
 	output += testRasteriser();
 	output += testPerObject();
+	output += testPerScene();
 
 	return output;
 }
@@ -33,4 +34,9 @@ std::string ApplicationTester::testRasteriser()
 std::string ApplicationTester::testPerObject()
 {
 	return PerObjectTester().test();
+}
+
+std::string ApplicationTester::testPerScene()
+{
+	return PerSceneTester().test();
 }

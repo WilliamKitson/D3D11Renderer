@@ -264,6 +264,15 @@
     <ClCompile Include="src\application\perObject\reload\PerObjectReloadTransformTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\application\perScene\default\PerSceneDefaultWorldViewProjectionTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\application\perScene\default\PerSceneDefaultTester.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\application\perScene\PerSceneTester.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\MemoryTest.h">
@@ -510,6 +519,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\application\perObject\reload\PerObjectReloadTransformTest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\application\perScene\default\PerSceneDefaultWorldViewProjectionTest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\application\perScene\default\PerSceneDefaultTester.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\application\perScene\PerSceneTester.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

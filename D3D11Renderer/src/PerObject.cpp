@@ -119,7 +119,7 @@ void D3D11Renderer::PerObject::validate(IUnknown* input)
 
 void D3D11Renderer::PerObject::create(ID3D11Device* input)
 {
-	D3D11_BUFFER_DESC perObjectDescription{
+	D3D11_BUFFER_DESC description{
 		sizeof(data),
 		D3D11_USAGE_DEFAULT,
 		D3D11_BIND_CONSTANT_BUFFER,
@@ -134,8 +134,8 @@ void D3D11Renderer::PerObject::create(ID3D11Device* input)
 		0
 	};
 
-	HRESULT result = input->CreateBuffer(
-		&perObjectDescription,
+	input->CreateBuffer(
+		&description,
 		&subresource,
 		&cBuffer
 	);
