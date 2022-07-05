@@ -1,9 +1,9 @@
 #include "PerObjectInvalidApplyTest.h"
 
 PerObjectInvalidApplyTest::PerObjectInvalidApplyTest()
-	: device{ nullptr }, context{ nullptr }, objectBuffer{ nullptr }, readBuffer{ nullptr }, result(), update(), data()
+	: device{ nullptr }, context{ nullptr }, objectBuffer{ nullptr }, readBuffer{ nullptr }, result(), inputData(), outputData()
 {
-	initialiseUpdate();
+	initialiseInput();
 }
 
 PerObjectInvalidApplyTest::~PerObjectInvalidApplyTest()
@@ -28,10 +28,17 @@ std::string PerObjectInvalidApplyTest::test()
 	unit.initialise(device);
 	unit.bind(context);
 
-	unit.setTransform(update.transform);
+	float transform[16];
+
+	for (int i{ 0 }; i < 16; i++)
+	{
+		transform[i] = inputData[i];
+	}
+
+	unit.setTransform(transform);
 	unit.apply(nullptr);
 
-	initialiseData();
+	initialiseOutput();
 
 	if (FAILED(result))
 	{
@@ -46,11 +53,11 @@ std::string PerObjectInvalidApplyTest::test()
 	return "per object update transform test failed\n";
 }
 
-void PerObjectInvalidApplyTest::initialiseUpdate()
+void PerObjectInvalidApplyTest::initialiseInput()
 {
 	for (int i{ 0 }; i < 16; i++)
 	{
-		update.transform[i] = (float)i;
+		inputData[i] = (float)i;
 	}
 }
 
@@ -84,7 +91,7 @@ void PerObjectInvalidApplyTest::initialiseD3D11()
 	);
 }
 
-void PerObjectInvalidApplyTest::initialiseData()
+void PerObjectInvalidApplyTest::initialiseOutput()
 {
 	initialiseObject();
 	initialiseRead();
@@ -110,9 +117,9 @@ void PerObjectInvalidApplyTest::initialiseData()
 	);
 
 	memcpy(
-		&data,
+		&outputData,
 		subresource.pData,
-		sizeof(data)
+		sizeof(outputData)
 	);
 }
 
@@ -136,7 +143,7 @@ void PerObjectInvalidApplyTest::initialiseObject()
 void PerObjectInvalidApplyTest::initialiseRead()
 {
 	D3D11_BUFFER_DESC readDescription{
-		sizeof(D3D11Renderer::CBufferPerObject),
+		sizeof(inputData),
 		D3D11_USAGE_STAGING,
 		0,
 		D3D11_CPU_ACCESS_READ,
@@ -167,7 +174,7 @@ int PerObjectInvalidApplyTest::successes()
 
 	for (int i{ 0 }; i < 16; i++)
 	{
-		output += data.transform[i] == D3D11Renderer::CBufferPerObject().transform[i];
+		output += outputData[i] == 1.0f;
 	}
 
 	return output;

@@ -143,7 +143,7 @@ void PerObjectApplyTransformTest::initialiseObject()
 void PerObjectApplyTransformTest::initialiseRead()
 {
 	D3D11_BUFFER_DESC readDescription{
-		sizeof(D3D11Renderer::CBufferPerObject),
+		sizeof(inputData),
 		D3D11_USAGE_STAGING,
 		0,
 		D3D11_CPU_ACCESS_READ,
