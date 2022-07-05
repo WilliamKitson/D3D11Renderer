@@ -1,9 +1,9 @@
 #include "PerObjectApplyColourTest.h"
 
 PerObjectApplyColourTest::PerObjectApplyColourTest()
-	: device{ nullptr }, context{ nullptr }, objectBuffer{ nullptr }, readBuffer{ nullptr }, result(), update(), data()
+	: device{ nullptr }, context{ nullptr }, objectBuffer{ nullptr }, readBuffer{ nullptr }, result(), inputData(), outputData()
 {
-	initialiseUpdate();
+	initialiseInput();
 }
 
 PerObjectApplyColourTest::~PerObjectApplyColourTest()
@@ -28,10 +28,17 @@ std::string PerObjectApplyColourTest::test()
 	unit.initialise(device);
 	unit.bind(context);
 
-	unit.setColour(update.colour);
+	float colour[4];
+
+	for (int i{ 0 }; i < 4; i++)
+	{
+		colour[i] = inputData[16 + i];
+	}
+
+	unit.setColour(colour);
 	unit.apply(context);
 
-	initialiseData();
+	initialiseOutput();
 
 	if (FAILED(result))
 	{
@@ -46,11 +53,11 @@ std::string PerObjectApplyColourTest::test()
 	return "per object apply colour test failed\n";
 }
 
-void PerObjectApplyColourTest::initialiseUpdate()
+void PerObjectApplyColourTest::initialiseInput()
 {
-	for (int i{ 0 }; i < 4; i++)
+	for (int i{ 16 }; i < 20; i++)
 	{
-		update.colour[i] = (float)i;
+		inputData[i] = (float)i;
 	}
 }
 
@@ -84,7 +91,7 @@ void PerObjectApplyColourTest::initialiseD3D11()
 	);
 }
 
-void PerObjectApplyColourTest::initialiseData()
+void PerObjectApplyColourTest::initialiseOutput()
 {
 	initialiseObject();
 	initialiseRead();
@@ -110,9 +117,9 @@ void PerObjectApplyColourTest::initialiseData()
 	);
 
 	memcpy(
-		&data,
+		&outputData,
 		subresource.pData,
-		sizeof(data)
+		sizeof(outputData)
 	);
 }
 
@@ -165,9 +172,9 @@ int PerObjectApplyColourTest::successes()
 {
 	int output = 0;
 
-	for (int i{ 0 }; i < 4; i++)
+	for (int i{ 16 }; i < 20; i++)
 	{
-		output += data.colour[i] == update.colour[i];
+		output += outputData[i] == inputData[i];
 	}
 
 	return output;
