@@ -68,24 +68,24 @@ void D3D11Renderer::PerScene::bind(ID3D11DeviceContext* input)
 
 void D3D11Renderer::PerScene::setCamera(float input[8])
 {
-	DirectX::XMMATRIX transform = worldViewProjection(input);
+	DirectX::XMMATRIX worldViewProjection = calculate(input);
 
-	data[0] = transform._11;
-	data[1] = transform._12;
-	data[2] = transform._13;
-	data[3] = transform._14;
-	data[4] = transform._21;
-	data[5] = transform._22;
-	data[6] = transform._23;
-	data[7] = transform._24;
-	data[8] = transform._31;
-	data[9] = transform._32;
-	data[10] = transform._33;
-	data[11] = transform._34;
-	data[12] = transform._41;
-	data[13] = transform._42;
-	data[14] = transform._43;
-	data[15] = transform._44;
+	data[0] = worldViewProjection._11;
+	data[1] = worldViewProjection._12;
+	data[2] = worldViewProjection._13;
+	data[3] = worldViewProjection._14;
+	data[4] = worldViewProjection._21;
+	data[5] = worldViewProjection._22;
+	data[6] = worldViewProjection._23;
+	data[7] = worldViewProjection._24;
+	data[8] = worldViewProjection._31;
+	data[9] = worldViewProjection._32;
+	data[10] = worldViewProjection._33;
+	data[11] = worldViewProjection._34;
+	data[12] = worldViewProjection._41;
+	data[13] = worldViewProjection._42;
+	data[14] = worldViewProjection._43;
+	data[15] = worldViewProjection._44;
 }
 
 void D3D11Renderer::PerScene::setAmbience(float input[3])
@@ -163,7 +163,7 @@ void D3D11Renderer::PerScene::create(ID3D11Device* input)
 	);
 }
 
-DirectX::XMMATRIX D3D11Renderer::PerScene::worldViewProjection(float input[8])
+DirectX::XMMATRIX D3D11Renderer::PerScene::calculate(float input[8])
 {
 	DirectX::XMMATRIX world = DirectX::XMMatrixIdentity();
 

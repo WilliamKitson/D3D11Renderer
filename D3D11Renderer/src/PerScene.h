@@ -26,7 +26,7 @@ namespace D3D11Renderer
 		void cleanup();
 		void validate(IUnknown*);
 		void create(ID3D11Device*);
-		DirectX::XMMATRIX worldViewProjection(float[8]);
+		DirectX::XMMATRIX calculate(float[8]);
 
 	private:
 		ID3D11Buffer* cBuffer;
