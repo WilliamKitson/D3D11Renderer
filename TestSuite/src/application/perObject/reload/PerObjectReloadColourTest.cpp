@@ -28,9 +28,9 @@ std::string PerObjectReloadColourTest::test()
 	unit.initialise(device);
 	unit.bind(context);
 
-	float colour[4];
+	float colour[3];
 
-	for (int i{ 0 }; i < 4; i++)
+	for (int i{ 0 }; i < 3; i++)
 	{
 		colour[i] = inputData[16 + i];
 	}
@@ -173,10 +173,12 @@ int PerObjectReloadColourTest::successes()
 {
 	int output = 0;
 
-	for (int i{ 16 }; i < 20; i++)
+	for (int i{ 16 }; i < 19; i++)
 	{
 		output += outputData[i] == inputData[i];
 	}
+
+	output += outputData[19] == 1.0f;
 
 	return output;
 }
