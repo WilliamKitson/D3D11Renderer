@@ -5,6 +5,7 @@
 #include "pos/CameraPosTester.h"
 #include "rot/CameraRotTester.h"
 #include "CameraFrustumTest.h"
+#include "CameraAspectRatioTest.h"
 
 class CameraTester
 {
@@ -18,4 +19,5 @@ private:
 	std::string testPos();
 	std::string testRot();
 	std::string testFrustum();
+	std::string testAspectRatio();
 };

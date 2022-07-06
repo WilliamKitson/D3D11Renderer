@@ -12,5 +12,6 @@ namespace D3D11Renderer
 		const float yrot{ 0.0f };
 		const float zrot{ 0.0f };
 		const float frustum{ 0.0f };
+		const float aspectRatio{ 0.0f };
 	};
 }
