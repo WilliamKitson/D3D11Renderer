@@ -4,11 +4,7 @@ D3D11Renderer::PerObject::PerObject()
 	: cBuffer{ nullptr }, data()
 {
 	transform();
-
-	for (int i{ 16 }; i < 20; i++)
-	{
-		data[i] = 1.0f;
-	}
+	colour();
 }
 
 D3D11Renderer::PerObject::~PerObject()
@@ -115,6 +111,14 @@ void D3D11Renderer::PerObject::transform()
 	};
 
 	setTransform(output);
+}
+
+void D3D11Renderer::PerObject::colour()
+{
+	for (int i{ 16 }; i < 20; i++)
+	{
+		data[i] = 1.0f;
+	}
 }
 
 void D3D11Renderer::PerObject::cleanup()

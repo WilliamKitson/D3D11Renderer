@@ -22,6 +22,7 @@ namespace D3D11Renderer
 
 	private:
 		void transform();
+		void colour();
 		void cleanup();
 		void validate(IUnknown*);
 		void create(ID3D11Device*);
