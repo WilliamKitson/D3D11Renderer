@@ -18,6 +18,18 @@ void D3D11Renderer::PerScene::initialise(ID3D11Device* input)
 	create(input);
 }
 
+void D3D11Renderer::PerScene::apply(ID3D11DeviceContext* input)
+{
+	input->UpdateSubresource(
+		cBuffer,
+		0,
+		0,
+		&data,
+		0,
+		0
+	);
+}
+
 void D3D11Renderer::PerScene::bind(ID3D11DeviceContext* input)
 {
 	input->VSSetConstantBuffers(

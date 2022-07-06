@@ -14,6 +14,7 @@ std::string PerSceneTester::test()
 
 	output += testDefault();
 	output += testReload();
+	output += testApply();
 
 	return output;
 }
@@ -26,4 +27,9 @@ std::string PerSceneTester::testDefault()
 std::string PerSceneTester::testReload()
 {
 	return PerSceneReloadTester().test();
+}
+
+std::string PerSceneTester::testApply()
+{
+	return PerSceneApplyTester().test();
 }
