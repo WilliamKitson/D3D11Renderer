@@ -168,6 +168,8 @@
     <ClCompile Include="src\application\perScene\default\PerSceneDefaultAmbienceTest.cpp" />
     <ClCompile Include="src\application\perScene\default\PerSceneDefaultTester.cpp" />
     <ClCompile Include="src\application\perScene\default\PerSceneDefaultWorldViewProjectionTest.cpp" />
+    <ClCompile Include="src\application\perScene\invalid\PerSceneInvalidDeviceTest.cpp" />
+    <ClCompile Include="src\application\perScene\invalid\PerSceneInvalidTester.cpp" />
     <ClCompile Include="src\application\perScene\PerSceneTester.cpp" />
     <ClCompile Include="src\application\perScene\reload\PerSceneReloadAmbienceTest.cpp" />
     <ClCompile Include="src\application\perScene\reload\PerSceneReloadTester.cpp" />
@@ -263,6 +265,8 @@
     <ClInclude Include="src\application\perScene\default\PerSceneDefaultAmbienceTest.h" />
     <ClInclude Include="src\application\perScene\default\PerSceneDefaultTester.h" />
     <ClInclude Include="src\application\perScene\default\PerSceneDefaultWorldViewProjectionTest.h" />
+    <ClInclude Include="src\application\perScene\invalid\PerSceneInvalidDeviceTest.h" />
+    <ClInclude Include="src\application\perScene\invalid\PerSceneInvalidTester.h" />
     <ClInclude Include="src\application\perScene\PerSceneTester.h" />
     <ClInclude Include="src\application\perScene\reload\PerSceneReloadAmbienceTest.h" />
     <ClInclude Include="src\application\perScene\reload\PerSceneReloadTester.h" />

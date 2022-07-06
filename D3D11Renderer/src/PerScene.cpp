@@ -14,6 +14,15 @@ D3D11Renderer::PerScene::~PerScene()
 
 void D3D11Renderer::PerScene::initialise(ID3D11Device* input)
 {
+	try
+	{
+		validate(input);
+	}
+	catch (int)
+	{
+		return;
+	}
+
 	cleanup();
 	create(input);
 }
@@ -104,6 +113,16 @@ void D3D11Renderer::PerScene::cleanup()
 		cBuffer->Release();
 		cBuffer = nullptr;
 	}
+}
+
+void D3D11Renderer::PerScene::validate(IUnknown* input)
+{
+	if (input)
+	{
+		return;
+	}
+
+	throw int();
 }
 
 void D3D11Renderer::PerScene::create(ID3D11Device* input)

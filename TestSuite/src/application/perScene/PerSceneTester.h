@@ -5,6 +5,7 @@
 #include "default/PerSceneDefaultTester.h"
 #include "reload/PerSceneReloadTester.h"
 #include "apply/PerSceneApplyTester.h"
+#include "invalid/PerSceneInvalidTester.h"
 
 class PerSceneTester
 {
@@ -18,4 +19,5 @@ private:
 	std::string testDefault();
 	std::string testReload();
 	std::string testApply();
+	std::string testInvalid();
 };

@@ -294,6 +294,12 @@
     <ClCompile Include="src\application\perScene\apply\PerSceneApplyAmbienceTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\application\perScene\invalid\PerSceneInvalidDeviceTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\application\perScene\invalid\PerSceneInvalidTester.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\MemoryTest.h">
@@ -570,6 +576,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\application\perScene\apply\PerSceneApplyAmbienceTest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\application\perScene\invalid\PerSceneInvalidDeviceTest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\application\perScene\invalid\PerSceneInvalidTester.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
