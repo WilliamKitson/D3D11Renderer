@@ -28,14 +28,7 @@ std::string PerObjectReloadColourTest::test()
 	unit.initialise(device);
 	unit.bind(context);
 
-	float colour[3];
-
-	for (int i{ 0 }; i < 3; i++)
-	{
-		colour[i] = inputData[16 + i];
-	}
-
-	unit.setColour(colour);
+	unit.setColour(inputData);
 	unit.initialise(device);
 	unit.bind(context);
 
@@ -46,7 +39,7 @@ std::string PerObjectReloadColourTest::test()
 		return "per object reload colour test failed to initialise data\n";
 	}
 
-	if (success())
+	if (successes() == 3)
 	{
 		return std::string();
 	}
@@ -56,7 +49,7 @@ std::string PerObjectReloadColourTest::test()
 
 void PerObjectReloadColourTest::initialiseInput()
 {
-	for (int i{ 16 }; i < 20; i++)
+	for (int i{ 0 }; i < 3; i++)
 	{
 		inputData[i] = (float)i;
 	}
@@ -159,26 +152,14 @@ void PerObjectReloadColourTest::initialiseRead()
 	);
 }
 
-bool PerObjectReloadColourTest::success()
-{
-	if (successes() == 4)
-	{
-		return true;
-	}
-
-	return false;
-}
-
 int PerObjectReloadColourTest::successes()
 {
 	int output = 0;
 
-	for (int i{ 16 }; i < 19; i++)
+	for (int i{ 0 }; i < 3; i++)
 	{
-		output += outputData[i] == inputData[i];
+		output += outputData[16 + i] == inputData[i];
 	}
-
-	output += outputData[19] == 1.0f;
 
 	return output;
 }

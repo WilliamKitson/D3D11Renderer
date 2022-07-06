@@ -20,7 +20,6 @@ private:
 	void initialiseOutput();
 	void initialiseObject();
 	void initialiseRead();
-	bool success();
 	int successes();
 
 private:
@@ -29,6 +28,6 @@ private:
 	ID3D11Buffer* objectBuffer;
 	ID3D11Buffer* readBuffer;
 	HRESULT result;
-	float inputData[20];
+	float inputData[3];
 	float outputData[20];
 };
