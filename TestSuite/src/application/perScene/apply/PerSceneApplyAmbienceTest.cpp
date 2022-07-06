@@ -51,7 +51,7 @@ std::string PerSceneApplyAmbienceTest::test()
 
 	initialiseOutput();
 
-	if (successes() == 4)
+	if (successes() == 3)
 	{
 		return std::string();
 	}
@@ -61,7 +61,7 @@ std::string PerSceneApplyAmbienceTest::test()
 
 void PerSceneApplyAmbienceTest::initialiseAmbience()
 {
-	for (int i{ 0 }; i < 4; i++)
+	for (int i{ 0 }; i < 3; i++)
 	{
 		ambience[i] = (float)i;
 	}
@@ -143,7 +143,7 @@ int PerSceneApplyAmbienceTest::successes()
 {
 	int output = 0;
 
-	for (int i{ 0 }; i < 4; i++)
+	for (int i{ 0 }; i < 3; i++)
 	{
 		output += outputData[16 + i] == ambience[i];
 	}

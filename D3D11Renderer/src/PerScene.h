@@ -18,7 +18,7 @@ namespace D3D11Renderer
 		void apply(ID3D11DeviceContext*);
 		void bind(ID3D11DeviceContext*);
 		void setCamera(float[8]);
-		void setAmbience(float[4]);
+		void setAmbience(float[3]);
 
 	private:
 		void camera();

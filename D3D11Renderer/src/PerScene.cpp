@@ -88,9 +88,9 @@ void D3D11Renderer::PerScene::setCamera(float input[8])
 	data[15] = transform._44;
 }
 
-void D3D11Renderer::PerScene::setAmbience(float input[4])
+void D3D11Renderer::PerScene::setAmbience(float input[3])
 {
-	for (int i{ 0 }; i < 4; i++)
+	for (int i{ 0 }; i < 3; i++)
 	{
 		data[16 + i] = input[i];
 	}
@@ -114,14 +114,10 @@ void D3D11Renderer::PerScene::camera()
 
 void D3D11Renderer::PerScene::ambience()
 {
-	float ambience[4]{
-		1.0f,
-		1.0f,
-		1.0f,
-		1.0f
-	};
-
-	setAmbience(ambience);
+	for (int i{ 0 }; i < 4; i++)
+	{
+		data[16 + i] = 1.0f;
+	}
 }
 
 void D3D11Renderer::PerScene::cleanup()

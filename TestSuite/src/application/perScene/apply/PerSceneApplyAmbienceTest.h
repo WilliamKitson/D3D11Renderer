@@ -27,6 +27,6 @@ private:
 	ID3D11Buffer* sceneBuffer;
 	ID3D11Buffer* readBuffer;
 	HRESULT result;
-	float ambience[4];
+	float ambience[3];
 	float outputData[20];
 };
