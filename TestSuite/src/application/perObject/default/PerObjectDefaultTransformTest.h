@@ -16,11 +16,10 @@ public:
 private:
 	void cleanup(IUnknown*);
 	void initialiseD3D11();
-	void initialiseData();
+	void initialiseOutput();
 	void initialiseObject();
 	void initialiseRead();
 	bool success();
-	int successes();
 
 private:
 	ID3D11Device* device;
@@ -28,5 +27,5 @@ private:
 	ID3D11Buffer* objectBuffer;
 	ID3D11Buffer* readBuffer;
 	HRESULT result;
-	float data[20];
+	float outputData[20];
 };

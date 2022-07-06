@@ -28,14 +28,14 @@ std::string PerObjectInvalidApplyTest::test()
 	unit.initialise(device);
 	unit.bind(context);
 
-	float transform[16];
+	float colour[4];
 
-	for (int i{ 0 }; i < 16; i++)
+	for (int i{ 0 }; i < 4; i++)
 	{
-		transform[i] = inputData[i];
+		colour[i] = float(i);
 	}
 
-	unit.setTransform(transform);
+	unit.setColour(colour);
 	unit.apply(nullptr);
 
 	initialiseOutput();
@@ -50,7 +50,7 @@ std::string PerObjectInvalidApplyTest::test()
 		return std::string();
 	}
 
-	return "per object update transform test failed\n";
+	return "per object invalid apply test failed\n";
 }
 
 void PerObjectInvalidApplyTest::initialiseInput()
@@ -160,7 +160,7 @@ void PerObjectInvalidApplyTest::initialiseRead()
 
 bool PerObjectInvalidApplyTest::success()
 {
-	if (successes() == 16)
+	if (successes() == 4)
 	{
 		return true;
 	}
@@ -172,9 +172,9 @@ int PerObjectInvalidApplyTest::successes()
 {
 	int output = 0;
 
-	for (int i{ 0 }; i < 16; i++)
+	for (int i{ 0 }; i < 4; i++)
 	{
-		output += outputData[i] == 1.0f;
+		output += outputData[16 + i] == 1.0f;
 	}
 
 	return output;

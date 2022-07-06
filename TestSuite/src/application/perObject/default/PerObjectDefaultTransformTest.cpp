@@ -1,7 +1,7 @@
 #include "PerObjectDefaultTransformTest.h"
 
 PerObjectDefaultTransformTest::PerObjectDefaultTransformTest()
-	: device{ nullptr }, context{ nullptr }, objectBuffer{ nullptr }, readBuffer{ nullptr }, result(), data()
+	: device{ nullptr }, context{ nullptr }, objectBuffer{ nullptr }, readBuffer{ nullptr }, result(), outputData()
 {
 }
 
@@ -27,7 +27,7 @@ std::string PerObjectDefaultTransformTest::test()
 	unit.initialise(device);
 	unit.bind(context);
 
-	initialiseData();
+	initialiseOutput();
 
 	if (FAILED(result))
 	{
@@ -72,7 +72,7 @@ void PerObjectDefaultTransformTest::initialiseD3D11()
 	);
 }
 
-void PerObjectDefaultTransformTest::initialiseData()
+void PerObjectDefaultTransformTest::initialiseOutput()
 {
 	initialiseObject();
 	initialiseRead();
@@ -98,9 +98,9 @@ void PerObjectDefaultTransformTest::initialiseData()
 	);
 
 	memcpy(
-		&data,
+		&outputData,
 		subresource.pData,
-		sizeof(data)
+		sizeof(outputData)
 	);
 }
 
@@ -124,7 +124,7 @@ void PerObjectDefaultTransformTest::initialiseObject()
 void PerObjectDefaultTransformTest::initialiseRead()
 {
 	D3D11_BUFFER_DESC readDescription{
-		sizeof(data),
+		sizeof(outputData),
 		D3D11_USAGE_STAGING,
 		0,
 		D3D11_CPU_ACCESS_READ,
@@ -141,22 +141,105 @@ void PerObjectDefaultTransformTest::initialiseRead()
 
 bool PerObjectDefaultTransformTest::success()
 {
-	if (successes() == 16)
+	DirectX::XMMATRIX location = DirectX::XMMatrixTranslation(
+		0.0f,
+		0.0f,
+		0.0f
+	);
+
+	DirectX::XMMATRIX rotation = DirectX::XMMatrixRotationRollPitchYaw(
+		0.0f,
+		0.0f,
+		0.0f
+	);
+
+	DirectX::XMMATRIX scale = DirectX::XMMatrixScaling(
+		1.0f,
+		1.0f,
+		1.0f
+	);
+
+	DirectX::XMMATRIX transform = location * rotation * scale;
+
+	if (outputData[0] != transform._11)
 	{
-		return true;
+		return false;
 	}
 
-	return false;
-}
-
-int PerObjectDefaultTransformTest::successes()
-{
-	int output = 0;
-
-	for (int i{ 0 }; i < 16; i++)
+	if (outputData[1] != transform._12)
 	{
-		output += data[i] == 1.0f;
+		return false;
 	}
 
-	return output;
+	if (outputData[2] != transform._13)
+	{
+		return false;
+	}
+
+	if (outputData[3] != transform._14)
+	{
+		return false;
+	}
+
+	if (outputData[4] != transform._21)
+	{
+		return false;
+	}
+
+	if (outputData[5] != transform._22)
+	{
+		return false;
+	}
+
+	if (outputData[6] != transform._23)
+	{
+		return false;
+	}
+
+	if (outputData[7] != transform._24)
+	{
+		return false;
+	}
+
+	if (outputData[8] != transform._31)
+	{
+		return false;
+	}
+
+	if (outputData[9] != transform._32)
+	{
+		return false;
+	}
+
+	if (outputData[10] != transform._33)
+	{
+		return false;
+	}
+
+	if (outputData[11] != transform._34)
+	{
+		return false;
+	}
+
+	if (outputData[12] != transform._41)
+	{
+		return false;
+	}
+
+	if (outputData[13] != transform._42)
+	{
+		return false;
+	}
+
+	if (outputData[14] != transform._43)
+	{
+		return false;
+	}
+
+	if (outputData[15] != transform._44)
+	{
+		return false;
+	}
+
+	return true;
 }
