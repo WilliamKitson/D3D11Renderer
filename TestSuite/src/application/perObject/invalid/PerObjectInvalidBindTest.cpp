@@ -27,7 +27,7 @@ std::string PerObjectInvalidBindTest::test()
 	unit.bind(nullptr);
 
 	context->VSGetConstantBuffers(
-		0,
+		1,
 		1,
 		&objectBuffer
 	);

@@ -27,7 +27,7 @@ std::string PerObjectInvalidDeviceTest::test()
 	unit.bind(context);
 
 	context->VSGetConstantBuffers(
-		0,
+		1,
 		1,
 		&objectBuffer
 	);

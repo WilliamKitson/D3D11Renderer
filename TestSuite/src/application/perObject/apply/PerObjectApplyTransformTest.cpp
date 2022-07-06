@@ -119,7 +119,7 @@ void PerObjectApplyTransformTest::initialiseOutput()
 void PerObjectApplyTransformTest::initialiseObject()
 {
 	context->VSGetConstantBuffers(
-		0,
+		1,
 		1,
 		&objectBuffer
 	);

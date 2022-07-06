@@ -60,7 +60,7 @@ void D3D11Renderer::PerObject::bind(ID3D11DeviceContext* input)
 	}
 
 	input->VSSetConstantBuffers(
-		0,
+		1,
 		1,
 		&cBuffer
 	);

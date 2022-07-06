@@ -126,7 +126,7 @@ void PerObjectApplyColourTest::initialiseOutput()
 void PerObjectApplyColourTest::initialiseObject()
 {
 	context->VSGetConstantBuffers(
-		0,
+		1,
 		1,
 		&objectBuffer
 	);
