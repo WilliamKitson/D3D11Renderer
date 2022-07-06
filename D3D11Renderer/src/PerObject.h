@@ -21,10 +21,11 @@ namespace D3D11Renderer
 		void setColour(float[4]);
 
 	private:
+		void transform();
 		void cleanup();
 		void validate(IUnknown*);
 		void create(ID3D11Device*);
-		DirectX::XMMATRIX calculate(float[16]);
+		DirectX::XMMATRIX calculate(float[9]);
 
 	private:
 		ID3D11Buffer* cBuffer;

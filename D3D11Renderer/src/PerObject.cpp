@@ -3,42 +3,7 @@
 D3D11Renderer::PerObject::PerObject()
 	: cBuffer{ nullptr }, data()
 {
-	DirectX::XMMATRIX location = DirectX::XMMatrixTranslation(
-		0.0f,
-		0.0f,
-		0.0f
-	);
-
-	DirectX::XMMATRIX rotation = DirectX::XMMatrixRotationRollPitchYaw(
-		0.0f,
-		0.0f,
-		0.0f
-	);
-
-	DirectX::XMMATRIX scale = DirectX::XMMatrixScaling(
-		1.0f,
-		1.0f,
-		1.0f
-	);
-
-	DirectX::XMMATRIX transform = location * rotation * scale;
-
-	data[0] = transform._11;
-	data[1] = transform._12;
-	data[2] = transform._13;
-	data[3] = transform._14;
-	data[4] = transform._21;
-	data[5] = transform._22;
-	data[6] = transform._23;
-	data[7] = transform._24;
-	data[8] = transform._31;
-	data[9] = transform._32;
-	data[10] = transform._33;
-	data[11] = transform._34;
-	data[12] = transform._41;
-	data[13] = transform._42;
-	data[14] = transform._43;
-	data[15] = transform._44;
+	transform();
 
 	for (int i{ 16 }; i < 20; i++)
 	{
@@ -133,6 +98,23 @@ void D3D11Renderer::PerObject::setColour(float input[4])
 	{
 		data[16 + i] = input[i];
 	}
+}
+
+void D3D11Renderer::PerObject::transform()
+{
+	float output[9]{
+		0.0f,
+		0.0f,
+		0.0f,
+		0.0f,
+		0.0f,
+		0.0f,
+		1.0f,
+		1.0f,
+		1.0f
+	};
+
+	setTransform(output);
 }
 
 void D3D11Renderer::PerObject::cleanup()
