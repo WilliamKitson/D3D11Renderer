@@ -41,6 +41,15 @@ void D3D11Renderer::PerScene::apply(ID3D11DeviceContext* input)
 
 void D3D11Renderer::PerScene::bind(ID3D11DeviceContext* input)
 {
+	try
+	{
+		validate(input);
+	}
+	catch (int)
+	{
+		return;
+	}
+
 	input->VSSetConstantBuffers(
 		0,
 		1,
