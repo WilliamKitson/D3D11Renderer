@@ -28,14 +28,7 @@ std::string PerObjectInvalidApplyTest::test()
 	unit.initialise(device);
 	unit.bind(context);
 
-	float colour[4];
-
-	for (int i{ 0 }; i < 4; i++)
-	{
-		colour[i] = float(i);
-	}
-
-	unit.setColour(colour);
+	unit.setColour(inputData);
 	unit.apply(nullptr);
 
 	initialiseOutput();
@@ -45,7 +38,7 @@ std::string PerObjectInvalidApplyTest::test()
 		return "per object invalid apply test failed to initialise data\n";
 	}
 
-	if (success())
+	if (successes() == 4)
 	{
 		return std::string();
 	}
@@ -55,7 +48,7 @@ std::string PerObjectInvalidApplyTest::test()
 
 void PerObjectInvalidApplyTest::initialiseInput()
 {
-	for (int i{ 0 }; i < 16; i++)
+	for (int i{ 0 }; i < 3; i++)
 	{
 		inputData[i] = (float)i;
 	}
@@ -143,7 +136,7 @@ void PerObjectInvalidApplyTest::initialiseObject()
 void PerObjectInvalidApplyTest::initialiseRead()
 {
 	D3D11_BUFFER_DESC readDescription{
-		sizeof(inputData),
+		sizeof(outputData),
 		D3D11_USAGE_STAGING,
 		0,
 		D3D11_CPU_ACCESS_READ,
@@ -156,16 +149,6 @@ void PerObjectInvalidApplyTest::initialiseRead()
 		NULL,
 		&readBuffer
 	);
-}
-
-bool PerObjectInvalidApplyTest::success()
-{
-	if (successes() == 4)
-	{
-		return true;
-	}
-
-	return false;
 }
 
 int PerObjectInvalidApplyTest::successes()
