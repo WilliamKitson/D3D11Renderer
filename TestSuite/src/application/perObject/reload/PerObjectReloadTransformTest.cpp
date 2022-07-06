@@ -28,14 +28,7 @@ std::string PerObjectReloadTransformTest::test()
 	unit.initialise(device);
 	unit.bind(context);
 
-	float transform[16];
-
-	for (int i{ 0 }; i < 16; i++)
-	{
-		transform[i] = inputData[i];
-	}
-
-	unit.setTransform(transform);
+	unit.setTransform(inputData);
 	unit.initialise(device);
 	unit.bind(context);
 
@@ -56,7 +49,7 @@ std::string PerObjectReloadTransformTest::test()
 
 void PerObjectReloadTransformTest::initialiseInput()
 {
-	for (int i{ 0 }; i < 16; i++)
+	for (int i{ 0 }; i < 9; i++)
 	{
 		inputData[i] = (float)i;
 	}
@@ -246,7 +239,7 @@ bool PerObjectReloadTransformTest::success()
 	return true;
 }
 
-DirectX::XMMATRIX PerObjectReloadTransformTest::convert(float input[20])
+DirectX::XMMATRIX PerObjectReloadTransformTest::convert(float input[9])
 {
 	DirectX::XMMATRIX position = DirectX::XMMatrixTranslation(
 		input[0],
@@ -255,15 +248,15 @@ DirectX::XMMATRIX PerObjectReloadTransformTest::convert(float input[20])
 	);
 
 	DirectX::XMMATRIX rotation = DirectX::XMMatrixRotationRollPitchYaw(
+		input[3],
 		input[4],
-		input[5],
-		input[6]
+		input[5]
 	);
 
 	DirectX::XMMATRIX scale = DirectX::XMMatrixScaling(
-		input[8],
-		input[9],
-		input[10]
+		input[6],
+		input[7],
+		input[8]
 	);
 
 	return position * rotation * scale;

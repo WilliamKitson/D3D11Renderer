@@ -21,7 +21,7 @@ private:
 	void initialiseObject();
 	void initialiseRead();
 	bool success();
-	DirectX::XMMATRIX convert(float[20]);
+	DirectX::XMMATRIX convert(float[9]);
 
 private:
 	ID3D11Device* device;
@@ -29,6 +29,6 @@ private:
 	ID3D11Buffer* objectBuffer;
 	ID3D11Buffer* readBuffer;
 	HRESULT result;
-	float inputData[20];
+	float inputData[9];
 	float outputData[20];
 };

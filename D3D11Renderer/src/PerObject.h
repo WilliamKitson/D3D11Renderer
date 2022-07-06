@@ -17,7 +17,7 @@ namespace D3D11Renderer
 		void initialise(ID3D11Device*);
 		void apply(ID3D11DeviceContext*);
 		void bind(ID3D11DeviceContext*);
-		void setTransform(float[16]);
+		void setTransform(float[9]);
 		void setColour(float[4]);
 
 	private:
