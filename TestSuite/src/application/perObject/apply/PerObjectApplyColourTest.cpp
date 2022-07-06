@@ -28,14 +28,7 @@ std::string PerObjectApplyColourTest::test()
 	unit.initialise(device);
 	unit.bind(context);
 
-	float colour[3];
-
-	for (int i{ 0 }; i < 3; i++)
-	{
-		colour[i] = inputData[16 + i];
-	}
-
-	unit.setColour(colour);
+	unit.setColour(inputData);
 	unit.apply(context);
 
 	initialiseOutput();
@@ -45,7 +38,7 @@ std::string PerObjectApplyColourTest::test()
 		return "per object apply colour test failed to initialise data\n";
 	}
 
-	if (success())
+	if (successes() == 3)
 	{
 		return std::string();
 	}
@@ -55,7 +48,7 @@ std::string PerObjectApplyColourTest::test()
 
 void PerObjectApplyColourTest::initialiseInput()
 {
-	for (int i{ 16 }; i < 20; i++)
+	for (int i{ 0 }; i < 3; i++)
 	{
 		inputData[i] = (float)i;
 	}
@@ -143,7 +136,7 @@ void PerObjectApplyColourTest::initialiseObject()
 void PerObjectApplyColourTest::initialiseRead()
 {
 	D3D11_BUFFER_DESC readDescription{
-		sizeof(inputData),
+		sizeof(outputData),
 		D3D11_USAGE_STAGING,
 		0,
 		D3D11_CPU_ACCESS_READ,
@@ -158,26 +151,14 @@ void PerObjectApplyColourTest::initialiseRead()
 	);
 }
 
-bool PerObjectApplyColourTest::success()
-{
-	if (successes() == 4)
-	{
-		return true;
-	}
-
-	return false;
-}
-
 int PerObjectApplyColourTest::successes()
 {
 	int output = 0;
 
-	for (int i{ 16 }; i < 19; i++)
+	for (int i{ 0 }; i < 3; i++)
 	{
-		output += outputData[i] == inputData[i];
+		output += outputData[16 + i] == inputData[i];
 	}
-
-	output += outputData[19] == 1.0f;
 
 	return output;
 }
