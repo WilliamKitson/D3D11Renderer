@@ -1,7 +1,9 @@
 #pragma once
 
 #include <string>
+
 #include "PerSceneApplyWorldViewProjectionTest.h"
+#include "PerSceneApplyAmbienceTest.h"
 
 class PerSceneApplyTester
 {
@@ -13,4 +15,5 @@ public:
 
 private:
 	std::string testWorldViewProjection();
+	std::string testAmbience();
 };

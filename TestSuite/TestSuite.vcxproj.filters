@@ -291,6 +291,9 @@
     <ClCompile Include="src\application\perScene\apply\PerSceneApplyTester.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\application\perScene\apply\PerSceneApplyAmbienceTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\MemoryTest.h">
@@ -564,6 +567,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\application\perScene\apply\PerSceneApplyTester.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\application\perScene\apply\PerSceneApplyAmbienceTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

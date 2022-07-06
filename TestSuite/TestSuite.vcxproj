@@ -162,6 +162,7 @@
     <ClCompile Include="src\application\perObject\reload\PerObjectReloadColourTest.cpp" />
     <ClCompile Include="src\application\perObject\reload\PerObjectReloadTester.cpp" />
     <ClCompile Include="src\application\perObject\reload\PerObjectReloadTransformTest.cpp" />
+    <ClCompile Include="src\application\perScene\apply\PerSceneApplyAmbienceTest.cpp" />
     <ClCompile Include="src\application\perScene\apply\PerSceneApplyTester.cpp" />
     <ClCompile Include="src\application\perScene\apply\PerSceneApplyWorldViewProjectionTest.cpp" />
     <ClCompile Include="src\application\perScene\default\PerSceneDefaultAmbienceTest.cpp" />
@@ -256,6 +257,7 @@
     <ClInclude Include="src\application\perObject\reload\PerObjectReloadColourTest.h" />
     <ClInclude Include="src\application\perObject\reload\PerObjectReloadTester.h" />
     <ClInclude Include="src\application\perObject\reload\PerObjectReloadTransformTest.h" />
+    <ClInclude Include="src\application\perScene\apply\PerSceneApplyAmbienceTest.h" />
     <ClInclude Include="src\application\perScene\apply\PerSceneApplyTester.h" />
     <ClInclude Include="src\application\perScene\apply\PerSceneApplyWorldViewProjectionTest.h" />
     <ClInclude Include="src\application\perScene\default\PerSceneDefaultAmbienceTest.h" />
