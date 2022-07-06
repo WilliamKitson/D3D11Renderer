@@ -14,6 +14,7 @@ std::string PerSceneInvalidTester::test()
 
 	output += testDevice();
 	output += testBind();
+	output += testApply();
 
 	return output;
 }
@@ -26,4 +27,9 @@ std::string PerSceneInvalidTester::testDevice()
 std::string PerSceneInvalidTester::testBind()
 {
 	return PerSceneInvalidBindTest().test();
+}
+
+std::string PerSceneInvalidTester::testApply()
+{
+	return PerSceneInvalidApplyTest().test();
 }

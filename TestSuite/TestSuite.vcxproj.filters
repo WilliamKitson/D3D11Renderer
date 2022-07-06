@@ -303,6 +303,9 @@
     <ClCompile Include="src\application\perScene\invalid\PerSceneInvalidBindTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\application\perScene\invalid\PerSceneInvalidApplyTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\MemoryTest.h">
@@ -588,6 +591,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\application\perScene\invalid\PerSceneInvalidBindTest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\application\perScene\invalid\PerSceneInvalidApplyTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

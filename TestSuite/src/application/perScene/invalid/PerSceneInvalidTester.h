@@ -4,6 +4,7 @@
 
 #include "PerSceneInvalidDeviceTest.h"
 #include "PerSceneInvalidBindTest.h"
+#include "PerSceneInvalidApplyTest.h"
 
 class PerSceneInvalidTester
 {
@@ -16,4 +17,5 @@ public:
 private:
 	std::string testDevice();
 	std::string testBind();
+	std::string testApply();
 };
