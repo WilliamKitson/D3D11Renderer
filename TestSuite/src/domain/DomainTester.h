@@ -3,7 +3,6 @@
 #include <string>
 
 #include "resolution/ResolutionTester.h"
-#include "coordinates2D/Coordinates2DTester.h"
 #include "coordinates3D/Coordinates3DTester.h"
 
 class DomainTester
@@ -16,6 +15,5 @@ public:
 
 private:
 	std::string testResolution();
-	std::string testCoordinates2D();
 	std::string testCoordinates3D();
 };
