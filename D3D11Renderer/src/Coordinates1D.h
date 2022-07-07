@@ -8,6 +8,10 @@ namespace D3D11Renderer
 		Coordinates1D();
 		~Coordinates1D();
 
+		void push(float);
 		int getCount();
+
+	private:
+		int count;
 	};
 }

@@ -217,6 +217,7 @@
     <ClCompile Include="src\application\swapchain\SwapchainTester.cpp" />
     <ClCompile Include="src\domain\coordinates1D\Coordinates1DTester.cpp" />
     <ClCompile Include="src\domain\coordinates1D\count\Coordinates1DCountDefaultTest.cpp" />
+    <ClCompile Include="src\domain\coordinates1D\count\Coordinates1DCountPushTest.cpp" />
     <ClCompile Include="src\domain\coordinates1D\count\Coordinates1DCountTester.cpp" />
     <ClCompile Include="src\domain\DomainTester.cpp" />
     <ClCompile Include="src\domain\resolution\default\ResolutionDefaultHeightTest.cpp" />
@@ -325,6 +326,7 @@
     <ClInclude Include="src\application\swapchain\SwapchainTester.h" />
     <ClInclude Include="src\domain\coordinates1D\Coordinates1DTester.h" />
     <ClInclude Include="src\domain\coordinates1D\count\Coordinates1DCountDefaultTest.h" />
+    <ClInclude Include="src\domain\coordinates1D\count\Coordinates1DCountPushTest.h" />
     <ClInclude Include="src\domain\coordinates1D\count\Coordinates1DCountTester.h" />
     <ClInclude Include="src\domain\DomainTester.h" />
     <ClInclude Include="src\domain\resolution\default\ResolutionDefaultHeightTest.h" />
