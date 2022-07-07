@@ -10,4 +10,7 @@ public:
 	~Coordinates1DIndexDefaultTest();
 
 	std::string test();
+
+private:
+	float coordinate;
 };
