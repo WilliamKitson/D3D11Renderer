@@ -220,6 +220,7 @@
     <ClCompile Include="src\domain\coordinates1D\count\Coordinates1DCountPushTest.cpp" />
     <ClCompile Include="src\domain\coordinates1D\count\Coordinates1DCountTester.cpp" />
     <ClCompile Include="src\domain\coordinates1D\index\Coordinates1DIndexDefaultTest.cpp" />
+    <ClCompile Include="src\domain\coordinates1D\index\Coordinates1DIndexMinimumTest.cpp" />
     <ClCompile Include="src\domain\coordinates1D\index\Coordinates1DIndexTester.cpp" />
     <ClCompile Include="src\domain\DomainTester.cpp" />
     <ClCompile Include="src\domain\resolution\default\ResolutionDefaultHeightTest.cpp" />
@@ -331,6 +332,7 @@
     <ClInclude Include="src\domain\coordinates1D\count\Coordinates1DCountPushTest.h" />
     <ClInclude Include="src\domain\coordinates1D\count\Coordinates1DCountTester.h" />
     <ClInclude Include="src\domain\coordinates1D\index\Coordinates1DIndexDefaultTest.h" />
+    <ClInclude Include="src\domain\coordinates1D\index\Coordinates1DIndexMinimumTest.h" />
     <ClInclude Include="src\domain\coordinates1D\index\Coordinates1DIndexTester.h" />
     <ClInclude Include="src\domain\DomainTester.h" />
     <ClInclude Include="src\domain\resolution\default\ResolutionDefaultHeightTest.h" />

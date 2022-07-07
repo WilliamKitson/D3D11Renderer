@@ -342,6 +342,9 @@
     <ClCompile Include="src\domain\coordinates1D\index\Coordinates1DIndexTester.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\domain\coordinates1D\index\Coordinates1DIndexMinimumTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\MemoryTest.h">
@@ -666,6 +669,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\domain\coordinates1D\index\Coordinates1DIndexTester.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\domain\coordinates1D\index\Coordinates1DIndexMinimumTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

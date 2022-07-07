@@ -1,7 +1,9 @@
 #pragma once
 
 #include <string>
+
 #include "Coordinates1DIndexDefaultTest.h"
+#include "Coordinates1DIndexMinimumTest.h"
 
 class Coordinates1DIndexTester
 {
@@ -13,4 +15,5 @@ public:
 
 private:
 	std::string testDefault();
+	std::string testMinimum();
 };

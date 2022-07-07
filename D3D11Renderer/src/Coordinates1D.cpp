@@ -23,3 +23,7 @@ float D3D11Renderer::Coordinates1D::getCoordinate()
 {
 	return 1.0f;
 }
+
+void D3D11Renderer::Coordinates1D::setIndex(int)
+{
+}
