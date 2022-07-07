@@ -167,19 +167,17 @@ DirectX::XMMATRIX D3D11Renderer::PerScene::calculate(float input[8])
 {
 	DirectX::XMMATRIX world = DirectX::XMMatrixIdentity();
 
-	DirectX::XMMATRIX viewPosition = DirectX::XMMatrixTranslation(
+	DirectX::XMMATRIX position = DirectX::XMMatrixTranslation(
 		input[0],
 		input[1],
 		input[2]
 	);
 
-	DirectX::XMMATRIX viewRotation = DirectX::XMMatrixRotationRollPitchYaw(
+	DirectX::XMMATRIX rotation = DirectX::XMMatrixRotationRollPitchYaw(
 		input[3],
 		input[4],
 		input[5]
 	);
-
-	DirectX::XMMATRIX view = viewPosition * viewRotation;
 
 	DirectX::XMMATRIX projection = DirectX::XMMatrixPerspectiveFovLH(
 		DirectX::XMConvertToRadians(input[6]),
@@ -188,5 +186,5 @@ DirectX::XMMATRIX D3D11Renderer::PerScene::calculate(float input[8])
 		100.0f
 	);
 
-	return world * view * projection;
+	return world * position * rotation * projection;
 }
