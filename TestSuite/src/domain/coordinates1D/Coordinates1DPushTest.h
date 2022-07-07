@@ -13,9 +13,9 @@ public:
 
 private:
 	void initialise();
+	int successes();
 
 private:
 	D3D11Renderer::Coordinates1D unit;
 	int itterations;
-	int successes;
 };
