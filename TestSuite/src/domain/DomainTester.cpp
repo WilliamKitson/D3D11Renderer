@@ -14,6 +14,7 @@ std::string DomainTester::test()
 
 	failures += testResolution();
 	failures += testCoordinates2D();
+	failures += testCoordinates3D();
 
 	return failures;
 }
@@ -26,4 +27,9 @@ std::string DomainTester::testResolution()
 std::string DomainTester::testCoordinates2D()
 {
 	return Coordinates2DTester().test();
+}
+
+std::string DomainTester::testCoordinates3D()
+{
+	return Coordinates3DTester().test();
 }
