@@ -1,17 +1,39 @@
 #include "Coordinates1D.h"
 
 D3D11Renderer::Coordinates1D::Coordinates1D()
-	: count{ 0 }
+	: count{ 0 }, index{ 0 }, coordinates{ nullptr }
 {
 }
 
 D3D11Renderer::Coordinates1D::~Coordinates1D()
 {
+	if (coordinates)
+	{
+		delete[] coordinates;
+		coordinates = nullptr;
+	}
 }
 
-void D3D11Renderer::Coordinates1D::push(float)
+void D3D11Renderer::Coordinates1D::push(float input)
 {
 	count++;
+
+	float* pushed = new float[count];
+
+	for (int i{ 0 }; i < count - 1; i++)
+	{
+		pushed[i] = coordinates[i];
+	}
+
+	pushed[count - 1] = input;
+
+	if (coordinates)
+	{
+		delete[] coordinates;
+		coordinates = nullptr;
+	}
+
+	coordinates = pushed;
 }
 
 int D3D11Renderer::Coordinates1D::getCount()
@@ -21,9 +43,20 @@ int D3D11Renderer::Coordinates1D::getCount()
 
 float D3D11Renderer::Coordinates1D::getCoordinate()
 {
-	return 1.0f;
+	return coordinates[index];
 }
 
-void D3D11Renderer::Coordinates1D::setIndex(int)
+void D3D11Renderer::Coordinates1D::setIndex(int input)
 {
+	if (input < 0)
+	{
+		input = 0;
+	}
+
+	if (input >= count)
+	{
+		input = 0;
+	}
+
+	index = input;
 }

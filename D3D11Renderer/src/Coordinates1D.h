@@ -15,5 +15,7 @@ namespace D3D11Renderer
 
 	private:
 		int count;
+		int index;
+		float* coordinates;
 	};
 }

@@ -14,6 +14,7 @@ std::string Coordinates1DTester::test()
 
 	output += testCount();
 	output += testIndex();
+	output += testPush();
 
 	return output;
 }
@@ -26,4 +27,9 @@ std::string Coordinates1DTester::testCount()
 std::string Coordinates1DTester::testIndex()
 {
 	return Coordinates1DIndexTester().test();
+}
+
+std::string Coordinates1DTester::testPush()
+{
+	return Coordinates1DPushTest().test();
 }
