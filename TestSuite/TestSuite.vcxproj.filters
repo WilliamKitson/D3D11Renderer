@@ -405,6 +405,15 @@
     <ClCompile Include="src\domain\coordinates3D\Coordinates3DTester.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\application\geometry\default\GeometryDefaultPositionsTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\application\geometry\default\GeometryDefaultTester.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\application\geometry\GeometryTester.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\MemoryTest.h">
@@ -792,6 +801,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\domain\coordinates3D\Coordinates3DTester.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\application\geometry\default\GeometryDefaultPositionsTest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\application\geometry\default\GeometryDefaultTester.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\application\geometry\GeometryTester.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

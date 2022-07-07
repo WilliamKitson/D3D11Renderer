@@ -14,6 +14,7 @@ std::string ApplicationTester::test()
 	std::string output{ "" };
 
 	output += testSwapchain();
+	output += testGeometry();
 	output += testRasteriser();
 	output += testPerScene();
 	output += testPerObject();
@@ -24,6 +25,11 @@ std::string ApplicationTester::test()
 std::string ApplicationTester::testSwapchain()
 {
 	return SwapchainTester(hInstance, nCmdShow).test();
+}
+
+std::string ApplicationTester::testGeometry()
+{
+	return GeometryTester().test();
 }
 
 std::string ApplicationTester::testRasteriser()
