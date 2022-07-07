@@ -178,7 +178,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="src\Camera.h" />
-    <ClInclude Include="src\Coordinates3D.h" />
     <ClInclude Include="src\Geometry.h" />
     <ClInclude Include="src\PerObject.h" />
     <ClInclude Include="src\PerScene.h" />
@@ -189,7 +188,6 @@
     <ClInclude Include="src\Swapchain.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Coordinates3D.cpp" />
     <ClCompile Include="src\Geometry.cpp" />
     <ClCompile Include="src\PerObject.cpp" />
     <ClCompile Include="src\PerScene.cpp" />

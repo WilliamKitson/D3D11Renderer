@@ -309,57 +309,6 @@
     <ClCompile Include="src\presentation\camera\CameraAspectRatioTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\domain\coordinates3D\count\Coordinates3DCountClearTest.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\domain\coordinates3D\count\Coordinates3DCountDefaultTest.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\domain\coordinates3D\count\Coordinates3DCountPushTest.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\domain\coordinates3D\count\Coordinates3DCountTester.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\domain\coordinates3D\empty\Coordinates3DEmptyTester.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\domain\coordinates3D\empty\Coordinates3DEmptyXTest.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\domain\coordinates3D\empty\Coordinates3DEmptyYTest.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\domain\coordinates3D\empty\Coordinates3DEmptyZTest.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\domain\coordinates3D\index\Coordinates3DIndexDefaultTest.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\domain\coordinates3D\index\Coordinates3DIndexMaximumTest.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\domain\coordinates3D\index\Coordinates3DIndexMinimumTest.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\domain\coordinates3D\index\Coordinates3DIndexTester.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\domain\coordinates3D\push\Coordinates3DPushTester.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\domain\coordinates3D\push\Coordinates3DPushXTest.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\domain\coordinates3D\push\Coordinates3DPushYTest.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\domain\coordinates3D\push\Coordinates3DPushZTest.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\domain\coordinates3D\Coordinates3DTester.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\application\geometry\default\GeometryDefaultPositionsTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -666,57 +615,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\presentation\camera\CameraAspectRatioTest.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\domain\coordinates3D\count\Coordinates3DCountClearTest.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\domain\coordinates3D\count\Coordinates3DCountDefaultTest.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\domain\coordinates3D\count\Coordinates3DCountPushTest.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\domain\coordinates3D\count\Coordinates3DCountTester.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\domain\coordinates3D\empty\Coordinates3DEmptyTester.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\domain\coordinates3D\empty\Coordinates3DEmptyXTest.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\domain\coordinates3D\empty\Coordinates3DEmptyYTest.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\domain\coordinates3D\empty\Coordinates3DEmptyZTest.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\domain\coordinates3D\index\Coordinates3DIndexDefaultTest.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\domain\coordinates3D\index\Coordinates3DIndexMaximumTest.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\domain\coordinates3D\index\Coordinates3DIndexMinimumTest.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\domain\coordinates3D\index\Coordinates3DIndexTester.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\domain\coordinates3D\push\Coordinates3DPushTester.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\domain\coordinates3D\push\Coordinates3DPushXTest.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\domain\coordinates3D\push\Coordinates3DPushYTest.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\domain\coordinates3D\push\Coordinates3DPushZTest.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\domain\coordinates3D\Coordinates3DTester.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\application\geometry\default\GeometryDefaultPositionsTest.h">
