@@ -1,7 +1,9 @@
 #pragma once
 
 #include <string>
+
 #include "GeometryDefaultPositionsTest.h"
+#include "GeometryDefaultTexcoordsTest.h"
 
 class GeometryDefaultTester
 {
@@ -13,4 +15,5 @@ public:
 
 private:
 	std::string testPositions();
+	std::string testTexcoords();
 };
