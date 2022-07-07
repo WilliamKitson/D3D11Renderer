@@ -324,6 +324,15 @@
     <ClCompile Include="src\application\geometry\default\GeometryDefaultNormalsTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\domain\coordinates1D\count\Coordinates1DCountDefaultTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\domain\coordinates1D\count\Coordinates1DCountTester.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\domain\coordinates1D\Coordinates1DTester.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\MemoryTest.h">
@@ -630,6 +639,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\application\geometry\default\GeometryDefaultNormalsTest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\domain\coordinates1D\count\Coordinates1DCountDefaultTest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\domain\coordinates1D\count\Coordinates1DCountTester.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\domain\coordinates1D\Coordinates1DTester.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

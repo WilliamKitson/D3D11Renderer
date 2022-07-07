@@ -1,7 +1,9 @@
 #pragma once
 
 #include <string>
+
 #include "resolution/ResolutionTester.h"
+#include "coordinates1D/Coordinates1DTester.h"
 
 class DomainTester
 {
@@ -13,4 +15,5 @@ public:
 
 private:
 	std::string testResolution();
+	std::string testCoordinates1D();
 };
