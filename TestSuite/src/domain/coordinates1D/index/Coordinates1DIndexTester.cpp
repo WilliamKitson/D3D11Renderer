@@ -14,6 +14,7 @@ std::string Coordinates1DIndexTester::test()
 
 	output += testDefault();
 	output += testMinimum();
+	output += testMaximum();
 
 	return output;
 }
@@ -26,4 +27,9 @@ std::string Coordinates1DIndexTester::testDefault()
 std::string Coordinates1DIndexTester::testMinimum()
 {
 	return Coordinates1DIndexMinimumTest().test();
+}
+
+std::string Coordinates1DIndexTester::testMaximum()
+{
+	return Coordiantes1DIndexMaximumTest().test();
 }
