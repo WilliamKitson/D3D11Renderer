@@ -7,11 +7,7 @@ GeometryDefaultPositionsTest::GeometryDefaultPositionsTest()
 
 GeometryDefaultPositionsTest::~GeometryDefaultPositionsTest()
 {
-	for (int i{ 0 }; i < 3; i++)
-	{
-		cleanup(vBuffer[i]);
-	}
-
+	cleanup();
 	cleanup(context);
 	cleanup(device);
 }
@@ -36,6 +32,14 @@ std::string GeometryDefaultPositionsTest::test()
 	}
 
 	return "geometry default positions test failed\n";
+}
+
+void GeometryDefaultPositionsTest::cleanup()
+{
+	for (int i{ 0 }; i < 3; i++)
+	{
+		cleanup(vBuffer[i]);
+	}
 }
 
 void GeometryDefaultPositionsTest::cleanup(IUnknown* input)
