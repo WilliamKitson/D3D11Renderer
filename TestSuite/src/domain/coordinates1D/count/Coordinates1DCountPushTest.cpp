@@ -1,7 +1,7 @@
 #include "Coordinates1DCountPushTest.h"
 
 Coordinates1DCountPushTest::Coordinates1DCountPushTest()
-	: itterations{ 4 }
+	: unit(), itterations{ 4 }
 {
 }
 
@@ -11,12 +11,7 @@ Coordinates1DCountPushTest::~Coordinates1DCountPushTest()
 
 std::string Coordinates1DCountPushTest::test()
 {
-	D3D11Renderer::Coordinates1D unit;
-
-	for (int i{ 0 }; i < itterations; i++)
-	{
-		unit.push(0.0f);
-	}
+	initialise();
 
 	if (unit.getCount() == itterations)
 	{
@@ -24,4 +19,12 @@ std::string Coordinates1DCountPushTest::test()
 	}
 
 	return "coordinates 1D count push test failed\n";
+}
+
+void Coordinates1DCountPushTest::initialise()
+{
+	for (int i{ 0 }; i < itterations; i++)
+	{
+		unit.push(0.0f);
+	}
 }

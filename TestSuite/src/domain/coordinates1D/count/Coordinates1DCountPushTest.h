@@ -12,5 +12,9 @@ public:
 	std::string test();
 
 private:
+	void initialise();
+
+private:
+	D3D11Renderer::Coordinates1D unit;
 	int itterations;
 };
