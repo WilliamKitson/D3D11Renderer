@@ -417,6 +417,9 @@
     <ClCompile Include="src\application\geometry\default\GeometryDefaultTexcoordsTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\application\geometry\default\GeometryDefaultNormalsTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\MemoryTest.h">
@@ -816,6 +819,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\application\geometry\default\GeometryDefaultTexcoordsTest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\application\geometry\default\GeometryDefaultNormalsTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -148,6 +148,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\application\ApplicationTester.cpp" />
+    <ClCompile Include="src\application\geometry\default\GeometryDefaultNormalsTest.cpp" />
     <ClCompile Include="src\application\geometry\default\GeometryDefaultPositionsTest.cpp" />
     <ClCompile Include="src\application\geometry\default\GeometryDefaultTester.cpp" />
     <ClCompile Include="src\application\geometry\default\GeometryDefaultTexcoordsTest.cpp" />
@@ -284,6 +285,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\application\ApplicationTester.h" />
+    <ClInclude Include="src\application\geometry\default\GeometryDefaultNormalsTest.h" />
     <ClInclude Include="src\application\geometry\default\GeometryDefaultPositionsTest.h" />
     <ClInclude Include="src\application\geometry\default\GeometryDefaultTester.h" />
     <ClInclude Include="src\application\geometry\default\GeometryDefaultTexcoordsTest.h" />

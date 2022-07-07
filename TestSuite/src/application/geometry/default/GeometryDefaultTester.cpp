@@ -14,6 +14,7 @@ std::string GeometryDefaultTester::test()
 
 	output += testPositions();
 	output += testTexcoords();
+	output += testNormals();
 
 	return output;
 }
@@ -26,4 +27,9 @@ std::string GeometryDefaultTester::testPositions()
 std::string GeometryDefaultTester::testTexcoords()
 {
 	return GeometryDefaultTexcoordsTest().test();
+}
+
+std::string GeometryDefaultTester::testNormals()
+{
+	return GeometryDefaultNormalsTest().test();
 }

@@ -1,24 +1,24 @@
-#include "GeometryDefaultTexcoordsTest.h"
+#include "GeometryDefaultNormalsTest.h"
 
-GeometryDefaultTexcoordsTest::GeometryDefaultTexcoordsTest()
+GeometryDefaultNormalsTest::GeometryDefaultNormalsTest()
 	: device{ nullptr }, context{ nullptr }, vBuffer(), result()
 {
 }
 
-GeometryDefaultTexcoordsTest::~GeometryDefaultTexcoordsTest()
+GeometryDefaultNormalsTest::~GeometryDefaultNormalsTest()
 {
 	cleanup();
 	cleanup(context);
 	cleanup(device);
 }
 
-std::string GeometryDefaultTexcoordsTest::test()
+std::string GeometryDefaultNormalsTest::test()
 {
 	initialiseD3D11();
 
 	if (FAILED(result))
 	{
-		return "geometry default texcoords test failed to initialise D3D11\n";
+		return "geometry default normals test failed to initialise D3D11\n";
 	}
 
 	D3D11Renderer::Geometry unit;
@@ -31,10 +31,10 @@ std::string GeometryDefaultTexcoordsTest::test()
 		return std::string();
 	}
 
-	return "geometry default texcoords test failed\n";
+	return "geometry default normals test failed\n";
 }
 
-void GeometryDefaultTexcoordsTest::cleanup()
+void GeometryDefaultNormalsTest::cleanup()
 {
 	for (int i{ 0 }; i < 3; i++)
 	{
@@ -42,7 +42,7 @@ void GeometryDefaultTexcoordsTest::cleanup()
 	}
 }
 
-void GeometryDefaultTexcoordsTest::cleanup(IUnknown* input)
+void GeometryDefaultNormalsTest::cleanup(IUnknown* input)
 {
 	if (input)
 	{
@@ -50,7 +50,7 @@ void GeometryDefaultTexcoordsTest::cleanup(IUnknown* input)
 	}
 }
 
-void GeometryDefaultTexcoordsTest::initialiseD3D11()
+void GeometryDefaultNormalsTest::initialiseD3D11()
 {
 	D3D_FEATURE_LEVEL levels[] = {
 		D3D_FEATURE_LEVEL_11_0
@@ -72,7 +72,7 @@ void GeometryDefaultTexcoordsTest::initialiseD3D11()
 	);
 }
 
-bool GeometryDefaultTexcoordsTest::success()
+bool GeometryDefaultNormalsTest::success()
 {
 	UINT stride[] = {
 		0,
@@ -94,7 +94,7 @@ bool GeometryDefaultTexcoordsTest::success()
 		offset
 	);
 
-	if (!vBuffer[1])
+	if (!vBuffer[2])
 	{
 		return true;
 	}
