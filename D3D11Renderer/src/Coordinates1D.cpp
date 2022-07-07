@@ -18,3 +18,8 @@ int D3D11Renderer::Coordinates1D::getCount()
 {
 	return count;
 }
+
+float D3D11Renderer::Coordinates1D::getCoordinate()
+{
+	return 1.0f;
+}

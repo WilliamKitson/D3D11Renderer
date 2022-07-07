@@ -10,6 +10,7 @@ namespace D3D11Renderer
 
 		void push(float);
 		int getCount();
+		float getCoordinate();
 
 	private:
 		int count;
