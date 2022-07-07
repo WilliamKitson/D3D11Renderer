@@ -1,13 +1,17 @@
 #include "GeometryDefaultPositionsTest.h"
 
 GeometryDefaultPositionsTest::GeometryDefaultPositionsTest()
-	: device{ nullptr }, context{ nullptr }, positionsBuffer{ nullptr }, result()
+	: device{ nullptr }, context{ nullptr }, vBuffer(), result()
 {
 }
 
 GeometryDefaultPositionsTest::~GeometryDefaultPositionsTest()
 {
-	cleanup(positionsBuffer);
+	for (int i{ 0 }; i < 3; i++)
+	{
+		cleanup(vBuffer[i]);
+	}
+
 	cleanup(context);
 	cleanup(device);
 }
@@ -26,18 +30,7 @@ std::string GeometryDefaultPositionsTest::test()
 	unit.initialise(device);
 	unit.bind(context);
 
-	UINT stride = 0;
-	UINT offset = 0;
-
-	context->IAGetVertexBuffers(
-		0,
-		1,
-		&positionsBuffer,
-		&stride,
-		&offset
-	);
-
-	if (!positionsBuffer)
+	if (success())
 	{
 		return std::string();
 	}
@@ -73,4 +66,34 @@ void GeometryDefaultPositionsTest::initialiseD3D11()
 		&supported,
 		&context
 	);
+}
+
+bool GeometryDefaultPositionsTest::success()
+{
+	UINT stride[] = {
+		0,
+		0,
+		0
+	};
+
+	UINT offset[] = {
+		0,
+		0,
+		0
+	};
+
+	context->IAGetVertexBuffers(
+		0,
+		3,
+		vBuffer,
+		stride,
+		offset
+	);
+
+	if (!vBuffer[0])
+	{
+		return true;
+	}
+
+	return false;
 }
