@@ -1,7 +1,7 @@
 #include "Coordinates1DPushTest.h"
 
 Coordinates1DPushTest::Coordinates1DPushTest()
-	: itterations{ 4 }, successes{ 0 }
+	: unit(), itterations{ 4 }, successes{ 0 }
 {
 }
 
@@ -11,12 +11,7 @@ Coordinates1DPushTest::~Coordinates1DPushTest()
 
 std::string Coordinates1DPushTest::test()
 {
-	D3D11Renderer::Coordinates1D unit;
-
-	for (int i{ 0 }; i < itterations; i++)
-	{
-		unit.push((float)i);
-	}
+	initialise();
 
 	for (int i{ 0 }; i < itterations; i++)
 	{
@@ -30,4 +25,12 @@ std::string Coordinates1DPushTest::test()
 	}
 
 	return "coordinates 1D push test failed\n";
+}
+
+void Coordinates1DPushTest::initialise()
+{
+	for (int i{ 0 }; i < itterations; i++)
+	{
+		unit.push((float)i);
+	}
 }
