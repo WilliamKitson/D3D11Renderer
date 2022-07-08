@@ -378,6 +378,12 @@
     <ClCompile Include="src\application\geometry\strides\GeometryStridesNormalTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\application\geometry\invalid\GeometryInvalidDeviceTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\application\geometry\invalid\GeometryInvalidTester.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\MemoryTest.h">
@@ -738,6 +744,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\application\geometry\strides\GeometryStridesNormalTest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\application\geometry\invalid\GeometryInvalidDeviceTest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\application\geometry\invalid\GeometryInvalidTester.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

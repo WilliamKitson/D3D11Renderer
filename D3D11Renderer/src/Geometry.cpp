@@ -12,6 +12,15 @@ D3D11Renderer::Geometry::~Geometry()
 
 void D3D11Renderer::Geometry::initialise(ID3D11Device* input)
 {
+	try
+	{
+		validate(input);
+	}
+	catch (int)
+	{
+		return;
+	}
+
 	cleanup();
 
 	for (int i{ 0 }; i < 3; i++)
@@ -81,6 +90,16 @@ void D3D11Renderer::Geometry::cleanup(IUnknown* input)
 	{
 		input->Release();
 	}
+}
+
+void D3D11Renderer::Geometry::validate(IUnknown* input)
+{
+	if (input)
+	{
+		return;
+	}
+
+	throw int();
 }
 
 void D3D11Renderer::Geometry::validate(int input)

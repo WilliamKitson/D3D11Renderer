@@ -15,6 +15,7 @@ std::string GeometryTester::test()
 	output += testDefault();
 	output += testReload();
 	output += testStrides();
+	output += testInvalid();
 
 	return output;
 }
@@ -32,4 +33,9 @@ std::string GeometryTester::testReload()
 std::string GeometryTester::testStrides()
 {
 	return GeometryStridesTester().test();
+}
+
+std::string GeometryTester::testInvalid()
+{
+	return GeometryInvalidTester().test();
 }
