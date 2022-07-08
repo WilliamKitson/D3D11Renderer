@@ -15,6 +15,7 @@ namespace D3D11Renderer
 
 	private:
 		void cleanup();
+		void increment();
 
 	private:
 		int count;

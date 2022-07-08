@@ -12,7 +12,7 @@ D3D11Renderer::Coordinates1D::~Coordinates1D()
 
 void D3D11Renderer::Coordinates1D::push(float input)
 {
-	count++;
+	increment();
 
 	float* pushed = new float[count];
 
@@ -59,4 +59,9 @@ void D3D11Renderer::Coordinates1D::cleanup()
 		delete[] coordinates;
 		coordinates = nullptr;
 	}
+}
+
+void D3D11Renderer::Coordinates1D::increment()
+{
+	count++;
 }
