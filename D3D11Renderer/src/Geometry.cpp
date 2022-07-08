@@ -7,13 +7,7 @@ D3D11Renderer::Geometry::Geometry()
 
 D3D11Renderer::Geometry::~Geometry()
 {
-	for (int i{ 0 }; i < 3; i++)
-	{
-		if (vBuffers[i])
-		{
-			vBuffers[i]->Release();
-		}
-	}
+	cleanup();
 }
 
 void D3D11Renderer::Geometry::initialise(ID3D11Device* input)
@@ -23,13 +17,7 @@ void D3D11Renderer::Geometry::initialise(ID3D11Device* input)
 		return;
 	}
 
-	for (int i{ 0 }; i < 3; i++)
-	{
-		if (vBuffers[i])
-		{
-			vBuffers[i]->Release();
-		}
-	}
+	cleanup();
 
 	int size = data[0].getCount();
 
@@ -93,5 +81,16 @@ void D3D11Renderer::Geometry::pushPosition(float input[3])
 	for (int i{ 0 }; i < 3; i++)
 	{
 		data[0].push(input[i]);
+	}
+}
+
+void D3D11Renderer::Geometry::cleanup()
+{
+	for (int i{ 0 }; i < 3; i++)
+	{
+		if (vBuffers[i])
+		{
+			vBuffers[i]->Release();
+		}
 	}
 }

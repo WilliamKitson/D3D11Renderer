@@ -16,6 +16,9 @@ namespace D3D11Renderer
 		void pushPosition(float[3]);
 
 	private:
+		void cleanup();
+
+	private:
 		ID3D11Buffer* vBuffers[3];
 		Coordinates1D data[3];
 	};
