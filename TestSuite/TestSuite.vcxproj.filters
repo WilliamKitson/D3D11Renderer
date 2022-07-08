@@ -360,6 +360,12 @@
     <ClCompile Include="src\application\geometry\reload\GeometryReloadTester.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\application\geometry\strides\GeometryStridesPositionTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\application\geometry\strides\GeometryStridesTester.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\MemoryTest.h">
@@ -702,6 +708,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\application\geometry\reload\GeometryReloadTester.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\application\geometry\strides\GeometryStridesPositionTest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\application\geometry\strides\GeometryStridesTester.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

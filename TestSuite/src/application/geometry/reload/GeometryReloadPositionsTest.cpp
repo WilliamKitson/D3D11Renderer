@@ -105,17 +105,8 @@ void GeometryReloadPositionsTest::initialiseD3D11()
 
 void GeometryReloadPositionsTest::initialiseVBuffer()
 {
-	UINT stride[] = {
-		sizeof(float) * 3,
-		0,
-		0
-	};
-
-	UINT offset[] = {
-		0,
-		0,
-		0
-	};
+	UINT stride[3];
+	UINT offset[3];
 
 	context->IAGetVertexBuffers(
 		0,

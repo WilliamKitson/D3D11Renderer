@@ -4,6 +4,7 @@
 
 #include "default/GeometryDefaultTester.h"
 #include "reload/GeometryReloadTester.h"
+#include "strides/GeometryStridesTester.h"
 
 class GeometryTester
 {
@@ -16,4 +17,5 @@ public:
 private:
 	std::string testDefault();
 	std::string testReload();
+	std::string testStrides();
 };
