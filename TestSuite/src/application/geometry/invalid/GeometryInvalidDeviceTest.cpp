@@ -23,17 +23,26 @@ std::string GeometryInvalidDeviceTest::test()
 
 	D3D11Renderer::Geometry unit;
 
-	for (int i{ 0 }; i < 4; i++)
-	{
-		float position[] = {
-			 (float)i,
-			 (float)i + 1,
-			 (float)i + 2
-		};
+	float position[] = {
+		0.0f,
+		0.0f,
+		0.0f
+	};
 
-		unit.pushPosition(position);
-	}
+	float texcoord[] = {
+		0.0f,
+		0.0f
+	};
 
+	float normal[] = {
+		0.0f,
+		0.0f,
+		0.0f
+	};
+
+	unit.pushPosition(position);
+	unit.pushTexcoord(texcoord);
+	unit.pushNormal(normal);
 	unit.initialise(nullptr);
 	unit.bind(context);
 
@@ -93,7 +102,14 @@ bool GeometryInvalidDeviceTest::success()
 		nullptr
 	);
 
-	if (!vBuffer[0])
+	int successes = 0;
+
+	for (int i{ 0 }; i < 3; i++)
+	{
+		successes += !vBuffer[i];
+	}
+
+	if (successes == 3)
 	{
 		return true;
 	}
