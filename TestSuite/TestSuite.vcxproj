@@ -158,6 +158,7 @@
     <ClCompile Include="src\application\geometry\reload\GeometryReloadTexcoordsTest.cpp" />
     <ClCompile Include="src\application\geometry\strides\GeometryStridesPositionTest.cpp" />
     <ClCompile Include="src\application\geometry\strides\GeometryStridesTester.cpp" />
+    <ClCompile Include="src\application\geometry\strides\GeometryStridesTexcoordTest.cpp" />
     <ClCompile Include="src\application\perObject\apply\PerObjectApplyColourTest.cpp" />
     <ClCompile Include="src\application\perObject\apply\PerObjectApplyTester.cpp" />
     <ClCompile Include="src\application\perObject\apply\PerObjectApplyTransformTest.cpp" />
@@ -278,6 +279,7 @@
     <ClInclude Include="src\application\geometry\reload\GeometryReloadTexcoordsTest.h" />
     <ClInclude Include="src\application\geometry\strides\GeometryStridesPositionTest.h" />
     <ClInclude Include="src\application\geometry\strides\GeometryStridesTester.h" />
+    <ClInclude Include="src\application\geometry\strides\GeometryStridesTexcoordTest.h" />
     <ClInclude Include="src\application\perObject\apply\PerObjectApplyColourTest.h" />
     <ClInclude Include="src\application\perObject\apply\PerObjectApplyTester.h" />
     <ClInclude Include="src\application\perObject\apply\PerObjectApplyTransformTest.h" />

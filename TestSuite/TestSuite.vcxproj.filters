@@ -369,6 +369,9 @@
     <ClCompile Include="src\application\geometry\reload\GeometryReloadTexcoordsTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\application\geometry\strides\GeometryStridesTexcoordTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\MemoryTest.h">
@@ -720,6 +723,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\application\geometry\reload\GeometryReloadTexcoordsTest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\application\geometry\strides\GeometryStridesTexcoordTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
