@@ -25,7 +25,7 @@ void D3D11Renderer::Geometry::bind(ID3D11DeviceContext* input)
 	UINT strides[] = {
 		sizeof(float) * 3,
 		sizeof(float) * 2,
-		sizeof(float)
+		sizeof(float) * 3
 	};
 
 	UINT offsets[] = {

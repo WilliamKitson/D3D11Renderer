@@ -1,33 +1,34 @@
-#include "GeometryStridesTexcoordTest.h"
+#include "GeometryStridesNormalTest.h"
 
-GeometryStridesTexcoordTest::GeometryStridesTexcoordTest()
+GeometryStridesNormalTest::GeometryStridesNormalTest()
 	: device{ nullptr }, context{ nullptr }, result()
 {
 }
 
-GeometryStridesTexcoordTest::~GeometryStridesTexcoordTest()
+GeometryStridesNormalTest::~GeometryStridesNormalTest()
 {
 	cleanup(context);
 	cleanup(device);
 }
 
-std::string GeometryStridesTexcoordTest::test()
+std::string GeometryStridesNormalTest::test()
 {
 	initialiseD3D11();
 
 	if (FAILED(result))
 	{
-		return "geometry strides texcoord test failed to initialise D3D11\n";
+		return "geometry strides normal test failed to initialise D3D11\n";
 	}
 
 	D3D11Renderer::Geometry unit;
 
-	float texcoord[] = {
+	float normal[] = {
+		0.0f,
 		0.0f,
 		0.0f
 	};
 
-	unit.pushTexcoord(texcoord);
+	unit.pushNormal(normal);
 	unit.initialise(device);
 	unit.bind(context);
 
@@ -36,10 +37,10 @@ std::string GeometryStridesTexcoordTest::test()
 		return std::string();
 	}
 
-	return "geometry strides texcoord test failed\n";
+	return "geometry strides normal test failed\n";
 }
 
-void GeometryStridesTexcoordTest::cleanup(IUnknown* input)
+void GeometryStridesNormalTest::cleanup(IUnknown* input)
 {
 	if (input)
 	{
@@ -47,7 +48,7 @@ void GeometryStridesTexcoordTest::cleanup(IUnknown* input)
 	}
 }
 
-void GeometryStridesTexcoordTest::initialiseD3D11()
+void GeometryStridesNormalTest::initialiseD3D11()
 {
 	D3D_FEATURE_LEVEL levels[] = {
 		D3D_FEATURE_LEVEL_11_0
@@ -69,7 +70,7 @@ void GeometryStridesTexcoordTest::initialiseD3D11()
 	);
 }
 
-bool GeometryStridesTexcoordTest::success()
+bool GeometryStridesNormalTest::success()
 {
 	UINT strides[3];
 
@@ -81,7 +82,7 @@ bool GeometryStridesTexcoordTest::success()
 		nullptr
 	);
 
-	if (strides[1] == sizeof(float) * 2)
+	if (strides[2] == sizeof(float) * 3)
 	{
 		return true;
 	}

@@ -14,6 +14,7 @@ std::string GeometryStridesTester::test()
 
 	output += testPosition();
 	output += testTexcoord();
+	output += testNormal();
 
 	return output;
 }
@@ -26,4 +27,9 @@ std::string GeometryStridesTester::testPosition()
 std::string GeometryStridesTester::testTexcoord()
 {
 	return GeometryStridesTexcoordTest().test();
+}
+
+std::string GeometryStridesTester::testNormal()
+{
+	return GeometryStridesNormalTest().test();
 }

@@ -4,6 +4,7 @@
 
 #include "GeometryStridesPositionTest.h"
 #include "GeometryStridesTexcoordTest.h"
+#include "GeometryStridesNormalTest.h"
 
 class GeometryStridesTester
 {
@@ -16,4 +17,5 @@ public:
 private:
 	std::string testPosition();
 	std::string testTexcoord();
+	std::string testNormal();
 };
