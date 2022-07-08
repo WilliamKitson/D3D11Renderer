@@ -57,16 +57,7 @@ std::string GeometryReloadPositionsTest::test()
 
 	initialiseOutput();
 
-	int successes = 0;
-
-	for (int i{ 0 }; i < 4; i++)
-	{
-		successes += outputData[i * 3] == (float)i;
-		successes += outputData[(i * 3) + 1] == (float)i;
-		successes += outputData[(i * 3) + 2] == (float)i;
-	}
-
-	if (successes == 4 * 3)
+	if (success())
 	{
 		return std::string();
 	}
@@ -179,4 +170,23 @@ void GeometryReloadPositionsTest::initialiseOutput()
 		subresource.pData,
 		sizeof(outputData)
 	);
+}
+
+bool GeometryReloadPositionsTest::success()
+{
+	int successes = 0;
+
+	for (int i{ 0 }; i < 4; i++)
+	{
+		successes += outputData[i * 3] == (float)i;
+		successes += outputData[(i * 3) + 1] == (float)i;
+		successes += outputData[(i * 3) + 2] == (float)i;
+	}
+
+	if (successes == 4 * 3)
+	{
+		return true;
+	}
+
+	return false;
 }
