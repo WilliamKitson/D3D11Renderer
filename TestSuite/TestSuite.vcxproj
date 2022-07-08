@@ -153,6 +153,7 @@
     <ClCompile Include="src\application\geometry\default\GeometryDefaultTester.cpp" />
     <ClCompile Include="src\application\geometry\default\GeometryDefaultTexcoordsTest.cpp" />
     <ClCompile Include="src\application\geometry\GeometryTester.cpp" />
+    <ClCompile Include="src\application\geometry\invalid\GeometryInvalidContextTest.cpp" />
     <ClCompile Include="src\application\geometry\invalid\GeometryInvalidDeviceTest.cpp" />
     <ClCompile Include="src\application\geometry\invalid\GeometryInvalidTester.cpp" />
     <ClCompile Include="src\application\geometry\reload\GeometryReloadNormalsTest.cpp" />
@@ -278,6 +279,7 @@
     <ClInclude Include="src\application\geometry\default\GeometryDefaultTester.h" />
     <ClInclude Include="src\application\geometry\default\GeometryDefaultTexcoordsTest.h" />
     <ClInclude Include="src\application\geometry\GeometryTester.h" />
+    <ClInclude Include="src\application\geometry\invalid\GeometryInvalidContextTest.h" />
     <ClInclude Include="src\application\geometry\invalid\GeometryInvalidDeviceTest.h" />
     <ClInclude Include="src\application\geometry\invalid\GeometryInvalidTester.h" />
     <ClInclude Include="src\application\geometry\reload\GeometryReloadNormalsTest.h" />

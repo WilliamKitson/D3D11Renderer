@@ -1,7 +1,9 @@
 #pragma once
 
 #include <string>
+
 #include "GeometryInvalidDeviceTest.h"
+#include "GeometryInvalidContextTest.h"
 
 class GeometryInvalidTester
 {
@@ -13,4 +15,5 @@ public:
 
 private:
 	std::string testDevice();
+	std::string testContext();
 };
