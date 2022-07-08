@@ -59,6 +59,14 @@ void D3D11Renderer::Geometry::pushTexcoord(float input[2])
 	}
 }
 
+void D3D11Renderer::Geometry::pushNormal(float input[3])
+{
+	for (int i{ 0 }; i < 3; i++)
+	{
+		data[2].push(input[i]);
+	}
+}
+
 void D3D11Renderer::Geometry::cleanup()
 {
 	for (int i{ 0 }; i < 3; i++)

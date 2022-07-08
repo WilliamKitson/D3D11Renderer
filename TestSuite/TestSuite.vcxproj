@@ -153,6 +153,7 @@
     <ClCompile Include="src\application\geometry\default\GeometryDefaultTester.cpp" />
     <ClCompile Include="src\application\geometry\default\GeometryDefaultTexcoordsTest.cpp" />
     <ClCompile Include="src\application\geometry\GeometryTester.cpp" />
+    <ClCompile Include="src\application\geometry\reload\GeometryReloadNormalsTest.cpp" />
     <ClCompile Include="src\application\geometry\reload\GeometryReloadPositionsTest.cpp" />
     <ClCompile Include="src\application\geometry\reload\GeometryReloadTester.cpp" />
     <ClCompile Include="src\application\geometry\reload\GeometryReloadTexcoordsTest.cpp" />
@@ -274,6 +275,7 @@
     <ClInclude Include="src\application\geometry\default\GeometryDefaultTester.h" />
     <ClInclude Include="src\application\geometry\default\GeometryDefaultTexcoordsTest.h" />
     <ClInclude Include="src\application\geometry\GeometryTester.h" />
+    <ClInclude Include="src\application\geometry\reload\GeometryReloadNormalsTest.h" />
     <ClInclude Include="src\application\geometry\reload\GeometryReloadPositionsTest.h" />
     <ClInclude Include="src\application\geometry\reload\GeometryReloadTester.h" />
     <ClInclude Include="src\application\geometry\reload\GeometryReloadTexcoordsTest.h" />

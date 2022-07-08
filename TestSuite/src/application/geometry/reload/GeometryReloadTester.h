@@ -4,6 +4,7 @@
 
 #include "GeometryReloadPositionsTest.h"
 #include "GeometryReloadTexcoordsTest.h"
+#include "GeometryReloadNormalsTest.h"
 
 class GeometryReloadTester
 {
@@ -16,4 +17,5 @@ public:
 private:
 	std::string testPositions();
 	std::string testTexcoords();
+	std::string testNormals();
 };

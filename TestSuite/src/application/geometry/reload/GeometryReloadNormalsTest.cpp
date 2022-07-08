@@ -1,11 +1,11 @@
-#include "GeometryReloadPositionsTest.h"
+#include "GeometryReloadNormalsTest.h"
 
-GeometryReloadPositionsTest::GeometryReloadPositionsTest()
+GeometryReloadNormalsTest::GeometryReloadNormalsTest()
 	: device{ nullptr }, context{ nullptr }, vBuffer(), readBuffer{ nullptr }, result(), outputData()
 {
 }
 
-GeometryReloadPositionsTest::~GeometryReloadPositionsTest()
+GeometryReloadNormalsTest::~GeometryReloadNormalsTest()
 {
 	cleanup(readBuffer);
 	cleanup();
@@ -13,7 +13,7 @@ GeometryReloadPositionsTest::~GeometryReloadPositionsTest()
 	cleanup(device);
 }
 
-std::string GeometryReloadPositionsTest::test()
+std::string GeometryReloadNormalsTest::test()
 {
 	initialiseD3D11();
 
@@ -29,13 +29,13 @@ std::string GeometryReloadPositionsTest::test()
 
 	for (int i{ 0 }; i < 4; i++)
 	{
-		float position[] = {
+		float normal[] = {
 			 (float)i,
 			 (float)i + 1,
 			 (float)i + 2
 		};
 
-		unit.pushPosition(position);
+		unit.pushNormal(normal);
 	}
 
 	unit.initialise(device);
@@ -43,16 +43,16 @@ std::string GeometryReloadPositionsTest::test()
 
 	initialiseVBuffer();
 
-	if (!vBuffer[0])
+	if (!vBuffer[2])
 	{
-		return "geometry reload positions test failed to initialise vBuffer 0\n";
+		return "geometry reload normals test failed to initialise vBuffer 2\n";
 	}
 
 	initialiseRead();
 
 	if (FAILED(result))
 	{
-		return "geometry reload positions test failed to initialise read buffer\n";
+		return "geometry reload normals test failed to initialise read buffer\n";
 	}
 
 	initialiseOutput();
@@ -62,10 +62,10 @@ std::string GeometryReloadPositionsTest::test()
 		return std::string();
 	}
 
-	return "geometry reload positions test failed\n";
+	return "geometry reload normals test failed\n";
 }
 
-void GeometryReloadPositionsTest::cleanup()
+void GeometryReloadNormalsTest::cleanup()
 {
 	for (int i{ 0 }; i < 3; i++)
 	{
@@ -73,7 +73,7 @@ void GeometryReloadPositionsTest::cleanup()
 	}
 }
 
-void GeometryReloadPositionsTest::cleanup(IUnknown* input)
+void GeometryReloadNormalsTest::cleanup(IUnknown* input)
 {
 	if (input)
 	{
@@ -81,7 +81,7 @@ void GeometryReloadPositionsTest::cleanup(IUnknown* input)
 	}
 }
 
-void GeometryReloadPositionsTest::initialiseD3D11()
+void GeometryReloadNormalsTest::initialiseD3D11()
 {
 	D3D_FEATURE_LEVEL levels[] = {
 		D3D_FEATURE_LEVEL_11_0
@@ -103,7 +103,7 @@ void GeometryReloadPositionsTest::initialiseD3D11()
 	);
 }
 
-void GeometryReloadPositionsTest::initialiseVBuffer()
+void GeometryReloadNormalsTest::initialiseVBuffer()
 {
 	context->IAGetVertexBuffers(
 		0,
@@ -114,11 +114,11 @@ void GeometryReloadPositionsTest::initialiseVBuffer()
 	);
 }
 
-void GeometryReloadPositionsTest::initialiseRead()
+void GeometryReloadNormalsTest::initialiseRead()
 {
 	D3D11_BUFFER_DESC vBufferDesc;
 
-	vBuffer[0]->GetDesc(&vBufferDesc);
+	vBuffer[2]->GetDesc(&vBufferDesc);
 
 	D3D11_BUFFER_DESC readDescription{
 		vBufferDesc.ByteWidth,
@@ -136,11 +136,11 @@ void GeometryReloadPositionsTest::initialiseRead()
 	);
 }
 
-void GeometryReloadPositionsTest::initialiseOutput()
+void GeometryReloadNormalsTest::initialiseOutput()
 {
 	context->CopyResource(
 		readBuffer,
-		vBuffer[0]
+		vBuffer[2]
 	);
 
 	D3D11_MAPPED_SUBRESOURCE subresource;
@@ -160,7 +160,7 @@ void GeometryReloadPositionsTest::initialiseOutput()
 	);
 }
 
-bool GeometryReloadPositionsTest::success()
+bool GeometryReloadNormalsTest::success()
 {
 	if (successes() == 12)
 	{
@@ -170,7 +170,7 @@ bool GeometryReloadPositionsTest::success()
 	return false;
 }
 
-int GeometryReloadPositionsTest::successes()
+int GeometryReloadNormalsTest::successes()
 {
 	int output = 0;
 

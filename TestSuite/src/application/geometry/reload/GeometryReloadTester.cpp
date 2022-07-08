@@ -14,6 +14,7 @@ std::string GeometryReloadTester::test()
 
 	output += testPositions();
 	output += testTexcoords();
+	output += testNormals();
 
 	return output;
 }
@@ -26,4 +27,9 @@ std::string GeometryReloadTester::testPositions()
 std::string GeometryReloadTester::testTexcoords()
 {
 	return GeometryReloadTexcoordsTest().test();
+}
+
+std::string GeometryReloadTester::testNormals()
+{
+	return GeometryReloadNormalsTest().test();
 }
