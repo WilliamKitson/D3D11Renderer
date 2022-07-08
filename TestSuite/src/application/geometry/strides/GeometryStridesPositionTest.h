@@ -21,6 +21,5 @@ private:
 private:
 	ID3D11Device* device;
 	ID3D11DeviceContext* context;
-	UINT strides[3];
 	HRESULT result;
 };
