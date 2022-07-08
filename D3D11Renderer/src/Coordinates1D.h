@@ -18,6 +18,7 @@ namespace D3D11Renderer
 		void increment();
 		void swap(float*);
 		float* pushed();
+		void initialise(float);
 
 	private:
 		int count;

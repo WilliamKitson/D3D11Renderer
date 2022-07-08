@@ -14,8 +14,7 @@ void D3D11Renderer::Coordinates1D::push(float input)
 {
 	increment();
 	swap(pushed());
-
-	coordinates[count - 1] = input;
+	initialise(input);
 }
 
 int D3D11Renderer::Coordinates1D::getCount()
@@ -73,4 +72,9 @@ float* D3D11Renderer::Coordinates1D::pushed()
 	}
 
 	return output;
+}
+
+void D3D11Renderer::Coordinates1D::initialise(float input)
+{
+	coordinates[count - 1] = input;
 }
