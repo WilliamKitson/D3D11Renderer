@@ -18,6 +18,7 @@ private:
 	void cleanup(IUnknown*);
 	void initialiseD3D11();
 	void initialiseVBuffer();
+	void initialiseRead();
 
 private:
 	ID3D11Device* device;

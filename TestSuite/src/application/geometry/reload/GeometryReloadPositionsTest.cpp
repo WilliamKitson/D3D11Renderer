@@ -48,24 +48,7 @@ std::string GeometryReloadPositionsTest::test()
 		return "geometry reload positions test failed to initialise vBuffer 0\n";
 	}
 
-	D3D11_BUFFER_DESC vBufferDesc;
-
-	vBuffer[0]->GetDesc(&vBufferDesc);
-
-	D3D11_BUFFER_DESC readDescription{
-		vBufferDesc.ByteWidth,
-		D3D11_USAGE_STAGING,
-		0,
-		D3D11_CPU_ACCESS_READ,
-		0,
-		0
-	};
-
-	result = device->CreateBuffer(
-		&readDescription,
-		NULL,
-		&readBuffer
-	);
+	initialiseRead();
 
 	if (FAILED(result))
 	{
@@ -170,5 +153,27 @@ void GeometryReloadPositionsTest::initialiseVBuffer()
 		vBuffer,
 		stride,
 		offset
+	);
+}
+
+void GeometryReloadPositionsTest::initialiseRead()
+{
+	D3D11_BUFFER_DESC vBufferDesc;
+
+	vBuffer[0]->GetDesc(&vBufferDesc);
+
+	D3D11_BUFFER_DESC readDescription{
+		vBufferDesc.ByteWidth,
+		D3D11_USAGE_STAGING,
+		0,
+		D3D11_CPU_ACCESS_READ,
+		0,
+		0
+	};
+
+	result = device->CreateBuffer(
+		&readDescription,
+		NULL,
+		&readBuffer
 	);
 }
