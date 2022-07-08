@@ -21,6 +21,7 @@ private:
 	void initialiseRead();
 	void initialiseOutput();
 	bool success();
+	int successes();
 
 private:
 	ID3D11Device* device;
