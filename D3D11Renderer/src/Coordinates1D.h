@@ -19,6 +19,7 @@ namespace D3D11Renderer
 		void swap(float*);
 		float* pushed();
 		void initialise(float);
+		int minimum(int);
 
 	private:
 		int count;
