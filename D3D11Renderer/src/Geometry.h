@@ -14,6 +14,7 @@ namespace D3D11Renderer
 		void initialise(ID3D11Device*);
 		void bind(ID3D11DeviceContext*);
 		void pushPosition(float[3]);
+		void pushTexcoord(float[2]);
 
 	private:
 		void cleanup();

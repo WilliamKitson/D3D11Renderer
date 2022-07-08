@@ -1,7 +1,9 @@
 #pragma once
 
 #include <string>
+
 #include "GeometryReloadPositionsTest.h"
+#include "GeometryReloadTexcoordsTest.h"
 
 class GeometryReloadTester
 {
@@ -13,4 +15,5 @@ public:
 
 private:
 	std::string testPositions();
+	std::string testTexcoords();
 };
