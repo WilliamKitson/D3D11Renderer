@@ -1,7 +1,7 @@
 #include "GeometryReloadPositionsTest.h"
 
 GeometryReloadPositionsTest::GeometryReloadPositionsTest()
-	: device{ nullptr }, context{ nullptr }, vBuffer(), readBuffer{ nullptr }, result()
+	: device{ nullptr }, context{ nullptr }, vBuffer(), readBuffer{ nullptr }, result(), outputData()
 {
 }
 
@@ -55,28 +55,7 @@ std::string GeometryReloadPositionsTest::test()
 		return "geometry reload positions test failed to initialise read buffer\n";
 	}
 
-	context->CopyResource(
-		readBuffer,
-		vBuffer[0]
-	);
-
-	D3D11_MAPPED_SUBRESOURCE subresource;
-
-	result = context->Map(
-		readBuffer,
-		NULL,
-		D3D11_MAP_READ,
-		NULL,
-		&subresource
-	);
-
-	float outputData[12];
-
-	memcpy(
-		&outputData,
-		subresource.pData,
-		sizeof(outputData)
-	);
+	initialiseOutput();
 
 	int successes = 0;
 
@@ -175,5 +154,29 @@ void GeometryReloadPositionsTest::initialiseRead()
 		&readDescription,
 		NULL,
 		&readBuffer
+	);
+}
+
+void GeometryReloadPositionsTest::initialiseOutput()
+{
+	context->CopyResource(
+		readBuffer,
+		vBuffer[0]
+	);
+
+	D3D11_MAPPED_SUBRESOURCE subresource;
+
+	result = context->Map(
+		readBuffer,
+		NULL,
+		D3D11_MAP_READ,
+		NULL,
+		&subresource
+	);
+
+	memcpy(
+		&outputData,
+		subresource.pData,
+		sizeof(outputData)
 	);
 }

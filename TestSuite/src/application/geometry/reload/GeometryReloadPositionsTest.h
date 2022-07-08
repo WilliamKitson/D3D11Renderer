@@ -19,6 +19,7 @@ private:
 	void initialiseD3D11();
 	void initialiseVBuffer();
 	void initialiseRead();
+	void initialiseOutput();
 
 private:
 	ID3D11Device* device;
@@ -26,4 +27,5 @@ private:
 	ID3D11Buffer* vBuffer[3];
 	ID3D11Buffer* readBuffer;
 	HRESULT result;
+	float outputData[12];
 };
