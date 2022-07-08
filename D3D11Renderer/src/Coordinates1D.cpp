@@ -14,17 +14,11 @@ void D3D11Renderer::Coordinates1D::push(float input)
 {
 	increment();
 
-	float* pushed = new float[count];
-
-	for (int i{ 0 }; i < count - 1; i++)
-	{
-		pushed[i] = coordinates[i];
-	}
-
-	pushed[count - 1] = input;
-
+	float* temp = pushed();
 	cleanup();
-	coordinates = pushed;
+	coordinates = temp;
+
+	coordinates[count - 1] = input;
 }
 
 int D3D11Renderer::Coordinates1D::getCount()
@@ -64,4 +58,16 @@ void D3D11Renderer::Coordinates1D::cleanup()
 void D3D11Renderer::Coordinates1D::increment()
 {
 	count++;
+}
+
+float* D3D11Renderer::Coordinates1D::pushed()
+{
+	float* output = new float[count];
+
+	for (int i{ 0 }; i < count - 1; i++)
+	{
+		output[i] = coordinates[i];
+	}
+
+	return output;
 }
