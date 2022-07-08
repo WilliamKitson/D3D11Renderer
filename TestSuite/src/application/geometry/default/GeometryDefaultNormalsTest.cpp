@@ -74,24 +74,12 @@ void GeometryDefaultNormalsTest::initialiseD3D11()
 
 bool GeometryDefaultNormalsTest::success()
 {
-	UINT stride[] = {
-		0,
-		0,
-		0
-	};
-
-	UINT offset[] = {
-		0,
-		0,
-		0
-	};
-
 	context->IAGetVertexBuffers(
 		0,
 		3,
 		vBuffer,
-		stride,
-		offset
+		nullptr,
+		nullptr
 	);
 
 	if (!vBuffer[2])
