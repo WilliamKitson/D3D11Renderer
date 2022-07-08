@@ -7,11 +7,7 @@ D3D11Renderer::Coordinates1D::Coordinates1D()
 
 D3D11Renderer::Coordinates1D::~Coordinates1D()
 {
-	if (coordinates)
-	{
-		delete[] coordinates;
-		coordinates = nullptr;
-	}
+	cleanup();
 }
 
 void D3D11Renderer::Coordinates1D::push(float input)
@@ -27,12 +23,7 @@ void D3D11Renderer::Coordinates1D::push(float input)
 
 	pushed[count - 1] = input;
 
-	if (coordinates)
-	{
-		delete[] coordinates;
-		coordinates = nullptr;
-	}
-
+	cleanup();
 	coordinates = pushed;
 }
 
@@ -59,4 +50,13 @@ void D3D11Renderer::Coordinates1D::setIndex(int input)
 	}
 
 	index = input;
+}
+
+void D3D11Renderer::Coordinates1D::cleanup()
+{
+	if (coordinates)
+	{
+		delete[] coordinates;
+		coordinates = nullptr;
+	}
 }

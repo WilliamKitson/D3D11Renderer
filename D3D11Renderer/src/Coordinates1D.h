@@ -14,6 +14,9 @@ namespace D3D11Renderer
 		void setIndex(int);
 
 	private:
+		void cleanup();
+
+	private:
 		int count;
 		int index;
 		float* coordinates;
