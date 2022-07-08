@@ -63,17 +63,29 @@ void D3D11Renderer::Geometry::cleanup(IUnknown* input)
 	}
 }
 
-void D3D11Renderer::Geometry::positions(ID3D11Device* input)
+void D3D11Renderer::Geometry::validate(int input)
 {
-	if (!data[0].getCount())
+	if (data[input].getCount())
 	{
 		return;
 	}
 
-	int size = data[0].getCount();
+	throw int();
+}
+
+void D3D11Renderer::Geometry::positions(ID3D11Device* input)
+{
+	try
+	{
+		validate(0);
+	}
+	catch (int)
+	{
+		return;
+	}
 
 	D3D11_BUFFER_DESC description{
-		sizeof(float) * size,
+		sizeof(float) * data[0].getCount(),
 		D3D11_USAGE_IMMUTABLE,
 		D3D11_BIND_VERTEX_BUFFER,
 		0,
@@ -81,16 +93,10 @@ void D3D11Renderer::Geometry::positions(ID3D11Device* input)
 		0
 	};
 
-	float* positions = new float[size];
-
-	for (int i{ 0 }; i < size; i++)
-	{
-		data[0].setIndex(i);
-		positions[i] = data[0].getCoordinate();
-	}
+	float* rawData = rawPositions();
 
 	D3D11_SUBRESOURCE_DATA subresource{
-		positions,
+		rawData,
 		0,
 		0
 	};
@@ -101,5 +107,19 @@ void D3D11Renderer::Geometry::positions(ID3D11Device* input)
 		&vBuffers[0]
 	);
 
-	delete[] positions;
+	delete[] rawData;
+}
+
+float* D3D11Renderer::Geometry::rawPositions()
+{
+	int size = data[0].getCount();
+	float* output = new float[size];
+
+	for (int i{ 0 }; i < size; i++)
+	{
+		data[0].setIndex(i);
+		output[i] = data[0].getCoordinate();
+	}
+
+	return output;
 }
