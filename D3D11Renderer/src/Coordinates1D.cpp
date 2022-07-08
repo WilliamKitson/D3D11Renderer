@@ -24,6 +24,15 @@ int D3D11Renderer::Coordinates1D::getCount()
 
 float D3D11Renderer::Coordinates1D::getCoordinate()
 {
+	try
+	{
+		validate();
+	}
+	catch (int)
+	{
+		return 0.0f;
+	}
+
 	return coordinates[index];
 }
 
@@ -67,6 +76,16 @@ float* D3D11Renderer::Coordinates1D::pushed()
 void D3D11Renderer::Coordinates1D::initialise(float input)
 {
 	coordinates[count - 1] = input;
+}
+
+void D3D11Renderer::Coordinates1D::validate()
+{
+	if (count)
+	{
+		return;
+	}
+
+	throw int();
 }
 
 int D3D11Renderer::Coordinates1D::minimum(int input)

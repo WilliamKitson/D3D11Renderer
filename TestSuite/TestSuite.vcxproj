@@ -215,6 +215,7 @@
     <ClCompile Include="src\application\swapchain\resolution\SwapchainResolutionViewportTest.cpp" />
     <ClCompile Include="src\application\swapchain\resolution\SwapchainResolutionViewTest.cpp" />
     <ClCompile Include="src\application\swapchain\SwapchainTester.cpp" />
+    <ClCompile Include="src\domain\coordinates1D\Coordinates1DEmptyTest.cpp" />
     <ClCompile Include="src\domain\coordinates1D\Coordinates1DPushTest.cpp" />
     <ClCompile Include="src\domain\coordinates1D\Coordinates1DTester.cpp" />
     <ClCompile Include="src\domain\coordinates1D\count\Coordinates1DCountDefaultTest.cpp" />
@@ -329,6 +330,7 @@
     <ClInclude Include="src\application\swapchain\resolution\SwapchainResolutionViewportTest.h" />
     <ClInclude Include="src\application\swapchain\resolution\SwapchainResolutionViewTest.h" />
     <ClInclude Include="src\application\swapchain\SwapchainTester.h" />
+    <ClInclude Include="src\domain\coordinates1D\Coordinates1DEmptyTest.h" />
     <ClInclude Include="src\domain\coordinates1D\Coordinates1DPushTest.h" />
     <ClInclude Include="src\domain\coordinates1D\Coordinates1DTester.h" />
     <ClInclude Include="src\domain\coordinates1D\count\Coordinates1DCountDefaultTest.h" />
