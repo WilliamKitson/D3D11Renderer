@@ -17,6 +17,7 @@ namespace D3D11Renderer
 
 	private:
 		void cleanup();
+		void cleanup(IUnknown*);
 
 	private:
 		ID3D11Buffer* vBuffers[3];

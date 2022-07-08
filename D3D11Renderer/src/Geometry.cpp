@@ -88,9 +88,14 @@ void D3D11Renderer::Geometry::cleanup()
 {
 	for (int i{ 0 }; i < 3; i++)
 	{
-		if (vBuffers[i])
-		{
-			vBuffers[i]->Release();
-		}
+		cleanup(vBuffers[i]);
+	}
+}
+
+void D3D11Renderer::Geometry::cleanup(IUnknown* input)
+{
+	if (input)
+	{
+		input->Release();
 	}
 }
