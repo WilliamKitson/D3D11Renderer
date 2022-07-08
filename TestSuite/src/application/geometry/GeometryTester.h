@@ -1,7 +1,9 @@
 #pragma once
 
 #include <string>
+
 #include "default/GeometryDefaultTester.h"
+#include "reload/GeometryReloadTester.h"
 
 class GeometryTester
 {
@@ -13,4 +15,5 @@ public:
 
 private:
 	std::string testDefault();
+	std::string testReload();
 };

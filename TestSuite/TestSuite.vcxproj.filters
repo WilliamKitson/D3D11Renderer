@@ -354,6 +354,12 @@
     <ClCompile Include="src\domain\coordinates1D\Coordinates1DEmptyTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\application\geometry\reload\GeometryReloadPositionsTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\application\geometry\reload\GeometryReloadTester.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\MemoryTest.h">
@@ -690,6 +696,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\domain\coordinates1D\Coordinates1DEmptyTest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\application\geometry\reload\GeometryReloadPositionsTest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\application\geometry\reload\GeometryReloadTester.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
