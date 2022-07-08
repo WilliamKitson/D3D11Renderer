@@ -20,8 +20,7 @@ namespace D3D11Renderer
 		void cleanup();
 		void cleanup(IUnknown*);
 		void validate(int);
-		void positions(ID3D11Device*);
-		void texcoords(ID3D11Device*);
+		void create(int, ID3D11Device*);
 		float* rawData(int);
 
 	private:

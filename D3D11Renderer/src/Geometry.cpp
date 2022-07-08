@@ -13,8 +13,11 @@ D3D11Renderer::Geometry::~Geometry()
 void D3D11Renderer::Geometry::initialise(ID3D11Device* input)
 {
 	cleanup();
-	positions(input);
-	texcoords(input);
+
+	for (int i{ 0 }; i < 3; i++)
+	{
+		create(i, input);
+	}
 }
 
 void D3D11Renderer::Geometry::bind(ID3D11DeviceContext* input)
@@ -22,7 +25,7 @@ void D3D11Renderer::Geometry::bind(ID3D11DeviceContext* input)
 	UINT strides[] = {
 		sizeof(float) * 3,
 		sizeof(float),
-		0
+		sizeof(float)
 	};
 
 	UINT offsets[] = {
@@ -82,11 +85,11 @@ void D3D11Renderer::Geometry::validate(int input)
 	throw int();
 }
 
-void D3D11Renderer::Geometry::positions(ID3D11Device* input)
+void D3D11Renderer::Geometry::create(int index, ID3D11Device* device)
 {
 	try
 	{
-		validate(0);
+		validate(index);
 	}
 	catch (int)
 	{
@@ -94,7 +97,7 @@ void D3D11Renderer::Geometry::positions(ID3D11Device* input)
 	}
 
 	D3D11_BUFFER_DESC description{
-		sizeof(float) * data[0].getCount(),
+		sizeof(float) * data[index].getCount(),
 		D3D11_USAGE_IMMUTABLE,
 		D3D11_BIND_VERTEX_BUFFER,
 		0,
@@ -102,7 +105,7 @@ void D3D11Renderer::Geometry::positions(ID3D11Device* input)
 		0
 	};
 
-	float* raw = rawData(0);
+	float* raw = rawData(index);
 
 	D3D11_SUBRESOURCE_DATA subresource{
 		raw,
@@ -110,47 +113,10 @@ void D3D11Renderer::Geometry::positions(ID3D11Device* input)
 		0
 	};
 
-	input->CreateBuffer(
+	device->CreateBuffer(
 		&description,
 		&subresource,
-		&vBuffers[0]
-	);
-
-	delete[] raw;
-}
-
-void D3D11Renderer::Geometry::texcoords(ID3D11Device* input)
-{
-	try
-	{
-		validate(1);
-	}
-	catch (int)
-	{
-		return;
-	}
-
-	D3D11_BUFFER_DESC description{
-		sizeof(float) * data[1].getCount(),
-		D3D11_USAGE_IMMUTABLE,
-		D3D11_BIND_VERTEX_BUFFER,
-		0,
-		0,
-		0
-	};
-
-	float* raw = rawData(1);
-
-	D3D11_SUBRESOURCE_DATA subresource{
-		raw,
-		0,
-		0
-	};
-
-	input->CreateBuffer(
-		&description,
-		&subresource,
-		&vBuffers[1]
+		&vBuffers[index]
 	);
 
 	delete[] raw;
