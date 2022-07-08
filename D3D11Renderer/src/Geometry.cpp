@@ -16,7 +16,7 @@ void D3D11Renderer::Geometry::initialise(ID3D11Device* input)
 
 	for (int i{ 0 }; i < 3; i++)
 	{
-		create(i, input);
+		initialise(i, input);
 	}
 }
 
@@ -93,7 +93,7 @@ void D3D11Renderer::Geometry::validate(int input)
 	throw int();
 }
 
-void D3D11Renderer::Geometry::create(int index, ID3D11Device* device)
+void D3D11Renderer::Geometry::initialise(int index, ID3D11Device* device)
 {
 	try
 	{
