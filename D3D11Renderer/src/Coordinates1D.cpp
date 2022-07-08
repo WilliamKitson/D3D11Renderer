@@ -29,12 +29,7 @@ float D3D11Renderer::Coordinates1D::getCoordinate()
 
 void D3D11Renderer::Coordinates1D::setIndex(int input)
 {
-	if (input >= count)
-	{
-		input = 0;
-	}
-
-	index = minimum(input);
+	index = minimum(maximum(input));
 }
 
 void D3D11Renderer::Coordinates1D::cleanup()
@@ -84,4 +79,14 @@ int D3D11Renderer::Coordinates1D::minimum(int input)
 	}
 
 	return input;
+}
+
+int D3D11Renderer::Coordinates1D::maximum(int input)
+{
+	if (input < count)
+	{
+		return input;
+	}
+
+	return 0;
 }

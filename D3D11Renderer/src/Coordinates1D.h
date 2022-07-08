@@ -20,6 +20,7 @@ namespace D3D11Renderer
 		float* pushed();
 		void initialise(float);
 		int minimum(int);
+		int maximum(int);
 
 	private:
 		int count;
