@@ -31,8 +31,8 @@ std::string GeometryReloadPositionsTest::test()
 	{
 		float position[] = {
 			 (float)i,
-			 (float)i,
-			 (float)i
+			 (float)i + 1,
+			 (float)i + 2
 		};
 
 		unit.pushPosition(position);
@@ -189,8 +189,8 @@ int GeometryReloadPositionsTest::successes()
 	for (int i{ 0 }; i < 4; i++)
 	{
 		output += outputData[i * 3] == (float)i;
-		output += outputData[(i * 3) + 1] == (float)i;
-		output += outputData[(i * 3) + 2] == (float)i;
+		output += outputData[(i * 3) + 1] == (float)i + 1;
+		output += outputData[(i * 3) + 2] == (float)i + 2;
 	}
 
 	return output;
