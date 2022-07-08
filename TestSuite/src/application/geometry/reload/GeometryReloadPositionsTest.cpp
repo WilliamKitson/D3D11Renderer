@@ -106,7 +106,7 @@ void GeometryReloadPositionsTest::initialiseD3D11()
 void GeometryReloadPositionsTest::initialiseVBuffer()
 {
 	UINT stride[] = {
-		sizeof(float),
+		sizeof(float) * 3,
 		0,
 		0
 	};
