@@ -102,10 +102,10 @@ void D3D11Renderer::Geometry::positions(ID3D11Device* input)
 		0
 	};
 
-	float* rawData = rawPositions();
+	float* raw = rawData(0);
 
 	D3D11_SUBRESOURCE_DATA subresource{
-		rawData,
+		raw,
 		0,
 		0
 	};
@@ -116,21 +116,7 @@ void D3D11Renderer::Geometry::positions(ID3D11Device* input)
 		&vBuffers[0]
 	);
 
-	delete[] rawData;
-}
-
-float* D3D11Renderer::Geometry::rawPositions()
-{
-	int size = data[0].getCount();
-	float* output = new float[size];
-
-	for (int i{ 0 }; i < size; i++)
-	{
-		data[0].setIndex(i);
-		output[i] = data[0].getCoordinate();
-	}
-
-	return output;
+	delete[] raw;
 }
 
 void D3D11Renderer::Geometry::texcoords(ID3D11Device* input)
@@ -153,17 +139,10 @@ void D3D11Renderer::Geometry::texcoords(ID3D11Device* input)
 		0
 	};
 
-	int size = data[1].getCount();
-	float* output = new float[size];
-
-	for (int i{ 0 }; i < size; i++)
-	{
-		data[1].setIndex(i);
-		output[i] = data[1].getCoordinate();
-	}
+	float* raw = rawData(1);
 
 	D3D11_SUBRESOURCE_DATA subresource{
-		output,
+		raw,
 		0,
 		0
 	};
@@ -174,5 +153,19 @@ void D3D11Renderer::Geometry::texcoords(ID3D11Device* input)
 		&vBuffers[1]
 	);
 
-	delete[] output;
+	delete[] raw;
+}
+
+float* D3D11Renderer::Geometry::rawData(int input)
+{
+	int size = data[input].getCount();
+	float* output = new float[size];
+
+	for (int i{ 0 }; i < size; i++)
+	{
+		data[input].setIndex(i);
+		output[i] = data[input].getCoordinate();
+	}
+
+	return output;
 }

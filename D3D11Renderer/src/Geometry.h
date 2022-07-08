@@ -21,8 +21,8 @@ namespace D3D11Renderer
 		void cleanup(IUnknown*);
 		void validate(int);
 		void positions(ID3D11Device*);
-		float* rawPositions();
 		void texcoords(ID3D11Device*);
+		float* rawData(int);
 
 	private:
 		ID3D11Buffer* vBuffers[3];
