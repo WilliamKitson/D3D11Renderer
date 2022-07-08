@@ -32,17 +32,7 @@ std::string GeometryStridesPositionTest::test()
 	unit.initialise(device);
 	unit.bind(context);
 
-	UINT strides[3];
-
-	context->IAGetVertexBuffers(
-		0,
-		3,
-		nullptr,
-		strides,
-		nullptr
-	);
-
-	if (strides[0] == sizeof(float) * 3)
+	if (success())
 	{
 		return std::string();
 	}
@@ -78,4 +68,24 @@ void GeometryStridesPositionTest::initialiseD3D11()
 		&supported,
 		&context
 	);
+}
+
+bool GeometryStridesPositionTest::success()
+{
+	UINT strides[3];
+
+	context->IAGetVertexBuffers(
+		0,
+		3,
+		nullptr,
+		strides,
+		nullptr
+	);
+
+	if (strides[0] == sizeof(float) * 3)
+	{
+		return true;
+	}
+
+	return false;
 }
