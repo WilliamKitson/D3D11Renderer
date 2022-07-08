@@ -17,6 +17,7 @@ private:
 	void cleanup();
 	void cleanup(IUnknown*);
 	void initialiseD3D11();
+	void initialiseVBuffer();
 
 private:
 	ID3D11Device* device;
@@ -24,5 +25,4 @@ private:
 	ID3D11Buffer* vBuffer[3];
 	ID3D11Buffer* readBuffer;
 	HRESULT result;
-	int itterations;
 };

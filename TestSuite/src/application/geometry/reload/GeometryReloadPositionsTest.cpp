@@ -1,7 +1,7 @@
 #include "GeometryReloadPositionsTest.h"
 
 GeometryReloadPositionsTest::GeometryReloadPositionsTest()
-	: device{ nullptr }, context{ nullptr }, vBuffer(), readBuffer{ nullptr }, result(), itterations{ 4 }
+	: device{ nullptr }, context{ nullptr }, vBuffer(), readBuffer{ nullptr }, result()
 {
 }
 
@@ -27,7 +27,7 @@ std::string GeometryReloadPositionsTest::test()
 	unit.initialise(device);
 	unit.bind(context);
 
-	for (int i{ 0 }; i < itterations; i++)
+	for (int i{ 0 }; i < 4; i++)
 	{
 		float position[] = {
 			 (float)i,
@@ -41,25 +41,7 @@ std::string GeometryReloadPositionsTest::test()
 	unit.initialise(device);
 	unit.bind(context);
 
-	UINT stride[] = {
-		sizeof(float),
-		0,
-		0
-	};
-
-	UINT offset[] = {
-		0,
-		0,
-		0
-	};
-
-	context->IAGetVertexBuffers(
-		0,
-		3,
-		vBuffer,
-		stride,
-		offset
-	);
+	initialiseVBuffer();
 
 	if (!vBuffer[0])
 	{
@@ -115,14 +97,14 @@ std::string GeometryReloadPositionsTest::test()
 
 	int successes = 0;
 
-	for (int i{ 0 }; i < itterations; i++)
+	for (int i{ 0 }; i < 4; i++)
 	{
 		successes += outputData[i * 3] == (float)i;
 		successes += outputData[(i * 3) + 1] == (float)i;
 		successes += outputData[(i * 3) + 2] == (float)i;
 	}
 
-	if (successes == itterations * 3)
+	if (successes == 4 * 3)
 	{
 		return std::string();
 	}
@@ -165,5 +147,28 @@ void GeometryReloadPositionsTest::initialiseD3D11()
 		&device,
 		&supported,
 		&context
+	);
+}
+
+void GeometryReloadPositionsTest::initialiseVBuffer()
+{
+	UINT stride[] = {
+		sizeof(float),
+		0,
+		0
+	};
+
+	UINT offset[] = {
+		0,
+		0,
+		0
+	};
+
+	context->IAGetVertexBuffers(
+		0,
+		3,
+		vBuffer,
+		stride,
+		offset
 	);
 }
