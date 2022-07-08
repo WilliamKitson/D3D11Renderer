@@ -16,6 +16,7 @@ namespace D3D11Renderer
 	private:
 		void cleanup();
 		void increment();
+		void swap(float*);
 		float* pushed();
 
 	private:

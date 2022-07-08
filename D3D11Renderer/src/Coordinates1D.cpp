@@ -13,10 +13,7 @@ D3D11Renderer::Coordinates1D::~Coordinates1D()
 void D3D11Renderer::Coordinates1D::push(float input)
 {
 	increment();
-
-	float* temp = pushed();
-	cleanup();
-	coordinates = temp;
+	swap(pushed());
 
 	coordinates[count - 1] = input;
 }
@@ -58,6 +55,12 @@ void D3D11Renderer::Coordinates1D::cleanup()
 void D3D11Renderer::Coordinates1D::increment()
 {
 	count++;
+}
+
+void D3D11Renderer::Coordinates1D::swap(float* input)
+{
+	cleanup();
+	coordinates = input;
 }
 
 float* D3D11Renderer::Coordinates1D::pushed()
