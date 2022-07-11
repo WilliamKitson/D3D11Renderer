@@ -1,13 +1,14 @@
 #include "ShadersInvalidContextTest.h"
 
 ShadersInvalidContextTest::ShadersInvalidContextTest()
-	: device{ nullptr }, context{ nullptr }, shader{ nullptr }, result()
+	: device{ nullptr }, context{ nullptr }, vShader{ nullptr }, pShader{ nullptr }, result()
 {
 }
 
 ShadersInvalidContextTest::~ShadersInvalidContextTest()
 {
-	cleanup(shader);
+	cleanup(pShader);
+	cleanup(vShader);
 	cleanup(context);
 	cleanup(device);
 }
@@ -27,13 +28,7 @@ std::string ShadersInvalidContextTest::test()
 	unit.initialise(device);
 	unit.bind(nullptr);
 
-	context->VSGetShader(
-		&shader,
-		nullptr,
-		nullptr
-	);
-
-	if (!shader)
+	if (success())
 	{
 		return std::string();
 	}
@@ -69,4 +64,31 @@ void ShadersInvalidContextTest::initialise()
 		&supported,
 		&context
 	);
+}
+
+bool ShadersInvalidContextTest::success()
+{
+	context->VSGetShader(
+		&vShader,
+		nullptr,
+		nullptr
+	);
+
+	if (vShader)
+	{
+		return false;
+	}
+
+	context->PSGetShader(
+		&pShader,
+		nullptr,
+		nullptr
+	);
+
+	if (pShader)
+	{
+		return false;
+	}
+
+	return true;
 }
