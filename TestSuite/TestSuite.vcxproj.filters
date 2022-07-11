@@ -387,6 +387,15 @@
     <ClCompile Include="src\application\geometry\invalid\GeometryInvalidContextTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\application\shaders\load\ShadersLoadTester.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\application\shaders\load\ShadersLoadVertexTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\application\shaders\ShadersTester.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\MemoryTest.h">
@@ -758,5 +767,17 @@
     <ClInclude Include="src\application\geometry\invalid\GeometryInvalidContextTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\application\shaders\load\ShadersLoadTester.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\application\shaders\load\ShadersLoadVertexTest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\application\shaders\ShadersTester.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="assets\shaders\shaders.hlsl" />
   </ItemGroup>
 </Project>

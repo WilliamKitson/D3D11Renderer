@@ -111,7 +111,7 @@
       <Command>xcopy /Y "$(ProjectDir)src\*.h" "$(SolutionDir)bin\$(ProjectName)\include\"</Command>
     </PostBuildEvent>
     <Lib>
-      <AdditionalDependencies>d3d11.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>d3d11.lib;D3DCompiler.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -133,7 +133,7 @@
       <Command>xcopy /Y "$(ProjectDir)src\*.h" "$(SolutionDir)bin\$(ProjectName)\include\"</Command>
     </PostBuildEvent>
     <Lib>
-      <AdditionalDependencies>d3d11.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>d3d11.lib;D3DCompiler.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -151,7 +151,7 @@
       <Command>xcopy /Y "$(ProjectDir)src\*.h" "$(SolutionDir)bin\$(ProjectName)\include\"</Command>
     </PostBuildEvent>
     <Lib>
-      <AdditionalDependencies>d3d11.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>d3d11.lib;D3DCompiler.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -173,7 +173,7 @@
       <Command>xcopy /Y "$(ProjectDir)src\*.h" "$(SolutionDir)bin\$(ProjectName)\include\"</Command>
     </PostBuildEvent>
     <Lib>
-      <AdditionalDependencies>d3d11.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>d3d11.lib;D3DCompiler.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -186,6 +186,7 @@
     <ClInclude Include="src\Resolution.h" />
     <ClInclude Include="src\RGB.h" />
     <ClInclude Include="src\RGBA.h" />
+    <ClInclude Include="src\Shaders.h" />
     <ClInclude Include="src\Swapchain.h" />
   </ItemGroup>
   <ItemGroup>
@@ -195,6 +196,7 @@
     <ClCompile Include="src\PerScene.cpp" />
     <ClCompile Include="src\Rasteriser.cpp" />
     <ClCompile Include="src\Resolution.cpp" />
+    <ClCompile Include="src\Shaders.cpp" />
     <ClCompile Include="src\Swapchain.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

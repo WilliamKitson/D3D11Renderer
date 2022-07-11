@@ -3,6 +3,7 @@
 #include <string>
 
 #include "swapchain/SwapchainTester.h"
+#include "shaders/ShadersTester.h"
 #include "geometry/GeometryTester.h"
 #include "rasteriser/RasteriserTester.h"
 #include "perScene/PerSceneTester.h"
@@ -18,6 +19,7 @@ public:
 
 private:
 	std::string testSwapchain();
+	std::string testShaders();
 	std::string testGeometry();
 	std::string testRasteriser();
 	std::string testPerScene();
