@@ -17,6 +17,7 @@ namespace D3D11Renderer
 		void bind(ID3D11DeviceContext*);
 
 	private:
+		void cleanup(IUnknown*);
 		void vLoad(ID3D11Device*);
 		void pLoad(ID3D11Device*);
 

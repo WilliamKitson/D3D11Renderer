@@ -7,15 +7,8 @@ D3D11Renderer::Shaders::Shaders()
 
 D3D11Renderer::Shaders::~Shaders()
 {
-	if (pShader)
-	{
-		pShader->Release();
-	}
-
-	if (vShader)
-	{
-		vShader->Release();
-	}
+	cleanup(pShader);
+	cleanup(vShader);
 }
 
 void D3D11Renderer::Shaders::initialise(ID3D11Device* input)
@@ -37,6 +30,14 @@ void D3D11Renderer::Shaders::bind(ID3D11DeviceContext* input)
 		0,
 		0
 	);
+}
+
+void D3D11Renderer::Shaders::cleanup(IUnknown* input)
+{
+	if (input)
+	{
+		input->Release();
+	}
 }
 
 void D3D11Renderer::Shaders::vLoad(ID3D11Device* input)
