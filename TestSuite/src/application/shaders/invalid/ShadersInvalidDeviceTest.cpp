@@ -1,13 +1,14 @@
 #include "ShadersInvalidDeviceTest.h"
 
 ShadersInvalidDeviceTest::ShadersInvalidDeviceTest()
-	: device{ nullptr }, context{ nullptr }, vShader{ nullptr }, pShader{ nullptr }, result()
+	: device{ nullptr }, context{ nullptr }, vShader{ nullptr }, layout{ nullptr }, pShader{ nullptr }, result()
 {
 }
 
 ShadersInvalidDeviceTest::~ShadersInvalidDeviceTest()
 {
 	cleanup(pShader);
+	cleanup(layout);
 	cleanup(vShader);
 	cleanup(context);
 	cleanup(device);
@@ -86,6 +87,13 @@ bool ShadersInvalidDeviceTest::success()
 	);
 
 	if (pShader)
+	{
+		return false;
+	}
+
+	context->IAGetInputLayout(&layout);
+
+	if (layout)
 	{
 		return false;
 	}
