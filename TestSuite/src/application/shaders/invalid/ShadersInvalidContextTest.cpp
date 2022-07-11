@@ -1,13 +1,14 @@
 #include "ShadersInvalidContextTest.h"
 
 ShadersInvalidContextTest::ShadersInvalidContextTest()
-	: device{ nullptr }, context{ nullptr }, vShader{ nullptr }, pShader{ nullptr }, result()
+	: device{ nullptr }, context{ nullptr }, vShader{ nullptr }, layout{ nullptr }, pShader{ nullptr }, result()
 {
 }
 
 ShadersInvalidContextTest::~ShadersInvalidContextTest()
 {
 	cleanup(pShader);
+	cleanup(layout);
 	cleanup(vShader);
 	cleanup(context);
 	cleanup(device);
@@ -86,6 +87,13 @@ bool ShadersInvalidContextTest::success()
 	);
 
 	if (pShader)
+	{
+		return false;
+	}
+
+	context->IAGetInputLayout(&layout);
+
+	if (layout)
 	{
 		return false;
 	}
