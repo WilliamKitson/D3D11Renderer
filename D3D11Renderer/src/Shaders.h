@@ -18,6 +18,7 @@ namespace D3D11Renderer
 
 	private:
 		void vLoad(ID3D11Device*);
+		void pLoad(ID3D11Device*);
 
 	private:
 		ID3D11VertexShader* vShader;
