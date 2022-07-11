@@ -23,6 +23,7 @@ std::string ShadersInvalidContextTest::test()
 
 	D3D11Renderer::Shaders unit;
 
+	unit.setFilepath("assets/shaders/shaders.hlsl");
 	unit.initialise(device);
 	unit.bind(nullptr);
 

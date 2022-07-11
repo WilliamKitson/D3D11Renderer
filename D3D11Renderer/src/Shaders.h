@@ -15,6 +15,7 @@ namespace D3D11Renderer
 
 		void initialise(ID3D11Device*);
 		void bind(ID3D11DeviceContext*);
+		void setFilepath(std::string);
 
 	private:
 		void cleanup(IUnknown*);
@@ -25,5 +26,6 @@ namespace D3D11Renderer
 	private:
 		ID3D11VertexShader* vShader;
 		ID3D11PixelShader* pShader;
+		std::wstring filepath;
 	};
 }

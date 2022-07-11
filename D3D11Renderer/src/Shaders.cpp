@@ -1,7 +1,7 @@
 #include "Shaders.h"
 
 D3D11Renderer::Shaders::Shaders()
-	: vShader{ nullptr }, pShader{ nullptr }
+	: vShader{ nullptr }, pShader{ nullptr }, filepath{ L"" }
 {
 }
 
@@ -50,6 +50,11 @@ void D3D11Renderer::Shaders::bind(ID3D11DeviceContext* input)
 	);
 }
 
+void D3D11Renderer::Shaders::setFilepath(std::string input)
+{
+	filepath = std::wstring_convert<std::codecvt_utf8<wchar_t>>().from_bytes(input);
+}
+
 void D3D11Renderer::Shaders::cleanup(IUnknown* input)
 {
 	if (input)
@@ -73,7 +78,7 @@ void D3D11Renderer::Shaders::vLoad(ID3D11Device* input)
 	ID3DBlob* blob = nullptr;
 
 	D3DCompileFromFile(
-		L"assets/shaders/shaders.hlsl",
+		filepath.c_str(),
 		0,
 		0,
 		"VShader",
@@ -97,7 +102,7 @@ void D3D11Renderer::Shaders::pLoad(ID3D11Device* input)
 	ID3DBlob* blob = nullptr;
 
 	D3DCompileFromFile(
-		L"assets/shaders/shaders.hlsl",
+		filepath.c_str(),
 		0,
 		0,
 		"PShader",
