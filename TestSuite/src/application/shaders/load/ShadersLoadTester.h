@@ -1,7 +1,9 @@
 #pragma once
 
 #include <string>
+
 #include "ShadersLoadVertexTest.h"
+#include "ShadersLoadPixelTest.h"
 
 class ShadersLoadTester
 {
@@ -13,4 +15,5 @@ public:
 
 private:
 	std::string testVertex();
+	std::string testPixel();
 };

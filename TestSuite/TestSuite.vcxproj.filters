@@ -396,6 +396,9 @@
     <ClCompile Include="src\application\shaders\ShadersTester.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\application\shaders\load\ShadersLoadPixelTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\MemoryTest.h">
@@ -774,6 +777,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\application\shaders\ShadersTester.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\application\shaders\load\ShadersLoadPixelTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

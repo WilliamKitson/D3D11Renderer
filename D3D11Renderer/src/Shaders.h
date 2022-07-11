@@ -21,5 +21,6 @@ namespace D3D11Renderer
 
 	private:
 		ID3D11VertexShader* vShader;
+		ID3D11PixelShader* pShader;
 	};
 }
