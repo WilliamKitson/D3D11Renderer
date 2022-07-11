@@ -18,6 +18,7 @@ namespace D3D11Renderer
 		void setFilepath(std::string);
 
 	private:
+		void cleanup();
 		void cleanup(IUnknown*);
 		void validate(IUnknown*);
 		void vLoad(ID3D11Device*);

@@ -7,9 +7,7 @@ D3D11Renderer::Shaders::Shaders()
 
 D3D11Renderer::Shaders::~Shaders()
 {
-	cleanup(pShader);
-	cleanup(layout);
-	cleanup(vShader);
+	cleanup();
 }
 
 void D3D11Renderer::Shaders::initialise(ID3D11Device* input)
@@ -23,10 +21,7 @@ void D3D11Renderer::Shaders::initialise(ID3D11Device* input)
 		return;
 	}
 
-	cleanup(pShader);
-	cleanup(layout);
-	cleanup(vShader);
-
+	cleanup();
 	vLoad(input);
 	pLoad(input);
 }
@@ -60,6 +55,13 @@ void D3D11Renderer::Shaders::bind(ID3D11DeviceContext* input)
 void D3D11Renderer::Shaders::setFilepath(std::string input)
 {
 	filepath = std::wstring_convert<std::codecvt_utf8<wchar_t>>().from_bytes(input);
+}
+
+void D3D11Renderer::Shaders::cleanup()
+{
+	cleanup(pShader);
+	cleanup(layout);
+	cleanup(vShader);
 }
 
 void D3D11Renderer::Shaders::cleanup(IUnknown* input)
