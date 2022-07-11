@@ -211,6 +211,7 @@
     <ClCompile Include="src\application\shaders\invalid\ShadersInvalidDeviceTest.cpp" />
     <ClCompile Include="src\application\shaders\invalid\ShadersInvalidFilepathTest.cpp" />
     <ClCompile Include="src\application\shaders\invalid\ShadersInvalidTester.cpp" />
+    <ClCompile Include="src\application\shaders\load\ShadersLoadInputTest.cpp" />
     <ClCompile Include="src\application\shaders\load\ShadersLoadPixelTest.cpp" />
     <ClCompile Include="src\application\shaders\load\ShadersLoadTester.cpp" />
     <ClCompile Include="src\application\shaders\load\ShadersLoadVertexTest.cpp" />
@@ -345,6 +346,7 @@
     <ClInclude Include="src\application\shaders\invalid\ShadersInvalidDeviceTest.h" />
     <ClInclude Include="src\application\shaders\invalid\ShadersInvalidFilepathTest.h" />
     <ClInclude Include="src\application\shaders\invalid\ShadersInvalidTester.h" />
+    <ClInclude Include="src\application\shaders\load\ShadersLoadInputTest.h" />
     <ClInclude Include="src\application\shaders\load\ShadersLoadPixelTest.h" />
     <ClInclude Include="src\application\shaders\load\ShadersLoadTester.h" />
     <ClInclude Include="src\application\shaders\load\ShadersLoadVertexTest.h" />

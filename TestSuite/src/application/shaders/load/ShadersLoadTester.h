@@ -4,6 +4,7 @@
 
 #include "ShadersLoadVertexTest.h"
 #include "ShadersLoadPixelTest.h"
+#include "ShadersLoadInputTest.h"
 
 class ShadersLoadTester
 {
@@ -16,4 +17,5 @@ public:
 private:
 	std::string testVertex();
 	std::string testPixel();
+	std::string testInput();
 };

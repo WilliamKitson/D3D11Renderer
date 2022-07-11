@@ -21,10 +21,12 @@ namespace D3D11Renderer
 		void cleanup(IUnknown*);
 		void validate(IUnknown*);
 		void vLoad(ID3D11Device*);
+		void iLoad(ID3D11Device*, ID3DBlob*);
 		void pLoad(ID3D11Device*);
 
 	private:
 		ID3D11VertexShader* vShader;
+		ID3D11InputLayout* layout;
 		ID3D11PixelShader* pShader;
 		std::wstring filepath;
 	};

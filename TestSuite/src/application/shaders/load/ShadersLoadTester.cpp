@@ -14,6 +14,7 @@ std::string ShadersLoadTester::test()
 
 	output += testVertex();
 	output += testPixel();
+	output += testInput();
 
 	return output;
 }
@@ -26,4 +27,9 @@ std::string ShadersLoadTester::testVertex()
 std::string ShadersLoadTester::testPixel()
 {
 	return ShadersLoadPixelTest().test();
+}
+
+std::string ShadersLoadTester::testInput()
+{
+	return ShadersLoadInputTest().test();
 }
