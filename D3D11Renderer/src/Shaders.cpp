@@ -89,6 +89,15 @@ void D3D11Renderer::Shaders::vLoad(ID3D11Device* input)
 		nullptr
 	);
 
+	try
+	{
+		validate(blob);
+	}
+	catch (int)
+	{
+		return;
+	}
+
 	input->CreateVertexShader(
 		blob->GetBufferPointer(),
 		blob->GetBufferSize(),
@@ -112,6 +121,15 @@ void D3D11Renderer::Shaders::pLoad(ID3D11Device* input)
 		&blob,
 		nullptr
 	);
+
+	try
+	{
+		validate(blob);
+	}
+	catch (int)
+	{
+		return;
+	}
 
 	input->CreatePixelShader(
 		blob->GetBufferPointer(),

@@ -14,6 +14,7 @@ std::string ShadersInvalidTester::test()
 
 	output += testDevice();
 	output += testContext();
+	output += testFilepath();
 
 	return output;
 }
@@ -26,4 +27,9 @@ std::string ShadersInvalidTester::testDevice()
 std::string ShadersInvalidTester::testContext()
 {
 	return ShadersInvalidContextTest().test();
+}
+
+std::string ShadersInvalidTester::testFilepath()
+{
+	return ShadersInvalidFilepathTest().test();
 }

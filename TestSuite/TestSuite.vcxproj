@@ -209,6 +209,7 @@
     <ClCompile Include="src\application\rasteriser\RasteriserTester.cpp" />
     <ClCompile Include="src\application\shaders\invalid\ShadersInvalidContextTest.cpp" />
     <ClCompile Include="src\application\shaders\invalid\ShadersInvalidDeviceTest.cpp" />
+    <ClCompile Include="src\application\shaders\invalid\ShadersInvalidFilepathTest.cpp" />
     <ClCompile Include="src\application\shaders\invalid\ShadersInvalidTester.cpp" />
     <ClCompile Include="src\application\shaders\load\ShadersLoadPixelTest.cpp" />
     <ClCompile Include="src\application\shaders\load\ShadersLoadTester.cpp" />
@@ -342,6 +343,7 @@
     <ClInclude Include="src\application\rasteriser\RasteriserTester.h" />
     <ClInclude Include="src\application\shaders\invalid\ShadersInvalidContextTest.h" />
     <ClInclude Include="src\application\shaders\invalid\ShadersInvalidDeviceTest.h" />
+    <ClInclude Include="src\application\shaders\invalid\ShadersInvalidFilepathTest.h" />
     <ClInclude Include="src\application\shaders\invalid\ShadersInvalidTester.h" />
     <ClInclude Include="src\application\shaders\load\ShadersLoadPixelTest.h" />
     <ClInclude Include="src\application\shaders\load\ShadersLoadTester.h" />

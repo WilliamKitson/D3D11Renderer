@@ -4,6 +4,7 @@
 
 #include "ShadersInvalidDeviceTest.h"
 #include "ShadersInvalidContextTest.h"
+#include "ShadersInvalidFilepathTest.h"
 
 class ShadersInvalidTester
 {
@@ -16,4 +17,5 @@ public:
 private:
 	std::string testDevice();
 	std::string testContext();
+	std::string testFilepath();
 };
