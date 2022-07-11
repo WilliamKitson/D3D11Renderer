@@ -1,13 +1,14 @@
 #include "ShadersInvalidFilepathTest.h"
 
 ShadersInvalidFilepathTest::ShadersInvalidFilepathTest()
-	: device{ nullptr }, context{ nullptr }, shader{ nullptr }, result()
+	: device{ nullptr }, context{ nullptr }, vShader{ nullptr }, pShader{ nullptr }, result()
 {
 }
 
 ShadersInvalidFilepathTest::~ShadersInvalidFilepathTest()
 {
-	cleanup(shader);
+	cleanup(pShader);
+	cleanup(vShader);
 	cleanup(context);
 	cleanup(device);
 }
@@ -26,13 +27,7 @@ std::string ShadersInvalidFilepathTest::test()
 	unit.initialise(device);
 	unit.bind(context);
 
-	context->VSGetShader(
-		&shader,
-		nullptr,
-		nullptr
-	);
-
-	if (!shader)
+	if (success())
 	{
 		return std::string();
 	}
@@ -68,4 +63,31 @@ void ShadersInvalidFilepathTest::initialise()
 		&supported,
 		&context
 	);
+}
+
+bool ShadersInvalidFilepathTest::success()
+{
+	context->VSGetShader(
+		&vShader,
+		nullptr,
+		nullptr
+	);
+
+	if (vShader)
+	{
+		return false;
+	}
+
+	context->PSGetShader(
+		&pShader,
+		nullptr,
+		nullptr
+	);
+
+	if (pShader)
+	{
+		return false;
+	}
+
+	return true;
 }
