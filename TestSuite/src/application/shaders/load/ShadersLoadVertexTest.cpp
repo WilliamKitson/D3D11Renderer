@@ -7,20 +7,9 @@ ShadersLoadVertexTest::ShadersLoadVertexTest()
 
 ShadersLoadVertexTest::~ShadersLoadVertexTest()
 {
-	if (shader)
-	{
-		shader->Release();
-	}
-
-	if (context)
-	{
-		context->Release();
-	}
-
-	if (device)
-	{
-		device->Release();
-	}
+	cleanup(shader);
+	cleanup(context);
+	cleanup(device);
 }
 
 std::string ShadersLoadVertexTest::test()
@@ -66,4 +55,12 @@ std::string ShadersLoadVertexTest::test()
 	}
 
 	return "shaders load vertex test failed\n";
+}
+
+void ShadersLoadVertexTest::cleanup(IUnknown* input)
+{
+	if (input)
+	{
+		input->Release();
+	}
 }

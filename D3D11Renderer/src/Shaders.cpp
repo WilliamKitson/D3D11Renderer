@@ -15,6 +15,20 @@ D3D11Renderer::Shaders::~Shaders()
 
 void D3D11Renderer::Shaders::initialise(ID3D11Device* input)
 {
+	vLoad(input);
+}
+
+void D3D11Renderer::Shaders::bind(ID3D11DeviceContext* input)
+{
+	input->VSSetShader(
+		vShader,
+		0,
+		0
+	);
+}
+
+void D3D11Renderer::Shaders::vLoad(ID3D11Device* input)
+{
 	ID3DBlob* blob = nullptr;
 
 	D3DCompileFromFile(
@@ -34,14 +48,5 @@ void D3D11Renderer::Shaders::initialise(ID3D11Device* input)
 		blob->GetBufferSize(),
 		NULL,
 		&vShader
-	);
-}
-
-void D3D11Renderer::Shaders::bind(ID3D11DeviceContext* input)
-{
-	input->VSSetShader(
-		vShader,
-		0,
-		0
 	);
 }
