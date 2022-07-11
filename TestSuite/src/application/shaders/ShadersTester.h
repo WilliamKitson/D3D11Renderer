@@ -1,7 +1,9 @@
 #pragma once
 
 #include <string>
+
 #include "load/ShadersLoadTester.h"
+#include "invalid/ShadersInvalidTester.h"
 
 class ShadersTester
 {
@@ -13,4 +15,5 @@ public:
 
 private:
 	std::string testLoad();
+	std::string testInvalid();
 };

@@ -13,6 +13,15 @@ D3D11Renderer::Shaders::~Shaders()
 
 void D3D11Renderer::Shaders::initialise(ID3D11Device* input)
 {
+	try
+	{
+		validate(input);
+	}
+	catch (int)
+	{
+		return;
+	}
+
 	vLoad(input);
 	pLoad(input);
 }
@@ -38,6 +47,16 @@ void D3D11Renderer::Shaders::cleanup(IUnknown* input)
 	{
 		input->Release();
 	}
+}
+
+void D3D11Renderer::Shaders::validate(IUnknown* input)
+{
+	if (input)
+	{
+		return;
+	}
+
+	throw int();
 }
 
 void D3D11Renderer::Shaders::vLoad(ID3D11Device* input)
