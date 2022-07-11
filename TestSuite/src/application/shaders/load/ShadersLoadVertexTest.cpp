@@ -27,6 +27,9 @@ std::string ShadersLoadVertexTest::test()
 	unit.initialise(device);
 	unit.bind(context);
 
+	unit.initialise(device);
+	unit.bind(context);
+
 	context->VSGetShader(
 		&shader,
 		nullptr,

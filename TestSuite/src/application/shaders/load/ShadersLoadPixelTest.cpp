@@ -27,6 +27,9 @@ std::string ShadersLoadPixelTest::test()
 	unit.initialise(device);
 	unit.bind(context);
 
+	unit.initialise(device);
+	unit.bind(context);
+
 	context->PSGetShader(
 		&shader,
 		nullptr,

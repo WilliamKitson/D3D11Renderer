@@ -27,6 +27,9 @@ std::string ShadersLoadInputTest::test()
 	unit.initialise(device);
 	unit.bind(context);
 
+	unit.initialise(device);
+	unit.bind(context);
+
 	context->IAGetInputLayout(&input);
 
 	if (input)

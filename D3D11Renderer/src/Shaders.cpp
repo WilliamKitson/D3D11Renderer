@@ -23,6 +23,10 @@ void D3D11Renderer::Shaders::initialise(ID3D11Device* input)
 		return;
 	}
 
+	cleanup(pShader);
+	cleanup(layout);
+	cleanup(vShader);
+
 	vLoad(input);
 	pLoad(input);
 }
