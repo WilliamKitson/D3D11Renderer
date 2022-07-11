@@ -28,6 +28,15 @@ void D3D11Renderer::Shaders::initialise(ID3D11Device* input)
 
 void D3D11Renderer::Shaders::bind(ID3D11DeviceContext* input)
 {
+	try
+	{
+		validate(input);
+	}
+	catch (int)
+	{
+		return;
+	}
+
 	input->VSSetShader(
 		vShader,
 		0,

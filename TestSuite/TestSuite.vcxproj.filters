@@ -405,6 +405,9 @@
     <ClCompile Include="src\application\shaders\invalid\ShadersInvalidTester.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\application\shaders\invalid\ShadersInvalidContextTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\MemoryTest.h">
@@ -792,6 +795,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\application\shaders\invalid\ShadersInvalidTester.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\application\shaders\invalid\ShadersInvalidContextTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
