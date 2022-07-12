@@ -45,6 +45,15 @@ void D3D11Renderer::Swapchain::bind(ID3D11DeviceContext* input)
 
 void D3D11Renderer::Swapchain::update(ID3D11DeviceContext* input)
 {
+	try
+	{
+		validate(input);
+	}
+	catch (int)
+	{
+		return;
+	}
+
 	input->ClearDepthStencilView(
 		depth,
 		D3D11_CLEAR_DEPTH | D3D11_CLEAR_STENCIL,

@@ -16,6 +16,7 @@ std::string SwapchainInvalidTester::test()
 	output += testDevice();
 	output += testWindow();
 	output += testBind();
+	output += testUpdate();
 
 	return output;
 }
@@ -33,4 +34,9 @@ std::string SwapchainInvalidTester::testWindow()
 std::string SwapchainInvalidTester::testBind()
 {
 	return SwapchainInvalidBindTest(hInstance, nCmdShow).test();
+}
+
+std::string SwapchainInvalidTester::testUpdate()
+{
+	return SwapchainInvalidUpdateTest(hInstance, nCmdShow).test();
 }
