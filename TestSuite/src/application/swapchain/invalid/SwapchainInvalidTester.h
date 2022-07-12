@@ -6,6 +6,7 @@
 #include "SwapchainInvalidWindowTest.h"
 #include "SwapchainInvalidBindTest.h"
 #include "SwapchainInvalidUpdateTest.h"
+#include "SwapchainInvalidStateTest.h"
 
 class SwapchainInvalidTester
 {
@@ -20,6 +21,7 @@ private:
 	std::string testWindow();
 	std::string testBind();
 	std::string testUpdate();
+	std::string testState();
 
 private:
 	HINSTANCE hInstance;

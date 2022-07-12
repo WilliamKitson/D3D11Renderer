@@ -48,6 +48,7 @@ void D3D11Renderer::Swapchain::update(ID3D11DeviceContext* input)
 	try
 	{
 		validate(input);
+		validate(state);
 	}
 	catch (int)
 	{
