@@ -4,7 +4,7 @@
 
 #include "SwapchainInvalidDeviceTest.h"
 #include "SwapchainInvalidWindowTest.h"
-#include "SwapchainInvalidContextTest.h"
+#include "SwapchainInvalidBindTest.h"
 
 class SwapchainInvalidTester
 {
@@ -17,7 +17,7 @@ public:
 private:
 	std::string testDevice();
 	std::string testWindow();
-	std::string testContext();
+	std::string testBind();
 
 private:
 	HINSTANCE hInstance;

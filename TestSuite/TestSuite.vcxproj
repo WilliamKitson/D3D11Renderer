@@ -226,7 +226,7 @@
     <ClCompile Include="src\application\swapchain\interval\SwapchainIntervalNoneTest.cpp" />
     <ClCompile Include="src\application\swapchain\interval\SwapchainIntervalQuaterTest.cpp" />
     <ClCompile Include="src\application\swapchain\interval\SwapchainIntervalTester.cpp" />
-    <ClCompile Include="src\application\swapchain\invalid\SwapchainInvalidContextTest.cpp" />
+    <ClCompile Include="src\application\swapchain\invalid\SwapchainInvalidBindTest.cpp" />
     <ClCompile Include="src\application\swapchain\invalid\SwapchainInvalidDeviceTest.cpp" />
     <ClCompile Include="src\application\swapchain\invalid\SwapchainInvalidTester.cpp" />
     <ClCompile Include="src\application\swapchain\invalid\SwapchainInvalidWindowTest.cpp" />
@@ -361,7 +361,7 @@
     <ClInclude Include="src\application\swapchain\interval\SwapchainIntervalNoneTest.h" />
     <ClInclude Include="src\application\swapchain\interval\SwapchainIntervalQuaterTest.h" />
     <ClInclude Include="src\application\swapchain\interval\SwapchainIntervalTester.h" />
-    <ClInclude Include="src\application\swapchain\invalid\SwapchainInvalidContextTest.h" />
+    <ClInclude Include="src\application\swapchain\invalid\SwapchainInvalidBindTest.h" />
     <ClInclude Include="src\application\swapchain\invalid\SwapchainInvalidDeviceTest.h" />
     <ClInclude Include="src\application\swapchain\invalid\SwapchainInvalidTester.h" />
     <ClInclude Include="src\application\swapchain\invalid\SwapchainInvalidWindowTest.h" />

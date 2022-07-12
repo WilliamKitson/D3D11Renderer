@@ -1,7 +1,7 @@
-#include "SwapchainInvalidContextTest.h"
+#include "SwapchainInvalidBindTest.h"
 
-SwapchainInvalidContextTest::SwapchainInvalidContextTest(HINSTANCE hInstanceInput, int nCmdShowInput)
-	: hInstance{ hInstanceInput }, nCmdShow{ nCmdShowInput }, tag{ L"swapchain invalid context test" }, window(), device{ nullptr }, context{ nullptr }, result()
+SwapchainInvalidBindTest::SwapchainInvalidBindTest(HINSTANCE hInstanceInput, int nCmdShowInput)
+	: hInstance{ hInstanceInput }, nCmdShow{ nCmdShowInput }, tag{ L"swapchain invalid bind test" }, window(), device{ nullptr }, context{ nullptr }, result()
 {
 	initialiseWindowClass();
 
@@ -20,18 +20,18 @@ SwapchainInvalidContextTest::SwapchainInvalidContextTest(HINSTANCE hInstanceInpu
 	initialiseD3D11();
 }
 
-SwapchainInvalidContextTest::~SwapchainInvalidContextTest()
+SwapchainInvalidBindTest::~SwapchainInvalidBindTest()
 {
 	cleanup(context);
 	cleanup(device);
 	DestroyWindow(window);
 }
 
-std::string SwapchainInvalidContextTest::test()
+std::string SwapchainInvalidBindTest::test()
 {
 	if (FAILED(result))
 	{
-		return "swapchain invalid device test failed to initialise\n";
+		return "swapchain invalid bind test failed to initialise\n";
 	}
 
 	D3D11Renderer::Swapchain unit;
@@ -44,15 +44,15 @@ std::string SwapchainInvalidContextTest::test()
 		return std::string();
 	}
 
-	return "swapchain invalid device test failed\n";
+	return "swapchain invalid bind test failed\n";
 }
 
-LRESULT CALLBACK SwapchainInvalidContextTest::windowProcedure(HWND window, UINT message, WPARAM wParam, LPARAM lParam)
+LRESULT CALLBACK SwapchainInvalidBindTest::windowProcedure(HWND window, UINT message, WPARAM wParam, LPARAM lParam)
 {
 	return DefWindowProc(window, message, wParam, lParam);
 }
 
-void SwapchainInvalidContextTest::cleanup(IUnknown* input)
+void SwapchainInvalidBindTest::cleanup(IUnknown* input)
 {
 	if (input)
 	{
@@ -60,7 +60,7 @@ void SwapchainInvalidContextTest::cleanup(IUnknown* input)
 	}
 }
 
-void SwapchainInvalidContextTest::initialiseWindowClass()
+void SwapchainInvalidBindTest::initialiseWindowClass()
 {
 	WNDCLASS windowClass = WNDCLASS();
 	windowClass.lpfnWndProc = windowProcedure;
@@ -76,7 +76,7 @@ void SwapchainInvalidContextTest::initialiseWindowClass()
 	result = S_OK;
 }
 
-void SwapchainInvalidContextTest::initialiseWindow()
+void SwapchainInvalidBindTest::initialiseWindow()
 {
 	window = CreateWindow(
 		tag.c_str(),
@@ -104,7 +104,7 @@ void SwapchainInvalidContextTest::initialiseWindow()
 	);
 }
 
-void SwapchainInvalidContextTest::initialiseD3D11()
+void SwapchainInvalidBindTest::initialiseD3D11()
 {
 	D3D_FEATURE_LEVEL levels[] = {
 		D3D_FEATURE_LEVEL_11_0
@@ -126,7 +126,7 @@ void SwapchainInvalidContextTest::initialiseD3D11()
 	);
 }
 
-bool SwapchainInvalidContextTest::success()
+bool SwapchainInvalidBindTest::success()
 {
 	ID3D11RenderTargetView* view = nullptr;
 

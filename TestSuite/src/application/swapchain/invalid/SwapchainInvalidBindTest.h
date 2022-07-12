@@ -6,11 +6,11 @@
 
 #include "Swapchain.h"
 
-class SwapchainInvalidContextTest
+class SwapchainInvalidBindTest
 {
 public:
-	SwapchainInvalidContextTest(HINSTANCE, int);
-	~SwapchainInvalidContextTest();
+	SwapchainInvalidBindTest(HINSTANCE, int);
+	~SwapchainInvalidBindTest();
 
 	std::string test();
 

@@ -15,7 +15,7 @@ std::string SwapchainInvalidTester::test()
 
 	output += testDevice();
 	output += testWindow();
-	output += testContext();
+	output += testBind();
 
 	return output;
 }
@@ -30,7 +30,7 @@ std::string SwapchainInvalidTester::testWindow()
 	return SwapchainInvalidWindowTest(hInstance, nCmdShow).test();
 }
 
-std::string SwapchainInvalidTester::testContext()
+std::string SwapchainInvalidTester::testBind()
 {
-	return SwapchainInvalidContextTest(hInstance, nCmdShow).test();
+	return SwapchainInvalidBindTest(hInstance, nCmdShow).test();
 }
