@@ -19,7 +19,6 @@ std::string ApplicationTester::test()
 	output += testRasteriser();
 	output += testSampler();
 	output += testPerScene();
-	output += testDirectional();
 	output += testPerObject();
 
 	return output;
@@ -53,11 +52,6 @@ std::string ApplicationTester::testSampler()
 std::string ApplicationTester::testPerScene()
 {
 	return PerSceneTester().test();
-}
-
-std::string ApplicationTester::testDirectional()
-{
-	return DirectionalTester().test();
 }
 
 std::string ApplicationTester::testPerObject()

@@ -8,7 +8,6 @@
 #include "rasteriser/RasteriserTester.h"
 #include "sampler/SamplerTester.h"
 #include "perScene/PerSceneTester.h"
-#include "directional/DirectionalTester.h"
 #include "perObject/PerObjectTester.h"
 
 class ApplicationTester
@@ -26,7 +25,6 @@ private:
 	std::string testRasteriser();
 	std::string testSampler();
 	std::string testPerScene();
-	std::string testDirectional();
 	std::string testPerObject();
 
 private:

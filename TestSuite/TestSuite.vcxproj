@@ -148,20 +148,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\application\ApplicationTester.cpp" />
-    <ClCompile Include="src\application\directional\apply\DirectionalApplyColourTest.cpp" />
-    <ClCompile Include="src\application\directional\apply\DirectionalApplyDirectionTest.cpp" />
-    <ClCompile Include="src\application\directional\apply\DirectionalApplyTester.cpp" />
-    <ClCompile Include="src\application\directional\default\DirectionalDefaultColourTest.cpp" />
-    <ClCompile Include="src\application\directional\default\DirectionalDefaultDirectionTest.cpp" />
-    <ClCompile Include="src\application\directional\default\DirectionalDefaultTester.cpp" />
-    <ClCompile Include="src\application\directional\DirectionalTester.cpp" />
-    <ClCompile Include="src\application\directional\invalid\DirectionalInvalidApplyTest.cpp" />
-    <ClCompile Include="src\application\directional\invalid\DirectionalInvalidBindTest.cpp" />
-    <ClCompile Include="src\application\directional\invalid\DirectionalInvalidInitialiseTest.cpp" />
-    <ClCompile Include="src\application\directional\invalid\DirectionalInvalidTester.cpp" />
-    <ClCompile Include="src\application\directional\reload\DirectionalReloadColourTest.cpp" />
-    <ClCompile Include="src\application\directional\reload\DirectionalReloadDirectionTest.cpp" />
-    <ClCompile Include="src\application\directional\reload\DirectionalReloadTester.cpp" />
     <ClCompile Include="src\application\geometry\default\GeometryDefaultNormalsTest.cpp" />
     <ClCompile Include="src\application\geometry\default\GeometryDefaultPositionsTest.cpp" />
     <ClCompile Include="src\application\geometry\default\GeometryDefaultTester.cpp" />
@@ -301,20 +287,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\application\ApplicationTester.h" />
-    <ClInclude Include="src\application\directional\apply\DirectionalApplyColourTest.h" />
-    <ClInclude Include="src\application\directional\apply\DirectionalApplyDirectionTest.h" />
-    <ClInclude Include="src\application\directional\apply\DirectionalApplyTester.h" />
-    <ClInclude Include="src\application\directional\default\DirectionalDefaultColourTest.h" />
-    <ClInclude Include="src\application\directional\default\DirectionalDefaultDirectionTest.h" />
-    <ClInclude Include="src\application\directional\default\DirectionalDefaultTester.h" />
-    <ClInclude Include="src\application\directional\DirectionalTester.h" />
-    <ClInclude Include="src\application\directional\invalid\DirectionalInvalidApplyTest.h" />
-    <ClInclude Include="src\application\directional\invalid\DirectionalInvalidBindTest.h" />
-    <ClInclude Include="src\application\directional\invalid\DirectionalInvalidInitialiseTest.h" />
-    <ClInclude Include="src\application\directional\invalid\DirectionalInvalidTester.h" />
-    <ClInclude Include="src\application\directional\reload\DirectionalReloadColourTest.h" />
-    <ClInclude Include="src\application\directional\reload\DirectionalReloadDirectionTest.h" />
-    <ClInclude Include="src\application\directional\reload\DirectionalReloadTester.h" />
     <ClInclude Include="src\application\geometry\default\GeometryDefaultNormalsTest.h" />
     <ClInclude Include="src\application\geometry\default\GeometryDefaultPositionsTest.h" />
     <ClInclude Include="src\application\geometry\default\GeometryDefaultTester.h" />
