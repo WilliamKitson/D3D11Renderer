@@ -13,6 +13,7 @@ std::string DirectionalDefaultTester::test()
 	std::string output{ "" };
 
 	output += testDirection();
+	output += testColour();
 
 	return output;
 }
@@ -20,4 +21,9 @@ std::string DirectionalDefaultTester::test()
 std::string DirectionalDefaultTester::testDirection()
 {
 	return DirectionalDefaultDirectionTest().test();
+}
+
+std::string DirectionalDefaultTester::testColour()
+{
+	return DirectionalDefaultColourTest().test();
 }

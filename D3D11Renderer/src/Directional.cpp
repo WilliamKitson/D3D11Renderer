@@ -3,9 +3,14 @@
 D3D11Renderer::Directional::Directional()
 	: cBuffer{ nullptr }, data()
 {
-	for (int i{ 0 }; i < 8; i++)
+	for (int i{ 0 }; i < 4; i++)
 	{
 		data[i] = 0.0f;
+	}
+
+	for (int i{ 4 }; i < 8; i++)
+	{
+		data[i] = 1.0f;
 	}
 }
 
