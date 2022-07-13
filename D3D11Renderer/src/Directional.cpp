@@ -72,9 +72,9 @@ void D3D11Renderer::Directional::bind(ID3D11DeviceContext* input)
 	);
 }
 
-void D3D11Renderer::Directional::setDirection(float input[4])
+void D3D11Renderer::Directional::setDirection(float input[3])
 {
-	for (int i{ 0 }; i < 4; i++)
+	for (int i{ 0 }; i < 3; i++)
 	{
 		data[i] = input[i];
 	}
