@@ -14,6 +14,7 @@ std::string DirectionalInvalidTester::test()
 
 	output += testInitialise();
 	output += testBind();
+	output += testApply();
 
 	return output;
 }
@@ -26,4 +27,9 @@ std::string DirectionalInvalidTester::testInitialise()
 std::string DirectionalInvalidTester::testBind()
 {
 	return DirectionalInvalidBindTest().test();
+}
+
+std::string DirectionalInvalidTester::testApply()
+{
+	return DirectionalInvalidApplyTest().test();
 }

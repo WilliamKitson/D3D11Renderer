@@ -4,6 +4,7 @@
 
 #include "DirectionalInvalidInitialiseTest.h"
 #include "DirectionalInvalidBindTest.h"
+#include "DirectionalInvalidApplyTest.h"
 
 class DirectionalInvalidTester
 {
@@ -16,4 +17,5 @@ public:
 private:
 	std::string testInitialise();
 	std::string testBind();
+	std::string testApply();
 };
