@@ -17,6 +17,9 @@ namespace D3D11Renderer
 		void setColour(float[3]);
 
 	private:
+		void validate(IUnknown*);
+
+	private:
 		ID3D11Buffer* cBuffer;
 		float data[8];
 	};

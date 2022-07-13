@@ -15,6 +15,7 @@ std::string DirectionalTester::test()
 	output += testDefault();
 	output += testReload();
 	output += testApply();
+	output += testInvalid();
 
 	return output;
 }
@@ -32,4 +33,9 @@ std::string DirectionalTester::testReload()
 std::string DirectionalTester::testApply()
 {
 	return DirectionalApplyTester().test();
+}
+
+std::string DirectionalTester::testInvalid()
+{
+	return DirectionalInvalidTester().test();
 }

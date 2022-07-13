@@ -24,6 +24,15 @@ D3D11Renderer::Directional::~Directional()
 
 void D3D11Renderer::Directional::initialise(ID3D11Device* input)
 {
+	try
+	{
+		validate(input);
+	}
+	catch (int)
+	{
+		return;
+	}
+
 	if (cBuffer)
 	{
 		cBuffer->Release();
@@ -86,4 +95,14 @@ void D3D11Renderer::Directional::setColour(float input[3])
 	{
 		data[4 + i] = input[i];
 	}
+}
+
+void D3D11Renderer::Directional::validate(IUnknown* input)
+{
+	if (input)
+	{
+		return;
+	}
+
+	throw int();
 }

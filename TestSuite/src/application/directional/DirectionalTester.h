@@ -5,6 +5,7 @@
 #include "default/DirectionalDefaultTester.h"
 #include "reload/DirectionalReloadTester.h"
 #include "apply/DirectionalApplyTester.h"
+#include "invalid/DirectionalInvalidTester.h"
 
 class DirectionalTester
 {
@@ -18,4 +19,5 @@ private:
 	std::string testDefault();
 	std::string testReload();
 	std::string testApply();
+	std::string testInvalid();
 };
