@@ -3,7 +3,7 @@
 DirectionalApplyColourTest::DirectionalApplyColourTest()
 	: device{ nullptr }, context{ nullptr }, cBuffer{ nullptr }, readBuffer{ nullptr }, result(), inputData(), outputData()
 {
-	for (int i{ 0 }; i < 4; i++)
+	for (int i{ 0 }; i < 3; i++)
 	{
 		inputData[i] = (float)i;
 	}
@@ -156,10 +156,12 @@ int DirectionalApplyColourTest::success()
 {
 	int output = 0;
 
-	for (int i{ 0 }; i < 4; i++)
+	for (int i{ 0 }; i < 3; i++)
 	{
 		output += outputData[4 + i] == inputData[i];
 	}
+
+	output += outputData[7] == 1.0f;
 
 	return output;
 }

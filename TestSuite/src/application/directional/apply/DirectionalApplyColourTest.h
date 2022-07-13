@@ -27,6 +27,6 @@ private:
 	ID3D11Buffer* cBuffer;
 	ID3D11Buffer* readBuffer;
 	HRESULT result;
-	float inputData[4];
+	float inputData[3];
 	float outputData[8];
 };
