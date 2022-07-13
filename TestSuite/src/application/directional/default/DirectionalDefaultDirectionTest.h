@@ -20,6 +20,7 @@ private:
 	void initialiseOutput();
 	void initialiseCBuffer();
 	void initialiseRead();
+	int success();
 
 private:
 	ID3D11Device* device;

@@ -34,14 +34,7 @@ std::string DirectionalDefaultDirectionTest::test()
 		return "directional default direction test failed to initialise data\n";
 	}
 
-	int success = 0;
-
-	for (int i{ 0 }; i < 8; i++)
-	{
-		success += outputData[i] == 0.0f;
-	}
-
-	if (success == 8)
+	if (success() == 4)
 	{
 		return std::string();
 	}
@@ -150,4 +143,16 @@ void DirectionalDefaultDirectionTest::initialiseRead()
 		NULL,
 		&readBuffer
 	);
+}
+
+int DirectionalDefaultDirectionTest::success()
+{
+	int output = 0;
+
+	for (int i{ 0 }; i < 4; i++)
+	{
+		output += outputData[i] == 0.0f;
+	}
+
+	return output;
 }
