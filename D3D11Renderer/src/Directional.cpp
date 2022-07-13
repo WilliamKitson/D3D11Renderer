@@ -3,11 +3,7 @@
 D3D11Renderer::Directional::Directional()
 	: cBuffer{ nullptr }, data()
 {
-	for (int i{ 0 }; i < 4; i++)
-	{
-		data[i] = 0.0f;
-	}
-
+	direction();
 	colour();
 }
 
@@ -83,6 +79,14 @@ void D3D11Renderer::Directional::setColour(float input[3])
 	for (int i{ 0 }; i < 3; i++)
 	{
 		data[4 + i] = input[i];
+	}
+}
+
+void D3D11Renderer::Directional::direction()
+{
+	for (int i{ 0 }; i < 4; i++)
+	{
+		data[i] = 0.0f;
 	}
 }
 
