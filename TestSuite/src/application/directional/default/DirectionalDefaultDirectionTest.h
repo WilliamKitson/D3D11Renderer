@@ -2,7 +2,6 @@
 
 #include <string>
 #include <d3d11.h>
-#include <DirectXMath.h>
 
 #include "Directional.h"
 

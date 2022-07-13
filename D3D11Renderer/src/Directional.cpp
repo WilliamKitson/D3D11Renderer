@@ -24,6 +24,11 @@ D3D11Renderer::Directional::~Directional()
 
 void D3D11Renderer::Directional::initialise(ID3D11Device* input)
 {
+	if (cBuffer)
+	{
+		cBuffer->Release();
+	}
+
 	D3D11_BUFFER_DESC description{
 		sizeof(data),
 		D3D11_USAGE_DEFAULT,
@@ -53,4 +58,12 @@ void D3D11Renderer::Directional::bind(ID3D11DeviceContext* input)
 		1,
 		&cBuffer
 	);
+}
+
+void D3D11Renderer::Directional::setDirection(float input[4])
+{
+	for (int i{ 0 }; i < 4; i++)
+	{
+		data[i] = input[i];
+	}
 }

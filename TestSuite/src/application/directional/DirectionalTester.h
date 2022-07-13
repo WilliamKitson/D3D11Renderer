@@ -1,7 +1,9 @@
 #pragma once
 
 #include <string>
+
 #include "default/DirectionalDefaultTester.h"
+#include "reload/DirectionalReloadTester.h"
 
 class DirectionalTester
 {
@@ -13,4 +15,5 @@ public:
 
 private:
 	std::string testDefault();
+	std::string testReload();
 };

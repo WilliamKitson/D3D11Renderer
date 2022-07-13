@@ -5,11 +5,11 @@
 
 #include "Directional.h"
 
-class DirectionalDefaultColourTest
+class DirectionalReloadDirectionTest
 {
 public:
-	DirectionalDefaultColourTest();
-	~DirectionalDefaultColourTest();
+	DirectionalReloadDirectionTest();
+	~DirectionalReloadDirectionTest();
 
 	std::string test();
 
@@ -27,5 +27,6 @@ private:
 	ID3D11Buffer* cBuffer;
 	ID3D11Buffer* readBuffer;
 	HRESULT result;
+	float inputData[4];
 	float outputData[8];
 };

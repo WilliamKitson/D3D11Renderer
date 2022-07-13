@@ -152,6 +152,8 @@
     <ClCompile Include="src\application\directional\default\DirectionalDefaultDirectionTest.cpp" />
     <ClCompile Include="src\application\directional\default\DirectionalDefaultTester.cpp" />
     <ClCompile Include="src\application\directional\DirectionalTester.cpp" />
+    <ClCompile Include="src\application\directional\reload\DirectionalReloadDirectionTest.cpp" />
+    <ClCompile Include="src\application\directional\reload\DirectionalReloadTester.cpp" />
     <ClCompile Include="src\application\geometry\default\GeometryDefaultNormalsTest.cpp" />
     <ClCompile Include="src\application\geometry\default\GeometryDefaultPositionsTest.cpp" />
     <ClCompile Include="src\application\geometry\default\GeometryDefaultTester.cpp" />
@@ -293,6 +295,8 @@
     <ClInclude Include="src\application\directional\default\DirectionalDefaultDirectionTest.h" />
     <ClInclude Include="src\application\directional\default\DirectionalDefaultTester.h" />
     <ClInclude Include="src\application\directional\DirectionalTester.h" />
+    <ClInclude Include="src\application\directional\reload\DirectionalReloadDirectionTest.h" />
+    <ClInclude Include="src\application\directional\reload\DirectionalReloadTester.h" />
     <ClInclude Include="src\application\geometry\default\GeometryDefaultNormalsTest.h" />
     <ClInclude Include="src\application\geometry\default\GeometryDefaultPositionsTest.h" />
     <ClInclude Include="src\application\geometry\default\GeometryDefaultTester.h" />
