@@ -8,10 +8,7 @@ D3D11Renderer::Directional::Directional()
 		data[i] = 0.0f;
 	}
 
-	for (int i{ 4 }; i < 8; i++)
-	{
-		data[i] = 1.0f;
-	}
+	colour();
 }
 
 D3D11Renderer::Directional::~Directional()
@@ -86,6 +83,14 @@ void D3D11Renderer::Directional::setColour(float input[3])
 	for (int i{ 0 }; i < 3; i++)
 	{
 		data[4 + i] = input[i];
+	}
+}
+
+void D3D11Renderer::Directional::colour()
+{
+	for (int i{ 4 }; i < 8; i++)
+	{
+		data[i] = 1.0f;
 	}
 }
 

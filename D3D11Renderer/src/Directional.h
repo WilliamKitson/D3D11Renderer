@@ -17,6 +17,7 @@ namespace D3D11Renderer
 		void setColour(float[3]);
 
 	private:
+		void colour();
 		void cleanup();
 		void validate(IUnknown*);
 		void create(ID3D11Device*);
