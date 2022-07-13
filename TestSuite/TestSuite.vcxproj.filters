@@ -462,6 +462,12 @@
     <ClCompile Include="src\application\directional\invalid\DirectionalInvalidApplyTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\application\sampler\SamplerDefaultTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\application\sampler\SamplerTester.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\MemoryTest.h">
@@ -906,6 +912,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\application\directional\invalid\DirectionalInvalidApplyTest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\application\sampler\SamplerDefaultTest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\application\sampler\SamplerTester.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

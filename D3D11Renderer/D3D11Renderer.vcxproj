@@ -187,6 +187,7 @@
     <ClInclude Include="src\Resolution.h" />
     <ClInclude Include="src\RGB.h" />
     <ClInclude Include="src\RGBA.h" />
+    <ClInclude Include="src\Sampler.h" />
     <ClInclude Include="src\Shaders.h" />
     <ClInclude Include="src\Swapchain.h" />
   </ItemGroup>
@@ -198,6 +199,7 @@
     <ClCompile Include="src\PerScene.cpp" />
     <ClCompile Include="src\Rasteriser.cpp" />
     <ClCompile Include="src\Resolution.cpp" />
+    <ClCompile Include="src\Sampler.cpp" />
     <ClCompile Include="src\Shaders.cpp" />
     <ClCompile Include="src\Swapchain.cpp" />
   </ItemGroup>

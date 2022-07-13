@@ -6,6 +6,7 @@
 #include "shaders/ShadersTester.h"
 #include "geometry/GeometryTester.h"
 #include "rasteriser/RasteriserTester.h"
+#include "sampler/SamplerTester.h"
 #include "perScene/PerSceneTester.h"
 #include "directional/DirectionalTester.h"
 #include "perObject/PerObjectTester.h"
@@ -23,6 +24,7 @@ private:
 	std::string testShaders();
 	std::string testGeometry();
 	std::string testRasteriser();
+	std::string testSampler();
 	std::string testPerScene();
 	std::string testDirectional();
 	std::string testPerObject();

@@ -17,6 +17,7 @@ std::string ApplicationTester::test()
 	output += testShaders();
 	output += testGeometry();
 	output += testRasteriser();
+	output += testSampler();
 	output += testPerScene();
 	output += testDirectional();
 	output += testPerObject();
@@ -42,6 +43,11 @@ std::string ApplicationTester::testGeometry()
 std::string ApplicationTester::testRasteriser()
 {
 	return RasteriserTester().test();
+}
+
+std::string ApplicationTester::testSampler()
+{
+	return SamplerTester().test();
 }
 
 std::string ApplicationTester::testPerScene()
