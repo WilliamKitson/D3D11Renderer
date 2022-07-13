@@ -1,6 +1,6 @@
-#include "DirectionalReloadDirectionTest.h"
+#include "DirectionalReloadColourTest.h"
 
-DirectionalReloadDirectionTest::DirectionalReloadDirectionTest()
+DirectionalReloadColourTest::DirectionalReloadColourTest()
 	: device{ nullptr }, context{ nullptr }, cBuffer{ nullptr }, readBuffer{ nullptr }, result(), inputData(), outputData()
 {
 	for (int i{ 0 }; i < 4; i++)
@@ -9,7 +9,7 @@ DirectionalReloadDirectionTest::DirectionalReloadDirectionTest()
 	}
 }
 
-DirectionalReloadDirectionTest::~DirectionalReloadDirectionTest()
+DirectionalReloadColourTest::~DirectionalReloadColourTest()
 {
 	cleanup(readBuffer);
 	cleanup(cBuffer);
@@ -17,13 +17,13 @@ DirectionalReloadDirectionTest::~DirectionalReloadDirectionTest()
 	cleanup(device);
 }
 
-std::string DirectionalReloadDirectionTest::test()
+std::string DirectionalReloadColourTest::test()
 {
 	initialiseD3D11();
 
 	if (FAILED(result))
 	{
-		return "directional reload direction test failed to initialise D3D11\n";
+		return "directional reload colour test failed to initialise D3D11\n";
 	}
 
 	D3D11Renderer::Directional unit;
@@ -31,7 +31,7 @@ std::string DirectionalReloadDirectionTest::test()
 	unit.initialise(device);
 	unit.bind(context);
 
-	unit.setDirection(inputData);
+	unit.setColour(inputData);
 	unit.initialise(device);
 	unit.bind(context);
 
@@ -39,7 +39,7 @@ std::string DirectionalReloadDirectionTest::test()
 
 	if (FAILED(result))
 	{
-		return "directional reload direction test failed to initialise data\n";
+		return "directional reload colour test failed to initialise data\n";
 	}
 
 	if (success() == 4)
@@ -47,10 +47,10 @@ std::string DirectionalReloadDirectionTest::test()
 		return std::string();
 	}
 
-	return "directional reload direction test failed\n";
+	return "directional reload colour test failed\n";
 }
 
-void DirectionalReloadDirectionTest::cleanup(IUnknown* input)
+void DirectionalReloadColourTest::cleanup(IUnknown* input)
 {
 	if (input)
 	{
@@ -58,7 +58,7 @@ void DirectionalReloadDirectionTest::cleanup(IUnknown* input)
 	}
 }
 
-void DirectionalReloadDirectionTest::initialiseD3D11()
+void DirectionalReloadColourTest::initialiseD3D11()
 {
 	D3D_FEATURE_LEVEL levels[] = {
 		D3D_FEATURE_LEVEL_11_0
@@ -80,7 +80,7 @@ void DirectionalReloadDirectionTest::initialiseD3D11()
 	);
 }
 
-void DirectionalReloadDirectionTest::initialiseOutput()
+void DirectionalReloadColourTest::initialiseOutput()
 {
 	initialiseCBuffer();
 
@@ -118,7 +118,7 @@ void DirectionalReloadDirectionTest::initialiseOutput()
 	);
 }
 
-void DirectionalReloadDirectionTest::initialiseCBuffer()
+void DirectionalReloadColourTest::initialiseCBuffer()
 {
 	context->VSGetConstantBuffers(
 		2,
@@ -135,7 +135,7 @@ void DirectionalReloadDirectionTest::initialiseCBuffer()
 	result = S_OK;
 }
 
-void DirectionalReloadDirectionTest::initialiseRead()
+void DirectionalReloadColourTest::initialiseRead()
 {
 	D3D11_BUFFER_DESC readDescription{
 		sizeof(outputData),
@@ -153,13 +153,13 @@ void DirectionalReloadDirectionTest::initialiseRead()
 	);
 }
 
-int DirectionalReloadDirectionTest::success()
+int DirectionalReloadColourTest::success()
 {
 	int output = 0;
 
 	for (int i{ 0 }; i < 4; i++)
 	{
-		output += outputData[i] == inputData[i];
+		output += outputData[4 + i] == inputData[i];
 	}
 
 	return output;

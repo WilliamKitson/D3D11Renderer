@@ -67,3 +67,11 @@ void D3D11Renderer::Directional::setDirection(float input[4])
 		data[i] = input[i];
 	}
 }
+
+void D3D11Renderer::Directional::setColour(float input[4])
+{
+	for (int i{ 0 }; i < 4; i++)
+	{
+		data[4 + i] = input[i];
+	}
+}

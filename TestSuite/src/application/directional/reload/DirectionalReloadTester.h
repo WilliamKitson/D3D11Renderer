@@ -1,7 +1,9 @@
 #pragma once
 
 #include <string>
+
 #include "DirectionalReloadDirectionTest.h"
+#include "DirectionalReloadColourTest.h"
 
 class DirectionalReloadTester
 {
@@ -13,4 +15,5 @@ public:
 
 private:
 	std::string testDirection();
+	std::string testColour();
 };
