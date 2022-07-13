@@ -208,6 +208,7 @@
     <ClCompile Include="src\application\rasteriser\mode\RasteriserModeWireframeTest.cpp" />
     <ClCompile Include="src\application\rasteriser\RasteriserTester.cpp" />
     <ClCompile Include="src\application\sampler\SamplerDefaultTest.cpp" />
+    <ClCompile Include="src\application\sampler\SamplerReloadTest.cpp" />
     <ClCompile Include="src\application\sampler\SamplerTester.cpp" />
     <ClCompile Include="src\application\shaders\invalid\ShadersInvalidContextTest.cpp" />
     <ClCompile Include="src\application\shaders\invalid\ShadersInvalidDeviceTest.cpp" />
@@ -347,6 +348,7 @@
     <ClInclude Include="src\application\rasteriser\mode\RasteriserModeWireframeTest.h" />
     <ClInclude Include="src\application\rasteriser\RasteriserTester.h" />
     <ClInclude Include="src\application\sampler\SamplerDefaultTest.h" />
+    <ClInclude Include="src\application\sampler\SamplerReloadTest.h" />
     <ClInclude Include="src\application\sampler\SamplerTester.h" />
     <ClInclude Include="src\application\shaders\invalid\ShadersInvalidContextTest.h" />
     <ClInclude Include="src\application\shaders\invalid\ShadersInvalidDeviceTest.h" />

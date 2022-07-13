@@ -426,6 +426,9 @@
     <ClCompile Include="src\application\sampler\SamplerTester.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\application\sampler\SamplerReloadTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\MemoryTest.h">
@@ -834,6 +837,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\application\sampler\SamplerTester.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\application\sampler\SamplerReloadTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

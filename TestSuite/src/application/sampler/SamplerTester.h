@@ -1,7 +1,9 @@
 #pragma once
 
 #include <string>
+
 #include "SamplerDefaultTest.h"
+#include "SamplerReloadTest.h"
 
 class SamplerTester
 {
@@ -13,4 +15,5 @@ public:
 
 private:
 	std::string testDefault();
+	std::string testReload();
 };

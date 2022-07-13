@@ -20,6 +20,11 @@ D3D11Renderer::Sampler::~Sampler()
 
 void D3D11Renderer::Sampler::initialise(ID3D11Device* input)
 {
+	if (state)
+	{
+		state->Release();
+	}
+
 	input->CreateSamplerState(
 		&description,
 		&state
