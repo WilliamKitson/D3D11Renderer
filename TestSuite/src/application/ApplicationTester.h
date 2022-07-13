@@ -7,6 +7,7 @@
 #include "geometry/GeometryTester.h"
 #include "rasteriser/RasteriserTester.h"
 #include "perScene/PerSceneTester.h"
+#include "directional/DirectionalTester.h"
 #include "perObject/PerObjectTester.h"
 
 class ApplicationTester
@@ -23,6 +24,7 @@ private:
 	std::string testGeometry();
 	std::string testRasteriser();
 	std::string testPerScene();
+	std::string testDirectional();
 	std::string testPerObject();
 
 private:
