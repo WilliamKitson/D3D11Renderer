@@ -1,7 +1,9 @@
 #pragma once
 
 #include <string>
+
 #include "DirectionalApplyDirectionTest.h"
+#include "DirectionalApplyColourTest.h"
 
 class DirectionalApplyTester
 {
@@ -13,4 +15,5 @@ public:
 
 private:
 	std::string testDirection();
+	std::string testColour();
 };
