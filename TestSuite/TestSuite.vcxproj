@@ -155,6 +155,7 @@
     <ClCompile Include="src\application\directional\default\DirectionalDefaultDirectionTest.cpp" />
     <ClCompile Include="src\application\directional\default\DirectionalDefaultTester.cpp" />
     <ClCompile Include="src\application\directional\DirectionalTester.cpp" />
+    <ClCompile Include="src\application\directional\invalid\DirectionalInvalidBindTest.cpp" />
     <ClCompile Include="src\application\directional\invalid\DirectionalInvalidInitialiseTest.cpp" />
     <ClCompile Include="src\application\directional\invalid\DirectionalInvalidTester.cpp" />
     <ClCompile Include="src\application\directional\reload\DirectionalReloadColourTest.cpp" />
@@ -304,6 +305,7 @@
     <ClInclude Include="src\application\directional\default\DirectionalDefaultDirectionTest.h" />
     <ClInclude Include="src\application\directional\default\DirectionalDefaultTester.h" />
     <ClInclude Include="src\application\directional\DirectionalTester.h" />
+    <ClInclude Include="src\application\directional\invalid\DirectionalInvalidBindTest.h" />
     <ClInclude Include="src\application\directional\invalid\DirectionalInvalidInitialiseTest.h" />
     <ClInclude Include="src\application\directional\invalid\DirectionalInvalidTester.h" />
     <ClInclude Include="src\application\directional\reload\DirectionalReloadColourTest.h" />

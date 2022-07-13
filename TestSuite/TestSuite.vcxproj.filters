@@ -456,6 +456,9 @@
     <ClCompile Include="src\application\directional\invalid\DirectionalInvalidTester.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\application\directional\invalid\DirectionalInvalidBindTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\MemoryTest.h">
@@ -894,6 +897,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\application\directional\invalid\DirectionalInvalidTester.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\application\directional\invalid\DirectionalInvalidBindTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

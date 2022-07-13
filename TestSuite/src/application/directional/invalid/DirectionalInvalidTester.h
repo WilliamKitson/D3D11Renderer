@@ -1,7 +1,9 @@
 #pragma once
 
 #include <string>
+
 #include "DirectionalInvalidInitialiseTest.h"
+#include "DirectionalInvalidBindTest.h"
 
 class DirectionalInvalidTester
 {
@@ -13,4 +15,5 @@ public:
 
 private:
 	std::string testInitialise();
+	std::string testBind();
 };
