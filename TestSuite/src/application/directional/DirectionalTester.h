@@ -4,6 +4,7 @@
 
 #include "default/DirectionalDefaultTester.h"
 #include "reload/DirectionalReloadTester.h"
+#include "apply/DirectionalApplyTester.h"
 
 class DirectionalTester
 {
@@ -16,4 +17,5 @@ public:
 private:
 	std::string testDefault();
 	std::string testReload();
+	std::string testApply();
 };

@@ -148,6 +148,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\application\ApplicationTester.cpp" />
+    <ClCompile Include="src\application\directional\apply\DirectionalApplyDirectionTest.cpp" />
+    <ClCompile Include="src\application\directional\apply\DirectionalApplyTester.cpp" />
     <ClCompile Include="src\application\directional\default\DirectionalDefaultColourTest.cpp" />
     <ClCompile Include="src\application\directional\default\DirectionalDefaultDirectionTest.cpp" />
     <ClCompile Include="src\application\directional\default\DirectionalDefaultTester.cpp" />
@@ -292,6 +294,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\application\ApplicationTester.h" />
+    <ClInclude Include="src\application\directional\apply\DirectionalApplyDirectionTest.h" />
+    <ClInclude Include="src\application\directional\apply\DirectionalApplyTester.h" />
     <ClInclude Include="src\application\directional\default\DirectionalDefaultColourTest.h" />
     <ClInclude Include="src\application\directional\default\DirectionalDefaultDirectionTest.h" />
     <ClInclude Include="src\application\directional\default\DirectionalDefaultTester.h" />

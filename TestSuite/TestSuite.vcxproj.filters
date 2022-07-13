@@ -441,6 +441,12 @@
     <ClCompile Include="src\application\directional\reload\DirectionalReloadColourTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\application\directional\apply\DirectionalApplyDirectionTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\application\directional\apply\DirectionalApplyTester.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\MemoryTest.h">
@@ -864,6 +870,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\application\directional\reload\DirectionalReloadColourTest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\application\directional\apply\DirectionalApplyDirectionTest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\application\directional\apply\DirectionalApplyTester.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
