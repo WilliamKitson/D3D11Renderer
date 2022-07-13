@@ -17,6 +17,7 @@ namespace D3D11Renderer
 		void setColour(float[3]);
 
 	private:
+		void cleanup();
 		void validate(IUnknown*);
 
 	private:

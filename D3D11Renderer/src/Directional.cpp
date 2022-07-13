@@ -16,10 +16,7 @@ D3D11Renderer::Directional::Directional()
 
 D3D11Renderer::Directional::~Directional()
 {
-	if (cBuffer)
-	{
-		cBuffer->Release();
-	}
+	cleanup();
 }
 
 void D3D11Renderer::Directional::initialise(ID3D11Device* input)
@@ -33,10 +30,7 @@ void D3D11Renderer::Directional::initialise(ID3D11Device* input)
 		return;
 	}
 
-	if (cBuffer)
-	{
-		cBuffer->Release();
-	}
+	cleanup();
 
 	D3D11_BUFFER_DESC description{
 		sizeof(data),
@@ -112,6 +106,14 @@ void D3D11Renderer::Directional::setColour(float input[3])
 	for (int i{ 0 }; i < 3; i++)
 	{
 		data[4 + i] = input[i];
+	}
+}
+
+void D3D11Renderer::Directional::cleanup()
+{
+	if (cBuffer)
+	{
+		cBuffer->Release();
 	}
 }
 
