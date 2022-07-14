@@ -17,6 +17,7 @@ namespace D3D11Renderer
 
 	private:
 		void cleanup();
+		void validate(IUnknown*);
 		void validate();
 		void create(ID3D11Device*);
 		float* raw();

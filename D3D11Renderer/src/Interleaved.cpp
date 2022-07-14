@@ -14,6 +14,7 @@ void D3D11Renderer::Interleaved::initialise(ID3D11Device* input)
 {
 	try
 	{
+		validate(input);
 		validate();
 	}
 	catch (int)
@@ -58,6 +59,16 @@ void D3D11Renderer::Interleaved::cleanup()
 	{
 		vBuffer->Release();
 	}
+}
+
+void D3D11Renderer::Interleaved::validate(IUnknown* input)
+{
+	if (input)
+	{
+		return;
+	}
+
+	throw int();
 }
 
 void D3D11Renderer::Interleaved::validate()

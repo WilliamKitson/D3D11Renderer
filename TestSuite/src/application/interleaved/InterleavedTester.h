@@ -6,6 +6,7 @@
 #include "InterleavedReloadTest.h"
 #include "InterleavedStrideTest.h"
 #include "InterleavedOffsetTest.h"
+#include "invalid/InterleavedInvalidTester.h"
 
 class InterleavedTester
 {
@@ -20,4 +21,5 @@ private:
 	std::string testReload();
 	std::string testStride();
 	std::string testOffset();
+	std::string testInvalid();
 };
