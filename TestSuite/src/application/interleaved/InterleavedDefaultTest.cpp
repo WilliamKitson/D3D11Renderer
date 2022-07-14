@@ -7,7 +7,7 @@ InterleavedDefaultTest::InterleavedDefaultTest()
 
 InterleavedDefaultTest::~InterleavedDefaultTest()
 {
-	cleanup();
+	cleanup(vBuffer);
 	cleanup(context);
 	cleanup(device);
 }
@@ -32,14 +32,6 @@ std::string InterleavedDefaultTest::test()
 	}
 
 	return "interleaved default test failed\n";
-}
-
-void InterleavedDefaultTest::cleanup()
-{
-	for (int i{ 0 }; i < 3; i++)
-	{
-		cleanup(vBuffer[i]);
-	}
 }
 
 void InterleavedDefaultTest::cleanup(IUnknown* input)
@@ -76,13 +68,13 @@ bool InterleavedDefaultTest::success()
 {
 	context->IAGetVertexBuffers(
 		0,
-		3,
-		vBuffer,
+		1,
+		&vBuffer,
 		nullptr,
 		nullptr
 	);
 
-	if (!vBuffer[0])
+	if (!vBuffer)
 	{
 		return true;
 	}

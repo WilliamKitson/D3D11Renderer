@@ -165,6 +165,7 @@
     <ClCompile Include="src\application\geometry\strides\GeometryStridesTester.cpp" />
     <ClCompile Include="src\application\geometry\strides\GeometryStridesTexcoordTest.cpp" />
     <ClCompile Include="src\application\interleaved\InterleavedDefaultTest.cpp" />
+    <ClCompile Include="src\application\interleaved\InterleavedReloadTest.cpp" />
     <ClCompile Include="src\application\interleaved\InterleavedTester.cpp" />
     <ClCompile Include="src\application\perObject\apply\PerObjectApplyColourTest.cpp" />
     <ClCompile Include="src\application\perObject\apply\PerObjectApplyTester.cpp" />
@@ -310,6 +311,7 @@
     <ClInclude Include="src\application\geometry\strides\GeometryStridesTester.h" />
     <ClInclude Include="src\application\geometry\strides\GeometryStridesTexcoordTest.h" />
     <ClInclude Include="src\application\interleaved\InterleavedDefaultTest.h" />
+    <ClInclude Include="src\application\interleaved\InterleavedReloadTest.h" />
     <ClInclude Include="src\application\interleaved\InterleavedTester.h" />
     <ClInclude Include="src\application\perObject\apply\PerObjectApplyColourTest.h" />
     <ClInclude Include="src\application\perObject\apply\PerObjectApplyTester.h" />

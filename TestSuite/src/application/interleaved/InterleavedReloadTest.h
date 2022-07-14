@@ -5,22 +5,28 @@
 
 #include "Interleaved.h"
 
-class InterleavedDefaultTest
+class InterleavedReloadTest
 {
 public:
-	InterleavedDefaultTest();
-	~InterleavedDefaultTest();
+	InterleavedReloadTest();
+	~InterleavedReloadTest();
 
 	std::string test();
 
 private:
 	void cleanup(IUnknown*);
 	void initialiseD3D11();
+	void initialiseVBuffer();
+	void initialiseRead();
+	void initialiseOutput();
 	bool success();
+	int successes();
 
 private:
 	ID3D11Device* device;
 	ID3D11DeviceContext* context;
 	ID3D11Buffer* vBuffer;
+	ID3D11Buffer* readBuffer;
 	HRESULT result;
+	float outputData[32];
 };
