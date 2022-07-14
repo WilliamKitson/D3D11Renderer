@@ -1,7 +1,9 @@
 #pragma once
 
 #include <string>
+
 #include "SamplerInvalidDeviceTest.h"
+#include "SamplerInvalidContextTest.h"
 
 class SamplerInvalidTester
 {
@@ -13,4 +15,5 @@ public:
 
 private:
 	std::string testDevice();
+	std::string testContext();
 };

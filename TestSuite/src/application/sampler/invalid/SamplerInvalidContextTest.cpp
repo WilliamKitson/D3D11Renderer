@@ -1,30 +1,30 @@
-#include "SamplerInvalidDeviceTest.h"
+#include "SamplerInvalidContextTest.h"
 
-SamplerInvalidDeviceTest::SamplerInvalidDeviceTest()
+SamplerInvalidContextTest::SamplerInvalidContextTest()
 	: device{ nullptr }, context{ nullptr }, state{ nullptr }, result()
 {
 }
 
-SamplerInvalidDeviceTest::~SamplerInvalidDeviceTest()
+SamplerInvalidContextTest::~SamplerInvalidContextTest()
 {
 	cleanup(state);
 	cleanup(context);
 	cleanup(device);
 }
 
-std::string SamplerInvalidDeviceTest::test()
+std::string SamplerInvalidContextTest::test()
 {
 	initialiseD3D11();
 
 	if (FAILED(result))
 	{
-		return "sampler invalid device test failed to initialise D3D11\n";
+		return "sampler invalid context failed to initialise D3D11\n";
 	}
 
 	D3D11Renderer::Sampler unit;
 
-	unit.initialise(nullptr);
-	unit.bind(context);
+	unit.initialise(device);
+	unit.bind(nullptr);
 
 	context->PSGetSamplers(
 		0,
@@ -37,10 +37,10 @@ std::string SamplerInvalidDeviceTest::test()
 		return std::string();
 	}
 
-	return "sampler invalid device test failed\n";
+	return "sampler invalid context test failed\n";
 }
 
-void SamplerInvalidDeviceTest::cleanup(IUnknown* input)
+void SamplerInvalidContextTest::cleanup(IUnknown* input)
 {
 	if (input)
 	{
@@ -48,7 +48,7 @@ void SamplerInvalidDeviceTest::cleanup(IUnknown* input)
 	}
 }
 
-void SamplerInvalidDeviceTest::initialiseD3D11()
+void SamplerInvalidContextTest::initialiseD3D11()
 {
 	D3D_FEATURE_LEVEL levels[] = {
 		D3D_FEATURE_LEVEL_11_0

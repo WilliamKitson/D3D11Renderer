@@ -435,6 +435,9 @@
     <ClCompile Include="src\application\sampler\invalid\SamplerInvalidTester.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\application\sampler\invalid\SamplerInvalidContextTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\MemoryTest.h">
@@ -852,6 +855,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\application\sampler\invalid\SamplerInvalidTester.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\application\sampler\invalid\SamplerInvalidContextTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

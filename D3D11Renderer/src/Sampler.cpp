@@ -42,6 +42,15 @@ void D3D11Renderer::Sampler::initialise(ID3D11Device* input)
 
 void D3D11Renderer::Sampler::bind(ID3D11DeviceContext* input)
 {
+	try
+	{
+		validate(input);
+	}
+	catch (int)
+	{
+		return;
+	}
+
 	input->PSSetSamplers(
 		0,
 		1,
