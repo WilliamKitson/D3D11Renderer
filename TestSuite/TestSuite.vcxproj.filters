@@ -402,6 +402,9 @@
     <ClCompile Include="src\application\interleaved\InterleavedStrideTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\application\interleaved\InterleavedOffsetTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\MemoryTest.h">
@@ -786,6 +789,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\application\interleaved\InterleavedStrideTest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\application\interleaved\InterleavedOffsetTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

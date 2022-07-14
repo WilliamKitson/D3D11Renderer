@@ -149,6 +149,7 @@
   <ItemGroup>
     <ClCompile Include="src\application\ApplicationTester.cpp" />
     <ClCompile Include="src\application\interleaved\InterleavedDefaultTest.cpp" />
+    <ClCompile Include="src\application\interleaved\InterleavedOffsetTest.cpp" />
     <ClCompile Include="src\application\interleaved\InterleavedReloadTest.cpp" />
     <ClCompile Include="src\application\interleaved\InterleavedStrideTest.cpp" />
     <ClCompile Include="src\application\interleaved\InterleavedTester.cpp" />
@@ -280,6 +281,7 @@
   <ItemGroup>
     <ClInclude Include="src\application\ApplicationTester.h" />
     <ClInclude Include="src\application\interleaved\InterleavedDefaultTest.h" />
+    <ClInclude Include="src\application\interleaved\InterleavedOffsetTest.h" />
     <ClInclude Include="src\application\interleaved\InterleavedReloadTest.h" />
     <ClInclude Include="src\application\interleaved\InterleavedStrideTest.h" />
     <ClInclude Include="src\application\interleaved\InterleavedTester.h" />
