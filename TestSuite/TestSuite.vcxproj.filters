@@ -390,9 +390,6 @@
     <ClCompile Include="src\application\sampler\invalid\SamplerInvalidContextTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\application\interleaved\InterleavedDefaultTest.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\application\interleaved\InterleavedTester.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -409,6 +406,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\application\interleaved\invalid\InterleavedInvalidTester.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\application\interleaved\default\InterleavedDefaultVertexTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\application\interleaved\default\InterleavedDefaultTester.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -785,9 +788,6 @@
     <ClInclude Include="src\application\sampler\invalid\SamplerInvalidContextTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\application\interleaved\InterleavedDefaultTest.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="src\application\interleaved\InterleavedTester.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -804,6 +804,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\application\interleaved\invalid\InterleavedInvalidTester.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\application\interleaved\default\InterleavedDefaultVertexTest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\application\interleaved\default\InterleavedDefaultTester.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

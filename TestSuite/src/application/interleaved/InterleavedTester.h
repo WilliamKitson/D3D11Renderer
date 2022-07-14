@@ -2,7 +2,7 @@
 
 #include <string>
 
-#include "InterleavedDefaultTest.h"
+#include "default/InterleavedDefaultTester.h"
 #include "InterleavedReloadTest.h"
 #include "InterleavedStrideTest.h"
 #include "InterleavedOffsetTest.h"

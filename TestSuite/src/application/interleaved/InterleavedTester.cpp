@@ -23,7 +23,7 @@ std::string InterleavedTester::test()
 
 std::string InterleavedTester::testDefault()
 {
-	return InterleavedDefaultTest().test();
+	return InterleavedDefaultTester().test();
 }
 
 std::string InterleavedTester::testReload()

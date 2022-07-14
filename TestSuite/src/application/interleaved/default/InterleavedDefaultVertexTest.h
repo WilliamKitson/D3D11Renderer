@@ -5,11 +5,11 @@
 
 #include "Interleaved.h"
 
-class InterleavedDefaultTest
+class InterleavedDefaultVertexTest
 {
 public:
-	InterleavedDefaultTest();
-	~InterleavedDefaultTest();
+	InterleavedDefaultVertexTest();
+	~InterleavedDefaultVertexTest();
 
 	std::string test();
 

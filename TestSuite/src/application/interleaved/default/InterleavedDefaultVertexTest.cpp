@@ -1,24 +1,24 @@
-#include "InterleavedDefaultTest.h"
+#include "InterleavedDefaultVertexTest.h"
 
-InterleavedDefaultTest::InterleavedDefaultTest()
+InterleavedDefaultVertexTest::InterleavedDefaultVertexTest()
 	: device{ nullptr }, context{ nullptr }, vBuffer(), result()
 {
 }
 
-InterleavedDefaultTest::~InterleavedDefaultTest()
+InterleavedDefaultVertexTest::~InterleavedDefaultVertexTest()
 {
 	cleanup(vBuffer);
 	cleanup(context);
 	cleanup(device);
 }
 
-std::string InterleavedDefaultTest::test()
+std::string InterleavedDefaultVertexTest::test()
 {
 	initialiseD3D11();
 
 	if (FAILED(result))
 	{
-		return "interleaved default test failed to initialise D3D11\n";
+		return "interleaved default vertex test failed to initialise D3D11\n";
 	}
 
 	D3D11Renderer::Interleaved unit;
@@ -31,10 +31,10 @@ std::string InterleavedDefaultTest::test()
 		return std::string();
 	}
 
-	return "interleaved default test failed\n";
+	return "interleaved default vertex test failed\n";
 }
 
-void InterleavedDefaultTest::cleanup(IUnknown* input)
+void InterleavedDefaultVertexTest::cleanup(IUnknown* input)
 {
 	if (input)
 	{
@@ -42,7 +42,7 @@ void InterleavedDefaultTest::cleanup(IUnknown* input)
 	}
 }
 
-void InterleavedDefaultTest::initialiseD3D11()
+void InterleavedDefaultVertexTest::initialiseD3D11()
 {
 	D3D_FEATURE_LEVEL levels[] = {
 		D3D_FEATURE_LEVEL_11_0
@@ -64,7 +64,7 @@ void InterleavedDefaultTest::initialiseD3D11()
 	);
 }
 
-bool InterleavedDefaultTest::success()
+bool InterleavedDefaultVertexTest::success()
 {
 	context->IAGetVertexBuffers(
 		0,
