@@ -52,6 +52,8 @@ void D3D11Renderer::Interleaved::render(ID3D11DeviceContext* input)
 		strides,
 		offsets
 	);
+
+	input->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
 }
 
 void D3D11Renderer::Interleaved::push(float input[8])
