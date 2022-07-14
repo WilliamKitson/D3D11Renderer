@@ -7,18 +7,12 @@ D3D11Renderer::Interleaved::Interleaved()
 
 D3D11Renderer::Interleaved::~Interleaved()
 {
-	if (vBuffer)
-	{
-		vBuffer->Release();
-	}
+	cleanup();
 }
 
 void D3D11Renderer::Interleaved::initialise(ID3D11Device* input)
 {
-	if (vBuffer)
-	{
-		vBuffer->Release();
-	}
+	cleanup();
 
 	if (!data.getCount())
 	{
@@ -82,5 +76,13 @@ void D3D11Renderer::Interleaved::pushVertex(float input[8])
 	for (int i{ 0 }; i < 8; i++)
 	{
 		data.push(input[i]);
+	}
+}
+
+void D3D11Renderer::Interleaved::cleanup()
+{
+	if (vBuffer)
+	{
+		vBuffer->Release();
 	}
 }

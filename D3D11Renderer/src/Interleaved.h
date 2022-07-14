@@ -16,6 +16,9 @@ namespace D3D11Renderer
 		void pushVertex(float[8]);
 
 	private:
+		void cleanup();
+
+	private:
 		ID3D11Buffer* vBuffer;
 		Coordinates1D data;
 	};
