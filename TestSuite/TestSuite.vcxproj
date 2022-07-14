@@ -148,22 +148,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\application\ApplicationTester.cpp" />
-    <ClCompile Include="src\application\geometry\default\GeometryDefaultNormalsTest.cpp" />
-    <ClCompile Include="src\application\geometry\default\GeometryDefaultPositionsTest.cpp" />
-    <ClCompile Include="src\application\geometry\default\GeometryDefaultTester.cpp" />
-    <ClCompile Include="src\application\geometry\default\GeometryDefaultTexcoordsTest.cpp" />
-    <ClCompile Include="src\application\geometry\GeometryTester.cpp" />
-    <ClCompile Include="src\application\geometry\invalid\GeometryInvalidContextTest.cpp" />
-    <ClCompile Include="src\application\geometry\invalid\GeometryInvalidDeviceTest.cpp" />
-    <ClCompile Include="src\application\geometry\invalid\GeometryInvalidTester.cpp" />
-    <ClCompile Include="src\application\geometry\reload\GeometryReloadNormalsTest.cpp" />
-    <ClCompile Include="src\application\geometry\reload\GeometryReloadPositionsTest.cpp" />
-    <ClCompile Include="src\application\geometry\reload\GeometryReloadTester.cpp" />
-    <ClCompile Include="src\application\geometry\reload\GeometryReloadTexcoordsTest.cpp" />
-    <ClCompile Include="src\application\geometry\strides\GeometryStridesNormalTest.cpp" />
-    <ClCompile Include="src\application\geometry\strides\GeometryStridesPositionTest.cpp" />
-    <ClCompile Include="src\application\geometry\strides\GeometryStridesTester.cpp" />
-    <ClCompile Include="src\application\geometry\strides\GeometryStridesTexcoordTest.cpp" />
     <ClCompile Include="src\application\interleaved\InterleavedDefaultTest.cpp" />
     <ClCompile Include="src\application\interleaved\InterleavedReloadTest.cpp" />
     <ClCompile Include="src\application\interleaved\InterleavedStrideTest.cpp" />
@@ -295,22 +279,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\application\ApplicationTester.h" />
-    <ClInclude Include="src\application\geometry\default\GeometryDefaultNormalsTest.h" />
-    <ClInclude Include="src\application\geometry\default\GeometryDefaultPositionsTest.h" />
-    <ClInclude Include="src\application\geometry\default\GeometryDefaultTester.h" />
-    <ClInclude Include="src\application\geometry\default\GeometryDefaultTexcoordsTest.h" />
-    <ClInclude Include="src\application\geometry\GeometryTester.h" />
-    <ClInclude Include="src\application\geometry\invalid\GeometryInvalidContextTest.h" />
-    <ClInclude Include="src\application\geometry\invalid\GeometryInvalidDeviceTest.h" />
-    <ClInclude Include="src\application\geometry\invalid\GeometryInvalidTester.h" />
-    <ClInclude Include="src\application\geometry\reload\GeometryReloadNormalsTest.h" />
-    <ClInclude Include="src\application\geometry\reload\GeometryReloadPositionsTest.h" />
-    <ClInclude Include="src\application\geometry\reload\GeometryReloadTester.h" />
-    <ClInclude Include="src\application\geometry\reload\GeometryReloadTexcoordsTest.h" />
-    <ClInclude Include="src\application\geometry\strides\GeometryStridesNormalTest.h" />
-    <ClInclude Include="src\application\geometry\strides\GeometryStridesPositionTest.h" />
-    <ClInclude Include="src\application\geometry\strides\GeometryStridesTester.h" />
-    <ClInclude Include="src\application\geometry\strides\GeometryStridesTexcoordTest.h" />
     <ClInclude Include="src\application\interleaved\InterleavedDefaultTest.h" />
     <ClInclude Include="src\application\interleaved\InterleavedReloadTest.h" />
     <ClInclude Include="src\application\interleaved\InterleavedStrideTest.h" />

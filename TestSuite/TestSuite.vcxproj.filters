@@ -306,21 +306,6 @@
     <ClCompile Include="src\presentation\camera\CameraAspectRatioTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\application\geometry\default\GeometryDefaultPositionsTest.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\application\geometry\default\GeometryDefaultTester.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\application\geometry\GeometryTester.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\application\geometry\default\GeometryDefaultTexcoordsTest.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\application\geometry\default\GeometryDefaultNormalsTest.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\domain\coordinates1D\count\Coordinates1DCountDefaultTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -349,39 +334,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\domain\coordinates1D\Coordinates1DEmptyTest.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\application\geometry\reload\GeometryReloadPositionsTest.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\application\geometry\reload\GeometryReloadTester.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\application\geometry\strides\GeometryStridesPositionTest.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\application\geometry\strides\GeometryStridesTester.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\application\geometry\reload\GeometryReloadTexcoordsTest.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\application\geometry\strides\GeometryStridesTexcoordTest.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\application\geometry\reload\GeometryReloadNormalsTest.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\application\geometry\strides\GeometryStridesNormalTest.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\application\geometry\invalid\GeometryInvalidDeviceTest.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\application\geometry\invalid\GeometryInvalidTester.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\application\geometry\invalid\GeometryInvalidContextTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\application\shaders\load\ShadersLoadTester.cpp">
@@ -740,21 +692,6 @@
     <ClInclude Include="src\presentation\camera\CameraAspectRatioTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\application\geometry\default\GeometryDefaultPositionsTest.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\application\geometry\default\GeometryDefaultTester.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\application\geometry\GeometryTester.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\application\geometry\default\GeometryDefaultTexcoordsTest.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\application\geometry\default\GeometryDefaultNormalsTest.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="src\domain\coordinates1D\count\Coordinates1DCountDefaultTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -783,39 +720,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\domain\coordinates1D\Coordinates1DEmptyTest.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\application\geometry\reload\GeometryReloadPositionsTest.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\application\geometry\reload\GeometryReloadTester.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\application\geometry\strides\GeometryStridesPositionTest.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\application\geometry\strides\GeometryStridesTester.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\application\geometry\reload\GeometryReloadTexcoordsTest.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\application\geometry\strides\GeometryStridesTexcoordTest.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\application\geometry\reload\GeometryReloadNormalsTest.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\application\geometry\strides\GeometryStridesNormalTest.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\application\geometry\invalid\GeometryInvalidDeviceTest.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\application\geometry\invalid\GeometryInvalidTester.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\application\geometry\invalid\GeometryInvalidContextTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\application\shaders\load\ShadersLoadTester.h">

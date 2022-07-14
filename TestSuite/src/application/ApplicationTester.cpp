@@ -15,7 +15,6 @@ std::string ApplicationTester::test()
 
 	output += testSwapchain();
 	output += testShaders();
-	output += testGeometry();
 	output += testInterleaved();
 	output += testRasteriser();
 	output += testSampler();
@@ -33,11 +32,6 @@ std::string ApplicationTester::testSwapchain()
 std::string ApplicationTester::testShaders()
 {
 	return ShadersTester().test();
-}
-
-std::string ApplicationTester::testGeometry()
-{
-	return GeometryTester().test();
 }
 
 std::string ApplicationTester::testInterleaved()
