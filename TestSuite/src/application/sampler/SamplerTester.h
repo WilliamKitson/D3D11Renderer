@@ -4,6 +4,7 @@
 
 #include "SamplerDefaultTest.h"
 #include "SamplerReloadTest.h"
+#include "invalid/SamplerInvalidTester.h"
 
 class SamplerTester
 {
@@ -16,4 +17,5 @@ public:
 private:
 	std::string testDefault();
 	std::string testReload();
+	std::string testInvalid();
 };

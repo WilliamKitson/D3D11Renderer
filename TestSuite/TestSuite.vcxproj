@@ -207,6 +207,8 @@
     <ClCompile Include="src\application\rasteriser\mode\RasteriserModeTester.cpp" />
     <ClCompile Include="src\application\rasteriser\mode\RasteriserModeWireframeTest.cpp" />
     <ClCompile Include="src\application\rasteriser\RasteriserTester.cpp" />
+    <ClCompile Include="src\application\sampler\invalid\SamplerInvalidDeviceTest.cpp" />
+    <ClCompile Include="src\application\sampler\invalid\SamplerInvalidTester.cpp" />
     <ClCompile Include="src\application\sampler\SamplerDefaultTest.cpp" />
     <ClCompile Include="src\application\sampler\SamplerReloadTest.cpp" />
     <ClCompile Include="src\application\sampler\SamplerTester.cpp" />
@@ -347,6 +349,8 @@
     <ClInclude Include="src\application\rasteriser\mode\RasteriserModeTester.h" />
     <ClInclude Include="src\application\rasteriser\mode\RasteriserModeWireframeTest.h" />
     <ClInclude Include="src\application\rasteriser\RasteriserTester.h" />
+    <ClInclude Include="src\application\sampler\invalid\SamplerInvalidDeviceTest.h" />
+    <ClInclude Include="src\application\sampler\invalid\SamplerInvalidTester.h" />
     <ClInclude Include="src\application\sampler\SamplerDefaultTest.h" />
     <ClInclude Include="src\application\sampler\SamplerReloadTest.h" />
     <ClInclude Include="src\application\sampler\SamplerTester.h" />

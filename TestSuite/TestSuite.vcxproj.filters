@@ -429,6 +429,12 @@
     <ClCompile Include="src\application\sampler\SamplerReloadTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\application\sampler\invalid\SamplerInvalidDeviceTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\application\sampler\invalid\SamplerInvalidTester.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\MemoryTest.h">
@@ -840,6 +846,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\application\sampler\SamplerReloadTest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\application\sampler\invalid\SamplerInvalidDeviceTest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\application\sampler\invalid\SamplerInvalidTester.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

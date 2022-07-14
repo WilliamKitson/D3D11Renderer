@@ -25,6 +25,15 @@ void D3D11Renderer::Sampler::initialise(ID3D11Device* input)
 		state->Release();
 	}
 
+	try
+	{
+		validate(input);
+	}
+	catch (int)
+	{
+		return;
+	}
+
 	input->CreateSamplerState(
 		&description,
 		&state
@@ -38,4 +47,14 @@ void D3D11Renderer::Sampler::bind(ID3D11DeviceContext* input)
 		1,
 		&state
 	);
+}
+
+void D3D11Renderer::Sampler::validate(IUnknown* input)
+{
+	if (input)
+	{
+		return;
+	}
+
+	throw int();
 }

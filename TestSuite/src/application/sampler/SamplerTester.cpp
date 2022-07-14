@@ -14,6 +14,7 @@ std::string SamplerTester::test()
 
 	output += testDefault();
 	output += testReload();
+	output += testInvalid();
 
 	return output;
 }
@@ -26,4 +27,9 @@ std::string SamplerTester::testDefault()
 std::string SamplerTester::testReload()
 {
 	return SamplersReloadTest().test();
+}
+
+std::string SamplerTester::testInvalid()
+{
+	return SamplerInvalidTester().test();
 }
