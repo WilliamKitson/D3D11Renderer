@@ -12,12 +12,16 @@ D3D11Renderer::Interleaved::~Interleaved()
 
 void D3D11Renderer::Interleaved::initialise(ID3D11Device* input)
 {
-	cleanup();
-
-	if (!data.getCount())
+	try
+	{
+		validate();
+	}
+	catch (int)
 	{
 		return;
 	}
+
+	cleanup();
 
 	D3D11_BUFFER_DESC description{
 		sizeof(float) * data.getCount(),
@@ -85,4 +89,14 @@ void D3D11Renderer::Interleaved::cleanup()
 	{
 		vBuffer->Release();
 	}
+}
+
+void D3D11Renderer::Interleaved::validate()
+{
+	if (data.getCount())
+	{
+		return;
+	}
+
+	throw int();
 }
