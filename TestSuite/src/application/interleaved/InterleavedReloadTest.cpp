@@ -19,7 +19,7 @@ std::string InterleavedReloadTest::test()
 
 	if (FAILED(result))
 	{
-		return "geometry reload test failed to initialise D3D11\n";
+		return "interleaved reload test failed to initialise D3D11\n";
 	}
 
 	D3D11Renderer::Interleaved unit;
@@ -50,14 +50,14 @@ std::string InterleavedReloadTest::test()
 
 	if (!vBuffer)
 	{
-		return "geometry reload test failed to initialise vBuffer\n";
+		return "interleaved reload test failed to initialise vBuffer\n";
 	}
 
 	initialiseRead();
 
 	if (FAILED(result))
 	{
-		return "geometry reload test failed to initialise read buffer\n";
+		return "interleaved reload test failed to initialise read buffer\n";
 	}
 
 	initialiseOutput();
@@ -67,7 +67,7 @@ std::string InterleavedReloadTest::test()
 		return std::string();
 	}
 
-	return "geometry reload test failed\n";
+	return "interleaved reload test failed\n";
 }
 
 void InterleavedReloadTest::cleanup(IUnknown* input)

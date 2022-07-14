@@ -14,6 +14,7 @@ std::string InterleavedTester::test()
 
 	output += testDefault();
 	output += testReload();
+	output += testStride();
 
 	return output;
 }
@@ -26,4 +27,9 @@ std::string InterleavedTester::testDefault()
 std::string InterleavedTester::testReload()
 {
 	return InterleavedReloadTest().test();
+}
+
+std::string InterleavedTester::testStride()
+{
+	return InterleavedStrideTest().test();
 }

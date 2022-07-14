@@ -61,7 +61,7 @@ void D3D11Renderer::Interleaved::initialise(ID3D11Device* input)
 void D3D11Renderer::Interleaved::bind(ID3D11DeviceContext* input)
 {
 	UINT strides[] = {
-		0
+		sizeof(float) * 8
 	};
 
 	UINT offsets[] = {
