@@ -24,9 +24,6 @@
     <ClInclude Include="src\RGB.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\RGBA.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="src\Rasteriser.h">
       <Filter>Header Files</Filter>
     </ClInclude>
