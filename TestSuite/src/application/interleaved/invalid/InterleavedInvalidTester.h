@@ -1,7 +1,9 @@
 #pragma once
 
 #include <string>
+
 #include "InterleavedInvalidDeviceTest.h"
+#include "InterleavedInvalidContextTest.h"
 
 class InterleavedInvalidTester
 {
@@ -13,4 +15,5 @@ public:
 
 private:
 	std::string testDevice();
+	std::string testContext();
 };

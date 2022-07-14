@@ -13,6 +13,7 @@ std::string InterleavedInvalidTester::test()
 	std::string output{ "" };
 
 	output += testDevice();
+	output += testContext();
 
 	return output;
 }
@@ -20,4 +21,9 @@ std::string InterleavedInvalidTester::test()
 std::string InterleavedInvalidTester::testDevice()
 {
 	return InterleavedInvalidDeviceTest().test();
+}
+
+std::string InterleavedInvalidTester::testContext()
+{
+	return InterleavedInvalidContextTest().test();
 }
