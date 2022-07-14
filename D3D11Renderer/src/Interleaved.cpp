@@ -26,7 +26,7 @@ void D3D11Renderer::Interleaved::initialise(ID3D11Device* input)
 	create(input);
 }
 
-void D3D11Renderer::Interleaved::render(ID3D11DeviceContext* input)
+void D3D11Renderer::Interleaved::bind(ID3D11DeviceContext* input)
 {
 	try
 	{

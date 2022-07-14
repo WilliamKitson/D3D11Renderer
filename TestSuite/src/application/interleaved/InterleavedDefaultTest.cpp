@@ -24,7 +24,7 @@ std::string InterleavedDefaultTest::test()
 	D3D11Renderer::Interleaved unit;
 
 	unit.initialise(device);
-	unit.render(context);
+	unit.bind(context);
 
 	if (success())
 	{

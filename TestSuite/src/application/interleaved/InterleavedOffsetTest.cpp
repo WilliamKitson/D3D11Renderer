@@ -35,7 +35,7 @@ std::string InterleavedOffsetTest::test()
 
 	unit.push(vertex);
 	unit.initialise(device);
-	unit.render(context);
+	unit.bind(context);
 
 	if (success())
 	{
