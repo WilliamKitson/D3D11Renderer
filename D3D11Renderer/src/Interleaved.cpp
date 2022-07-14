@@ -62,6 +62,11 @@ void D3D11Renderer::Interleaved::push(float input[8])
 	}
 }
 
+int D3D11Renderer::Interleaved::getCount()
+{
+	return data.getCount() / 8;
+}
+
 void D3D11Renderer::Interleaved::cleanup()
 {
 	if (vBuffer)

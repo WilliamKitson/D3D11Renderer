@@ -414,6 +414,9 @@
     <ClCompile Include="src\application\interleaved\invalid\InterleavedInvalidContextTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\application\interleaved\InterleavedCountTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\MemoryTest.h">
@@ -810,6 +813,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\application\interleaved\invalid\InterleavedInvalidContextTest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\application\interleaved\InterleavedCountTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

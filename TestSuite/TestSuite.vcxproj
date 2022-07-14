@@ -148,6 +148,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\application\ApplicationTester.cpp" />
+    <ClCompile Include="src\application\interleaved\InterleavedCountTest.cpp" />
     <ClCompile Include="src\application\interleaved\InterleavedDefaultTest.cpp" />
     <ClCompile Include="src\application\interleaved\InterleavedOffsetTest.cpp" />
     <ClCompile Include="src\application\interleaved\InterleavedReloadTest.cpp" />
@@ -283,6 +284,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\application\ApplicationTester.h" />
+    <ClInclude Include="src\application\interleaved\InterleavedCountTest.h" />
     <ClInclude Include="src\application\interleaved\InterleavedDefaultTest.h" />
     <ClInclude Include="src\application\interleaved\InterleavedOffsetTest.h" />
     <ClInclude Include="src\application\interleaved\InterleavedReloadTest.h" />
