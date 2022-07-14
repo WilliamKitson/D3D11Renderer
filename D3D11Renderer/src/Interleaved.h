@@ -13,7 +13,7 @@ namespace D3D11Renderer
 
 		void initialise(ID3D11Device*);
 		void bind(ID3D11DeviceContext*);
-		void pushVertex(float[8]);
+		void push(float[8]);
 
 	private:
 		void cleanup();

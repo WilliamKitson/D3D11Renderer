@@ -40,7 +40,7 @@ std::string InterleavedReloadTest::test()
 			(float)i + 7
 		};
 
-		unit.pushVertex(vertex);
+		unit.push(vertex);
 	}
 
 	unit.initialise(device);

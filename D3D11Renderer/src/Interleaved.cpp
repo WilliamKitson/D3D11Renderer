@@ -54,7 +54,7 @@ void D3D11Renderer::Interleaved::bind(ID3D11DeviceContext* input)
 	);
 }
 
-void D3D11Renderer::Interleaved::pushVertex(float input[8])
+void D3D11Renderer::Interleaved::push(float input[8])
 {
 	for (int i{ 0 }; i < 8; i++)
 	{
