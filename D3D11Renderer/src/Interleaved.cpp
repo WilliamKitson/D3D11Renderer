@@ -22,38 +22,7 @@ void D3D11Renderer::Interleaved::initialise(ID3D11Device* input)
 	}
 
 	cleanup();
-
-	D3D11_BUFFER_DESC description{
-		sizeof(float) * data.getCount(),
-		D3D11_USAGE_IMMUTABLE,
-		D3D11_BIND_VERTEX_BUFFER,
-		0,
-		0,
-		0
-	};
-
-	int size = data.getCount();
-	float* raw = new float[size];
-
-	for (int i{ 0 }; i < size; i++)
-	{
-		data.setIndex(i);
-		raw[i] = data.getCoordinate();
-	};
-
-	D3D11_SUBRESOURCE_DATA subresource{
-		raw,
-		0,
-		0
-	};
-
-	input->CreateBuffer(
-		&description,
-		&subresource,
-		&vBuffer
-	);
-
-	delete[] raw;
+	create(input);
 }
 
 void D3D11Renderer::Interleaved::bind(ID3D11DeviceContext* input)
@@ -99,4 +68,39 @@ void D3D11Renderer::Interleaved::validate()
 	}
 
 	throw int();
+}
+
+void D3D11Renderer::Interleaved::create(ID3D11Device* input)
+{
+	D3D11_BUFFER_DESC description{
+		sizeof(float) * data.getCount(),
+		D3D11_USAGE_IMMUTABLE,
+		D3D11_BIND_VERTEX_BUFFER,
+		0,
+		0,
+		0
+	};
+
+	int size = data.getCount();
+	float* raw = new float[size];
+
+	for (int i{ 0 }; i < size; i++)
+	{
+		data.setIndex(i);
+		raw[i] = data.getCoordinate();
+	};
+
+	D3D11_SUBRESOURCE_DATA subresource{
+		raw,
+		0,
+		0
+	};
+
+	input->CreateBuffer(
+		&description,
+		&subresource,
+		&vBuffer
+	);
+
+	delete[] raw;
 }
