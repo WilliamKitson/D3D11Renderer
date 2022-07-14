@@ -36,7 +36,7 @@ std::string InterleavedInvalidDeviceTest::test()
 
 	unit.push(vertex);
 	unit.initialise(nullptr);
-	unit.bind(context);
+	unit.render(context);
 
 	if (success())
 	{

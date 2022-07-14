@@ -35,7 +35,7 @@ std::string InterleavedStrideTest::test()
 
 	unit.push(vertex);
 	unit.initialise(device);
-	unit.bind(context);
+	unit.render(context);
 
 	if (success())
 	{

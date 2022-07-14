@@ -25,7 +25,7 @@ std::string InterleavedReloadTest::test()
 	D3D11Renderer::Interleaved unit;
 
 	unit.initialise(device);
-	unit.bind(context);
+	unit.render(context);
 
 	for (int i{ 0 }; i < 4; i++)
 	{
@@ -44,7 +44,7 @@ std::string InterleavedReloadTest::test()
 	}
 
 	unit.initialise(device);
-	unit.bind(context);
+	unit.render(context);
 
 	initialiseVBuffer();
 

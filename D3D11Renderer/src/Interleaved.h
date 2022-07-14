@@ -12,7 +12,7 @@ namespace D3D11Renderer
 		~Interleaved();
 
 		void initialise(ID3D11Device*);
-		void bind(ID3D11DeviceContext*);
+		void render(ID3D11DeviceContext*);
 		void push(float[8]);
 
 	private:
