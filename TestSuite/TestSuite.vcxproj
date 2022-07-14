@@ -148,7 +148,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\application\ApplicationTester.cpp" />
-    <ClCompile Include="src\application\interleaved\default\InterleavedDefaultIndexTest.cpp" />
     <ClCompile Include="src\application\interleaved\default\InterleavedDefaultTester.cpp" />
     <ClCompile Include="src\application\interleaved\default\InterleavedDefaultVertexTest.cpp" />
     <ClCompile Include="src\application\interleaved\InterleavedOffsetTest.cpp" />
@@ -284,7 +283,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\application\ApplicationTester.h" />
-    <ClInclude Include="src\application\interleaved\default\InterleavedDefaultIndexTest.h" />
     <ClInclude Include="src\application\interleaved\default\InterleavedDefaultTester.h" />
     <ClInclude Include="src\application\interleaved\default\InterleavedDefaultVertexTest.h" />
     <ClInclude Include="src\application\interleaved\InterleavedOffsetTest.h" />

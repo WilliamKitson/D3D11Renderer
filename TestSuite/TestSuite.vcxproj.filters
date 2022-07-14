@@ -414,9 +414,6 @@
     <ClCompile Include="src\application\interleaved\default\InterleavedDefaultTester.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\application\interleaved\default\InterleavedDefaultIndexTest.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\MemoryTest.h">
@@ -813,9 +810,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\application\interleaved\default\InterleavedDefaultTester.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\application\interleaved\default\InterleavedDefaultIndexTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
