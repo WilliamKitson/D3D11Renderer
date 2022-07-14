@@ -15,11 +15,11 @@ std::string ApplicationTester::test()
 
 	output += testSwapchain();
 	output += testShaders();
-	output += testInterleaved();
 	output += testRasteriser();
 	output += testSampler();
 	output += testPerScene();
 	output += testPerObject();
+	output += testInterleaved();
 
 	return output;
 }
@@ -32,11 +32,6 @@ std::string ApplicationTester::testSwapchain()
 std::string ApplicationTester::testShaders()
 {
 	return ShadersTester().test();
-}
-
-std::string ApplicationTester::testInterleaved()
-{
-	return InterleavedTester().test();
 }
 
 std::string ApplicationTester::testRasteriser()
@@ -57,4 +52,9 @@ std::string ApplicationTester::testPerScene()
 std::string ApplicationTester::testPerObject()
 {
 	return PerObjectTester().test();
+}
+
+std::string ApplicationTester::testInterleaved()
+{
+	return InterleavedTester().test();
 }

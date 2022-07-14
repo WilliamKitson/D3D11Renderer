@@ -4,11 +4,11 @@
 
 #include "swapchain/SwapchainTester.h"
 #include "shaders/ShadersTester.h"
-#include "interleaved/InterleavedTester.h"
 #include "rasteriser/RasteriserTester.h"
 #include "sampler/SamplerTester.h"
 #include "perScene/PerSceneTester.h"
 #include "perObject/PerObjectTester.h"
+#include "interleaved/InterleavedTester.h"
 
 class ApplicationTester
 {
@@ -21,11 +21,11 @@ public:
 private:
 	std::string testSwapchain();
 	std::string testShaders();
-	std::string testInterleaved();
 	std::string testRasteriser();
 	std::string testSampler();
 	std::string testPerScene();
 	std::string testPerObject();
+	std::string testInterleaved();
 
 private:
 	HINSTANCE hInstance;
