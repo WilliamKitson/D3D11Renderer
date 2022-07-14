@@ -81,17 +81,10 @@ void D3D11Renderer::Interleaved::create(ID3D11Device* input)
 		0
 	};
 
-	int size = data.getCount();
-	float* raw = new float[size];
-
-	for (int i{ 0 }; i < size; i++)
-	{
-		data.setIndex(i);
-		raw[i] = data.getCoordinate();
-	};
+	float* rawData = raw();
 
 	D3D11_SUBRESOURCE_DATA subresource{
-		raw,
+		rawData,
 		0,
 		0
 	};
@@ -102,5 +95,19 @@ void D3D11Renderer::Interleaved::create(ID3D11Device* input)
 		&vBuffer
 	);
 
-	delete[] raw;
+	delete[] rawData;
+}
+
+float* D3D11Renderer::Interleaved::raw()
+{
+	int size = data.getCount();
+	float* output = new float[size];
+
+	for (int i{ 0 }; i < size; i++)
+	{
+		data.setIndex(i);
+		output[i] = data.getCoordinate();
+	};
+
+	return output;
 }
