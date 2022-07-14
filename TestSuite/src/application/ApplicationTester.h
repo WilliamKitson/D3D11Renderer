@@ -5,6 +5,7 @@
 #include "swapchain/SwapchainTester.h"
 #include "shaders/ShadersTester.h"
 #include "geometry/GeometryTester.h"
+#include "interleaved/InterleavedTester.h"
 #include "rasteriser/RasteriserTester.h"
 #include "sampler/SamplerTester.h"
 #include "perScene/PerSceneTester.h"
@@ -22,6 +23,7 @@ private:
 	std::string testSwapchain();
 	std::string testShaders();
 	std::string testGeometry();
+	std::string testInterleaved();
 	std::string testRasteriser();
 	std::string testSampler();
 	std::string testPerScene();
