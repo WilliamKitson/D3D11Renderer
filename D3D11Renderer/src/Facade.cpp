@@ -48,3 +48,7 @@ void D3D11Renderer::Facade::drawWireframe()
 void D3D11Renderer::Facade::drawSolid()
 {
 }
+
+void D3D11Renderer::Facade::cullNone()
+{
+}

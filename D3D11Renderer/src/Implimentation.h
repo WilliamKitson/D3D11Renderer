@@ -23,6 +23,7 @@ namespace D3D11Renderer
 		virtual void syncNone();
 		virtual void drawWireframe();
 		virtual void drawSolid();
+		virtual void cullNone();
 
 	private:
 		void cleanup(IUnknown*);

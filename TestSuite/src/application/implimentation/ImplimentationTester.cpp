@@ -16,6 +16,7 @@ std::string ImplimentationTester::test()
 	output += testResolution();
 	output += testSync();
 	output += testDraw();
+	output += testCull();
 
 	return output;
 }
@@ -33,4 +34,9 @@ std::string ImplimentationTester::testSync()
 std::string ImplimentationTester::testDraw()
 {
 	return ImplimentationDrawTester(hInstance, nCmdShow).test();
+}
+
+std::string ImplimentationTester::testCull()
+{
+	return ImplimentationCullTester(hInstance, nCmdShow).test();
 }

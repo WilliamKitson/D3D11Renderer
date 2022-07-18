@@ -19,6 +19,7 @@ private:
 	std::string testResolution();
 	std::string testSync();
 	std::string testDraw();
+	std::string testCull();
 
 private:
 	HINSTANCE hInstance;

@@ -1,7 +1,9 @@
 #pragma once
 
 #include <string>
+
 #include "ImplimentationCullDefaultTest.h"
+#include "ImplimentationCullNoneTest.h"
 
 class ImplimentationCullTester
 {
@@ -13,6 +15,7 @@ public:
 
 private:
 	std::string testDefault();
+	std::string testNone();
 
 private:
 	HINSTANCE hInstance;

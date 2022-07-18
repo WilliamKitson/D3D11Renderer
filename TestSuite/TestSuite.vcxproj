@@ -149,6 +149,7 @@
   <ItemGroup>
     <ClCompile Include="src\application\ApplicationTester.cpp" />
     <ClCompile Include="src\application\implimentation\cull\ImplimentationCullDefaultTest.cpp" />
+    <ClCompile Include="src\application\implimentation\cull\ImplimentationCullNoneTest.cpp" />
     <ClCompile Include="src\application\implimentation\cull\ImplimentationCullTester.cpp" />
     <ClCompile Include="src\application\implimentation\draw\ImplimentationDrawDefaultTest.cpp" />
     <ClCompile Include="src\application\implimentation\draw\ImplimentationDrawSolidTest.cpp" />
@@ -281,6 +282,7 @@
   <ItemGroup>
     <ClInclude Include="src\application\ApplicationTester.h" />
     <ClInclude Include="src\application\implimentation\cull\ImplimentationCullDefaultTest.h" />
+    <ClInclude Include="src\application\implimentation\cull\ImplimentationCullNoneTest.h" />
     <ClInclude Include="src\application\implimentation\cull\ImplimentationCullTester.h" />
     <ClInclude Include="src\application\implimentation\draw\ImplimentationDrawDefaultTest.h" />
     <ClInclude Include="src\application\implimentation\draw\ImplimentationDrawSolidTest.h" />
