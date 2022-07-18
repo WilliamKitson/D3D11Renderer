@@ -18,6 +18,7 @@ std::string SwapchainInvalidTester::test()
 	output += testBind();
 	output += testUpdate();
 	output += testState();
+	output += testOverlap();
 
 	return output;
 }
@@ -45,4 +46,9 @@ std::string SwapchainInvalidTester::testUpdate()
 std::string SwapchainInvalidTester::testState()
 {
 	return SwapchainInvalidStateTest(hInstance, nCmdShow).test();
+}
+
+std::string SwapchainInvalidTester::testOverlap()
+{
+	return SwapchainInvalidOverlapTest(hInstance, nCmdShow).test();
 }

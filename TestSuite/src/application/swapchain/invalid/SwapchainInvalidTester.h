@@ -7,6 +7,7 @@
 #include "SwapchainInvalidBindTest.h"
 #include "SwapchainInvalidUpdateTest.h"
 #include "SwapchainInvalidStateTest.h"
+#include "SwapchainInvalidOverlapTest.h"
 
 class SwapchainInvalidTester
 {
@@ -22,6 +23,7 @@ private:
 	std::string testBind();
 	std::string testUpdate();
 	std::string testState();
+	std::string testOverlap();
 
 private:
 	HINSTANCE hInstance;

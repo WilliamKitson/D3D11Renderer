@@ -14,6 +14,7 @@ namespace D3D11Renderer
 		void initialise(ID3D11Device*, HWND);
 		void bind(ID3D11DeviceContext*);
 		void update(ID3D11DeviceContext*);
+		void overlap(ID3D11DeviceContext*);
 		void setResolution(int[2]);
 		void setFull();
 		void setHalf();
