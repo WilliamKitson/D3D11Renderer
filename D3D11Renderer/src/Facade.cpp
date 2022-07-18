@@ -24,3 +24,7 @@ ID3D11DeviceContext* D3D11Renderer::Facade::getContext()
 void D3D11Renderer::Facade::outputResolution(Output, HWND)
 {
 }
+
+void D3D11Renderer::Facade::syncFull()
+{
+}

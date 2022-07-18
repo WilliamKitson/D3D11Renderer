@@ -18,6 +18,11 @@ void D3D11Renderer::Implimentation::initialise(HWND input1, std::string input2)
 	swapchain.bind(context);
 }
 
+void D3D11Renderer::Implimentation::update()
+{
+	swapchain.update(context);
+}
+
 ID3D11DeviceContext* D3D11Renderer::Implimentation::getContext()
 {
 	return context;
@@ -33,6 +38,11 @@ void D3D11Renderer::Implimentation::outputResolution(Output input1, HWND input2)
 	swapchain.setResolution(resolution);
 	swapchain.initialise(device, input2);
 	swapchain.bind(context);
+}
+
+void D3D11Renderer::Implimentation::syncFull()
+{
+	swapchain.setFull();
 }
 
 void D3D11Renderer::Implimentation::cleanup(IUnknown* input)

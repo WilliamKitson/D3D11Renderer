@@ -1,7 +1,7 @@
-#include "ImplimentationSyncDefaultTest.h"
+#include "ImplimentationSyncFullTest.h"
 
-ImplimentationSyncDefaultTest::ImplimentationSyncDefaultTest(HINSTANCE hInstanceInput, int nCmdShowInput)
-	: hInstance{ hInstanceInput }, nCmdShow{ nCmdShowInput }, tag{ L"implimentation sync default test" }, window(), result(), unit{ new D3D11Renderer::Implimentation }
+ImplimentationSyncFullTest::ImplimentationSyncFullTest(HINSTANCE hInstanceInput, int nCmdShowInput)
+	: hInstance{ hInstanceInput }, nCmdShow{ nCmdShowInput }, tag{ L"implimentation sync full test" }, window(), result(), unit{ new D3D11Renderer::Implimentation }
 {
 	initialiseWindowClass();
 
@@ -18,7 +18,7 @@ ImplimentationSyncDefaultTest::ImplimentationSyncDefaultTest(HINSTANCE hInstance
 	}
 }
 
-ImplimentationSyncDefaultTest::~ImplimentationSyncDefaultTest()
+ImplimentationSyncFullTest::~ImplimentationSyncFullTest()
 {
 	if (unit)
 	{
@@ -28,29 +28,30 @@ ImplimentationSyncDefaultTest::~ImplimentationSyncDefaultTest()
 	DestroyWindow(window);
 }
 
-std::string ImplimentationSyncDefaultTest::test()
+std::string ImplimentationSyncFullTest::test()
 {
 	if (FAILED(result))
 	{
-		return "implimentation sync default test failed to initialise\n";
+		return "implimentation sync full test failed to initialise\n";
 	}
 
 	unit->initialise(window, "assets/shaders/shaders.hlsl");
+	unit->syncFull();
 
-	if (framerate() > 144)
+	if (framerate() < 150)
 	{
 		return std::string();
 	}
 
-	return "implimentation sync default test failed\n";
+	return "implimentation sync full test failed\n";
 }
 
-LRESULT CALLBACK ImplimentationSyncDefaultTest::windowProcedure(HWND window, UINT message, WPARAM wParam, LPARAM lParam)
+LRESULT CALLBACK ImplimentationSyncFullTest::windowProcedure(HWND window, UINT message, WPARAM wParam, LPARAM lParam)
 {
 	return DefWindowProc(window, message, wParam, lParam);
 }
 
-void ImplimentationSyncDefaultTest::initialiseWindowClass()
+void ImplimentationSyncFullTest::initialiseWindowClass()
 {
 	WNDCLASS windowClass = WNDCLASS();
 	windowClass.lpfnWndProc = windowProcedure;
@@ -66,7 +67,7 @@ void ImplimentationSyncDefaultTest::initialiseWindowClass()
 	result = S_OK;
 }
 
-void ImplimentationSyncDefaultTest::initialiseWindow()
+void ImplimentationSyncFullTest::initialiseWindow()
 {
 	window = CreateWindow(
 		tag.c_str(),
@@ -96,7 +97,7 @@ void ImplimentationSyncDefaultTest::initialiseWindow()
 	result = S_OK;
 }
 
-int ImplimentationSyncDefaultTest::framerate()
+int ImplimentationSyncFullTest::framerate()
 {
 	int output = 0;
 	double elapced = 0.0f;

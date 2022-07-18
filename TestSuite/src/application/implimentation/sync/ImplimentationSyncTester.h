@@ -1,7 +1,9 @@
 #pragma once
 
 #include <string>
+
 #include "ImplimentationSyncDefaultTest.h"
+#include "ImplimentationSyncFullTest.h"
 
 class ImplimentationSyncTester
 {
@@ -13,6 +15,7 @@ public:
 
 private:
 	std::string testDefault();
+	std::string testFull();
 
 private:
 	HINSTANCE hInstance;

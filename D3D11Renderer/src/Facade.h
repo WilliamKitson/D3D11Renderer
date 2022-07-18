@@ -18,5 +18,6 @@ namespace D3D11Renderer
 		virtual void update();
 		virtual ID3D11DeviceContext* getContext();
 		virtual void outputResolution(Output, HWND);
+		virtual void syncFull();
 	};
 }

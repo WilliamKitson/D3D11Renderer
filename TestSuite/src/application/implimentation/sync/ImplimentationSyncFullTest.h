@@ -8,11 +8,11 @@
 #include "Facade.h"
 #include "Implimentation.h"
 
-class ImplimentationSyncDefaultTest
+class ImplimentationSyncFullTest
 {
 public:
-	ImplimentationSyncDefaultTest(HINSTANCE, int);
-	~ImplimentationSyncDefaultTest();
+	ImplimentationSyncFullTest(HINSTANCE, int);
+	~ImplimentationSyncFullTest();
 
 	std::string test();
 
