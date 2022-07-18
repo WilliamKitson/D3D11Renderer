@@ -7,15 +7,8 @@ D3D11Renderer::Implimentation::Implimentation()
 
 D3D11Renderer::Implimentation::~Implimentation()
 {
-	if (context)
-	{
-		context->Release();
-	}
-
-	if (device)
-	{
-		device->Release();
-	}
+	cleanup(context);
+	cleanup(device);
 }
 
 void D3D11Renderer::Implimentation::initialise(HWND input, std::string)
@@ -50,4 +43,12 @@ void D3D11Renderer::Implimentation::initialise(HWND input, std::string)
 ID3D11DeviceContext* D3D11Renderer::Implimentation::getContext()
 {
 	return context;
+}
+
+void D3D11Renderer::Implimentation::cleanup(IUnknown* input)
+{
+	if (input)
+	{
+		input->Release();
+	}
 }

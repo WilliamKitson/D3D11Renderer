@@ -16,6 +16,9 @@ namespace D3D11Renderer
 		virtual ID3D11DeviceContext* getContext();
 
 	private:
+		void cleanup(IUnknown*);
+
+	private:
 		ID3D11Device* device;
 		ID3D11DeviceContext* context;
 		Swapchain swapchain;
