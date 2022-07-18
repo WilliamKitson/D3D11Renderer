@@ -155,6 +155,7 @@
     <ClCompile Include="src\application\implimentation\sync\ImplimentationSyncDefaultTest.cpp" />
     <ClCompile Include="src\application\implimentation\sync\ImplimentationSyncFullTest.cpp" />
     <ClCompile Include="src\application\implimentation\sync\ImplimentationSyncHalfTest.cpp" />
+    <ClCompile Include="src\application\implimentation\sync\ImplimentationSyncNoneTest.cpp" />
     <ClCompile Include="src\application\implimentation\sync\ImplimentationSyncQuaterTest.cpp" />
     <ClCompile Include="src\application\implimentation\sync\ImplimentationSyncTester.cpp" />
     <ClCompile Include="src\application\perObject\apply\PerObjectApplyColourTest.cpp" />
@@ -280,6 +281,7 @@
     <ClInclude Include="src\application\implimentation\sync\ImplimentationSyncDefaultTest.h" />
     <ClInclude Include="src\application\implimentation\sync\ImplimentationSyncFullTest.h" />
     <ClInclude Include="src\application\implimentation\sync\ImplimentationSyncHalfTest.h" />
+    <ClInclude Include="src\application\implimentation\sync\ImplimentationSyncNoneTest.h" />
     <ClInclude Include="src\application\implimentation\sync\ImplimentationSyncQuaterTest.h" />
     <ClInclude Include="src\application\implimentation\sync\ImplimentationSyncTester.h" />
     <ClInclude Include="src\application\perObject\apply\PerObjectApplyColourTest.h" />
