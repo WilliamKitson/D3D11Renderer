@@ -252,6 +252,7 @@
     <ClCompile Include="src\presentation\camera\rot\CameraXrotTest.cpp" />
     <ClCompile Include="src\presentation\camera\rot\CameraYrotTest.cpp" />
     <ClCompile Include="src\presentation\camera\rot\CameraZrotTest.cpp" />
+    <ClCompile Include="src\presentation\output\OutputHeightTest.cpp" />
     <ClCompile Include="src\presentation\output\OutputTester.cpp" />
     <ClCompile Include="src\presentation\output\OutputWidthTest.cpp" />
     <ClCompile Include="src\presentation\PresentationTester.cpp" />
@@ -366,6 +367,7 @@
     <ClInclude Include="src\presentation\camera\rot\CameraXrotTest.h" />
     <ClInclude Include="src\presentation\camera\rot\CameraYrotTest.h" />
     <ClInclude Include="src\presentation\camera\rot\CameraZrotTest.h" />
+    <ClInclude Include="src\presentation\output\OutputHeightTest.h" />
     <ClInclude Include="src\presentation\output\OutputTester.h" />
     <ClInclude Include="src\presentation\output\OutputWidthTest.h" />
     <ClInclude Include="src\presentation\PresentationTester.h" />

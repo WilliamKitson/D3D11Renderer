@@ -6,5 +6,6 @@ namespace D3D11Renderer
 	{
 	public:
 		const int width{ 0 };
+		const int height{ 0 };
 	};
 }
