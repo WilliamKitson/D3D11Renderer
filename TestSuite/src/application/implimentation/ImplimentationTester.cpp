@@ -14,6 +14,7 @@ std::string ImplimentationTester::test()
 	std::string output{ "" };
 
 	output += testResolution();
+	output += testSync();
 
 	return output;
 }
@@ -21,4 +22,9 @@ std::string ImplimentationTester::test()
 std::string ImplimentationTester::testResolution()
 {
 	return ImplimentationResolutionTester(hInstance, nCmdShow).test();
+}
+
+std::string ImplimentationTester::testSync()
+{
+	return ImplimentationSyncTester(hInstance, nCmdShow).test();
 }

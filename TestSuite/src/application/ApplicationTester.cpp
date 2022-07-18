@@ -56,5 +56,5 @@ std::string ApplicationTester::testPerObject()
 
 std::string ApplicationTester::testImplimentation()
 {
-	return ImplimentationResolutionTester(hInstance, nCmdShow).test();
+	return ImplimentationTester(hInstance, nCmdShow).test();
 }

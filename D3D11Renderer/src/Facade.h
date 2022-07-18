@@ -15,6 +15,7 @@ namespace D3D11Renderer
 		virtual ~Facade();
 
 		virtual void initialise(HWND, std::string);
+		virtual void update();
 		virtual ID3D11DeviceContext* getContext();
 		virtual void outputResolution(Output, HWND);
 	};

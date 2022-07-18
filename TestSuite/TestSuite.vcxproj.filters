@@ -369,6 +369,12 @@
     <ClCompile Include="src\application\implimentation\resolution\ImplimentationResolutionReloadTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\application\implimentation\sync\ImplimentationSyncDefaultTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\application\implimentation\sync\ImplimentationSyncTester.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\MemoryTest.h">
@@ -720,6 +726,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\application\implimentation\resolution\ImplimentationResolutionReloadTest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\application\implimentation\sync\ImplimentationSyncDefaultTest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\application\implimentation\sync\ImplimentationSyncTester.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -12,6 +12,10 @@ void D3D11Renderer::Facade::initialise(HWND, std::string)
 {
 }
 
+void D3D11Renderer::Facade::update()
+{
+}
+
 ID3D11DeviceContext* D3D11Renderer::Facade::getContext()
 {
     return nullptr;
