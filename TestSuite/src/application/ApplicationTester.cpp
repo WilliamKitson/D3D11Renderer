@@ -19,6 +19,7 @@ std::string ApplicationTester::test()
 	output += testSampler();
 	output += testPerScene();
 	output += testPerObject();
+	output += testImplimentation();
 
 	return output;
 }
@@ -51,4 +52,9 @@ std::string ApplicationTester::testPerScene()
 std::string ApplicationTester::testPerObject()
 {
 	return PerObjectTester().test();
+}
+
+std::string ApplicationTester::testImplimentation()
+{
+	return ImplimentationResolutionTester(hInstance, nCmdShow).test();
 }

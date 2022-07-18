@@ -357,6 +357,15 @@
     <ClCompile Include="src\presentation\output\OutputHeightTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\application\implimentation\resolution\ImplimentationResolutionDefaultTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\application\implimentation\resolution\ImplimentationResolutionTester.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\application\implimentation\ImplimentationTester.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\MemoryTest.h">
@@ -696,6 +705,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\presentation\output\OutputHeightTest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\application\implimentation\resolution\ImplimentationResolutionDefaultTest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\application\implimentation\resolution\ImplimentationResolutionTester.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\application\implimentation\ImplimentationTester.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
