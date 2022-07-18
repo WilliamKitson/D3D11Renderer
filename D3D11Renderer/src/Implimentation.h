@@ -17,6 +17,7 @@ namespace D3D11Renderer
 		virtual ID3D11DeviceContext* getContext();
 		virtual void outputResolution(Output, HWND);
 		virtual void syncFull();
+		virtual void syncHalf();
 
 	private:
 		void cleanup(IUnknown*);

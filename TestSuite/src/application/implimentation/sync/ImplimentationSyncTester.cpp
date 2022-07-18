@@ -15,6 +15,7 @@ std::string ImplimentationSyncTester::test()
 
 	output += testDefault();
 	output += testFull();
+	output += testHalf();
 
 	return output;
 }
@@ -27,4 +28,9 @@ std::string ImplimentationSyncTester::testDefault()
 std::string ImplimentationSyncTester::testFull()
 {
 	return ImplimentationSyncFullTest(hInstance, nCmdShow).test();
+}
+
+std::string ImplimentationSyncTester::testHalf()
+{
+	return ImplimentationSyncHalfTest(hInstance, nCmdShow).test();
 }

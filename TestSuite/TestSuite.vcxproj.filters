@@ -378,6 +378,9 @@
     <ClCompile Include="src\application\implimentation\sync\ImplimentationSyncFullTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\application\implimentation\sync\ImplimentationSyncHalfTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\MemoryTest.h">
@@ -738,6 +741,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\application\implimentation\sync\ImplimentationSyncFullTest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\application\implimentation\sync\ImplimentationSyncHalfTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

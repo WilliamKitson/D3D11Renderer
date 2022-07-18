@@ -28,3 +28,7 @@ void D3D11Renderer::Facade::outputResolution(Output, HWND)
 void D3D11Renderer::Facade::syncFull()
 {
 }
+
+void D3D11Renderer::Facade::syncHalf()
+{
+}

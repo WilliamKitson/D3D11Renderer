@@ -45,6 +45,11 @@ void D3D11Renderer::Implimentation::syncFull()
 	swapchain.setFull();
 }
 
+void D3D11Renderer::Implimentation::syncHalf()
+{
+	swapchain.setHalf();
+}
+
 void D3D11Renderer::Implimentation::cleanup(IUnknown* input)
 {
 	if (input)
