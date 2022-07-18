@@ -5,6 +5,7 @@
 #include "ImplimentationSyncDefaultTest.h"
 #include "ImplimentationSyncFullTest.h"
 #include "ImplimentationSyncHalfTest.h"
+#include "ImplimentationSyncQuaterTest.h"
 
 class ImplimentationSyncTester
 {
@@ -18,6 +19,7 @@ private:
 	std::string testDefault();
 	std::string testFull();
 	std::string testHalf();
+	std::string testQuater();
 
 private:
 	HINSTANCE hInstance;

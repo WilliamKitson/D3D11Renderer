@@ -32,3 +32,7 @@ void D3D11Renderer::Facade::syncFull()
 void D3D11Renderer::Facade::syncHalf()
 {
 }
+
+void D3D11Renderer::Facade::syncQuater()
+{
+}
