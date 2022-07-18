@@ -71,6 +71,13 @@ void D3D11Renderer::Implimentation::drawWireframe()
 	rasteriser.bind(context);
 }
 
+void D3D11Renderer::Implimentation::drawSolid()
+{
+	rasteriser.setSolid();
+	rasteriser.initialise(device);
+	rasteriser.bind(context);
+}
+
 void D3D11Renderer::Implimentation::cleanup(IUnknown* input)
 {
 	if (input)

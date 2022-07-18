@@ -23,5 +23,6 @@ namespace D3D11Renderer
 		virtual void syncQuater();
 		virtual void syncNone();
 		virtual void drawWireframe();
+		virtual void drawSolid();
 	};
 }

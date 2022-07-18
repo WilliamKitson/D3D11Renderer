@@ -44,3 +44,7 @@ void D3D11Renderer::Facade::syncNone()
 void D3D11Renderer::Facade::drawWireframe()
 {
 }
+
+void D3D11Renderer::Facade::drawSolid()
+{
+}
