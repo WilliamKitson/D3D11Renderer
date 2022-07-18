@@ -13,24 +13,7 @@ D3D11Renderer::Implimentation::~Implimentation()
 
 void D3D11Renderer::Implimentation::initialise(HWND input, std::string)
 {
-	D3D_FEATURE_LEVEL levels[] = {
-		D3D_FEATURE_LEVEL_11_0
-	};
-
-	D3D_FEATURE_LEVEL supported;
-
-	D3D11CreateDevice(
-		0,
-		D3D_DRIVER_TYPE_HARDWARE,
-		NULL,
-		D3D11_CREATE_DEVICE_DEBUG,
-		levels,
-		1,
-		D3D11_SDK_VERSION,
-		&device,
-		&supported,
-		&context
-	);
+	initialise();
 
 	swapchain.initialise(
 		device, 
@@ -51,4 +34,26 @@ void D3D11Renderer::Implimentation::cleanup(IUnknown* input)
 	{
 		input->Release();
 	}
+}
+
+void D3D11Renderer::Implimentation::initialise()
+{
+	D3D_FEATURE_LEVEL levels[] = {
+		D3D_FEATURE_LEVEL_11_0
+	};
+
+	D3D_FEATURE_LEVEL supported;
+
+	D3D11CreateDevice(
+		0,
+		D3D_DRIVER_TYPE_HARDWARE,
+		NULL,
+		D3D11_CREATE_DEVICE_DEBUG,
+		levels,
+		1,
+		D3D11_SDK_VERSION,
+		&device,
+		&supported,
+		&context
+	);
 }
