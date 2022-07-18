@@ -22,5 +22,6 @@ namespace D3D11Renderer
 		virtual void syncHalf();
 		virtual void syncQuater();
 		virtual void syncNone();
+		virtual void drawWireframe();
 	};
 }

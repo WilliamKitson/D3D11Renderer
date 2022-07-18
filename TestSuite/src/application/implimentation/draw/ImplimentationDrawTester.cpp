@@ -14,6 +14,7 @@ std::string ImplimentationDrawTester::test()
 	std::string output{ "" };
 
 	output += testDefault();
+	output += testWireframe();
 
 	return output;
 }
@@ -21,4 +22,9 @@ std::string ImplimentationDrawTester::test()
 std::string ImplimentationDrawTester::testDefault()
 {
 	return ImplimentationDrawDefaultTest(hInstance, nCmdShow).test();
+}
+
+std::string ImplimentationDrawTester::testWireframe()
+{
+	return ImplimentationDrawWireframeTest(hInstance, nCmdShow).test();
 }

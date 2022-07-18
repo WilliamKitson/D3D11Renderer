@@ -64,6 +64,13 @@ void D3D11Renderer::Implimentation::syncNone()
 	swapchain.setNone();
 }
 
+void D3D11Renderer::Implimentation::drawWireframe()
+{
+	rasteriser.setWireframe();
+	rasteriser.initialise(device);
+	rasteriser.bind(context);
+}
+
 void D3D11Renderer::Implimentation::cleanup(IUnknown* input)
 {
 	if (input)

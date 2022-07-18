@@ -1,7 +1,9 @@
 #pragma once
 
 #include <string>
+
 #include "ImplimentationDrawDefaultTest.h"
+#include "ImplimentationDrawWireframeTest.h"
 
 class ImplimentationDrawTester
 {
@@ -13,6 +15,7 @@ public:
 
 private:
 	std::string testDefault();
+	std::string testWireframe();
 
 private:
 	HINSTANCE hInstance;

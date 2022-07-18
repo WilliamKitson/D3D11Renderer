@@ -40,3 +40,7 @@ void D3D11Renderer::Facade::syncQuater()
 void D3D11Renderer::Facade::syncNone()
 {
 }
+
+void D3D11Renderer::Facade::drawWireframe()
+{
+}
