@@ -8,7 +8,6 @@
 #include "sampler/SamplerTester.h"
 #include "perScene/PerSceneTester.h"
 #include "perObject/PerObjectTester.h"
-#include "interleaved/InterleavedTester.h"
 
 class ApplicationTester
 {
@@ -25,7 +24,6 @@ private:
 	std::string testSampler();
 	std::string testPerScene();
 	std::string testPerObject();
-	std::string testInterleaved();
 
 private:
 	HINSTANCE hInstance;

@@ -19,7 +19,6 @@ std::string ApplicationTester::test()
 	output += testSampler();
 	output += testPerScene();
 	output += testPerObject();
-	output += testInterleaved();
 
 	return output;
 }
@@ -52,9 +51,4 @@ std::string ApplicationTester::testPerScene()
 std::string ApplicationTester::testPerObject()
 {
 	return PerObjectTester().test();
-}
-
-std::string ApplicationTester::testInterleaved()
-{
-	return InterleavedTester().test();
 }

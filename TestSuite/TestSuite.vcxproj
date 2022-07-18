@@ -148,15 +148,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\application\ApplicationTester.cpp" />
-    <ClCompile Include="src\application\interleaved\InterleavedCountTest.cpp" />
-    <ClCompile Include="src\application\interleaved\InterleavedDefaultTest.cpp" />
-    <ClCompile Include="src\application\interleaved\InterleavedOffsetTest.cpp" />
-    <ClCompile Include="src\application\interleaved\InterleavedReloadTest.cpp" />
-    <ClCompile Include="src\application\interleaved\InterleavedStrideTest.cpp" />
-    <ClCompile Include="src\application\interleaved\InterleavedTester.cpp" />
-    <ClCompile Include="src\application\interleaved\invalid\InterleavedInvalidContextTest.cpp" />
-    <ClCompile Include="src\application\interleaved\invalid\InterleavedInvalidDeviceTest.cpp" />
-    <ClCompile Include="src\application\interleaved\invalid\InterleavedInvalidTester.cpp" />
     <ClCompile Include="src\application\perObject\apply\PerObjectApplyColourTest.cpp" />
     <ClCompile Include="src\application\perObject\apply\PerObjectApplyTester.cpp" />
     <ClCompile Include="src\application\perObject\apply\PerObjectApplyTransformTest.cpp" />
@@ -237,16 +228,6 @@
     <ClCompile Include="src\application\swapchain\resolution\SwapchainResolutionViewportTest.cpp" />
     <ClCompile Include="src\application\swapchain\resolution\SwapchainResolutionViewTest.cpp" />
     <ClCompile Include="src\application\swapchain\SwapchainTester.cpp" />
-    <ClCompile Include="src\domain\coordinates1D\Coordinates1DEmptyTest.cpp" />
-    <ClCompile Include="src\domain\coordinates1D\Coordinates1DPushTest.cpp" />
-    <ClCompile Include="src\domain\coordinates1D\Coordinates1DTester.cpp" />
-    <ClCompile Include="src\domain\coordinates1D\count\Coordinates1DCountDefaultTest.cpp" />
-    <ClCompile Include="src\domain\coordinates1D\count\Coordinates1DCountPushTest.cpp" />
-    <ClCompile Include="src\domain\coordinates1D\count\Coordinates1DCountTester.cpp" />
-    <ClCompile Include="src\domain\coordinates1D\index\Coordinates1DIndexDefaultTest.cpp" />
-    <ClCompile Include="src\domain\coordinates1D\index\Coordinates1DIndexMaximumTest.cpp" />
-    <ClCompile Include="src\domain\coordinates1D\index\Coordinates1DIndexMinimumTest.cpp" />
-    <ClCompile Include="src\domain\coordinates1D\index\Coordinates1DIndexTester.cpp" />
     <ClCompile Include="src\domain\DomainTester.cpp" />
     <ClCompile Include="src\domain\resolution\default\ResolutionDefaultHeightTest.cpp" />
     <ClCompile Include="src\domain\resolution\default\ResolutionDefaultTester.cpp" />
@@ -280,15 +261,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\application\ApplicationTester.h" />
-    <ClInclude Include="src\application\interleaved\InterleavedCountTest.h" />
-    <ClInclude Include="src\application\interleaved\InterleavedDefaultTest.h" />
-    <ClInclude Include="src\application\interleaved\InterleavedOffsetTest.h" />
-    <ClInclude Include="src\application\interleaved\InterleavedReloadTest.h" />
-    <ClInclude Include="src\application\interleaved\InterleavedStrideTest.h" />
-    <ClInclude Include="src\application\interleaved\InterleavedTester.h" />
-    <ClInclude Include="src\application\interleaved\invalid\InterleavedInvalidContextTest.h" />
-    <ClInclude Include="src\application\interleaved\invalid\InterleavedInvalidDeviceTest.h" />
-    <ClInclude Include="src\application\interleaved\invalid\InterleavedInvalidTester.h" />
     <ClInclude Include="src\application\perObject\apply\PerObjectApplyColourTest.h" />
     <ClInclude Include="src\application\perObject\apply\PerObjectApplyTester.h" />
     <ClInclude Include="src\application\perObject\apply\PerObjectApplyTransformTest.h" />
@@ -369,16 +341,6 @@
     <ClInclude Include="src\application\swapchain\resolution\SwapchainResolutionViewportTest.h" />
     <ClInclude Include="src\application\swapchain\resolution\SwapchainResolutionViewTest.h" />
     <ClInclude Include="src\application\swapchain\SwapchainTester.h" />
-    <ClInclude Include="src\domain\coordinates1D\Coordinates1DEmptyTest.h" />
-    <ClInclude Include="src\domain\coordinates1D\Coordinates1DPushTest.h" />
-    <ClInclude Include="src\domain\coordinates1D\Coordinates1DTester.h" />
-    <ClInclude Include="src\domain\coordinates1D\count\Coordinates1DCountDefaultTest.h" />
-    <ClInclude Include="src\domain\coordinates1D\count\Coordinates1DCountPushTest.h" />
-    <ClInclude Include="src\domain\coordinates1D\count\Coordinates1DCountTester.h" />
-    <ClInclude Include="src\domain\coordinates1D\index\Coordinates1DIndexDefaultTest.h" />
-    <ClInclude Include="src\domain\coordinates1D\index\Coordinates1DIndexMaximumTest.h" />
-    <ClInclude Include="src\domain\coordinates1D\index\Coordinates1DIndexMinimumTest.h" />
-    <ClInclude Include="src\domain\coordinates1D\index\Coordinates1DIndexTester.h" />
     <ClInclude Include="src\domain\DomainTester.h" />
     <ClInclude Include="src\domain\resolution\default\ResolutionDefaultHeightTest.h" />
     <ClInclude Include="src\domain\resolution\default\ResolutionDefaultTester.h" />

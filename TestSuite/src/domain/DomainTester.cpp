@@ -10,20 +10,14 @@ DomainTester::~DomainTester()
 
 std::string DomainTester::test()
 {
-	std::string failures{ "" };
+	std::string output{ "" };
 
-	failures += testResolution();
-	failures += testCoordinates1D();
+	output += testResolution();
 
-	return failures;
+	return output;
 }
 
 std::string DomainTester::testResolution()
 {
 	return ResolutionTester().test();
-}
-
-std::string DomainTester::testCoordinates1D()
-{
-	return Coordinates1DTester().test();
 }

@@ -291,36 +291,6 @@
     <ClCompile Include="src\presentation\camera\CameraAspectRatioTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\domain\coordinates1D\count\Coordinates1DCountDefaultTest.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\domain\coordinates1D\count\Coordinates1DCountTester.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\domain\coordinates1D\Coordinates1DTester.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\domain\coordinates1D\count\Coordinates1DCountPushTest.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\domain\coordinates1D\index\Coordinates1DIndexDefaultTest.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\domain\coordinates1D\index\Coordinates1DIndexTester.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\domain\coordinates1D\index\Coordinates1DIndexMinimumTest.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\domain\coordinates1D\index\Coordinates1DIndexMaximumTest.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\domain\coordinates1D\Coordinates1DPushTest.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\domain\coordinates1D\Coordinates1DEmptyTest.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\application\shaders\load\ShadersLoadTester.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -373,33 +343,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\application\sampler\invalid\SamplerInvalidContextTest.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\application\interleaved\InterleavedDefaultTest.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\application\interleaved\InterleavedTester.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\application\interleaved\InterleavedReloadTest.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\application\interleaved\InterleavedStrideTest.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\application\interleaved\InterleavedOffsetTest.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\application\interleaved\invalid\InterleavedInvalidDeviceTest.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\application\interleaved\invalid\InterleavedInvalidTester.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\application\interleaved\invalid\InterleavedInvalidContextTest.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\application\interleaved\InterleavedCountTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\application\swapchain\invalid\SwapchainInvalidOverlapTest.cpp">
@@ -680,36 +623,6 @@
     <ClInclude Include="src\presentation\camera\CameraAspectRatioTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\domain\coordinates1D\count\Coordinates1DCountDefaultTest.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\domain\coordinates1D\count\Coordinates1DCountTester.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\domain\coordinates1D\Coordinates1DTester.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\domain\coordinates1D\count\Coordinates1DCountPushTest.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\domain\coordinates1D\index\Coordinates1DIndexDefaultTest.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\domain\coordinates1D\index\Coordinates1DIndexTester.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\domain\coordinates1D\index\Coordinates1DIndexMinimumTest.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\domain\coordinates1D\index\Coordinates1DIndexMaximumTest.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\domain\coordinates1D\Coordinates1DPushTest.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\domain\coordinates1D\Coordinates1DEmptyTest.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="src\application\shaders\load\ShadersLoadTester.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -762,33 +675,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\application\sampler\invalid\SamplerInvalidContextTest.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\application\interleaved\InterleavedDefaultTest.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\application\interleaved\InterleavedTester.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\application\interleaved\InterleavedReloadTest.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\application\interleaved\InterleavedStrideTest.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\application\interleaved\InterleavedOffsetTest.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\application\interleaved\invalid\InterleavedInvalidDeviceTest.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\application\interleaved\invalid\InterleavedInvalidTester.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\application\interleaved\invalid\InterleavedInvalidContextTest.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\application\interleaved\InterleavedCountTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\application\swapchain\invalid\SwapchainInvalidOverlapTest.h">
