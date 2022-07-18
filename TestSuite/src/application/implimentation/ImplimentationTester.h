@@ -4,6 +4,7 @@
 
 #include "resolution/ImplimentationResolutionTester.h"
 #include "sync/ImplimentationSyncTester.h"
+#include "draw/ImplimentationDrawTester.h"
 
 class ImplimentationTester
 {
@@ -16,6 +17,7 @@ public:
 private:
 	std::string testResolution();
 	std::string testSync();
+	std::string testDraw();
 
 private:
 	HINSTANCE hInstance;

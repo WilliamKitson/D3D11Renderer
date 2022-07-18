@@ -148,6 +148,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\application\ApplicationTester.cpp" />
+    <ClCompile Include="src\application\implimentation\draw\ImplimentationDrawDefaultTest.cpp" />
+    <ClCompile Include="src\application\implimentation\draw\ImplimentationDrawTester.cpp" />
     <ClCompile Include="src\application\implimentation\ImplimentationTester.cpp" />
     <ClCompile Include="src\application\implimentation\resolution\ImplimentationResolutionDefaultTest.cpp" />
     <ClCompile Include="src\application\implimentation\resolution\ImplimentationResolutionReloadTest.cpp" />
@@ -274,6 +276,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\application\ApplicationTester.h" />
+    <ClInclude Include="src\application\implimentation\draw\ImplimentationDrawDefaultTest.h" />
+    <ClInclude Include="src\application\implimentation\draw\ImplimentationDrawTester.h" />
     <ClInclude Include="src\application\implimentation\ImplimentationTester.h" />
     <ClInclude Include="src\application\implimentation\resolution\ImplimentationResolutionDefaultTest.h" />
     <ClInclude Include="src\application\implimentation\resolution\ImplimentationResolutionReloadTest.h" />
