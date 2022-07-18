@@ -178,6 +178,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="src\Camera.h" />
+    <ClInclude Include="src\Output.h" />
     <ClInclude Include="src\PerObject.h" />
     <ClInclude Include="src\PerScene.h" />
     <ClInclude Include="src\Rasteriser.h" />

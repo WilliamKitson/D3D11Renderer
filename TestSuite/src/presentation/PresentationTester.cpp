@@ -10,12 +10,18 @@ PresentationTester::~PresentationTester()
 
 std::string PresentationTester::test()
 {
-	std::string failures{ "" };
+	std::string output{ "" };
 
-	failures += testCamera();
-	failures += testRGB();
+	output += testOutput();
+	output += testCamera();
+	output += testRGB();
 
-	return failures;
+	return output;
+}
+
+std::string PresentationTester::testOutput()
+{
+	return OutputTester().test();
 }
 
 std::string PresentationTester::testCamera()
