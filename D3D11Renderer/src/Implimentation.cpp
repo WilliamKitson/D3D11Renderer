@@ -11,21 +11,28 @@ D3D11Renderer::Implimentation::~Implimentation()
 	cleanup(device);
 }
 
-void D3D11Renderer::Implimentation::initialise(HWND input, std::string)
+void D3D11Renderer::Implimentation::initialise(HWND input1, std::string input2)
 {
 	initialise();
-
-	swapchain.initialise(
-		device, 
-		input
-	);
-
+	swapchain.initialise(device, input1);
 	swapchain.bind(context);
 }
 
 ID3D11DeviceContext* D3D11Renderer::Implimentation::getContext()
 {
 	return context;
+}
+
+void D3D11Renderer::Implimentation::outputResolution(Output input1, HWND input2)
+{
+	int resolution[] = {
+		input1.width,
+		input1.height
+	};
+
+	swapchain.setResolution(resolution);
+	swapchain.initialise(device, input2);
+	swapchain.bind(context);
 }
 
 void D3D11Renderer::Implimentation::cleanup(IUnknown* input)

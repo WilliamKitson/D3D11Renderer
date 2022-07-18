@@ -14,6 +14,7 @@ namespace D3D11Renderer
 
 		virtual void initialise(HWND, std::string);
 		virtual ID3D11DeviceContext* getContext();
+		virtual void outputResolution(Output, HWND);
 
 	private:
 		void cleanup(IUnknown*);

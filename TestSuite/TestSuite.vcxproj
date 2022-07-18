@@ -150,6 +150,7 @@
     <ClCompile Include="src\application\ApplicationTester.cpp" />
     <ClCompile Include="src\application\implimentation\ImplimentationTester.cpp" />
     <ClCompile Include="src\application\implimentation\resolution\ImplimentationResolutionDefaultTest.cpp" />
+    <ClCompile Include="src\application\implimentation\resolution\ImplimentationResolutionReloadTest.cpp" />
     <ClCompile Include="src\application\implimentation\resolution\ImplimentationResolutionTester.cpp" />
     <ClCompile Include="src\application\perObject\apply\PerObjectApplyColourTest.cpp" />
     <ClCompile Include="src\application\perObject\apply\PerObjectApplyTester.cpp" />
@@ -269,6 +270,7 @@
     <ClInclude Include="src\application\ApplicationTester.h" />
     <ClInclude Include="src\application\implimentation\ImplimentationTester.h" />
     <ClInclude Include="src\application\implimentation\resolution\ImplimentationResolutionDefaultTest.h" />
+    <ClInclude Include="src\application\implimentation\resolution\ImplimentationResolutionReloadTest.h" />
     <ClInclude Include="src\application\implimentation\resolution\ImplimentationResolutionTester.h" />
     <ClInclude Include="src\application\perObject\apply\PerObjectApplyColourTest.h" />
     <ClInclude Include="src\application\perObject\apply\PerObjectApplyTester.h" />

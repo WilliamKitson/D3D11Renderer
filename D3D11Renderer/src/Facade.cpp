@@ -16,3 +16,7 @@ ID3D11DeviceContext* D3D11Renderer::Facade::getContext()
 {
     return nullptr;
 }
+
+void D3D11Renderer::Facade::outputResolution(Output, HWND)
+{
+}

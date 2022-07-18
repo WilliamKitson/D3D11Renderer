@@ -4,6 +4,8 @@
 #include <Windows.h>
 #include <d3d11.h>
 
+#include "Output.h"
+
 namespace D3D11Renderer
 {
 	class Facade
@@ -14,5 +16,6 @@ namespace D3D11Renderer
 
 		virtual void initialise(HWND, std::string);
 		virtual ID3D11DeviceContext* getContext();
+		virtual void outputResolution(Output, HWND);
 	};
 }

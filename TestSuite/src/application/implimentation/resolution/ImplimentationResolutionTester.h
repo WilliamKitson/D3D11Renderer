@@ -1,7 +1,9 @@
 #pragma once
 
 #include <string>
+
 #include "ImplimentationResolutionDefaultTest.h"
+#include "ImplimentationResolutionReloadTest.h"
 
 class ImplimentationResolutionTester
 {
@@ -13,6 +15,7 @@ public:
 
 private:
 	std::string testDefault();
+	std::string testReload();
 
 private:
 	HINSTANCE hInstance;
