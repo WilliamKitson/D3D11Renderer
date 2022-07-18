@@ -5,6 +5,7 @@
 #include "resolution/ImplimentationResolutionTester.h"
 #include "sync/ImplimentationSyncTester.h"
 #include "draw/ImplimentationDrawTester.h"
+#include "cull/ImplimentationCullTester.h"
 
 class ImplimentationTester
 {

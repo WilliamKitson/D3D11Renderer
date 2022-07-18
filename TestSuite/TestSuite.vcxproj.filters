@@ -399,6 +399,12 @@
     <ClCompile Include="src\application\implimentation\draw\ImplimentationDrawSolidTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\application\implimentation\cull\ImplimentationCullDefaultTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\application\implimentation\cull\ImplimentationCullTester.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\MemoryTest.h">
@@ -780,6 +786,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\application\implimentation\draw\ImplimentationDrawSolidTest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\application\implimentation\cull\ImplimentationCullDefaultTest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\application\implimentation\cull\ImplimentationCullTester.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
