@@ -15,10 +15,7 @@ void D3D11Renderer::Implimentation::initialise(HWND input1, std::string input2)
 {
 	initialiseDevice();
 	initialiseSwapchain(input1);
-
-	shaders.setFilepath(input2);
-	shaders.initialise(device);
-	shaders.bind(context);
+	initialiseShaders(input2);
 
 	rasteriser.initialise(device);
 	rasteriser.bind(context);
@@ -149,4 +146,11 @@ void D3D11Renderer::Implimentation::initialiseSwapchain(HWND input)
 {
 	swapchain.initialise(device, input);
 	swapchain.bind(context);
+}
+
+void D3D11Renderer::Implimentation::initialiseShaders(std::string input)
+{
+	shaders.setFilepath(input);
+	shaders.initialise(device);
+	shaders.bind(context);
 }
