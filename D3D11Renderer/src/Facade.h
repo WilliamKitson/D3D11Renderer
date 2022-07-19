@@ -7,6 +7,7 @@
 #include "Output.h"
 #include "Camera.h"
 #include "RGB.h"
+#include "Transform.h"
 
 namespace D3D11Renderer
 {
@@ -31,6 +32,7 @@ namespace D3D11Renderer
 		virtual void cullBack();
 		virtual void sceneCamera(Camera);
 		virtual void sceneAmbience(RGB);
+		virtual void objectTransform(Transform);
 		virtual ID3D11Device* getDevice();
 		virtual ID3D11DeviceContext* getContext();
 	};

@@ -51,6 +51,9 @@
     <ClInclude Include="src\Implimentation.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\Transform.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Resolution.cpp">

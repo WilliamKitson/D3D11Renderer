@@ -441,6 +441,9 @@
     <ClCompile Include="src\application\implimentation\scene\ImplimentationSceneAmbienceTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\application\implimentation\object\ImplimentationObjectTransformTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\MemoryTest.h">
@@ -864,6 +867,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\application\implimentation\scene\ImplimentationSceneAmbienceTest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\application\implimentation\object\ImplimentationObjectTransformTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

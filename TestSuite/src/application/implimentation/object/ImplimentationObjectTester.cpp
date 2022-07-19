@@ -13,6 +13,7 @@ std::string ImplimentationObjectTester::test()
 	std::string output{ "" };
 
 	output += testDefault();
+	output += testTransform();
 
 	return output;
 }
@@ -20,4 +21,9 @@ std::string ImplimentationObjectTester::test()
 std::string ImplimentationObjectTester::testDefault()
 {
 	return ImplimentationObjectDefaultTest().test();
+}
+
+std::string ImplimentationObjectTester::testTransform()
+{
+	return ImplimentationObjectTransformTest().test();
 }

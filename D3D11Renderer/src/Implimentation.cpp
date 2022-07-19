@@ -128,6 +128,24 @@ void D3D11Renderer::Implimentation::sceneAmbience(RGB input)
 	scene.apply(context);
 }
 
+void D3D11Renderer::Implimentation::objectTransform(Transform input)
+{
+	float transform[] = {
+		input.xpos,
+		input.ypos,
+		input.zpos,
+		input.xrot,
+		input.yrot,
+		input.zrot,
+		input.xscale,
+		input.yscale,
+		input.zscale
+	};
+
+	object.setTransform(transform);
+	object.apply(context);
+}
+
 ID3D11Device* D3D11Renderer::Implimentation::getDevice()
 {
 	return device;

@@ -68,6 +68,10 @@ void D3D11Renderer::Facade::sceneAmbience(RGB)
 {
 }
 
+void D3D11Renderer::Facade::objectTransform(Transform)
+{
+}
+
 ID3D11Device* D3D11Renderer::Facade::getDevice()
 {
     return nullptr;

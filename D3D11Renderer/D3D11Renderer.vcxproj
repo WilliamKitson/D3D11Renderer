@@ -189,6 +189,7 @@
     <ClInclude Include="src\Sampler.h" />
     <ClInclude Include="src\Shaders.h" />
     <ClInclude Include="src\Swapchain.h" />
+    <ClInclude Include="src\Transform.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Facade.cpp" />

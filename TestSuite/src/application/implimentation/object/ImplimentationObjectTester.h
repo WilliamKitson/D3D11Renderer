@@ -1,7 +1,9 @@
 #pragma once
 
 #include <string>
+
 #include "ImplimentationObjectDefaultTest.h"
+#include "ImplimentationObjectTransformTest.h"
 
 class ImplimentationObjectTester
 {
@@ -13,4 +15,5 @@ public:
 
 private:
 	std::string testDefault();
+	std::string testTransform();
 };
