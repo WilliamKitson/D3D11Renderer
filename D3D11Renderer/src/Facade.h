@@ -25,5 +25,6 @@ namespace D3D11Renderer
 		virtual void drawWireframe();
 		virtual void drawSolid();
 		virtual void cullNone();
+		virtual void cullFront();
 	};
 }

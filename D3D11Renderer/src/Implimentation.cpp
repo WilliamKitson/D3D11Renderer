@@ -85,6 +85,13 @@ void D3D11Renderer::Implimentation::cullNone()
 	rasteriser.bind(context);
 }
 
+void D3D11Renderer::Implimentation::cullFront()
+{
+	rasteriser.setFront();
+	rasteriser.initialise(device);
+	rasteriser.bind(context);
+}
+
 void D3D11Renderer::Implimentation::cleanup(IUnknown* input)
 {
 	if (input)
