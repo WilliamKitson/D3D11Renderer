@@ -64,6 +64,10 @@ void D3D11Renderer::Facade::sceneCamera(Camera)
 {
 }
 
+void D3D11Renderer::Facade::sceneAmbience(RGB)
+{
+}
+
 ID3D11Device* D3D11Renderer::Facade::getDevice()
 {
     return nullptr;

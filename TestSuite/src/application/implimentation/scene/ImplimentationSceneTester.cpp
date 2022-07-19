@@ -14,6 +14,7 @@ std::string ImplimentationSceneTester::test()
 
 	output += testDefault();
 	output += testCamera();
+	output += testAmbience();
 
 	return output;
 }
@@ -26,4 +27,9 @@ std::string ImplimentationSceneTester::testDefault()
 std::string ImplimentationSceneTester::testCamera()
 {
 	return ImplimentationSceneCameraTest().test();
+}
+
+std::string ImplimentationSceneTester::testAmbience()
+{
+	return ImplimentationSceneAmbienceTest().test();
 }

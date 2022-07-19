@@ -4,6 +4,7 @@
 
 #include "ImplimentationSceneDefaultTest.h"
 #include "ImplimentationSceneCameraTest.h"
+#include "ImplimentationSceneAmbienceTest.h"
 
 class ImplimentationSceneTester
 {
@@ -16,4 +17,5 @@ public:
 private:
 	std::string testDefault();
 	std::string testCamera();
+	std::string testAmbience();
 };

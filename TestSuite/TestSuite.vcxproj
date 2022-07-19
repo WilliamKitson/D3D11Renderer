@@ -166,6 +166,7 @@
     <ClCompile Include="src\application\implimentation\resolution\ImplimentationResolutionDefaultTest.cpp" />
     <ClCompile Include="src\application\implimentation\resolution\ImplimentationResolutionReloadTest.cpp" />
     <ClCompile Include="src\application\implimentation\resolution\ImplimentationResolutionTester.cpp" />
+    <ClCompile Include="src\application\implimentation\scene\ImplimentationSceneAmbienceTest.cpp" />
     <ClCompile Include="src\application\implimentation\scene\ImplimentationSceneCameraTest.cpp" />
     <ClCompile Include="src\application\implimentation\scene\ImplimentationSceneDefaultTest.cpp" />
     <ClCompile Include="src\application\implimentation\scene\ImplimentationSceneTester.cpp" />
@@ -309,6 +310,7 @@
     <ClInclude Include="src\application\implimentation\resolution\ImplimentationResolutionDefaultTest.h" />
     <ClInclude Include="src\application\implimentation\resolution\ImplimentationResolutionReloadTest.h" />
     <ClInclude Include="src\application\implimentation\resolution\ImplimentationResolutionTester.h" />
+    <ClInclude Include="src\application\implimentation\scene\ImplimentationSceneAmbienceTest.h" />
     <ClInclude Include="src\application\implimentation\scene\ImplimentationSceneCameraTest.h" />
     <ClInclude Include="src\application\implimentation\scene\ImplimentationSceneDefaultTest.h" />
     <ClInclude Include="src\application\implimentation\scene\ImplimentationSceneTester.h" />

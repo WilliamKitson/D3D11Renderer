@@ -116,6 +116,18 @@ void D3D11Renderer::Implimentation::sceneCamera(Camera input)
 	scene.apply(context);
 }
 
+void D3D11Renderer::Implimentation::sceneAmbience(RGB input)
+{
+	float ambience[] = {
+		input.red,
+		input.green,
+		input.blue,
+	};
+
+	scene.setAmbience(ambience);
+	scene.apply(context);
+}
+
 ID3D11Device* D3D11Renderer::Implimentation::getDevice()
 {
 	return device;
