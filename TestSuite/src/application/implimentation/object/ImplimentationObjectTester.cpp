@@ -14,6 +14,7 @@ std::string ImplimentationObjectTester::test()
 
 	output += testDefault();
 	output += testTransform();
+	output += testColour();
 
 	return output;
 }
@@ -26,4 +27,9 @@ std::string ImplimentationObjectTester::testDefault()
 std::string ImplimentationObjectTester::testTransform()
 {
 	return ImplimentationObjectTransformTest().test();
+}
+
+std::string ImplimentationObjectTester::testColour()
+{
+	return ImplimentationObjectColourTest().test();
 }

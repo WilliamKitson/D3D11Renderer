@@ -33,6 +33,7 @@ namespace D3D11Renderer
 		virtual void sceneCamera(Camera);
 		virtual void sceneAmbience(RGB);
 		virtual void objectTransform(Transform);
+		virtual void objectColour(RGB);
 		virtual ID3D11Device* getDevice();
 		virtual ID3D11DeviceContext* getContext();
 

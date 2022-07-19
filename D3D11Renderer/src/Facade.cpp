@@ -72,6 +72,10 @@ void D3D11Renderer::Facade::objectTransform(Transform)
 {
 }
 
+void D3D11Renderer::Facade::objectColour(RGB)
+{
+}
+
 ID3D11Device* D3D11Renderer::Facade::getDevice()
 {
     return nullptr;

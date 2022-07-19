@@ -161,6 +161,7 @@
     <ClCompile Include="src\application\implimentation\ImplimentationSamplerTest.cpp" />
     <ClCompile Include="src\application\implimentation\ImplimentationShadersTest.cpp" />
     <ClCompile Include="src\application\implimentation\ImplimentationTester.cpp" />
+    <ClCompile Include="src\application\implimentation\object\ImplimentationObjectColourTest.cpp" />
     <ClCompile Include="src\application\implimentation\object\ImplimentationObjectDefaultTest.cpp" />
     <ClCompile Include="src\application\implimentation\object\ImplimentationObjectTester.cpp" />
     <ClCompile Include="src\application\implimentation\object\ImplimentationObjectTransformTest.cpp" />
@@ -287,6 +288,7 @@
     <ClInclude Include="src\application\implimentation\ImplimentationSamplerTest.h" />
     <ClInclude Include="src\application\implimentation\ImplimentationShadersTest.h" />
     <ClInclude Include="src\application\implimentation\ImplimentationTester.h" />
+    <ClInclude Include="src\application\implimentation\object\ImplimentationObjectColourTest.h" />
     <ClInclude Include="src\application\implimentation\object\ImplimentationObjectDefaultTest.h" />
     <ClInclude Include="src\application\implimentation\object\ImplimentationObjectTester.h" />
     <ClInclude Include="src\application\implimentation\object\ImplimentationObjectTransformTest.h" />

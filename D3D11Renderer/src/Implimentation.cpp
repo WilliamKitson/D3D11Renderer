@@ -146,6 +146,18 @@ void D3D11Renderer::Implimentation::objectTransform(Transform input)
 	object.apply(context);
 }
 
+void D3D11Renderer::Implimentation::objectColour(RGB input)
+{
+	float colour[] = {
+		input.red,
+		input.green,
+		input.blue,
+	};
+
+	object.setColour(colour);
+	object.apply(context);
+}
+
 ID3D11Device* D3D11Renderer::Implimentation::getDevice()
 {
 	return device;

@@ -4,6 +4,7 @@
 
 #include "ImplimentationObjectDefaultTest.h"
 #include "ImplimentationObjectTransformTest.h"
+#include "ImplimentationObjectColourTest.h"
 
 class ImplimentationObjectTester
 {
@@ -16,4 +17,5 @@ public:
 private:
 	std::string testDefault();
 	std::string testTransform();
+	std::string testColour();
 };
