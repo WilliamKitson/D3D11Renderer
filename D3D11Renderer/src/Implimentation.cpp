@@ -13,7 +13,7 @@ D3D11Renderer::Implimentation::~Implimentation()
 
 void D3D11Renderer::Implimentation::initialise(HWND input1, std::string input2)
 {
-	initialise();
+	initialiseDevice();
 
 	swapchain.initialise(device, input1);
 	swapchain.bind(context);
@@ -125,7 +125,7 @@ void D3D11Renderer::Implimentation::cleanup(IUnknown* input)
 	}
 }
 
-void D3D11Renderer::Implimentation::initialise()
+void D3D11Renderer::Implimentation::initialiseDevice()
 {
 	D3D_FEATURE_LEVEL levels[] = {
 		D3D_FEATURE_LEVEL_11_0

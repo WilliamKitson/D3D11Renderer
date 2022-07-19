@@ -34,7 +34,7 @@ namespace D3D11Renderer
 
 	private:
 		void cleanup(IUnknown*);
-		void initialise();
+		void initialiseDevice();
 
 	private:
 		ID3D11Device* device;
