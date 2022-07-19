@@ -40,6 +40,7 @@ namespace D3D11Renderer
 		void initialiseRasteriser();
 		void initialiseSampler();
 		void initialiseScene();
+		void initialiseObject();
 
 	private:
 		ID3D11Device* device;
