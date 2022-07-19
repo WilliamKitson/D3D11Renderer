@@ -37,6 +37,7 @@ namespace D3D11Renderer
 		void initialiseDevice();
 		void initialiseSwapchain(HWND);
 		void initialiseShaders(std::string);
+		void initialiseRasteriser();
 
 	private:
 		ID3D11Device* device;
