@@ -4,6 +4,7 @@
 #include "Swapchain.h"
 #include "Shaders.h"
 #include "Rasteriser.h"
+#include "Sampler.h"
 
 namespace D3D11Renderer
 {
@@ -39,5 +40,6 @@ namespace D3D11Renderer
 		Swapchain swapchain;
 		Shaders shaders;
 		Rasteriser rasteriser;
+		Sampler sampler;
 	};
 }

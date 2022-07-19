@@ -8,6 +8,7 @@
 #include "cull/ImplimentationCullTester.h"
 #include "ImplimentationDeviceTest.h"
 #include "ImplimentationShadersTest.h"
+#include "ImplimentationSamplerTest.h"
 
 class ImplimentationTester
 {
@@ -24,6 +25,7 @@ private:
 	std::string testCull();
 	std::string testDevice();
 	std::string testShaders();
+	std::string testSampler();
 
 private:
 	HINSTANCE hInstance;
