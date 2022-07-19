@@ -30,6 +30,7 @@ namespace D3D11Renderer
 		virtual void cullNone();
 		virtual void cullFront();
 		virtual void cullBack();
+		virtual void sceneCamera(Camera);
 		virtual ID3D11Device* getDevice();
 		virtual ID3D11DeviceContext* getContext();
 

@@ -60,6 +60,10 @@ void D3D11Renderer::Facade::cullBack()
 {
 }
 
+void D3D11Renderer::Facade::sceneCamera(Camera)
+{
+}
+
 ID3D11Device* D3D11Renderer::Facade::getDevice()
 {
     return nullptr;

@@ -1,7 +1,9 @@
 #pragma once
 
 #include <string>
+
 #include "ImplimentationSceneDefaultTest.h"
+#include "ImplimentationSceneCameraTest.h"
 
 class ImplimentationSceneTester
 {
@@ -13,4 +15,5 @@ public:
 
 private:
 	std::string testDefault();
+	std::string testCamera();
 };

@@ -99,6 +99,23 @@ void D3D11Renderer::Implimentation::cullBack()
 	rasteriser.bind(context);
 }
 
+void D3D11Renderer::Implimentation::sceneCamera(Camera input)
+{
+	float camera[] = {
+		input.xpos,
+		input.ypos,
+		input.zpos,
+		input.xrot,
+		input.yrot,
+		input.zrot,
+		input.frustum,
+		input.aspectRatio
+	};
+
+	scene.setCamera(camera);
+	scene.apply(context);
+}
+
 ID3D11Device* D3D11Renderer::Implimentation::getDevice()
 {
 	return device;
