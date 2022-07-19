@@ -16,6 +16,7 @@ namespace D3D11Renderer
 
 		virtual void initialise(HWND, std::string);
 		virtual void update();
+		virtual void overlap();
 		virtual void outputResolution(Output, HWND);
 		virtual void syncFull();
 		virtual void syncHalf();

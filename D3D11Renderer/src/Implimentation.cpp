@@ -27,6 +27,11 @@ void D3D11Renderer::Implimentation::update()
 	swapchain.update(context);
 }
 
+void D3D11Renderer::Implimentation::overlap()
+{
+	swapchain.overlap(context);
+}
+
 void D3D11Renderer::Implimentation::outputResolution(Output input1, HWND input2)
 {
 	int resolution[] = {

@@ -16,6 +16,10 @@ void D3D11Renderer::Facade::update()
 {
 }
 
+void D3D11Renderer::Facade::overlap()
+{
+}
+
 void D3D11Renderer::Facade::outputResolution(Output, HWND)
 {
 }
