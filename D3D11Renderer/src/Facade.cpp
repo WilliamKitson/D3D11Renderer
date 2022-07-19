@@ -16,11 +16,6 @@ void D3D11Renderer::Facade::update()
 {
 }
 
-ID3D11DeviceContext* D3D11Renderer::Facade::getContext()
-{
-    return nullptr;
-}
-
 void D3D11Renderer::Facade::outputResolution(Output, HWND)
 {
 }
@@ -59,4 +54,14 @@ void D3D11Renderer::Facade::cullFront()
 
 void D3D11Renderer::Facade::cullBack()
 {
+}
+
+ID3D11Device* D3D11Renderer::Facade::getDevice()
+{
+    return nullptr;
+}
+
+ID3D11DeviceContext* D3D11Renderer::Facade::getContext()
+{
+    return nullptr;
 }

@@ -17,6 +17,7 @@ std::string ImplimentationTester::test()
 	output += testSync();
 	output += testDraw();
 	output += testCull();
+	output += testDevice();
 
 	return output;
 }
@@ -39,4 +40,9 @@ std::string ImplimentationTester::testDraw()
 std::string ImplimentationTester::testCull()
 {
 	return ImplimentationCullTester(hInstance, nCmdShow).test();
+}
+
+std::string ImplimentationTester::testDevice()
+{
+	return ImplimentationDeviceTest().test();
 }

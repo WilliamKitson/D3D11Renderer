@@ -6,6 +6,7 @@
 #include "sync/ImplimentationSyncTester.h"
 #include "draw/ImplimentationDrawTester.h"
 #include "cull/ImplimentationCullTester.h"
+#include "ImplimentationDeviceTest.h"
 
 class ImplimentationTester
 {
@@ -20,6 +21,7 @@ private:
 	std::string testSync();
 	std::string testDraw();
 	std::string testCull();
+	std::string testDevice();
 
 private:
 	HINSTANCE hInstance;

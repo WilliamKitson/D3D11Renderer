@@ -15,7 +15,6 @@ namespace D3D11Renderer
 
 		virtual void initialise(HWND, std::string);
 		virtual void update();
-		virtual ID3D11DeviceContext* getContext();
 		virtual void outputResolution(Output, HWND);
 		virtual void syncFull();
 		virtual void syncHalf();
@@ -26,6 +25,8 @@ namespace D3D11Renderer
 		virtual void cullNone();
 		virtual void cullFront();
 		virtual void cullBack();
+		virtual ID3D11Device* getDevice();
+		virtual ID3D11DeviceContext* getContext();
 
 	private:
 		void cleanup(IUnknown*);

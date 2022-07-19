@@ -27,11 +27,6 @@ void D3D11Renderer::Implimentation::update()
 	swapchain.update(context);
 }
 
-ID3D11DeviceContext* D3D11Renderer::Implimentation::getContext()
-{
-	return context;
-}
-
 void D3D11Renderer::Implimentation::outputResolution(Output input1, HWND input2)
 {
 	int resolution[] = {
@@ -97,6 +92,16 @@ void D3D11Renderer::Implimentation::cullBack()
 	rasteriser.setBack();
 	rasteriser.initialise(device);
 	rasteriser.bind(context);
+}
+
+ID3D11Device* D3D11Renderer::Implimentation::getDevice()
+{
+	return device;
+}
+
+ID3D11DeviceContext* D3D11Renderer::Implimentation::getContext()
+{
+	return context;
 }
 
 void D3D11Renderer::Implimentation::cleanup(IUnknown* input)
