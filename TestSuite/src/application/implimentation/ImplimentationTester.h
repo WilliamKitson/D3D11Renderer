@@ -6,6 +6,7 @@
 #include "sync/ImplimentationSyncTester.h"
 #include "draw/ImplimentationDrawTester.h"
 #include "cull/ImplimentationCullTester.h"
+#include "scene/ImplimentationSceneTester.h"
 #include "ImplimentationDeviceTest.h"
 #include "ImplimentationShadersTest.h"
 #include "ImplimentationSamplerTest.h"
@@ -23,6 +24,7 @@ private:
 	std::string testSync();
 	std::string testDraw();
 	std::string testCull();
+	std::string testScene();
 	std::string testDevice();
 	std::string testShaders();
 	std::string testSampler();

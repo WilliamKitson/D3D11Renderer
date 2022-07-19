@@ -5,6 +5,7 @@
 #include "Shaders.h"
 #include "Rasteriser.h"
 #include "Sampler.h"
+#include "PerScene.h"
 
 namespace D3D11Renderer
 {
@@ -41,5 +42,6 @@ namespace D3D11Renderer
 		Shaders shaders;
 		Rasteriser rasteriser;
 		Sampler sampler;
+		PerScene scene;
 	};
 }
