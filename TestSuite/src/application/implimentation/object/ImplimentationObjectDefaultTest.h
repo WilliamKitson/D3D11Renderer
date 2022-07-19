@@ -10,11 +10,11 @@
 #include "Facade.h"
 #include "Implimentation.h"
 
-class ImplimentationSceneDefaultTest
+class ImplimentationObjectDefaultTest
 {
 public:
-	ImplimentationSceneDefaultTest();
-	~ImplimentationSceneDefaultTest();
+	ImplimentationObjectDefaultTest();
+	~ImplimentationObjectDefaultTest();
 
 	std::string test();
 
@@ -22,12 +22,11 @@ private:
 	void cleanup(IUnknown*);
 	void initialiseRead();
 	void initialiseData();
-	DirectX::XMMATRIX WVPDefault();
 	bool success();
 
 private:
 	D3D11Renderer::Facade* unit;
-	ID3D11Buffer* sceneBuffer;
+	ID3D11Buffer* objectBuffer;
 	ID3D11Buffer* readBuffer;
 	HRESULT result;
 	float data[20];

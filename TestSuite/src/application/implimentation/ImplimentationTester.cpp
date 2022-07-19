@@ -18,6 +18,7 @@ std::string ImplimentationTester::test()
 	output += testDraw();
 	output += testCull();
 	output += testScene();
+	output += testObject();
 	output += testDevice();
 	output += testShaders();
 	output += testSampler();
@@ -48,6 +49,11 @@ std::string ImplimentationTester::testCull()
 std::string ImplimentationTester::testScene()
 {
 	return ImplimentationSceneTester().test();
+}
+
+std::string ImplimentationTester::testObject()
+{
+	return ImplimentationObjectTester().test();
 }
 
 std::string ImplimentationTester::testDevice()

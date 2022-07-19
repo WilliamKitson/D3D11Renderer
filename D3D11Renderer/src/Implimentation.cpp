@@ -1,7 +1,7 @@
 #include "Implimentation.h"
 
 D3D11Renderer::Implimentation::Implimentation()
-	: Facade(), device{ nullptr }, context{ nullptr }, swapchain(), shaders(), rasteriser(), sampler(), scene()
+	: Facade(), device{ nullptr }, context{ nullptr }, swapchain(), shaders(), rasteriser(), sampler(), scene(), object()
 {
 }
 
@@ -30,6 +30,9 @@ void D3D11Renderer::Implimentation::initialise(HWND input1, std::string input2)
 
 	scene.initialise(device);
 	scene.bind(context);
+
+	object.initialise(device);
+	object.bind(context);
 }
 
 void D3D11Renderer::Implimentation::update()

@@ -429,6 +429,12 @@
     <ClCompile Include="src\application\implimentation\scene\ImplimentationSceneTester.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\application\implimentation\object\ImplimentationObjectDefaultTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\application\implimentation\object\ImplimentationObjectTester.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\MemoryTest.h">
@@ -840,6 +846,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\application\implimentation\scene\ImplimentationSceneTester.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\application\implimentation\object\ImplimentationObjectDefaultTest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\application\implimentation\object\ImplimentationObjectTester.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
