@@ -14,9 +14,7 @@ D3D11Renderer::Implimentation::~Implimentation()
 void D3D11Renderer::Implimentation::initialise(HWND input1, std::string input2)
 {
 	initialiseDevice();
-
-	swapchain.initialise(device, input1);
-	swapchain.bind(context);
+	initialiseSwapchain(input1);
 
 	shaders.setFilepath(input2);
 	shaders.initialise(device);
@@ -145,4 +143,10 @@ void D3D11Renderer::Implimentation::initialiseDevice()
 		&supported,
 		&context
 	);
+}
+
+void D3D11Renderer::Implimentation::initialiseSwapchain(HWND input)
+{
+	swapchain.initialise(device, input);
+	swapchain.bind(context);
 }
