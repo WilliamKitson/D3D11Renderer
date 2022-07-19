@@ -21,12 +21,6 @@
     <ClCompile Include="src\MemoryTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\presentation\camera\CameraTester.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\presentation\PresentationTester.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\SubordinateTester.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -61,21 +55,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\domain\DomainTester.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\presentation\camera\CameraFrustumTest.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\presentation\RGB\RGBRedTest.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\presentation\RGB\RGBTester.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\presentation\RGB\RGBGreenTest.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\presentation\RGB\RGBBlueTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\application\rasteriser\default\RasteriserDefaultModeTest.cpp">
@@ -198,30 +177,6 @@
     <ClCompile Include="src\application\swapchain\invalid\SwapchainInvalidWindowTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\presentation\camera\pos\CameraXposTest.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\presentation\camera\pos\CameraYposTest.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\presentation\camera\pos\CameraZposTest.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\presentation\camera\pos\CameraPosTester.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\presentation\camera\rot\CameraXrotTest.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\presentation\camera\rot\CameraRotTester.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\presentation\camera\rot\CameraYrotTest.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\presentation\camera\rot\CameraZrotTest.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\application\perObject\apply\PerObjectApplyTransformTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -288,9 +243,6 @@
     <ClCompile Include="src\application\perScene\invalid\PerSceneInvalidApplyTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\presentation\camera\CameraAspectRatioTest.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\application\shaders\load\ShadersLoadTester.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -346,15 +298,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\application\swapchain\invalid\SwapchainInvalidOverlapTest.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\presentation\output\OutputWidthTest.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\presentation\output\OutputTester.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\presentation\output\OutputHeightTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\application\implimentation\resolution\ImplimentationResolutionDefaultTest.cpp">
@@ -449,12 +392,6 @@
     <ClInclude Include="src\MemoryTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\presentation\camera\CameraTester.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\presentation\PresentationTester.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="src\SubordinateTester.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -489,21 +426,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\domain\DomainTester.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\presentation\camera\CameraFrustumTest.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\presentation\RGB\RGBRedTest.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\presentation\RGB\RGBTester.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\presentation\RGB\RGBGreenTest.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\presentation\RGB\RGBBlueTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\application\rasteriser\default\RasteriserDefaultModeTest.h">
@@ -626,30 +548,6 @@
     <ClInclude Include="src\application\swapchain\invalid\SwapchainInvalidWindowTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\presentation\camera\pos\CameraXposTest.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\presentation\camera\pos\CameraYposTest.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\presentation\camera\pos\CameraZposTest.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\presentation\camera\pos\CameraPosTester.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\presentation\camera\rot\CameraXrotTest.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\presentation\camera\rot\CameraRotTester.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\presentation\camera\rot\CameraYrotTest.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\presentation\camera\rot\CameraZrotTest.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="src\application\perObject\apply\PerObjectApplyTransformTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -716,9 +614,6 @@
     <ClInclude Include="src\application\perScene\invalid\PerSceneInvalidApplyTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\presentation\camera\CameraAspectRatioTest.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="src\application\shaders\load\ShadersLoadTester.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -774,15 +669,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\application\swapchain\invalid\SwapchainInvalidOverlapTest.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\presentation\output\OutputWidthTest.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\presentation\output\OutputTester.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\presentation\output\OutputHeightTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\application\implimentation\resolution\ImplimentationResolutionDefaultTest.h">

@@ -15,7 +15,6 @@ std::string SubordinateTester::test()
 
 	failures += testDomain();
 	failures += testApplication();
-	failures += testPresentation();
 
 	return failures;
 }
@@ -28,9 +27,4 @@ std::string SubordinateTester::testDomain()
 std::string SubordinateTester::testApplication()
 {
 	return ApplicationTester(hInstance, nCmdShow).test();
-}
-
-std::string SubordinateTester::testPresentation()
-{
-	return PresentationTester().test();
 }

@@ -270,25 +270,6 @@
     <ClCompile Include="src\domain\resolution\ResolutionTester.cpp" />
     <ClCompile Include="src\Entrypoint.cpp" />
     <ClCompile Include="src\MemoryTest.cpp" />
-    <ClCompile Include="src\presentation\camera\CameraAspectRatioTest.cpp" />
-    <ClCompile Include="src\presentation\camera\CameraFrustumTest.cpp" />
-    <ClCompile Include="src\presentation\camera\CameraTester.cpp" />
-    <ClCompile Include="src\presentation\camera\pos\CameraPosTester.cpp" />
-    <ClCompile Include="src\presentation\camera\pos\CameraXposTest.cpp" />
-    <ClCompile Include="src\presentation\camera\pos\CameraYposTest.cpp" />
-    <ClCompile Include="src\presentation\camera\pos\CameraZposTest.cpp" />
-    <ClCompile Include="src\presentation\camera\rot\CameraRotTester.cpp" />
-    <ClCompile Include="src\presentation\camera\rot\CameraXrotTest.cpp" />
-    <ClCompile Include="src\presentation\camera\rot\CameraYrotTest.cpp" />
-    <ClCompile Include="src\presentation\camera\rot\CameraZrotTest.cpp" />
-    <ClCompile Include="src\presentation\output\OutputHeightTest.cpp" />
-    <ClCompile Include="src\presentation\output\OutputTester.cpp" />
-    <ClCompile Include="src\presentation\output\OutputWidthTest.cpp" />
-    <ClCompile Include="src\presentation\PresentationTester.cpp" />
-    <ClCompile Include="src\presentation\RGB\RGBBlueTest.cpp" />
-    <ClCompile Include="src\presentation\RGB\RGBGreenTest.cpp" />
-    <ClCompile Include="src\presentation\RGB\RGBRedTest.cpp" />
-    <ClCompile Include="src\presentation\RGB\RGBTester.cpp" />
     <ClCompile Include="src\SubordinateTester.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -414,25 +395,6 @@
     <ClInclude Include="src\domain\resolution\parameter\ResolutionParameterWidthTest.h" />
     <ClInclude Include="src\domain\resolution\ResolutionTester.h" />
     <ClInclude Include="src\MemoryTest.h" />
-    <ClInclude Include="src\presentation\camera\CameraAspectRatioTest.h" />
-    <ClInclude Include="src\presentation\camera\CameraFrustumTest.h" />
-    <ClInclude Include="src\presentation\camera\CameraTester.h" />
-    <ClInclude Include="src\presentation\camera\pos\CameraPosTester.h" />
-    <ClInclude Include="src\presentation\camera\pos\CameraXposTest.h" />
-    <ClInclude Include="src\presentation\camera\pos\CameraYposTest.h" />
-    <ClInclude Include="src\presentation\camera\pos\CameraZposTest.h" />
-    <ClInclude Include="src\presentation\camera\rot\CameraRotTester.h" />
-    <ClInclude Include="src\presentation\camera\rot\CameraXrotTest.h" />
-    <ClInclude Include="src\presentation\camera\rot\CameraYrotTest.h" />
-    <ClInclude Include="src\presentation\camera\rot\CameraZrotTest.h" />
-    <ClInclude Include="src\presentation\output\OutputHeightTest.h" />
-    <ClInclude Include="src\presentation\output\OutputTester.h" />
-    <ClInclude Include="src\presentation\output\OutputWidthTest.h" />
-    <ClInclude Include="src\presentation\PresentationTester.h" />
-    <ClInclude Include="src\presentation\RGB\RGBBlueTest.h" />
-    <ClInclude Include="src\presentation\RGB\RGBGreenTest.h" />
-    <ClInclude Include="src\presentation\RGB\RGBRedTest.h" />
-    <ClInclude Include="src\presentation\RGB\RGBTester.h" />
     <ClInclude Include="src\SubordinateTester.h" />
   </ItemGroup>
   <ItemGroup>
