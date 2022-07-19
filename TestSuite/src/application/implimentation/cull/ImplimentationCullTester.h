@@ -5,6 +5,7 @@
 #include "ImplimentationCullDefaultTest.h"
 #include "ImplimentationCullNoneTest.h"
 #include "ImplimentationCullFrontTest.h"
+#include "ImplimentationCullBackTest.h"
 
 class ImplimentationCullTester
 {
@@ -18,6 +19,7 @@ private:
 	std::string testDefault();
 	std::string testNone();
 	std::string testFront();
+	std::string testBack();
 
 private:
 	HINSTANCE hInstance;

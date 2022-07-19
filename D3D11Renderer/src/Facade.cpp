@@ -56,3 +56,7 @@ void D3D11Renderer::Facade::cullNone()
 void D3D11Renderer::Facade::cullFront()
 {
 }
+
+void D3D11Renderer::Facade::cullBack()
+{
+}

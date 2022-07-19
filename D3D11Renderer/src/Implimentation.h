@@ -25,6 +25,7 @@ namespace D3D11Renderer
 		virtual void drawSolid();
 		virtual void cullNone();
 		virtual void cullFront();
+		virtual void cullBack();
 
 	private:
 		void cleanup(IUnknown*);

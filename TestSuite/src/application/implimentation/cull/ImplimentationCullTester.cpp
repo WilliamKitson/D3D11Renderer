@@ -16,6 +16,7 @@ std::string ImplimentationCullTester::test()
 	output += testDefault();
 	output += testNone();
 	output += testFront();
+	output += testBack();
 
 	return output;
 }
@@ -33,4 +34,9 @@ std::string ImplimentationCullTester::testNone()
 std::string ImplimentationCullTester::testFront()
 {
 	return ImplimentationCullFrontTest(hInstance, nCmdShow).test();
+}
+
+std::string ImplimentationCullTester::testBack()
+{
+	return ImplimentationCullBackTest(hInstance, nCmdShow).test();
 }

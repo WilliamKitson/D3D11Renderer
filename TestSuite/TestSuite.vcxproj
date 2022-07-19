@@ -148,6 +148,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\application\ApplicationTester.cpp" />
+    <ClCompile Include="src\application\implimentation\cull\ImplimentationCullBackTest.cpp" />
     <ClCompile Include="src\application\implimentation\cull\ImplimentationCullDefaultTest.cpp" />
     <ClCompile Include="src\application\implimentation\cull\ImplimentationCullFrontTest.cpp" />
     <ClCompile Include="src\application\implimentation\cull\ImplimentationCullNoneTest.cpp" />
@@ -282,6 +283,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\application\ApplicationTester.h" />
+    <ClInclude Include="src\application\implimentation\cull\ImplimentationCullBackTest.h" />
     <ClInclude Include="src\application\implimentation\cull\ImplimentationCullDefaultTest.h" />
     <ClInclude Include="src\application\implimentation\cull\ImplimentationCullFrontTest.h" />
     <ClInclude Include="src\application\implimentation\cull\ImplimentationCullNoneTest.h" />
