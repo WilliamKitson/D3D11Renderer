@@ -18,9 +18,7 @@ void D3D11Renderer::Implimentation::initialise(HWND input1, std::string input2)
 	initialiseShaders(input2);
 	initialiseRasteriser();
 	initialiseSampler();
-
-	scene.initialise(device);
-	scene.bind(context);
+	initialiseScene();
 
 	object.initialise(device);
 	object.bind(context);
@@ -161,4 +159,10 @@ void D3D11Renderer::Implimentation::initialiseSampler()
 {
 	sampler.initialise(device);
 	sampler.bind(context);
+}
+
+void D3D11Renderer::Implimentation::initialiseScene()
+{
+	scene.initialise(device);
+	scene.bind(context);
 }
