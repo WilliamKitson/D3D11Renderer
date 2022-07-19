@@ -158,6 +158,7 @@
     <ClCompile Include="src\application\implimentation\draw\ImplimentationDrawTester.cpp" />
     <ClCompile Include="src\application\implimentation\draw\ImplimentationDrawWireframeTest.cpp" />
     <ClCompile Include="src\application\implimentation\ImplimentationDeviceTest.cpp" />
+    <ClCompile Include="src\application\implimentation\ImplimentationShadersTest.cpp" />
     <ClCompile Include="src\application\implimentation\ImplimentationTester.cpp" />
     <ClCompile Include="src\application\implimentation\resolution\ImplimentationResolutionDefaultTest.cpp" />
     <ClCompile Include="src\application\implimentation\resolution\ImplimentationResolutionReloadTest.cpp" />
@@ -294,6 +295,7 @@
     <ClInclude Include="src\application\implimentation\draw\ImplimentationDrawTester.h" />
     <ClInclude Include="src\application\implimentation\draw\ImplimentationDrawWireframeTest.h" />
     <ClInclude Include="src\application\implimentation\ImplimentationDeviceTest.h" />
+    <ClInclude Include="src\application\implimentation\ImplimentationShadersTest.h" />
     <ClInclude Include="src\application\implimentation\ImplimentationTester.h" />
     <ClInclude Include="src\application\implimentation\resolution\ImplimentationResolutionDefaultTest.h" />
     <ClInclude Include="src\application\implimentation\resolution\ImplimentationResolutionReloadTest.h" />

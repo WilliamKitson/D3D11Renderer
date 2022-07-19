@@ -1,7 +1,7 @@
 #include "Implimentation.h"
 
 D3D11Renderer::Implimentation::Implimentation()
-	: Facade(), device{ nullptr }, context{ nullptr }, swapchain(), rasteriser()
+	: Facade(), device{ nullptr }, context{ nullptr }, swapchain(), shaders(), rasteriser()
 {
 }
 
@@ -17,6 +17,10 @@ void D3D11Renderer::Implimentation::initialise(HWND input1, std::string input2)
 
 	swapchain.initialise(device, input1);
 	swapchain.bind(context);
+
+	shaders.setFilepath(input2);
+	shaders.initialise(device);
+	shaders.bind(context);
 
 	rasteriser.initialise(device);
 	rasteriser.bind(context);

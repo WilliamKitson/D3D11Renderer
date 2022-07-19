@@ -7,6 +7,7 @@
 #include "draw/ImplimentationDrawTester.h"
 #include "cull/ImplimentationCullTester.h"
 #include "ImplimentationDeviceTest.h"
+#include "ImplimentationShadersTest.h"
 
 class ImplimentationTester
 {
@@ -22,6 +23,7 @@ private:
 	std::string testDraw();
 	std::string testCull();
 	std::string testDevice();
+	std::string testShaders();
 
 private:
 	HINSTANCE hInstance;

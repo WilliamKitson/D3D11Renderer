@@ -417,6 +417,9 @@
     <ClCompile Include="src\application\implimentation\ImplimentationDeviceTest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\application\implimentation\ImplimentationShadersTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\MemoryTest.h">
@@ -816,6 +819,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\application\implimentation\ImplimentationDeviceTest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\application\implimentation\ImplimentationShadersTest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

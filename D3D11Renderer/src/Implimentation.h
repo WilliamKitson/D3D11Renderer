@@ -2,6 +2,7 @@
 
 #include "Facade.h"
 #include "Swapchain.h"
+#include "Shaders.h"
 #include "Rasteriser.h"
 
 namespace D3D11Renderer
@@ -36,6 +37,7 @@ namespace D3D11Renderer
 		ID3D11Device* device;
 		ID3D11DeviceContext* context;
 		Swapchain swapchain;
+		Shaders shaders;
 		Rasteriser rasteriser;
 	};
 }
