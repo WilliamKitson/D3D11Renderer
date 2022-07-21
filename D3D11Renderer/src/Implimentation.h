@@ -31,9 +31,9 @@ namespace D3D11Renderer
 		virtual void cullFront();
 		virtual void cullBack();
 		virtual void sceneCamera(Camera);
-		virtual void sceneAmbience(RGB);
+		virtual void sceneAmbience(RGBA);
 		virtual void objectTransform(Transform);
-		virtual void objectColour(RGB);
+		virtual void objectColour(RGBA);
 		virtual ID3D11Device* getDevice();
 		virtual ID3D11DeviceContext* getContext();
 

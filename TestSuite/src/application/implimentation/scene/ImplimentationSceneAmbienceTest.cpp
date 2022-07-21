@@ -45,9 +45,9 @@ std::string ImplimentationSceneAmbienceTest::test()
 	return "implimentation scene ambience test failed\n";
 }
 
-D3D11Renderer::RGB ImplimentationSceneAmbienceTest::initialiseAmbience()
+D3D11Renderer::RGBA ImplimentationSceneAmbienceTest::initialiseAmbience()
 {
-	return D3D11Renderer::RGB{
+	return D3D11Renderer::RGBA{
 		0.0f,
 		1.0f,
 		2.0f,

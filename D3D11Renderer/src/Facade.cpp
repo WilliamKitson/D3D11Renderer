@@ -64,7 +64,7 @@ void D3D11Renderer::Facade::sceneCamera(Camera)
 {
 }
 
-void D3D11Renderer::Facade::sceneAmbience(RGB)
+void D3D11Renderer::Facade::sceneAmbience(RGBA)
 {
 }
 
@@ -72,7 +72,7 @@ void D3D11Renderer::Facade::objectTransform(Transform)
 {
 }
 
-void D3D11Renderer::Facade::objectColour(RGB)
+void D3D11Renderer::Facade::objectColour(RGBA)
 {
 }
 

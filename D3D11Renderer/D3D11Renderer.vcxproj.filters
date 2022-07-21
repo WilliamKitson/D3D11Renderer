@@ -21,9 +21,6 @@
     <ClInclude Include="src\Resolution.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\RGB.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="src\Rasteriser.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -52,6 +49,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\Transform.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RGBA.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

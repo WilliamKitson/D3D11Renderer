@@ -116,7 +116,7 @@ void D3D11Renderer::Implimentation::sceneCamera(Camera input)
 	scene.apply(context);
 }
 
-void D3D11Renderer::Implimentation::sceneAmbience(RGB input)
+void D3D11Renderer::Implimentation::sceneAmbience(RGBA input)
 {
 	float ambience[] = {
 		input.red,
@@ -147,7 +147,7 @@ void D3D11Renderer::Implimentation::objectTransform(Transform input)
 	object.apply(context);
 }
 
-void D3D11Renderer::Implimentation::objectColour(RGB input)
+void D3D11Renderer::Implimentation::objectColour(RGBA input)
 {
 	float colour[] = {
 		input.red,

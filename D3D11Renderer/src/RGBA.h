@@ -2,7 +2,7 @@
 
 namespace D3D11Renderer
 {
-	struct RGB
+	struct RGBA
 	{
 	public:
 		const float red{ 0.0f };

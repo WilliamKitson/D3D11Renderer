@@ -185,7 +185,7 @@
     <ClInclude Include="src\PerScene.h" />
     <ClInclude Include="src\Rasteriser.h" />
     <ClInclude Include="src\Resolution.h" />
-    <ClInclude Include="src\RGB.h" />
+    <ClInclude Include="src\RGBA.h" />
     <ClInclude Include="src\Sampler.h" />
     <ClInclude Include="src\Shaders.h" />
     <ClInclude Include="src\Swapchain.h" />

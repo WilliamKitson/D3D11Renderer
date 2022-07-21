@@ -19,7 +19,7 @@ public:
 	std::string test();
 
 private:
-	D3D11Renderer::RGB initialiseColour();
+	D3D11Renderer::RGBA initialiseColour();
 	void cleanup(IUnknown*);
 	void initialiseRead();
 	void initialiseData();
@@ -27,7 +27,7 @@ private:
 
 private:
 	D3D11Renderer::Facade* unit;
-	D3D11Renderer::RGB colour;
+	D3D11Renderer::RGBA colour;
 	ID3D11Buffer* objectBuffer;
 	ID3D11Buffer* readBuffer;
 	HRESULT result;

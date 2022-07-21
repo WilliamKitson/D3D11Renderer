@@ -45,9 +45,9 @@ std::string ImplimentationObjectColourTest::test()
 	return "implimentation object colour test failed\n";
 }
 
-D3D11Renderer::RGB ImplimentationObjectColourTest::initialiseColour()
+D3D11Renderer::RGBA ImplimentationObjectColourTest::initialiseColour()
 {
-	return D3D11Renderer::RGB{
+	return D3D11Renderer::RGBA{
 		0.0f,
 		1.0f,
 		2.0f,
