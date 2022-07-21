@@ -50,7 +50,8 @@ D3D11Renderer::RGB ImplimentationSceneAmbienceTest::initialiseAmbience()
 	return D3D11Renderer::RGB{
 		0.0f,
 		1.0f,
-		2.0f
+		2.0f,
+		3.0f
 	};
 }
 
@@ -121,7 +122,7 @@ bool ImplimentationSceneAmbienceTest::success()
 		return false;
 	}
 
-	if (data[19] != 1.0f)
+	if (data[19] != ambience.alpha)
 	{
 		return false;
 	}

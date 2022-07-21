@@ -122,7 +122,7 @@ void D3D11Renderer::Implimentation::sceneAmbience(RGB input)
 		input.red,
 		input.green,
 		input.blue,
-		1.0f
+		input.alpha
 	};
 
 	scene.setAmbience(ambience);
@@ -153,7 +153,7 @@ void D3D11Renderer::Implimentation::objectColour(RGB input)
 		input.red,
 		input.green,
 		input.blue,
-		1.0f
+		input.alpha
 	};
 
 	object.setColour(colour);
