@@ -153,6 +153,7 @@ void D3D11Renderer::Implimentation::objectColour(RGB input)
 		input.red,
 		input.green,
 		input.blue,
+		1.0f
 	};
 
 	object.setColour(colour);

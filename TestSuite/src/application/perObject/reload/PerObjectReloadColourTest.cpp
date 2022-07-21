@@ -39,7 +39,7 @@ std::string PerObjectReloadColourTest::test()
 		return "per object reload colour test failed to initialise data\n";
 	}
 
-	if (successes() == 3)
+	if (successes() == 4)
 	{
 		return std::string();
 	}
@@ -49,7 +49,7 @@ std::string PerObjectReloadColourTest::test()
 
 void PerObjectReloadColourTest::initialiseInput()
 {
-	for (int i{ 0 }; i < 3; i++)
+	for (int i{ 0 }; i < 4; i++)
 	{
 		inputData[i] = (float)i;
 	}
@@ -156,7 +156,7 @@ int PerObjectReloadColourTest::successes()
 {
 	int output = 0;
 
-	for (int i{ 0 }; i < 3; i++)
+	for (int i{ 0 }; i < 4; i++)
 	{
 		output += outputData[16 + i] == inputData[i];
 	}
