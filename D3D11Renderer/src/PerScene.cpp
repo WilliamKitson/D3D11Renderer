@@ -88,9 +88,9 @@ void D3D11Renderer::PerScene::setCamera(float input[8])
 	data[15] = worldViewProjection._44;
 }
 
-void D3D11Renderer::PerScene::setAmbience(float input[3])
+void D3D11Renderer::PerScene::setAmbience(float input[4])
 {
-	for (int i{ 0 }; i < 3; i++)
+	for (int i{ 0 }; i < 4; i++)
 	{
 		data[16 + i] = input[i];
 	}

@@ -52,7 +52,7 @@ std::string PerSceneReloadAmbienceTest::test()
 
 	initialiseOutput();
 
-	if (successes() == 3)
+	if (successes() == 4)
 	{
 		return std::string();
 	}
@@ -62,7 +62,7 @@ std::string PerSceneReloadAmbienceTest::test()
 
 void PerSceneReloadAmbienceTest::initialiseAmbience()
 {
-	for (int i{ 0 }; i < 3; i++)
+	for (int i{ 0 }; i < 4; i++)
 	{
 		ambience[i] = (float)i;
 	}
@@ -144,7 +144,7 @@ int PerSceneReloadAmbienceTest::successes()
 {
 	int output = 0;
 
-	for (int i{ 0 }; i < 3; i++)
+	for (int i{ 0 }; i < 4; i++)
 	{
 		output += outputData[16 + i] == ambience[i];
 	}

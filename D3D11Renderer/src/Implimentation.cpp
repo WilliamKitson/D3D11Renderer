@@ -122,6 +122,7 @@ void D3D11Renderer::Implimentation::sceneAmbience(RGB input)
 		input.red,
 		input.green,
 		input.blue,
+		1.0f
 	};
 
 	scene.setAmbience(ambience);
