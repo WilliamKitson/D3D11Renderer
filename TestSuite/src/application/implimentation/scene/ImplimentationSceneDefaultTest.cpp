@@ -94,6 +94,151 @@ void ImplimentationSceneDefaultTest::initialiseData()
 	);
 }
 
+bool ImplimentationSceneDefaultTest::success()
+{
+	if (!position(WVPDefault()))
+	{
+		return false;
+	}
+
+	if (!rotation(WVPDefault()))
+	{
+		return false;
+	}
+
+	if (!scale(WVPDefault()))
+	{
+		return false;
+	}
+
+	if (!packing(WVPDefault()))
+	{
+		return false;
+	}
+
+	if (data[16] != 1.0f)
+	{
+		return false;
+	}
+
+	if (data[17] != 1.0f)
+	{
+		return false;
+	}
+
+	if (data[18] != 1.0f)
+	{
+		return false;
+	}
+
+	if (data[19] != 1.0f)
+	{
+		return false;
+	}
+
+	return true;
+}
+
+bool ImplimentationSceneDefaultTest::position(DirectX::XMMATRIX input)
+{
+	if (data[0] != input._11)
+	{
+		return false;
+	}
+
+	if (data[1] != input._12)
+	{
+		return false;
+	}
+
+	if (data[2] != input._13)
+	{
+		return false;
+	}
+
+	if (data[3] != input._14)
+	{
+		return false;
+	}
+
+	return true;
+}
+
+bool ImplimentationSceneDefaultTest::rotation(DirectX::XMMATRIX input)
+{
+	if (data[4] != input._21)
+	{
+		return false;
+	}
+
+	if (data[5] != input._22)
+	{
+		return false;
+	}
+
+	if (data[6] != input._23)
+	{
+		return false;
+	}
+
+	if (data[7] != input._24)
+	{
+		return false;
+	}
+
+	return true;
+}
+
+bool ImplimentationSceneDefaultTest::scale(DirectX::XMMATRIX input)
+{
+	if (data[8] != input._31)
+	{
+		return false;
+	}
+
+	if (data[9] != input._32)
+	{
+		return false;
+	}
+
+	if (data[10] != input._33)
+	{
+		return false;
+	}
+
+	if (data[11] != input._34)
+	{
+		return false;
+	}
+
+	return true;
+}
+
+bool ImplimentationSceneDefaultTest::packing(DirectX::XMMATRIX input)
+{
+	if (data[12] != input._41)
+	{
+		return false;
+	}
+
+	if (data[13] != input._42)
+	{
+		return false;
+	}
+
+	if (data[14] != input._43)
+	{
+		return false;
+	}
+
+	if (data[15] != input._44)
+	{
+		return false;
+	}
+
+	return true;
+}
+
 DirectX::XMMATRIX ImplimentationSceneDefaultTest::WVPDefault()
 {
 	DirectX::XMMATRIX world = DirectX::XMMatrixIdentity();
@@ -120,111 +265,4 @@ DirectX::XMMATRIX ImplimentationSceneDefaultTest::WVPDefault()
 	);
 
 	return world * view * projection;
-}
-
-bool ImplimentationSceneDefaultTest::success()
-{
-	DirectX::XMMATRIX worldViewProjection = WVPDefault();
-
-	if (data[0] != worldViewProjection._11)
-	{
-		return false;
-	}
-
-	if (data[1] != worldViewProjection._12)
-	{
-		return false;
-	}
-
-	if (data[2] != worldViewProjection._13)
-	{
-		return false;
-	}
-
-	if (data[3] != worldViewProjection._14)
-	{
-		return false;
-	}
-
-	if (data[4] != worldViewProjection._21)
-	{
-		return false;
-	}
-
-	if (data[5] != worldViewProjection._22)
-	{
-		return false;
-	}
-
-	if (data[6] != worldViewProjection._23)
-	{
-		return false;
-	}
-
-	if (data[7] != worldViewProjection._24)
-	{
-		return false;
-	}
-
-	if (data[8] != worldViewProjection._31)
-	{
-		return false;
-	}
-
-	if (data[9] != worldViewProjection._32)
-	{
-		return false;
-	}
-
-	if (data[10] != worldViewProjection._33)
-	{
-		return false;
-	}
-
-	if (data[11] != worldViewProjection._34)
-	{
-		return false;
-	}
-
-	if (data[12] != worldViewProjection._41)
-	{
-		return false;
-	}
-
-	if (data[13] != worldViewProjection._42)
-	{
-		return false;
-	}
-
-	if (data[14] != worldViewProjection._43)
-	{
-		return false;
-	}
-
-	if (data[15] != worldViewProjection._44)
-	{
-		return false;
-	}
-
-	if (data[16] != 1.0f)
-	{
-		return false;
-	}
-
-	if (data[17] != 1.0f)
-	{
-		return false;
-	}
-
-	if (data[18] != 1.0f)
-	{
-		return false;
-	}
-
-	if (data[19] != 1.0f)
-	{
-		return false;
-	}
-
-	return true;
 }

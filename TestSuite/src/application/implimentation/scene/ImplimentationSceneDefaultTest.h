@@ -22,8 +22,12 @@ private:
 	void cleanup(IUnknown*);
 	void initialiseRead();
 	void initialiseData();
-	DirectX::XMMATRIX WVPDefault();
 	bool success();
+	bool position(DirectX::XMMATRIX);
+	bool rotation(DirectX::XMMATRIX);
+	bool scale(DirectX::XMMATRIX);
+	bool packing(DirectX::XMMATRIX);
+	DirectX::XMMATRIX WVPDefault();
 
 private:
 	D3D11Renderer::Facade* unit;
