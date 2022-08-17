@@ -23,8 +23,9 @@ private:
 	void cleanup(IUnknown*);
 	void initialiseRead();
 	void initialiseData();
-	DirectX::XMMATRIX WVPCamera();
 	bool success();
+	bool position(DirectX::XMMATRIX);
+	DirectX::XMMATRIX WVPCamera();
 
 private:
 	D3D11Renderer::Facade* unit;

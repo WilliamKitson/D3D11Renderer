@@ -109,52 +109,11 @@ void ImplimentationSceneCameraTest::initialiseData()
 	);
 }
 
-DirectX::XMMATRIX ImplimentationSceneCameraTest::WVPCamera()
-{
-	DirectX::XMMATRIX world = DirectX::XMMatrixIdentity();
-
-	DirectX::XMMATRIX position = DirectX::XMMatrixTranslation(
-		camera.xpos,
-		camera.ypos,
-		camera.zpos
-	);
-
-	DirectX::XMMATRIX rotation = DirectX::XMMatrixRotationRollPitchYaw(
-		camera.xrot,
-		camera.yrot,
-		camera.zrot
-	);
-
-	DirectX::XMMATRIX projection = DirectX::XMMatrixPerspectiveFovLH(
-		DirectX::XMConvertToRadians(camera.frustum),
-		camera.aspectRatio,
-		1.0f,
-		100.0f
-	);
-
-	return world * position * rotation * projection;
-}
-
 bool ImplimentationSceneCameraTest::success()
 {
 	DirectX::XMMATRIX worldViewProjection = WVPCamera();
 
-	if (data[0] != worldViewProjection._11)
-	{
-		return false;
-	}
-
-	if (data[1] != worldViewProjection._12)
-	{
-		return false;
-	}
-
-	if (data[2] != worldViewProjection._13)
-	{
-		return false;
-	}
-
-	if (data[3] != worldViewProjection._14)
+	if (!position(WVPCamera()))
 	{
 		return false;
 	}
@@ -220,4 +179,55 @@ bool ImplimentationSceneCameraTest::success()
 	}
 
 	return true;
+}
+
+bool ImplimentationSceneCameraTest::position(DirectX::XMMATRIX input)
+{
+	if (data[0] != input._11)
+	{
+		return false;
+	}
+
+	if (data[1] != input._12)
+	{
+		return false;
+	}
+
+	if (data[2] != input._13)
+	{
+		return false;
+	}
+
+	if (data[3] != input._14)
+	{
+		return false;
+	}
+
+	return true;
+}
+
+DirectX::XMMATRIX ImplimentationSceneCameraTest::WVPCamera()
+{
+	DirectX::XMMATRIX world = DirectX::XMMatrixIdentity();
+
+	DirectX::XMMATRIX position = DirectX::XMMatrixTranslation(
+		camera.xpos,
+		camera.ypos,
+		camera.zpos
+	);
+
+	DirectX::XMMATRIX rotation = DirectX::XMMatrixRotationRollPitchYaw(
+		camera.xrot,
+		camera.yrot,
+		camera.zrot
+	);
+
+	DirectX::XMMATRIX projection = DirectX::XMMatrixPerspectiveFovLH(
+		DirectX::XMConvertToRadians(camera.frustum),
+		camera.aspectRatio,
+		1.0f,
+		100.0f
+	);
+
+	return world * position * rotation * projection;
 }
