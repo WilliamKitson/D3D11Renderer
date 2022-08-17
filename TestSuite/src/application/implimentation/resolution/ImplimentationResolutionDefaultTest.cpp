@@ -20,11 +20,7 @@ ImplimentationResolutionDefaultTest::ImplimentationResolutionDefaultTest(HINSTAN
 
 ImplimentationResolutionDefaultTest::~ImplimentationResolutionDefaultTest()
 {
-	if (unit)
-	{
-		delete unit;
-	}
-
+	cleanup();
 	DestroyWindow(window);
 }
 
@@ -48,6 +44,12 @@ std::string ImplimentationResolutionDefaultTest::test()
 LRESULT ImplimentationResolutionDefaultTest::windowProcedure(HWND window, UINT message, WPARAM wParam, LPARAM lParam)
 {
 	return DefWindowProc(window, message, wParam, lParam);
+}
+
+void ImplimentationResolutionDefaultTest::cleanup()
+{
+	delete unit;
+	unit = nullptr;
 }
 
 void ImplimentationResolutionDefaultTest::cleanup(IUnknown* input)
