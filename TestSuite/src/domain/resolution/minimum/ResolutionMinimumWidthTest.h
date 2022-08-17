@@ -10,4 +10,10 @@ public:
 	~ResolutionMinimumWidthTest();
 
 	std::string test();
+
+private:
+	void initialise();
+
+private:
+	D3D11Renderer::Resolution unit;
 };
