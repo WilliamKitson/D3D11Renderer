@@ -7,10 +7,8 @@ ImplimentationCullDefaultTest::ImplimentationCullDefaultTest(HINSTANCE hInstance
 
 ImplimentationCullDefaultTest::~ImplimentationCullDefaultTest()
 {
-	if (unit)
-	{
-		delete unit;
-	}
+	delete unit;
+	unit = nullptr;
 }
 
 std::string ImplimentationCullDefaultTest::test()
