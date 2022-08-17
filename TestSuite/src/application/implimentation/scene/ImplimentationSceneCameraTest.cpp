@@ -118,22 +118,7 @@ bool ImplimentationSceneCameraTest::success()
 		return false;
 	}
 
-	if (data[4] != worldViewProjection._21)
-	{
-		return false;
-	}
-
-	if (data[5] != worldViewProjection._22)
-	{
-		return false;
-	}
-
-	if (data[6] != worldViewProjection._23)
-	{
-		return false;
-	}
-
-	if (data[7] != worldViewProjection._24)
+	if (!rotation(WVPCamera()))
 	{
 		return false;
 	}
@@ -199,6 +184,31 @@ bool ImplimentationSceneCameraTest::position(DirectX::XMMATRIX input)
 	}
 
 	if (data[3] != input._14)
+	{
+		return false;
+	}
+
+	return true;
+}
+
+bool ImplimentationSceneCameraTest::rotation(DirectX::XMMATRIX input)
+{
+	if (data[4] != input._21)
+	{
+		return false;
+	}
+
+	if (data[5] != input._22)
+	{
+		return false;
+	}
+
+	if (data[6] != input._23)
+	{
+		return false;
+	}
+
+	if (data[7] != input._24)
 	{
 		return false;
 	}
