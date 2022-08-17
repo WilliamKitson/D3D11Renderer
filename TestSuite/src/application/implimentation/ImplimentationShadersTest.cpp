@@ -8,11 +8,7 @@ ImplimentationShadersTest::ImplimentationShadersTest()
 ImplimentationShadersTest::~ImplimentationShadersTest()
 {
 	cleanup();
-
-	if (shader)
-	{
-		shader->Release();
-	}
+	cleanup(shader);
 }
 
 std::string ImplimentationShadersTest::test()
@@ -37,4 +33,12 @@ void ImplimentationShadersTest::cleanup()
 {
 	delete unit;
 	unit = nullptr;
+}
+
+void ImplimentationShadersTest::cleanup(IUnknown* input)
+{
+	if (input)
+	{
+		input->Release();
+	}
 }

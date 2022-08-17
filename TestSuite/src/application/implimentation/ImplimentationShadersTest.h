@@ -16,6 +16,7 @@ public:
 
 private:
 	void cleanup();
+	void cleanup(IUnknown*);
 
 private:
 	D3D11Renderer::Facade* unit;

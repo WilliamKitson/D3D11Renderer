@@ -42,9 +42,9 @@ void ImplimentationSamplerTest::cleanup()
 
 void ImplimentationSamplerTest::cleanup(IUnknown* input)
 {
-	if (state)
+	if (input)
 	{
-		state->Release();
+		input->Release();
 	}
 }
 
