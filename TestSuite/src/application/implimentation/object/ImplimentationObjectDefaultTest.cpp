@@ -96,102 +96,84 @@ void ImplimentationObjectDefaultTest::initialiseData()
 
 bool ImplimentationObjectDefaultTest::success()
 {
-	DirectX::XMMATRIX location = DirectX::XMMatrixTranslation(
-		0.0f,
-		0.0f,
-		0.0f
-	);
+	DirectX::XMMATRIX comparison = transform();
 
-	DirectX::XMMATRIX rotation = DirectX::XMMatrixRotationRollPitchYaw(
-		0.0f,
-		0.0f,
-		0.0f
-	);
-
-	DirectX::XMMATRIX scale = DirectX::XMMatrixScaling(
-		1.0f,
-		1.0f,
-		1.0f
-	);
-
-	DirectX::XMMATRIX transform = location * rotation * scale;
-
-	if (data[0] != transform._11)
+	if (data[0] != comparison._11)
 	{
 		return false;
 	}
 
-	if (data[1] != transform._12)
+	if (data[1] != comparison._12)
 	{
 		return false;
 	}
 
-	if (data[2] != transform._13)
+	if (data[2] != comparison._13)
 	{
 		return false;
 	}
 
-	if (data[3] != transform._14)
+	if (data[3] != comparison._14)
 	{
 		return false;
 	}
 
-	if (data[4] != transform._21)
+	if (data[4] != comparison._21)
 	{
 		return false;
 	}
 
-	if (data[5] != transform._22)
+	if (data[5] != comparison._22)
 	{
 		return false;
 	}
 
-	if (data[6] != transform._23)
+	if (data[6] != comparison._23)
 	{
 		return false;
 	}
 
-	if (data[7] != transform._24)
+	if (data[7] != comparison._24)
 	{
 		return false;
 	}
 
-	if (data[8] != transform._31)
+	if (data[8] != comparison._31)
 	{
 		return false;
 	}
 
-	if (data[9] != transform._32)
+	if (data[9] != comparison._32)
 	{
 		return false;
 	}
 
-	if (data[10] != transform._33)
+	if (data[10] != comparison._33)
 	{
 		return false;
 	}
 
-	if (data[11] != transform._34)
+	if (data[11] != comparison._34)
 	{
 		return false;
 	}
 
-	if (data[12] != transform._41)
+	if (data[12] != comparison._41)
 	{
 		return false;
 	}
 
-	if (data[13] != transform._42)
+	if (data[13] != comparison._42)
 	{
 		return false;
 	}
 
-	if (data[14] != transform._43)
+	if (data[14] != comparison._43)
 	{
 		return false;
 	}
 
-	if (data[15] != transform._44)
+	if (data[15] != comparison._44)
 	{
 		return false;
 	}
@@ -217,4 +199,27 @@ bool ImplimentationObjectDefaultTest::success()
 	}
 
 	return true;
+}
+
+DirectX::XMMATRIX ImplimentationObjectDefaultTest::transform()
+{
+	DirectX::XMMATRIX location = DirectX::XMMatrixTranslation(
+		0.0f,
+		0.0f,
+		0.0f
+	);
+
+	DirectX::XMMATRIX rotation = DirectX::XMMatrixRotationRollPitchYaw(
+		0.0f,
+		0.0f,
+		0.0f
+	);
+
+	DirectX::XMMATRIX scale = DirectX::XMMatrixScaling(
+		1.0f,
+		1.0f,
+		1.0f
+	);
+
+	return location * rotation * scale;
 }

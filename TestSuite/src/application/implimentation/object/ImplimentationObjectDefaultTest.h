@@ -23,6 +23,7 @@ private:
 	void initialiseRead();
 	void initialiseData();
 	bool success();
+	DirectX::XMMATRIX transform();
 
 private:
 	D3D11Renderer::Facade* unit;
