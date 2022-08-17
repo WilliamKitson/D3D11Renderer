@@ -25,6 +25,7 @@ private:
 	bool success();
 	bool position(DirectX::XMMATRIX);
 	bool rotation(DirectX::XMMATRIX);
+	bool scale(DirectX::XMMATRIX);
 	DirectX::XMMATRIX transform();
 
 private:
