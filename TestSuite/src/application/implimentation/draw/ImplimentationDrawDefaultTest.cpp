@@ -7,10 +7,8 @@ ImplimentationDrawDefaultTest::ImplimentationDrawDefaultTest(HINSTANCE hInstance
 
 ImplimentationDrawDefaultTest::~ImplimentationDrawDefaultTest()
 {
-	if (unit)
-	{
-		delete unit;
-	}
+	delete unit;
+	unit = nullptr;
 }
 
 std::string ImplimentationDrawDefaultTest::test()
