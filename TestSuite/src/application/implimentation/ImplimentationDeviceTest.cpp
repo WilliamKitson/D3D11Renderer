@@ -7,10 +7,7 @@ ImplimentationDeviceTest::ImplimentationDeviceTest()
 
 ImplimentationDeviceTest::~ImplimentationDeviceTest()
 {
-	if (unit)
-	{
-		delete unit;
-	}
+	cleanup();
 }
 
 std::string ImplimentationDeviceTest::test()
@@ -23,4 +20,10 @@ std::string ImplimentationDeviceTest::test()
 	}
 
 	return "implimentation device test failed\n";
+}
+
+void ImplimentationDeviceTest::cleanup()
+{
+	delete unit;
+	unit = nullptr;
 }

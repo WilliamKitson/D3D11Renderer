@@ -15,5 +15,8 @@ public:
 	std::string test();
 
 private:
+	void cleanup();
+
+private:
 	D3D11Renderer::Facade* unit;
 };
