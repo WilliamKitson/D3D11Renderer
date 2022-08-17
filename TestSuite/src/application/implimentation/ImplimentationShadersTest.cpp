@@ -7,12 +7,12 @@ ImplimentationShadersTest::ImplimentationShadersTest()
 
 ImplimentationShadersTest::~ImplimentationShadersTest()
 {
+	cleanup();
+
 	if (shader)
 	{
 		shader->Release();
 	}
-
-	delete unit;
 }
 
 std::string ImplimentationShadersTest::test()
@@ -31,4 +31,10 @@ std::string ImplimentationShadersTest::test()
 	}
 
 	return "shaders load vertex test failed\n";
+}
+
+void ImplimentationShadersTest::cleanup()
+{
+	delete unit;
+	unit = nullptr;
 }
