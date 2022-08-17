@@ -7,10 +7,8 @@ ImplimentationDrawSolidTest::ImplimentationDrawSolidTest(HINSTANCE hInstanceInpu
 
 ImplimentationDrawSolidTest::~ImplimentationDrawSolidTest()
 {
-	if (unit)
-	{
-		delete unit;
-	}
+	delete unit;
+	unit = nullptr;
 }
 
 std::string ImplimentationDrawSolidTest::test()
