@@ -123,25 +123,7 @@ bool ImplimentationSceneCameraTest::success()
 		return false;
 	}
 
-	if (data[8] != worldViewProjection._31)
-	{
-		return false;
-	}
 
-	if (data[9] != worldViewProjection._32)
-	{
-		return false;
-	}
-
-	if (data[10] != worldViewProjection._33)
-	{
-		return false;
-	}
-
-	if (data[11] != worldViewProjection._34)
-	{
-		return false;
-	}
 
 	if (data[12] != worldViewProjection._41)
 	{
@@ -209,6 +191,31 @@ bool ImplimentationSceneCameraTest::rotation(DirectX::XMMATRIX input)
 	}
 
 	if (data[7] != input._24)
+	{
+		return false;
+	}
+
+	return true;
+}
+
+bool ImplimentationSceneCameraTest::scale(DirectX::XMMATRIX input)
+{
+	if (data[8] != input._31)
+	{
+		return false;
+	}
+
+	if (data[9] != input._32)
+	{
+		return false;
+	}
+
+	if (data[10] != input._33)
+	{
+		return false;
+	}
+
+	if (data[11] != input._34)
 	{
 		return false;
 	}
