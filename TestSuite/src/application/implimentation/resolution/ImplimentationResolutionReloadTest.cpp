@@ -20,11 +20,7 @@ ImplimentationResolutionReloadTest::ImplimentationResolutionReloadTest(HINSTANCE
 
 ImplimentationResolutionReloadTest::~ImplimentationResolutionReloadTest()
 {
-	if (unit)
-	{
-		delete unit;
-	}
-
+	cleanup();
 	DestroyWindow(window);
 }
 
@@ -54,6 +50,12 @@ std::string ImplimentationResolutionReloadTest::test()
 LRESULT ImplimentationResolutionReloadTest::windowProcedure(HWND window, UINT message, WPARAM wParam, LPARAM lParam)
 {
 	return DefWindowProc(window, message, wParam, lParam);
+}
+
+void ImplimentationResolutionReloadTest::cleanup()
+{
+	delete unit;
+	unit = nullptr;
 }
 
 void ImplimentationResolutionReloadTest::cleanup(IUnknown* input)

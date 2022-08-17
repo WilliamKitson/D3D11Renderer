@@ -17,6 +17,7 @@ public:
 
 private:
 	static LRESULT CALLBACK windowProcedure(HWND, UINT, WPARAM, LPARAM);
+	void cleanup();
 	void cleanup(IUnknown*);
 	void initialiseWindowClass();
 	void initialiseWindow();
