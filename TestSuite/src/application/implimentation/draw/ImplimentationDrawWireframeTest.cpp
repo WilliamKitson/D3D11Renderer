@@ -7,10 +7,8 @@ ImplimentationDrawWireframeTest::ImplimentationDrawWireframeTest(HINSTANCE hInst
 
 ImplimentationDrawWireframeTest::~ImplimentationDrawWireframeTest()
 {
-	if (unit)
-	{
-		delete unit;
-	}
+	delete unit;
+	unit = nullptr;
 }
 
 std::string ImplimentationDrawWireframeTest::test()
