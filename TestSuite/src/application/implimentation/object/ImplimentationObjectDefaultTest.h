@@ -24,6 +24,7 @@ private:
 	void initialiseData();
 	bool success();
 	bool position(DirectX::XMMATRIX);
+	bool rotation(DirectX::XMMATRIX);
 	DirectX::XMMATRIX transform();
 
 private:

@@ -103,22 +103,7 @@ bool ImplimentationObjectDefaultTest::success()
 		return false;
 	}
 
-	if (data[4] != comparison._21)
-	{
-		return false;
-	}
-
-	if (data[5] != comparison._22)
-	{
-		return false;
-	}
-
-	if (data[6] != comparison._23)
-	{
-		return false;
-	}
-
-	if (data[7] != comparison._24)
+	if (!rotation(transform()))
 	{
 		return false;
 	}
@@ -204,6 +189,31 @@ bool ImplimentationObjectDefaultTest::position(DirectX::XMMATRIX input)
 	}
 
 	if (data[3] != input._14)
+	{
+		return false;
+	}
+
+	return true;
+}
+
+bool ImplimentationObjectDefaultTest::rotation(DirectX::XMMATRIX input)
+{
+	if (data[4] != input._21)
+	{
+		return false;
+	}
+
+	if (data[5] != input._22)
+	{
+		return false;
+	}
+
+	if (data[6] != input._23)
+	{
+		return false;
+	}
+
+	if (data[7] != input._24)
 	{
 		return false;
 	}
