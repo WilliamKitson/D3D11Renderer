@@ -7,10 +7,8 @@ ImplimentationCullNoneTest::ImplimentationCullNoneTest(HINSTANCE hInstanceInput,
 
 ImplimentationCullNoneTest::~ImplimentationCullNoneTest()
 {
-	if (unit)
-	{
-		delete unit;
-	}
+	delete unit;
+	unit = nullptr;
 }
 
 std::string ImplimentationCullNoneTest::test()
