@@ -111,8 +111,6 @@ void ImplimentationSceneCameraTest::initialiseData()
 
 bool ImplimentationSceneCameraTest::success()
 {
-	DirectX::XMMATRIX worldViewProjection = WVPCamera();
-
 	if (!position(WVPCamera()))
 	{
 		return false;
@@ -123,24 +121,12 @@ bool ImplimentationSceneCameraTest::success()
 		return false;
 	}
 
-
-
-	if (data[12] != worldViewProjection._41)
+	if (!scale(WVPCamera()))
 	{
 		return false;
 	}
 
-	if (data[13] != worldViewProjection._42)
-	{
-		return false;
-	}
-
-	if (data[14] != worldViewProjection._43)
-	{
-		return false;
-	}
-
-	if (data[15] != worldViewProjection._44)
+	if (!packing(WVPCamera()))
 	{
 		return false;
 	}
@@ -216,6 +202,31 @@ bool ImplimentationSceneCameraTest::scale(DirectX::XMMATRIX input)
 	}
 
 	if (data[11] != input._34)
+	{
+		return false;
+	}
+
+	return true;
+}
+
+bool ImplimentationSceneCameraTest::packing(DirectX::XMMATRIX input)
+{
+	if (data[12] != input._41)
+	{
+		return false;
+	}
+
+	if (data[13] != input._42)
+	{
+		return false;
+	}
+
+	if (data[14] != input._43)
+	{
+		return false;
+	}
+
+	if (data[15] != input._44)
 	{
 		return false;
 	}
