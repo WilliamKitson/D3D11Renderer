@@ -116,22 +116,7 @@ bool ImplimentationSceneDefaultTest::success()
 		return false;
 	}
 
-	if (data[16] != 1.0f)
-	{
-		return false;
-	}
-
-	if (data[17] != 1.0f)
-	{
-		return false;
-	}
-
-	if (data[18] != 1.0f)
-	{
-		return false;
-	}
-
-	if (data[19] != 1.0f)
+	if (!ambience())
 	{
 		return false;
 	}
@@ -232,6 +217,31 @@ bool ImplimentationSceneDefaultTest::packing(DirectX::XMMATRIX input)
 	}
 
 	if (data[15] != input._44)
+	{
+		return false;
+	}
+
+	return true;
+}
+
+bool ImplimentationSceneDefaultTest::ambience()
+{
+	if (data[16] != 1.0f)
+	{
+		return false;
+	}
+
+	if (data[17] != 1.0f)
+	{
+		return false;
+	}
+
+	if (data[18] != 1.0f)
+	{
+		return false;
+	}
+
+	if (data[19] != 1.0f)
 	{
 		return false;
 	}
