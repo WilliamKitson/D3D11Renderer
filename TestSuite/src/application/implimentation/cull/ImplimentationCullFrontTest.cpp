@@ -7,10 +7,8 @@ ImplimentationCullFrontTest::ImplimentationCullFrontTest(HINSTANCE hInstanceInpu
 
 ImplimentationCullFrontTest::~ImplimentationCullFrontTest()
 {
-	if (unit)
-	{
-		delete unit;
-	}
+	delete unit;
+	unit = nullptr;
 }
 
 std::string ImplimentationCullFrontTest::test()
