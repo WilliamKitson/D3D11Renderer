@@ -16,6 +16,7 @@ public:
 
 private:
 	void cleanup();
+	void cleanup(IUnknown*);
 	bool success();
 
 private:

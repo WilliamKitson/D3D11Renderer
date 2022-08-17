@@ -7,12 +7,8 @@ ImplimentationSamplerTest::ImplimentationSamplerTest()
 
 ImplimentationSamplerTest::~ImplimentationSamplerTest()
 {
-	if (state)
-	{
-		state->Release();
-	}
-
 	cleanup();
+	cleanup(state);
 }
 
 std::string ImplimentationSamplerTest::test()
@@ -42,6 +38,14 @@ void ImplimentationSamplerTest::cleanup()
 {
 	delete unit;
 	unit = nullptr;
+}
+
+void ImplimentationSamplerTest::cleanup(IUnknown* input)
+{
+	if (state)
+	{
+		state->Release();
+	}
 }
 
 bool ImplimentationSamplerTest::success()
