@@ -96,8 +96,6 @@ void ImplimentationObjectDefaultTest::initialiseData()
 
 bool ImplimentationObjectDefaultTest::success()
 {
-	DirectX::XMMATRIX comparison = transform();
-
 	if (!position(transform()))
 	{
 		return false;
@@ -113,22 +111,7 @@ bool ImplimentationObjectDefaultTest::success()
 		return false;
 	}
 
-	if (data[12] != comparison._41)
-	{
-		return false;
-	}
-
-	if (data[13] != comparison._42)
-	{
-		return false;
-	}
-
-	if (data[14] != comparison._43)
-	{
-		return false;
-	}
-
-	if (data[15] != comparison._44)
+	if (!packing(transform()))
 	{
 		return false;
 	}
@@ -224,6 +207,31 @@ bool ImplimentationObjectDefaultTest::scale(DirectX::XMMATRIX input)
 	}
 
 	if (data[11] != input._34)
+	{
+		return false;
+	}
+
+	return true;
+}
+
+bool ImplimentationObjectDefaultTest::packing(DirectX::XMMATRIX input)
+{
+	if (data[12] != input._41)
+	{
+		return false;
+	}
+
+	if (data[13] != input._42)
+	{
+		return false;
+	}
+
+	if (data[14] != input._43)
+	{
+		return false;
+	}
+
+	if (data[15] != input._44)
 	{
 		return false;
 	}
