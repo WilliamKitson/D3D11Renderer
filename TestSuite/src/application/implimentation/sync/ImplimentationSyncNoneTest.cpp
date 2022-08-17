@@ -20,11 +20,7 @@ ImplimentationSyncNoneTest::ImplimentationSyncNoneTest(HINSTANCE hInstanceInput,
 
 ImplimentationSyncNoneTest::~ImplimentationSyncNoneTest()
 {
-	if (unit)
-	{
-		delete unit;
-	}
-
+	cleanup();
 	DestroyWindow(window);
 }
 
@@ -45,6 +41,12 @@ std::string ImplimentationSyncNoneTest::test()
 	}
 
 	return "implimentation sync none test failed\n";
+}
+
+void ImplimentationSyncNoneTest::cleanup()
+{
+	delete unit;
+	unit = nullptr;
 }
 
 LRESULT CALLBACK ImplimentationSyncNoneTest::windowProcedure(HWND window, UINT message, WPARAM wParam, LPARAM lParam)
