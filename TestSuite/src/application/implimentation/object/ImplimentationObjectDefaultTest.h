@@ -23,6 +23,7 @@ private:
 	void initialiseRead();
 	void initialiseData();
 	bool success();
+	bool position(DirectX::XMMATRIX);
 	DirectX::XMMATRIX transform();
 
 private:

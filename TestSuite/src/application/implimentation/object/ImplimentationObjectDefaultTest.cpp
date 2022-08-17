@@ -98,22 +98,7 @@ bool ImplimentationObjectDefaultTest::success()
 {
 	DirectX::XMMATRIX comparison = transform();
 
-	if (data[0] != comparison._11)
-	{
-		return false;
-	}
-
-	if (data[1] != comparison._12)
-	{
-		return false;
-	}
-
-	if (data[2] != comparison._13)
-	{
-		return false;
-	}
-
-	if (data[3] != comparison._14)
+	if (!position(transform()))
 	{
 		return false;
 	}
@@ -194,6 +179,31 @@ bool ImplimentationObjectDefaultTest::success()
 	}
 
 	if (data[19] != 1.0f)
+	{
+		return false;
+	}
+
+	return true;
+}
+
+bool ImplimentationObjectDefaultTest::position(DirectX::XMMATRIX input)
+{
+	if (data[0] != input._11)
+	{
+		return false;
+	}
+
+	if (data[1] != input._12)
+	{
+		return false;
+	}
+
+	if (data[2] != input._13)
+	{
+		return false;
+	}
+
+	if (data[3] != input._14)
 	{
 		return false;
 	}
