@@ -24,12 +24,17 @@ private:
 	void initialiseRead();
 	void initialiseData();
 	bool success();
+	bool position(DirectX::XMMATRIX);
+	bool rotation(DirectX::XMMATRIX);
+	bool scale(DirectX::XMMATRIX);
+	bool packing(DirectX::XMMATRIX);
+	DirectX::XMMATRIX transform();
 
 private:
 	D3D11Renderer::Facade* unit;
-	D3D11Renderer::Transform transform;
+	D3D11Renderer::Transform inputData;
 	ID3D11Buffer* objectBuffer;
 	ID3D11Buffer* readBuffer;
 	HRESULT result;
-	float data[20];
+	float outputData[20];
 };

@@ -1,7 +1,7 @@
 #include "ImplimentationObjectTransformTest.h"
 
 ImplimentationObjectTransformTest::ImplimentationObjectTransformTest()
-	: unit{ new D3D11Renderer::Implimentation() }, transform(initialiseTransform()), objectBuffer{ nullptr }, readBuffer{ nullptr }, result(), data()
+	: unit{ new D3D11Renderer::Implimentation() }, inputData(initialiseTransform()), objectBuffer{ nullptr }, readBuffer{ nullptr }, result(), outputData()
 {
 }
 
@@ -15,7 +15,7 @@ ImplimentationObjectTransformTest::~ImplimentationObjectTransformTest()
 std::string ImplimentationObjectTransformTest::test()
 {
 	unit->initialise(HWND(), "");
-	unit->objectTransform(transform);
+	unit->objectTransform(inputData);
 
 	unit->getContext()->VSGetConstantBuffers(
 		1,
@@ -71,7 +71,7 @@ void ImplimentationObjectTransformTest::cleanup(IUnknown* input)
 void ImplimentationObjectTransformTest::initialiseRead()
 {
 	D3D11_BUFFER_DESC readDescription{
-		sizeof(data),
+		sizeof(outputData),
 		D3D11_USAGE_STAGING,
 		0,
 		D3D11_CPU_ACCESS_READ,
@@ -104,113 +104,156 @@ void ImplimentationObjectTransformTest::initialiseData()
 	);
 
 	memcpy(
-		&data,
+		&outputData,
 		subresource.pData,
-		sizeof(data)
+		sizeof(outputData)
 	);
 }
 
 bool ImplimentationObjectTransformTest::success()
 {
-	DirectX::XMMATRIX location = DirectX::XMMatrixTranslation(
-		transform.xpos,
-		transform.ypos,
-		transform.zpos
-	);
-
-	DirectX::XMMATRIX rotation = DirectX::XMMatrixRotationRollPitchYaw(
-		transform.xrot,
-		transform.yrot,
-		transform.zrot
-	);
-
-	DirectX::XMMATRIX scale = DirectX::XMMatrixScaling(
-		transform.xscale,
-		transform.yscale,
-		transform.zscale
-	);
-
-	DirectX::XMMATRIX temp = location * rotation * scale;
-
-	if (data[0] != temp._11)
+	if (!position(transform()))
 	{
 		return false;
 	}
 
-	if (data[1] != temp._12)
+	if (!rotation(transform()))
 	{
 		return false;
 	}
 
-	if (data[2] != temp._13)
+	if (!scale(transform()))
 	{
 		return false;
 	}
 
-	if (data[3] != temp._14)
-	{
-		return false;
-	}
-
-	if (data[4] != temp._21)
-	{
-		return false;
-	}
-
-	if (data[5] != temp._22)
-	{
-		return false;
-	}
-
-	if (data[6] != temp._23)
-	{
-		return false;
-	}
-
-	if (data[7] != temp._24)
-	{
-		return false;
-	}
-
-	if (data[8] != temp._31)
-	{
-		return false;
-	}
-
-	if (data[9] != temp._32)
-	{
-		return false;
-	}
-
-	if (data[10] != temp._33)
-	{
-		return false;
-	}
-
-	if (data[11] != temp._34)
-	{
-		return false;
-	}
-
-	if (data[12] != temp._41)
-	{
-		return false;
-	}
-
-	if (data[13] != temp._42)
-	{
-		return false;
-	}
-
-	if (data[14] != temp._43)
-	{
-		return false;
-	}
-
-	if (data[15] != temp._44)
+	if (!packing(transform()))
 	{
 		return false;
 	}
 
 	return true;
+}
+
+bool ImplimentationObjectTransformTest::position(DirectX::XMMATRIX input)
+{
+	if (outputData[0] != input._11)
+	{
+		return false;
+	}
+
+	if (outputData[1] != input._12)
+	{
+		return false;
+	}
+
+	if (outputData[2] != input._13)
+	{
+		return false;
+	}
+
+	if (outputData[3] != input._14)
+	{
+		return false;
+	}
+
+	return true;
+}
+
+bool ImplimentationObjectTransformTest::rotation(DirectX::XMMATRIX input)
+{
+	if (outputData[4] != input._21)
+	{
+		return false;
+	}
+
+	if (outputData[5] != input._22)
+	{
+		return false;
+	}
+
+	if (outputData[6] != input._23)
+	{
+		return false;
+	}
+
+	if (outputData[7] != input._24)
+	{
+		return false;
+	}
+
+	return true;
+}
+
+bool ImplimentationObjectTransformTest::scale(DirectX::XMMATRIX input)
+{
+	if (outputData[8] != input._31)
+	{
+		return false;
+	}
+
+	if (outputData[9] != input._32)
+	{
+		return false;
+	}
+
+	if (outputData[10] != input._33)
+	{
+		return false;
+	}
+
+	if (outputData[11] != input._34)
+	{
+		return false;
+	}
+
+	return true;
+}
+
+bool ImplimentationObjectTransformTest::packing(DirectX::XMMATRIX input)
+{
+	if (outputData[12] != input._41)
+	{
+		return false;
+	}
+
+	if (outputData[13] != input._42)
+	{
+		return false;
+	}
+
+	if (outputData[14] != input._43)
+	{
+		return false;
+	}
+
+	if (outputData[15] != input._44)
+	{
+		return false;
+	}
+
+	return true;
+}
+
+DirectX::XMMATRIX ImplimentationObjectTransformTest::transform()
+{
+	DirectX::XMMATRIX location = DirectX::XMMatrixTranslation(
+		inputData.xpos,
+		inputData.ypos,
+		inputData.zpos
+	);
+
+	DirectX::XMMATRIX rotation = DirectX::XMMatrixRotationRollPitchYaw(
+		inputData.xrot,
+		inputData.yrot,
+		inputData.zrot
+	);
+
+	DirectX::XMMATRIX scale = DirectX::XMMatrixScaling(
+		inputData.xscale,
+		inputData.yscale,
+		inputData.zscale
+	);
+
+	return location * rotation * scale;
 }
