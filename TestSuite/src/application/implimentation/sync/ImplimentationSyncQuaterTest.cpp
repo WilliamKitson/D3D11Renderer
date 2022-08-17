@@ -20,11 +20,7 @@ ImplimentationSyncQuaterTest::ImplimentationSyncQuaterTest(HINSTANCE hInstanceIn
 
 ImplimentationSyncQuaterTest::~ImplimentationSyncQuaterTest()
 {
-	if (unit)
-	{
-		delete unit;
-	}
-
+	cleanup();
 	DestroyWindow(window);
 }
 
@@ -44,6 +40,12 @@ std::string ImplimentationSyncQuaterTest::test()
 	}
 
 	return "implimentation sync quater test failed\n";
+}
+
+void ImplimentationSyncQuaterTest::cleanup()
+{
+	delete unit;
+	unit = nullptr;
 }
 
 LRESULT CALLBACK ImplimentationSyncQuaterTest::windowProcedure(HWND window, UINT message, WPARAM wParam, LPARAM lParam)
