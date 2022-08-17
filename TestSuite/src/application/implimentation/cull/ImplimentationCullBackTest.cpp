@@ -7,10 +7,8 @@ ImplimentationCullBackTest::ImplimentationCullBackTest(HINSTANCE hInstanceInput,
 
 ImplimentationCullBackTest::~ImplimentationCullBackTest()
 {
-	if (unit)
-	{
-		delete unit;
-	}
+	delete unit;
+	unit = nullptr;
 }
 
 std::string ImplimentationCullBackTest::test()
