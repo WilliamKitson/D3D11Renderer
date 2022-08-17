@@ -15,6 +15,7 @@ public:
 	std::string test();
 
 private:
+	void cleanup();
 	bool success();
 
 private:

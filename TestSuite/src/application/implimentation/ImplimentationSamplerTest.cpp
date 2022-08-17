@@ -12,7 +12,7 @@ ImplimentationSamplerTest::~ImplimentationSamplerTest()
 		state->Release();
 	}
 
-	delete unit;
+	cleanup();
 }
 
 std::string ImplimentationSamplerTest::test()
@@ -36,6 +36,12 @@ std::string ImplimentationSamplerTest::test()
 	}
 
 	return "implimentation sampler test failed\n";
+}
+
+void ImplimentationSamplerTest::cleanup()
+{
+	delete unit;
+	unit = nullptr;
 }
 
 bool ImplimentationSamplerTest::success()
