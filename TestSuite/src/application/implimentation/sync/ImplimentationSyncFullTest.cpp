@@ -20,11 +20,7 @@ ImplimentationSyncFullTest::ImplimentationSyncFullTest(HINSTANCE hInstanceInput,
 
 ImplimentationSyncFullTest::~ImplimentationSyncFullTest()
 {
-	if (unit)
-	{
-		delete unit;
-	}
-
+	cleanup();
 	DestroyWindow(window);
 }
 
@@ -44,6 +40,12 @@ std::string ImplimentationSyncFullTest::test()
 	}
 
 	return "implimentation sync full test failed\n";
+}
+
+void ImplimentationSyncFullTest::cleanup()
+{
+	delete unit;
+	unit = nullptr;
 }
 
 LRESULT CALLBACK ImplimentationSyncFullTest::windowProcedure(HWND window, UINT message, WPARAM wParam, LPARAM lParam)
