@@ -20,11 +20,7 @@ ImplimentationSyncDefaultTest::ImplimentationSyncDefaultTest(HINSTANCE hInstance
 
 ImplimentationSyncDefaultTest::~ImplimentationSyncDefaultTest()
 {
-	if (unit)
-	{
-		delete unit;
-	}
-
+	cleanup();
 	DestroyWindow(window);
 }
 
@@ -43,6 +39,12 @@ std::string ImplimentationSyncDefaultTest::test()
 	}
 
 	return "implimentation sync default test failed\n";
+}
+
+void ImplimentationSyncDefaultTest::cleanup()
+{
+	delete unit;
+	unit = nullptr;
 }
 
 LRESULT CALLBACK ImplimentationSyncDefaultTest::windowProcedure(HWND window, UINT message, WPARAM wParam, LPARAM lParam)

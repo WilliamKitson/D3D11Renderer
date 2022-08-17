@@ -17,6 +17,7 @@ public:
 	std::string test();
 
 private:
+	void cleanup();
 	static LRESULT CALLBACK windowProcedure(HWND, UINT, WPARAM, LPARAM);
 	void initialiseWindowClass();
 	void initialiseWindow();
